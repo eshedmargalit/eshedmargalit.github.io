@@ -7,6 +7,7 @@
     <title>Eshed Margalit | Contact</title>
     <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" data-emoji="🧠" type="image/png">
     <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
@@ -127,6 +128,24 @@
     <script src="js/vendor/foundation.js"></script>
     <script>
         $(document).foundation();
+
+        // dynamically set favicon
+        const favicon = document.querySelector("link[rel=icon]");
+        if (favicon) {
+            const emoji = favicon.getAttribute("data-emoji");
+
+            if (emoji) {
+                const canvas = document.createElement("canvas");
+                canvas.height = 64;
+                canvas.width = 64;
+
+                const ctx = canvas.getContext("2d");
+                ctx.font = "64px serif";
+                ctx.fillText(emoji, 0, 64);
+
+                favicon.href = canvas.toDataURL();
+            }
+        }
     </script>
 </body>
 
