@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import "./MenuBar.css";
 
 import {
   Collapse,

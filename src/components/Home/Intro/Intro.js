@@ -58,7 +58,7 @@ class Intro extends Component {
             </Container>
 
             <hr />
-            <Link to="/About">
+            <Link to="/CV">
               <Button outline color="primary">
                 CV
               </Button>
@@ -77,7 +77,7 @@ class Intro extends Component {
             </Link>
             {` `}
           </Col>
-          <Col xs="12" lg="4">
+          <Col xs="4" lg="4">
             <Container>
               <Row>
                 <Col xs="12" lg="12">
@@ -92,13 +92,13 @@ class Intro extends Component {
                     This is me on a hike to Cloud's Rest in Yosemite, CA!
                   </UncontrolledTooltip>
                   <p className="center-text anonymous">
-                    eshedm [at] stanford [dot] edu
+                    eshed.margalit [at] gmail [dot] com
                   </p>
                 </Col>
               </Row>
             </Container>
           </Col>
-          <Col xs="12" lg="4">
+          <Col xs="8" lg="4">
             <Container>
               <Row>
                 <Col xs="12" lg="12">

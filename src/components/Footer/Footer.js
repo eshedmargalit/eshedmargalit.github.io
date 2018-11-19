@@ -12,9 +12,8 @@ class Footer extends Component {
         <Row className="vertical-align">
           <Col xs="12" lg="12">
             <hr />
-            <p>Please get in touch! I'd love to hear from you.</p>
             <p>
-              Copy my email here: {` `}
+              Please get in touch! I'd love to hear from you.{` `}
               <FaEnvelope color="" id={"gmail_address"} size="1.5em" />
               <UncontrolledTooltip
                 autohide={false}

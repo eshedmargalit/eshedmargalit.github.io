@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Button, Jumbotron, Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
+
 import "./Overview.css";
 
 class Overview extends Component {
@@ -16,12 +18,19 @@ class Overview extends Component {
                 computations that govern visual cortex and the representations
                 that they operate on. I hope to contribute to our understanding
                 of how information is transformed in neural networks and how
-                such networks develop. Click below to read more about projects
-                I've worked on in the past!
+                such networks develop.
               </p>
-              <Button size="lg" color="secondary" to="/">
-                My Research
-              </Button>
+              <Link to="/Research">
+                <Button size="lg" color="secondary">
+                  My Research
+                </Button>
+              </Link>
+              {` `}
+              <Link to="/CV">
+                <Button size="lg" color="secondary">
+                  My CV
+                </Button>
+              </Link>
             </Col>
           </Row>
           <hr />
