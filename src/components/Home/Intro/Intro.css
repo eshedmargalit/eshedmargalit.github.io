@@ -1,0 +1,26 @@
+.full-width {
+  width: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.anonymous {
+  font-family: "Anonymous Pro";
+  font-weight: 700;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.dark-hover:hover {
+  color: "white";
+}
