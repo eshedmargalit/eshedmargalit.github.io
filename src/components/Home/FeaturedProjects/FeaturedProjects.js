@@ -8,11 +8,12 @@ class FeaturedProjects extends Component {
     return projects.map(project => {
       const img_src = "img/" + project.img_src;
       const url = project.url;
+      const alt_text = project.alt;
 
       return (
         <Col xs="12" lg="3" key={project.name}>
           <a href={url}>
-            <img src={img_src} className="full-width project" />
+            <img src={img_src} className="full-width project" alt={alt_text} />
             <p>{project.name}</p>
           </a>
         </Col>
