@@ -4,6 +4,103 @@
     "pdf": {
       "path": "dummy.pdf",
       "size": "11.1MB"
+    },
+    "publications": {
+      "published": [
+        {
+          "title": "Neuromelanin marks the spot: Identifying a locus coeruleus biomarker of cognitive reserve in healthy aging",
+          "authors": [
+            "Clewett, D.",
+            "Lee, T.H.",
+            "Greening, S.",
+            "Ponzio, A.",
+            "Margalit, E.",
+            "Mather, M."
+          ],
+          "journal": "Neurobiology of Aging",
+          "year": "2016",
+          "volume": ", 37",
+          "pages": ", 117-126",
+          "url": "http://www.neurobiologyofaging.org/article/S0197-4580(15)00476-5/abstract"
+        },
+        {
+          "title": "The lateral occipital complex shows no net response to object familiarity",
+          "authors": [
+            "Margalit, E.",
+            "Shah, M.P.",
+            "Tjan, B.S.",
+            "Biederman, I.",
+            "Keller, B.",
+            "Brenner, R."
+          ],
+          "journal": "Journal of Vision",
+          "year": "2016",
+          "volume": ", 16(3)",
+          "url": "https://jov.arvojournals.org/article.aspx?articleid=2551659"
+        },
+        {
+          "title": "An applet for the Gabor scaling of the differences between complex stimuli",
+          "authors": [
+            "Margalit, E.",
+            "Herald, S.B.",
+            "Yue, X.",
+            "von der Malsburg, C.",
+            "Biederman, I."
+          ],
+          "journal": "Attention, Perception, and Psychophysics",
+          "year": "2016",
+          "volume": ", 78(8)",
+          "pages": ", 2298-2306",
+          "url": "https://link.springer.com/article/10.3758/s13414-016-1191-7"
+        },
+        {
+          "title": "What is actually affected by the scrambling of objects when localizing the lateral occipital complex?",
+          "authors": [
+            "Margalit, E.",
+            "Biederman, I.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Journal of Cognitive Neuroscience",
+          "year": "2017",
+          "volume": ", 20(9)",
+          "pages": ", 1595-1604",
+          "url": "https://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144"
+        },
+        {
+          "title": "The cognitive neuroscience of person identification",
+          "authors": [
+            "Biederman, I.",
+            "Shilowich, B.E.",
+            "Herald, S.B.",
+            "Margalit, E.",
+            "Maarek, R.",
+            "Meschke, E.X.",
+            "Hacker, C.M."
+          ],
+          "journal": "Neuropsychologia",
+          "year": "2018",
+          "volume": ", 116B",
+          "pages": ", 205-214",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0028393218300423"
+        }
+      ],
+      "preprints": [
+        {
+          "title": "A critical assessment of data quality and venous effects in ultra-high-resolution fMRI",
+          "authors": [
+            "Kay, K.N.",
+            "Jamison, K.",
+            "Vizioli, L.",
+            "Zhang, R.",
+            "Margalit, E.",
+            "Ugurbil, K."
+          ],
+          "journal": "bioRxiv",
+          "year": "2018",
+          "url": "https://www.biorxiv.org/content/early/2018/06/03/337667"
+        }
+      ]
     }
   }
 }

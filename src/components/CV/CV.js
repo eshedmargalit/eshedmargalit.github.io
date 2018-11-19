@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   Button,
   Collapse,
@@ -24,6 +24,8 @@ import {
   FaAngleDown,
   FaAngleUp
 } from "react-icons/fa";
+
+import PubGroup from "./PubGroup/PubGroup";
 
 class CV extends Component {
   constructor(props) {
@@ -80,6 +82,16 @@ class CV extends Component {
 
   render_education() {
     return <h3>Education</h3>;
+  }
+
+  render_publications() {
+    return (
+      <Fragment>
+        <PubGroup name="Published" pubs={this.cv.publications.published} />
+        <br />
+        <PubGroup name="Preprints" pubs={this.cv.publications.preprints} />
+      </Fragment>
+    );
   }
 
   render() {
@@ -224,7 +236,7 @@ class CV extends Component {
             <em>Peer-reviewed publications</em>
             <Collapse isOpen={this.state.publications_collapse}>
               <Card>
-                <CardBody>Pubs go here</CardBody>
+                <CardBody>{this.render_publications()}</CardBody>
               </Card>
             </Collapse>
           </Col>
@@ -315,7 +327,7 @@ class CV extends Component {
             >
               <h2>
                 <FaHandHoldingHeart size={BUTTON_ICON_SIZE} />
-                {` `}Teaching {service_toggle_arrow}
+                {` `}Service {service_toggle_arrow}
               </h2>
             </Button>
             <em>Mentorship and volunteer work</em>
