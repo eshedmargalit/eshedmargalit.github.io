@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Button, Jumbotron, Container, Row, Col } from "reactstrap";
 import "./Overview.css";
 
-import vtc_gif from "../../../img/vtc_fade.gif";
-
 class Overview extends Component {
   render() {
     return (
@@ -30,7 +28,7 @@ class Overview extends Component {
           <Row>
             <Col xs="6" lg="4">
               <img
-                src={vtc_gif}
+                src="img/vtc_fade.gif"
                 className="full-width"
                 alt="GIF cycling through fMRI data from human ventral temporal cortex"
               />
