@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
 import { FaGoogle, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import snail_logo from "../../img/snail-sq.png";
 import vpnl_logo from "../../img/vpnl.png";
@@ -12,6 +12,7 @@ class Intro extends Component {
   render() {
     const ICON_SIZE = "2em";
     const ICON_COLOR = "#8c1313";
+
     return (
       <Container className="vertical-align">
         <Row className="vertical-align">
@@ -83,8 +84,12 @@ class Intro extends Component {
                     src={splash}
                     alt="Headshot of Eshed"
                     className="circle full-width"
+                    id="clouds-rest"
+                    href="#"
                   />
-
+                  <UncontrolledTooltip placement="top" target="clouds-rest">
+                    This is me on a hike to Cloud's Rest in Yosemite, CA!
+                  </UncontrolledTooltip>
                   <p className="center-text anonymous">
                     eshedm [at] stanford [dot] edu
                   </p>
@@ -99,9 +104,9 @@ class Intro extends Component {
                   <hr />
                   <p>
                     I'm a neuroscience graduate student with an interest in
-                    vision, computational neuroscience, neuroimaging, and
-                    artificial intelligence. To learn more or to see some of my
-                    past work, please check out my{" "}
+                    vision, computational neuroscience, artificial intelligence,
+                    and neuroimaging! To learn more or to see some of my past
+                    work, please check out my{" "}
                     <Link to="/">research interests</Link>, or my{" "}
                     <Link to="/">CV</Link>.
                   </p>
