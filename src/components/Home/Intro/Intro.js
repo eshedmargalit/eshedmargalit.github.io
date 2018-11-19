@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
 import { FaGoogle, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
-import snail_logo from "../../../img/snail-sq.png";
-import vpnl_logo from "../../../img/vpnl.png";
-import splash from "../../../img/clouds_rest.jpg";
 import { Link } from "react-router-dom";
 
 import "./Intro.css";
@@ -37,7 +34,7 @@ class Intro extends Component {
                 </Col>
                 <Col xs="4" lg="5">
                   <img
-                    src={snail_logo}
+                    src="img/snail-sq.png"
                     alt="SNAIL Logo"
                     className="full-width"
                   />
@@ -51,7 +48,11 @@ class Intro extends Component {
                   <p>PI: Kalanit Grill-Spector</p>
                 </Col>
                 <Col xs="4" lg="5">
-                  <img src={vpnl_logo} alt="VPNL Logo" className="full-width" />
+                  <img
+                    src="img/vpnl.png"
+                    alt="VPNL Logo"
+                    className="full-width"
+                  />
                 </Col>
               </Row>
             </Container>
@@ -81,7 +82,7 @@ class Intro extends Component {
               <Row>
                 <Col xs="12" lg="12">
                   <img
-                    src={splash}
+                    src="img/clouds_rest.jpg"
                     alt="Headshot of Eshed"
                     className="circle full-width"
                     id="clouds-rest"

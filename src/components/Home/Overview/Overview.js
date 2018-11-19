@@ -8,7 +8,6 @@ class Overview extends Component {
   render() {
     return (
       <Container>
-        <hr />
         <Jumbotron>
           <Row>
             <Col xs="12" lg="12">
@@ -30,7 +29,11 @@ class Overview extends Component {
           <hr />
           <Row>
             <Col xs="6" lg="4">
-              <img src={vtc_gif} className="full-width" />
+              <img
+                src={vtc_gif}
+                className="full-width"
+                alt="GIF cycling through fMRI data from human ventral temporal cortex"
+              />
             </Col>
             <Col xs="12" lg="6">
               <p>

@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "name": "A V1-like Model for Object Discrimination",
+      "url": "http://geon.usc.edu/GJW/",
+      "img_src": "gabor_grab.PNG"
+    },
+    {
+      "name": "Modeling the Functional Architecture of the Visual System",
+      "url": "img/Margalit_et_al_VSS_2018.png",
+      "img_src": "spacenet.png"
+    },
+    {
+      "name": "Interactive Signal Detection Theory Notebook",
+      "url": "https://github.com/eshedmargalit/dprime_gui",
+      "img_src": "dp_gui_screenshot.png"
+    },
+    {
+      "name": "How are object parts represented in the human brain?",
+      "url": "http://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144",
+      "img_src": "Margalit_et_al_2017_Fig3.png"
+    }
+  ]
+}
