@@ -25,7 +25,8 @@ import {
   FaAward,
   FaAngleDown,
   FaAngleUp,
-  FaLink
+  FaLink,
+  FaGithub
 } from "react-icons/fa";
 
 import PubGroup from "./PubGroup/PubGroup";
@@ -45,8 +46,8 @@ class CV extends Component {
     this.cv = cv_file.CV;
 
     this.state = {
-      research_collapse: true,
-      education_collapse: true,
+      research_collapse: false,
+      education_collapse: false,
       publications_collapse: false,
       presentations_collapse: false,
       skills_collapse: false,
@@ -288,6 +289,187 @@ class CV extends Component {
     );
   }
 
+  render_skills() {
+    return (
+      <Container>
+        <Row>
+          <Col>
+            Check out my GitHub to see what I'm up to:
+            <Button color="link">
+              <FaGithub size="2em" />
+            </Button>
+          </Col>
+        </Row>
+        <hr />
+        <Row>
+          <Col xs="12" lg="4">
+            <h3>Things I use daily</h3>
+            <ListGroup>
+              <ListGroupItem>Python</ListGroupItem>
+              <ListGroupItem>MATLAB</ListGroupItem>
+              <ListGroupItem>Git / Github</ListGroupItem>
+              <ListGroupItem>TensorFlow</ListGroupItem>
+              <ListGroupItem>Jupyter</ListGroupItem>
+            </ListGroup>
+          </Col>
+
+          <Col xs="12" lg="4">
+            <h3>Things I use pretty often</h3>
+            <ListGroup>
+              <ListGroupItem>Keras</ListGroupItem>
+              <ListGroupItem>HTML/CSS/React/Redux</ListGroupItem>
+              <ListGroupItem>C, C++, Java</ListGroupItem>
+              <ListGroupItem>Psychtoolbox</ListGroupItem>
+              <ListGroupItem>FSL, FreeSurfer</ListGroupItem>
+              <ListGroupItem>Photoshop and Illustrator</ListGroupItem>
+            </ListGroup>
+          </Col>
+
+          <Col xs="12" lg="4">
+            <h3>Things I've used before</h3>
+            <ListGroup>
+              <ListGroupItem>Patch-clamp physiology</ListGroupItem>
+              <ListGroupItem>Multi-unit in-vivo recording</ListGroupItem>
+              <ListGroupItem>Psychtoolbox</ListGroupItem>
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
+  render_award = award => {
+    let link_render;
+    if (award.url === "") {
+      link_render = null;
+    } else {
+      link_render = (
+        <Button color="link" href={award.url}>
+          <FaLink size="1.5em" />
+        </Button>
+      );
+    }
+    return (
+      <ListGroupItem>
+        <h6>{award.name}</h6>
+        <p>{award.dates}</p>
+        <p>{award.description}</p>
+        {link_render}
+      </ListGroupItem>
+    );
+  };
+
+  render_awards() {
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <ListGroup>
+              {this.cv.awards.map(award => {
+                return <span key={award.name}>{this.render_award(award)}</span>;
+              })}
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
+  render_teaching() {
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <ListGroup>
+              <ListGroupItem>
+                <h6>
+                  Teaching Assistant, Introduction to Perception (PSYCH 30)
+                </h6>
+                <p>Fall 2017, 2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Teaching Assistant,{" "}
+                  <a href="https://med.stanford.edu/neurogradprogram/prospective_students/bootcamp.html">
+                    Stanford Intensive Neuroscience Bootcamp
+                  </a>
+                </h6>
+                <p>Fall 2017</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Instructor,{" "}
+                  <a href="https://stanfordesp.org/">Stanford Splash</a>
+                </h6>
+                <p>Fall 2017</p>
+              </ListGroupItem>
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
+  render_service() {
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <ListGroup>
+              <ListGroupItem>
+                <h6>
+                  Chair, Society for Neuroscience Nanosymposium: Extrastriate
+                  Vision
+                </h6>
+                <p>2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Stanford Neurosciences PhD Program Student Program Committee
+                </h6>
+                <p>2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Mentor and workshop leader for NSF GRFP Application</h6>
+                <p>2017 - 2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Student Speaker Representative, Stanford Neurosciences PhD
+                  Program
+                </h6>
+                <p>2017 - 2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Mentor, Stanford Biosciences Student Association</h6>
+                <p>2017 - 2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Student Representative, USC Undergraduate Neuroscience Program
+                  Executive Committee
+                </h6>
+                <p>2015 - 2016</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Mentor to undergraduate lab members</h6>
+                <p>2013 - present</p>
+                <p>
+                  Jordan Juarez, Isabel Irawan, Emily Meschke, Rafael Maarek,
+                  and Catrina Hacker
+                </p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Team captain, USC Cross Country Club</h6>
+                <p>2014 -2015</p>
+              </ListGroupItem>
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
   render() {
     const BUTTON_ICON_SIZE = "2rem";
 
@@ -468,7 +650,7 @@ class CV extends Component {
             <em>Methods, programming experience, and other training</em>
             <Collapse isOpen={this.state.skills_collapse}>
               <Card>
-                <CardBody>Skills go here</CardBody>
+                <CardBody>{this.render_skills()}</CardBody>
               </Card>
             </Collapse>
           </Col>
@@ -485,7 +667,7 @@ class CV extends Component {
             <em>Grants and awards</em>
             <Collapse isOpen={this.state.awards_collapse}>
               <Card>
-                <CardBody>Awards go here</CardBody>
+                <CardBody>{this.render_awards()}</CardBody>
               </Card>
             </Collapse>
           </Col>
@@ -506,7 +688,7 @@ class CV extends Component {
             <em>Teaching experience</em>
             <Collapse isOpen={this.state.teaching_collapse}>
               <Card>
-                <CardBody>Teaching goes here</CardBody>
+                <CardBody>{this.render_teaching()}</CardBody>
               </Card>
             </Collapse>
           </Col>
@@ -527,7 +709,7 @@ class CV extends Component {
             <em>Mentorship and volunteer work</em>
             <Collapse isOpen={this.state.service_collapse}>
               <Card>
-                <CardBody>Service goes here</CardBody>
+                <CardBody>{this.render_service()}</CardBody>
               </Card>
             </Collapse>
           </Col>

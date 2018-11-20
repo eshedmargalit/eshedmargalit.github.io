@@ -5,6 +5,74 @@
       "path": "dummy.pdf",
       "size": "11.1MB"
     },
+    "awards": [
+      {
+        "name": "NSF Graduate Research Fellowship Program (GRFP) Fellow",
+        "dates": "2016 - 2021",
+        "description": "NSF fellowship recognizes and supports outstanding graduate students in NSF-supported science, technology, engineering, and mathematics disciplines",
+        "url": "https://www.nsfgrfp.org/"
+      },
+      {
+        "name": "USC Trustee's Award",
+        "dates": "2016",
+        "description": "Awarded to the undergraduate male with the highest GPA at the University",
+        "url": ""
+      },
+      {
+        "name": "Graduate Trainee, Stanford Mind, Brain, Computation, and Technology",
+        "dates": "2018",
+        "description": "Traineeship awarded for the pursuit of multi-disciplinary research in the area of computational neuroscience",
+        "url": ""
+      },
+      {
+        "name": "USC Neuroscience Outstanding Student of the Year",
+        "dates": "2016",
+        "description": "Awarded to USC's best neuroscience student with senior standing",
+        "url": "http://dornsife.usc.edu/usc-neuroscience/"
+      },
+      {
+        "name": "USC Brian Philip Rakusin Neuroscience Scholarship Award",
+        "dates": "2015",
+        "description": "Awarded to USC's best neuroscience student with junior standing",
+        "url": "http://dornsife.usc.edu/usc-neuroscience/"
+      },
+      {
+        "name": "Phi Beta Kappa Honor Society",
+        "dates": "2015",
+        "description": "Academic honor's society",
+        "url": "https://www.pbk.org/"
+      },
+      {
+        "name": "USC Discovery Scholar",
+        "dates": "2016",
+        "description": "Awarded to students who excel in the classroom while demonstrating the ability to create exceptional new scholarship.",
+        "url": "http://ahf.usc.edu/scholars/discovery/"
+      },
+      {
+        "name": "USC Provost's Undergraduate Research Fellowship",
+        "dates": "2013 - 2016",
+        "description": "6-time recipient of award supporting exceptional undergraduate research",
+        "url": "https://undergrad.usc.edu/experience/research/undergrad_research/"
+      },
+      {
+        "name": "George H. Mayr Scholarship",
+        "dates": "2015",
+        "description": "Awarded to outstanding students from California in the college of letters, arts, and sciences",
+        "url": ""
+      },
+      {
+        "name": "USC S.O.A.R. Grant",
+        "dates": "2015",
+        "description": "Provides funding to Dornsife undergraduates for participation as a research assistant in a faculty member’s project",
+        "url": "https://dornsife.usc.edu/soar"
+      },
+      {
+        "name": "USC Dean's Scholar",
+        "dates": "2012 - 2016",
+        "description": "Quarter tuition scholarship",
+        "url": "http://dornsife.usc.edu/trustee-presidential-deans-scholarships"
+      }
+    ],
     "publications": {
       "published": [
         {
