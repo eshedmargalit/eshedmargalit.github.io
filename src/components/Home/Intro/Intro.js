@@ -69,15 +69,15 @@ class Intro extends Component {
               </Button>
             </Link>
             {` `}
-            <Link to="/">
+            <Link to="/Research">
               <Button outline color="primary">
                 Research
               </Button>
             </Link>
             {` `}
-            <Link to="/">
+            <Link to="/Fun">
               <Button outline color="primary">
-                Contact
+                Fun
               </Button>
             </Link>
             {` `}
