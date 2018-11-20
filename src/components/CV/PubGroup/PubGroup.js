@@ -8,6 +8,7 @@ import {
   ListGroupItem
 } from "reactstrap";
 import { FaLink } from "react-icons/fa";
+import moment from "moment";
 
 class PubGroup extends Component {
   render_author = author => {
@@ -57,12 +58,22 @@ class PubGroup extends Component {
           </span>
         );
       }
-      return <span key={authors.url + author}>{to_render}</span>;
+      return <span key={authors.tag + author}>{to_render}</span>;
     });
   };
 
   render_pub = pub => {
-    pub.authors.url = pub.url;
+    pub.authors.tag = pub.tag;
+    let link_render;
+    if (pub.url === "") {
+      link_render = null;
+    } else {
+      link_render = (
+        <Button color="link" href={pub.url}>
+          <FaLink size="1.5em" />
+        </Button>
+      );
+    }
     return (
       <ListGroupItem>
         <p>{pub.year}</p>
@@ -75,15 +86,13 @@ class PubGroup extends Component {
             {pub.pages}
           </em>
         </p>
-        <Button color="link" href={pub.url}>
-          <FaLink size="1.5em" />
-        </Button>
+        {link_render}
       </ListGroupItem>
     );
   };
   render_pubs = pubs => {
     return pubs.map(pub => {
-      return <span key={pub.url}>{this.render_pub(pub)}</span>;
+      return <span key={pub.tag}>{this.render_pub(pub)}</span>;
     });
   };
 
@@ -91,6 +100,8 @@ class PubGroup extends Component {
     if (this.props.pubs.length === 0) {
       return null;
     }
+    // descending sort
+    this.props.pubs.sort((a, b) => -moment(a.year).diff(moment(b.year)));
     return (
       <Container>
         <Row>

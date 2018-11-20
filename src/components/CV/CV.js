@@ -6,7 +6,9 @@ import {
   CardBody,
   Container,
   Row,
-  Col
+  Col,
+  ListGroup,
+  ListGroupItem
 } from "reactstrap";
 
 import cv_file from "../../json/CV.json";
@@ -22,7 +24,8 @@ import {
   FaChalkboardTeacher,
   FaAward,
   FaAngleDown,
-  FaAngleUp
+  FaAngleUp,
+  FaLink
 } from "react-icons/fa";
 
 import PubGroup from "./PubGroup/PubGroup";
@@ -42,8 +45,8 @@ class CV extends Component {
     this.cv = cv_file.CV;
 
     this.state = {
-      research_collapse: false,
-      education_collapse: false,
+      research_collapse: true,
+      education_collapse: true,
       publications_collapse: false,
       presentations_collapse: false,
       skills_collapse: false,
@@ -81,7 +84,188 @@ class CV extends Component {
   }
 
   render_education() {
-    return <h3>Education</h3>;
+    return (
+      <ListGroup>
+        <ListGroupItem>
+          <Container>
+            <Row>
+              <Col lg="2">
+                <img
+                  src="img/SU_Seal_Red.png"
+                  alt="Stanford official seal"
+                  className="full-width"
+                />
+              </Col>
+              <Col lg="10">
+                <h3>Stanford University</h3>
+                <p>2016 - Present</p>
+                <p>PhD Candidate, Neurosciences Ph.D. Program</p>
+              </Col>
+            </Row>
+          </Container>
+        </ListGroupItem>
+
+        <ListGroupItem>
+          <Container>
+            <Row>
+              <Col lg="2">
+                <img
+                  src="img/USC_Seal.png"
+                  alt="USC official seal"
+                  className="full-width"
+                />
+              </Col>
+              <Col lg="10">
+                <h3>University of Southern California</h3>
+                <p>2012 - 2016</p>
+                <p>
+                  B.S. with Honors in Computational Neuroscience
+                  <br />
+                  Minor in Computer Science
+                </p>
+                <p>Cumulative GPA: 3.99</p>
+              </Col>
+            </Row>
+          </Container>
+        </ListGroupItem>
+      </ListGroup>
+    );
+  }
+
+  render_research() {
+    return (
+      <Fragment>
+        <h2>Current</h2>
+        <ListGroup>
+          <ListGroupItem>
+            <Container>
+              <Row>
+                <Col>
+                  <h3>
+                    Stanford NeuroAI Lab{` `}
+                    <Button
+                      outline
+                      color="link"
+                      size="1.5em"
+                      href="http://neuroailab.stanford.edu/"
+                    >
+                      <FaLink />
+                    </Button>
+                  </h3>
+                  <p>
+                    2016 - Present
+                    <br />
+                    <strong>PI: </strong> Dan Yamins
+                  </p>
+                  <p>
+                    <em>
+                      Modeling structure and development of primate visual
+                      cortex
+                    </em>
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </ListGroupItem>
+
+          <ListGroupItem>
+            <Container>
+              <Row>
+                <Col>
+                  <h3>
+                    Stanford Vision and Perception Neuroscience Lab{` `}
+                    <Button
+                      outline
+                      color="link"
+                      size="1.5em"
+                      href="http://vpnl.stanford.edu/"
+                    >
+                      <FaLink />
+                    </Button>
+                  </h3>
+                  <p>
+                    2016 - Present
+                    <br />
+                    <strong>PI: </strong> Kalanit Grill-Spector
+                  </p>
+                  <p>
+                    <em>
+                      Characterization of human higher visual cortex via
+                      ultra-high-resolution fMRI
+                    </em>
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </ListGroupItem>
+        </ListGroup>
+        <br />
+        <h2>Past</h2>
+        <ListGroup>
+          <ListGroupItem>
+            <Container>
+              <Row>
+                <Col>
+                  <h3>
+                    USC Image Understanding Lab{` `}
+                    <Button
+                      outline
+                      color="link"
+                      size="1.5em"
+                      href="http://geon.usc.edu/"
+                    >
+                      <FaLink />
+                    </Button>
+                  </h3>
+                  <p>
+                    2014 - 2016
+                    <br />
+                    <strong>PI: </strong> Irving Biederman
+                  </p>
+                  <p>
+                    <em>
+                      Interrogating object representations in visual cortex and
+                      psychophysical correlates of developmental prosopagnosia
+                    </em>
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </ListGroupItem>
+
+          <ListGroupItem>
+            <Container>
+              <Row>
+                <Col>
+                  <h3>
+                    USC Emotion and Cognition Lab{` `}
+                    <Button
+                      outline
+                      color="link"
+                      size="1.5em"
+                      href="http://gero.usc.edu/labs/matherlab/"
+                    >
+                      <FaLink />
+                    </Button>
+                  </h3>
+                  <p>
+                    2013 - 2014
+                    <br />
+                    <strong>PI: </strong> Mara Mather
+                  </p>
+                  <p>
+                    <em>
+                      Investigating the role of the noradrenergic arousal system
+                      in aging and memory
+                    </em>
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </ListGroupItem>
+        </ListGroup>
+      </Fragment>
+    );
   }
 
   render_publications() {
@@ -90,6 +274,16 @@ class CV extends Component {
         <PubGroup name="Published" pubs={this.cv.publications.published} />
         <br />
         <PubGroup name="Preprints" pubs={this.cv.publications.preprints} />
+      </Fragment>
+    );
+  }
+
+  render_presentations() {
+    return (
+      <Fragment>
+        <PubGroup name="Talks" pubs={this.cv.presentations.talks} />
+        <br />
+        <PubGroup name="Posters" pubs={this.cv.presentations.posters} />
       </Fragment>
     );
   }
@@ -215,7 +409,7 @@ class CV extends Component {
             <em>Labs I've worked in</em>
             <Collapse isOpen={this.state.research_collapse}>
               <Card>
-                <CardBody>Research goes here</CardBody>
+                <CardBody>{this.render_research()}</CardBody>
               </Card>
             </Collapse>
           </Col>
@@ -257,7 +451,7 @@ class CV extends Component {
             <em>Conference posters and talks</em>
             <Collapse isOpen={this.state.presentations_collapse}>
               <Card>
-                <CardBody>Presentations go here</CardBody>
+                <CardBody>{this.render_presentations()}</CardBody>
               </Card>
             </Collapse>
           </Col>

@@ -12,7 +12,7 @@
           "authors": [
             "Clewett, D.",
             "Lee, T.H.",
-            "Greening, S.",
+            "Greening, S.G.",
             "Ponzio, A.",
             "Margalit, E.",
             "Mather, M."
@@ -21,7 +21,8 @@
           "year": "2016",
           "volume": ", 37",
           "pages": ", 117-126",
-          "url": "http://www.neurobiologyofaging.org/article/S0197-4580(15)00476-5/abstract"
+          "url": "http://www.neurobiologyofaging.org/article/S0197-4580(15)00476-5/abstract",
+          "tag": "noa-2016-neuromelanin"
         },
         {
           "title": "The lateral occipital complex shows no net response to object familiarity",
@@ -36,7 +37,8 @@
           "journal": "Journal of Vision",
           "year": "2016",
           "volume": ", 16(3)",
-          "url": "https://jov.arvojournals.org/article.aspx?articleid=2551659"
+          "url": "https://jov.arvojournals.org/article.aspx?articleid=2551659",
+          "tag": "jov-2016-thelateral"
         },
         {
           "title": "An applet for the Gabor scaling of the differences between complex stimuli",
@@ -51,7 +53,8 @@
           "year": "2016",
           "volume": ", 78(8)",
           "pages": ", 2298-2306",
-          "url": "https://link.springer.com/article/10.3758/s13414-016-1191-7"
+          "url": "https://link.springer.com/article/10.3758/s13414-016-1191-7",
+          "tag": "app-2016-anapplet"
         },
         {
           "title": "What is actually affected by the scrambling of objects when localizing the lateral occipital complex?",
@@ -65,7 +68,8 @@
           "year": "2017",
           "volume": ", 20(9)",
           "pages": ", 1595-1604",
-          "url": "https://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144"
+          "url": "https://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144",
+          "tag": "jocn-2017-whatis"
         },
         {
           "title": "The cognitive neuroscience of person identification",
@@ -82,7 +86,8 @@
           "year": "2018",
           "volume": ", 116B",
           "pages": ", 205-214",
-          "url": "https://www.sciencedirect.com/science/article/pii/S0028393218300423"
+          "url": "https://www.sciencedirect.com/science/article/pii/S0028393218300423",
+          "tag": "neuropsychologia-2018-thecognitive"
         }
       ],
       "preprints": [
@@ -98,7 +103,138 @@
           ],
           "journal": "bioRxiv",
           "year": "2018",
-          "url": "https://www.biorxiv.org/content/early/2018/06/03/337667"
+          "url": "https://www.biorxiv.org/content/early/2018/06/03/337667",
+          "tag": "biorxiv-2018-acritical"
+        }
+      ]
+    },
+    "presentations": {
+      "posters": [
+        {
+          "title": "Pinwheel-like Iso-Orientation Domains in a Convolutional Neural Network Model",
+          "authors": [
+            "Margalit, E.",
+            "Lee, H.",
+            "DiCarlo, J.J.",
+            "Yamins, D.L.K."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2018",
+          "url": "img/Margalit_et_al_VSS_2018.png",
+          "tag": "vss-2018-pinwheel"
+        },
+        {
+          "title": "What is the nature of the perceptual deficit in congenital prosopagnosia?",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Maarek, R.",
+            "Meschke, E.X.",
+            "Shilowich, B.E.",
+            "Hacker, C.M.",
+            "Juarez, J.J.",
+            "Seamans, T.J.",
+            "Herald, S.B."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2017",
+          "url": "http://geon.usc.edu/~biederman/presentations/PerceptualDeficit_VSS_17.pdf",
+          "tag": "vss-2017-whatis"
+        },
+        {
+          "title": "What is the nature of the perceptual deficit in congenital prosopagnosia?",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Annual Meeting of the Society of Experimental Psychologists",
+          "year": "2016",
+          "url": "",
+          "tag": "sep-2016-whatis"
+        },
+        {
+          "title": "Vertices are effective in perceptual grouping (and ungrouping)",
+          "authors": [
+            "Irawan, I.",
+            "Margalit, E.",
+            "Herald, S.B.",
+            "Biederman, I."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "http://geon.usc.edu/~biederman/presentations/Irawan_et_al_VSS_16.pdf",
+          "tag": "vss-2016-vertices"
+        },
+        {
+          "title": "Impaired face and non-face discrimination in developmental prosopagnosics (DPs)",
+          "authors": ["Margalit, E.", "Yue, X.", "Biederman, I."],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "",
+          "tag": "vss-2016-impaired"
+        },
+        {
+          "title": "What is actually affected by the scrambling of objects when localizing LOC? (Talk)",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "",
+          "tag": "vss-2016-whatis"
+        },
+        {
+          "title": "Neuromelanin marks the spot: a locus coeruleus substrate of cognitive reserve in healthy aging",
+          "authors": [
+            "Clewett, D.",
+            "Lee, T.H.",
+            "Greening, S.G.",
+            "Ponzio, A.",
+            "Margalit, E.",
+            "Mather, M."
+          ],
+          "journal": "USC Neuroscience Graduate Student Symposium",
+          "year": "2015",
+          "url": "",
+          "tag": "usc-2015-neuromelanin"
+        },
+        {
+          "title": "Phonagnosia, a voice homologue to prosopagnosia",
+          "authors": [
+            "Biederman, I.",
+            "Herald, S.B.",
+            "Xu, X.",
+            "Amir, O.",
+            "Shilowich, B.E.",
+            "Margalit, E."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2015",
+          "url": "http://geon.usc.edu/~biederman/presentations/BiedermanEtAl_VSS2015.pdf",
+          "tag": "vss-2015-phonagnosia"
+        }
+      ],
+      "talks": [
+        {
+          "title": "Differential representation of object category information across lateral and medial ventral temporal cortex revealed with ultra-high-resolution fMRI",
+          "authors": [
+            "Margalit, E.",
+            "Jamison, K.",
+            "Weiner, K.S.,",
+            "Vizioli, L.",
+            "Zhang, R.",
+            "Kay, K.N.",
+            "Grill-Spector, K."
+          ],
+          "journal": "Society for Neuroscience Annual Conference",
+          "year": "2018",
+          "url": "https://www.abstractsonline.com/pp8/#!/4649/presentation/41470",
+          "tag": "sfn-2018-differential"
         }
       ]
     }

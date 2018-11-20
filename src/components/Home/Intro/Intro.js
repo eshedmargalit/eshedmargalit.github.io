@@ -108,8 +108,8 @@ class Intro extends Component {
                     vision, computational neuroscience, artificial intelligence,
                     and neuroimaging! To learn more or to see some of my past
                     work, please check out my{" "}
-                    <Link to="/">research interests</Link>, or my{" "}
-                    <Link to="/">CV</Link>.
+                    <Link to="/Research">research interests</Link>, or my{" "}
+                    <Link to="/CV">CV</Link>.
                   </p>
                 </Col>
               </Row>

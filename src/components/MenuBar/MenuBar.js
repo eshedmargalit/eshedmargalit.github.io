@@ -34,11 +34,14 @@ class MenuBar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <LinkContainer to="/About">
-                <NavLink>About</NavLink>
+              <LinkContainer to="/CV">
+                <NavLink>CV</NavLink>
               </LinkContainer>
-              <LinkContainer to="/Discussions">
-                <NavLink>Discussions</NavLink>
+              <LinkContainer to="/Research">
+                <NavLink>Research</NavLink>
+              </LinkContainer>
+              <LinkContainer to="/Research">
+                <NavLink>Fun!</NavLink>
               </LinkContainer>
             </Nav>
           </Collapse>
