@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
-import { FaGoogle, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+  FaGraduationCap
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import "./Intro.css";
@@ -120,7 +125,7 @@ class Intro extends Component {
                     color="secondary"
                     href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao"
                   >
-                    <FaGoogle size={ICON_SIZE} color={ICON_COLOR} />
+                    <FaGraduationCap size={ICON_SIZE} color={ICON_COLOR} />
                   </Button>
                 </Col>
                 <Col xs="3" lg="3">

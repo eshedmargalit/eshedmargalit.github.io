@@ -26,7 +26,8 @@ import {
   FaAngleDown,
   FaAngleUp,
   FaLink,
-  FaGithub
+  FaGithub,
+  FaGoogle
 } from "react-icons/fa";
 
 import PubGroup from "./PubGroup/PubGroup";
@@ -272,6 +273,13 @@ class CV extends Component {
   render_publications() {
     return (
       <Fragment>
+        <Button
+          href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en"
+          color="secondary"
+        >
+          <FaGoogle size="1em" /> | My Google Scholar Profile
+        </Button>
+        <hr />
         <PubGroup name="Published" pubs={this.cv.publications.published} />
         <br />
         <PubGroup name="Preprints" pubs={this.cv.publications.preprints} />
@@ -547,6 +555,15 @@ class CV extends Component {
                     <Button color="secondary">
                       <FaFilePdf size="3em" />
                       {this.cv.pdf.path} | {this.cv.pdf.size}
+                    </Button>
+                    {` `}
+                    <Button
+                      href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en"
+                      color="primary"
+                    >
+                      <FaGoogle size="3em" />
+                      {` `}
+                      Google Scholar Profile
                     </Button>
                   </p>
                 </Col>
