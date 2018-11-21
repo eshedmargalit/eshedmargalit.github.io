@@ -1352,7 +1352,7 @@
                           null,
                           l.a.createElement(
                             p.d,
-                            { lg: "2" },
+                            { xs: "6", lg: "2" },
                             l.a.createElement("img", {
                               src: "img/SU_Seal_Red.png",
                               alt: "Stanford official seal",
@@ -1388,7 +1388,7 @@
                           null,
                           l.a.createElement(
                             p.d,
-                            { lg: "2" },
+                            { xs: "6", lg: "2" },
                             l.a.createElement("img", {
                               src: "img/USC_Seal.png",
                               alt: "USC official seal",
@@ -2711,4 +2711,4 @@
   },
   [[41, 2, 1]]
 ]);
-//# sourceMappingURL=main.59b7692a.chunk.js.map
+//# sourceMappingURL=main.fdd82bfb.chunk.js.map
