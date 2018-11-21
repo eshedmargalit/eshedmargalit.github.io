@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MenuBar from "./components/MenuBar/MenuBar";
 import Footer from "./components/Footer/Footer";
@@ -16,7 +16,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <div className="App">
           <Route path="/" component={MenuBar} />
           <Route exact path="/" component={Home} />
@@ -24,7 +24,7 @@ class App extends Component {
           <Route exact path="/Research" component={Research} />
           <Route path="/" component={Footer} />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

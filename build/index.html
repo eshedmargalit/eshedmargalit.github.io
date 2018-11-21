@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700"
       rel="stylesheet"
     />
-    <link rel="icon" data-emoji="🧠" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <title>
       Eshed Margalit | PhD Candidate, Stanford Neurosciences Graduate Program
     </title>
@@ -41,24 +41,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      // dynamically set favicon
-      const favicon = document.querySelector("link[rel=icon]");
-      if (favicon) {
-        const emoji = favicon.getAttribute("data-emoji");
-
-        if (emoji) {
-          const canvas = document.createElement("canvas");
-          canvas.height = 64;
-          canvas.width = 64;
-
-          const ctx = canvas.getContext("2d");
-          ctx.font = "64px serif";
-          ctx.fillText(emoji, 0, 64);
-
-          favicon.href = canvas.toDataURL();
-        }
-      }</script
-    ><script>
       !(function(l) {
         function e(e) {
           for (
@@ -144,6 +126,6 @@
         a();
       })([]);</script
     ><script src="/static/js/1.33eee767.chunk.js"></script
-    ><script src="/static/js/main.d862b98d.chunk.js"></script>
+    ><script src="/static/js/main.2ab2d03b.chunk.js"></script>
   </body>
 </html>
