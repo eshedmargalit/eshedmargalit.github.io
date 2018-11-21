@@ -11,7 +11,7 @@
     },
     {
       "name": "Characterizing the Fine Scale Functional Architecture of the Ventral Temporal Cortex",
-      "description": "Recent advances in fMRI technology have allowed insights into the functional organization of cortical regions at unprecented resolution. In collaboration with the CVN Lab at the University of Minnesota , we are examining areas of the brain that preferentially respond to different object categories and studying their arrangement in the brain.",
+      "description": "Recent advances in fMRI technology have allowed insights into the functional organization of cortical regions at unprecented resolution. In collaboration with the CVN Lab at the University of Minnesota, we are examining areas of the brain that preferentially respond to different object categories and studying their arrangement in the cortical sheet.",
       "img_src": "img/vtc_faces.png",
       "url": "https://www.abstractsonline.com/pp8/#!/4649/presentation/41470",
       "url_text": "SfN 2018 Abstract",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Object Familiarity in LOC",
-      "description": "Hundreds of studies have explored the Lateral Occipital Complex (LOC), which is critical for shape perception. Early studies discounted a role of familiarity by showing that “abstract” sculptures, unfamiliar to the subjects, also activated this region. This characterization of LOC as a region that responds to shape independently of familiarity had been accepted but never tested with control of the same low-level features. We assessed LOC’s response to objects that had identical parts in two different arrangements, one familiar and the other novel. Malach was correct: there is no net effect of familiarity in LOC. However, a MVPA showed that LOC does distinguish familiar from novel objects.",
+      "description": "Hundreds of studies have explored the Lateral Occipital Complex (LOC), which is critical for shape perception. Early studies discounted a role of familiarity by showing that “abstract” sculptures, unfamiliar to the subjects, also activated this region. This characterization of LOC as a region that responds to shape independently of familiarity had been accepted but never tested with control of the same low-level features. We assessed LOC’s response to objects that had identical parts in two different arrangements, one familiar and the other novel. The early work was correct: there is no net effect of familiarity in LOC, although multivariate classifiers suggest that LOC does distinguish familiar from novel objects.",
       "img_src": "img/LOC_mricrogl.png",
       "url": "http://jov.arvojournals.org/article.aspx?articleid=2551659",
       "url_text": "Article in Journal of Vision",

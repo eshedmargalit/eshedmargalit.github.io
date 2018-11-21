@@ -26,7 +26,7 @@ class FeaturedProjects extends Component {
       <Container>
         <Row>
           <Col xs="12" lg="12">
-            <h3>My recent work at a glance!</h3>
+            <h3>My recent work at a glance</h3>
           </Col>
         </Row>
         <Row>{this.render_featured_projects(projects.projects)}</Row>

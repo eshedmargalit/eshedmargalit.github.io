@@ -40,9 +40,6 @@ class MenuBar extends Component {
               <LinkContainer to="/Research">
                 <NavLink>Research</NavLink>
               </LinkContainer>
-              <LinkContainer to="/Fun">
-                <NavLink>Fun!</NavLink>
-              </LinkContainer>
             </Nav>
           </Collapse>
         </Navbar>

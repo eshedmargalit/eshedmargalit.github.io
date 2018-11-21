@@ -27,7 +27,10 @@ import {
   FaAngleUp,
   FaLink,
   FaGithub,
-  FaGoogle
+  FaGoogle,
+  FaGraduationCap,
+  FaTwitter,
+  FaLinkedin
 } from "react-icons/fa";
 
 import PubGroup from "./PubGroup/PubGroup";
@@ -101,7 +104,7 @@ class CV extends Component {
               <Col lg="10">
                 <h3>Stanford University</h3>
                 <p>2016 - Present</p>
-                <p>PhD Candidate, Neurosciences Ph.D. Program</p>
+                <p>PhD Candidate, Neurosciences PhD Program</p>
               </Col>
             </Row>
           </Container>
@@ -324,11 +327,11 @@ class CV extends Component {
           <Col xs="12" lg="4">
             <h3>Things I use pretty often</h3>
             <ListGroup>
-              <ListGroupItem>Keras</ListGroupItem>
+              <ListGroupItem>Google TPUv2</ListGroupItem>
               <ListGroupItem>HTML/CSS/React/Redux</ListGroupItem>
               <ListGroupItem>C, C++, Java</ListGroupItem>
-              <ListGroupItem>Psychtoolbox</ListGroupItem>
-              <ListGroupItem>FSL, FreeSurfer</ListGroupItem>
+              <ListGroupItem>FSL</ListGroupItem>
+              <ListGroupItem>FreeSurfer</ListGroupItem>
               <ListGroupItem>Photoshop and Illustrator</ListGroupItem>
             </ListGroup>
           </Col>
@@ -338,7 +341,8 @@ class CV extends Component {
             <ListGroup>
               <ListGroupItem>Patch-clamp physiology</ListGroupItem>
               <ListGroupItem>Multi-unit in-vivo recording</ListGroupItem>
-              <ListGroupItem>Psychtoolbox</ListGroupItem>
+              <ListGroupItem>Psychtoolbox, PsychoPy</ListGroupItem>
+              <ListGroupItem>Spike sorting (KiloSort)</ListGroupItem>
             </ListGroup>
           </Col>
         </Row>
@@ -411,6 +415,15 @@ class CV extends Component {
                 </h6>
                 <p>Fall 2017</p>
               </ListGroupItem>
+              <ListGroupItem>
+                <h6>
+                  Instructor,{" "}
+                  <a href="https://med.stanford.edu/neurogradprogram/news_and_events/news/brain-day.html">
+                    Stanford Brain Day
+                  </a>
+                </h6>
+                <p>Fall 2017</p>
+              </ListGroupItem>
             </ListGroup>
           </Col>
         </Row>
@@ -479,7 +492,9 @@ class CV extends Component {
   }
 
   render() {
-    const BUTTON_ICON_SIZE = "2rem";
+    const BUTTON_ICON_SIZE = "2em";
+    const ICON_SIZE = "2em";
+    const ICON_COLOR = "#8c1313";
 
     const education_toggle_arrow = this.state.education_collapse ? (
       <FaAngleUp />
@@ -528,6 +543,30 @@ class CV extends Component {
           <Col xs="4" lg="4">
             <Container>
               <Row>
+                <Col>
+                  <br />
+                  <h1 className="display-5">Curriculum Vitae</h1>
+                  <h6>Current through {this.cv.last_updated}</h6>
+                  <p>
+                    A hyper-textual version of my CV can be found on this page.
+                    If you'd prefer a PDF version, please click below!
+                  </p>
+                  <p>
+                    <Button
+                      color="secondary"
+                      href={"files/" + this.cv.pdf.path}
+                    >
+                      <FaFilePdf size="3em" />
+                      {this.cv.pdf.path}
+                    </Button>
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+          <Col xs="4" lg="4">
+            <Container>
+              <Row>
                 <Col xs="12" lg="12">
                   <img
                     src="img/headshot-sq.png"
@@ -541,31 +580,59 @@ class CV extends Component {
               </Row>
             </Container>
           </Col>
-          <Col xs="8" lg="8">
+          <Col xs="4" lg="4">
             <Container>
               <Row>
-                <Col>
-                  <h1 className="display-5">Curriculum Vitae</h1>
-                  <h6>Current through {this.cv.last_updated}</h6>
+                <Col xs="12" lg="12">
+                  <hr />
                   <p>
-                    A hyper-textual version of my CV can be found on this page.
-                    If you'd prefer a PDF version, please click below!
+                    I'm a neuroscience graduate student at Stanford with an
+                    interest in vision, computational neuroscience, artificial
+                    intelligence, and neuroimaging.
                   </p>
-                  <p>
-                    <Button color="secondary">
-                      <FaFilePdf size="3em" />
-                      {this.cv.pdf.path} | {this.cv.pdf.size}
-                    </Button>
-                    {` `}
-                    <Button
-                      href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en"
-                      color="primary"
-                    >
-                      <FaGoogle size="3em" />
-                      {` `}
-                      Google Scholar Profile
-                    </Button>
-                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs="12" lg="12">
+                  <Button
+                    outline
+                    color="secondary"
+                    href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao"
+                  >
+                    <FaGraduationCap size={ICON_SIZE} color={ICON_COLOR} />{" "}
+                    Google Scholar
+                  </Button>
+                  {` `}
+                  <Button
+                    outline
+                    color="secondary"
+                    href="https://github.com/eshedmargalit"
+                  >
+                    <FaGithub size={ICON_SIZE} color={ICON_COLOR} /> GitHub
+                  </Button>
+                </Col>
+              </Row>
+              <br />
+              <Row>
+                <Col xs="12" lg="12">
+                  <Button
+                    outline
+                    color="secondary"
+                    href="https://twitter.com/eshedmargalit"
+                  >
+                    <FaTwitter size={ICON_SIZE} color={ICON_COLOR} /> Twitter
+                  </Button>
+                  {` `}
+                  <Button
+                    outline
+                    color="secondary"
+                    href="https://www.linkedin.com/in/eshed-margalit-437222a7"
+                  >
+                    <FaLinkedin size={ICON_SIZE} color={ICON_COLOR} /> LinkedIn
+                  </Button>
+                </Col>
+                <Col lg="12">
+                  <hr />
                 </Col>
               </Row>
             </Container>

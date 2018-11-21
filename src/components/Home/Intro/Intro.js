@@ -75,12 +75,6 @@ class Intro extends Component {
               </Button>
             </Link>
             {` `}
-            <Link to="/Fun">
-              <Button outline color="primary">
-                Fun
-              </Button>
-            </Link>
-            {` `}
           </Col>
           <Col xs="4" lg="4">
             <Container>
@@ -119,40 +113,42 @@ class Intro extends Component {
                 </Col>
               </Row>
               <Row>
-                <Col xs="3" lg="3">
+                <Col xs="12" lg="12">
                   <Button
                     outline
                     color="secondary"
                     href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao"
                   >
-                    <FaGraduationCap size={ICON_SIZE} color={ICON_COLOR} />
+                    <FaGraduationCap size={ICON_SIZE} color={ICON_COLOR} />{" "}
+                    Google Scholar
                   </Button>
-                </Col>
-                <Col xs="3" lg="3">
+                  {` `}
                   <Button
                     outline
                     color="secondary"
                     href="https://github.com/eshedmargalit"
                   >
-                    <FaGithub size={ICON_SIZE} color={ICON_COLOR} />
+                    <FaGithub size={ICON_SIZE} color={ICON_COLOR} /> GitHub
                   </Button>
                 </Col>
-                <Col xs="3" lg="3">
+              </Row>
+              <br />
+              <Row>
+                <Col xs="12" lg="12">
                   <Button
                     outline
                     color="secondary"
                     href="https://twitter.com/eshedmargalit"
                   >
-                    <FaTwitter size={ICON_SIZE} color={ICON_COLOR} />
+                    <FaTwitter size={ICON_SIZE} color={ICON_COLOR} /> Twitter
                   </Button>
-                </Col>
-                <Col xs="3" lg="3">
+                  {` `}
                   <Button
                     outline
                     color="secondary"
                     href="https://www.linkedin.com/in/eshed-margalit-437222a7"
                   >
-                    <FaLinkedin size={ICON_SIZE} color={ICON_COLOR} />
+                    <FaLinkedin size={ICON_SIZE} color={ICON_COLOR} /> LinkedIn
                   </Button>
                 </Col>
                 <Col lg="12">

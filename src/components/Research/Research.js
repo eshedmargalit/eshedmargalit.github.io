@@ -57,7 +57,8 @@ class Research extends Component {
     return (
       <Container>
         <Row>
-          <Col>
+          <Col xs="8" lg="8">
+            <br />
             <h1>Projects I've worked on</h1>
             <p>
               This is an incomplete list of projects that have interested me,
@@ -70,9 +71,9 @@ class Research extends Component {
             >
               <FaGoogle size="1em" /> | My Google Scholar Profile
             </Button>
-            <hr />
           </Col>
         </Row>
+        <br />
         <ListGroup>{this.render_projects(project_file.projects)}</ListGroup>
       </Container>
     );
