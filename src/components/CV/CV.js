@@ -94,7 +94,7 @@ class CV extends Component {
         <ListGroupItem>
           <Container>
             <Row>
-              <Col lg="2">
+              <Col xs="6" lg="2">
                 <img
                   src="img/SU_Seal_Red.png"
                   alt="Stanford official seal"
@@ -113,7 +113,7 @@ class CV extends Component {
         <ListGroupItem>
           <Container>
             <Row>
-              <Col lg="2">
+              <Col xs="6" lg="2">
                 <img
                   src="img/USC_Seal.png"
                   alt="USC official seal"
