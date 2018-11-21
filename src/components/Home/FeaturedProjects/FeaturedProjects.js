@@ -11,7 +11,7 @@ class FeaturedProjects extends Component {
       const alt_text = project.alt;
 
       return (
-        <Col xs="12" lg="3" key={project.name}>
+        <Col xs="6" lg="3" key={project.name}>
           <a href={url}>
             <img src={img_src} className="full-width project" alt={alt_text} />
             <p>{project.name}</p>

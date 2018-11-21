@@ -18,7 +18,7 @@ class Intro extends Component {
     return (
       <Container className="vertical-align">
         <Row className="vertical-align">
-          <Col xs="12" lg="4">
+          <Col xs="8" lg="4">
             <h1>Eshed Margalit</h1>
             <h5>
               PhD Candidate in the{" "}
@@ -76,7 +76,7 @@ class Intro extends Component {
             </Link>
             {` `}
           </Col>
-          <Col xs="4" lg="4">
+          <Col xs="8" lg="4">
             <Container>
               <Row>
                 <Col xs="12" lg="12">

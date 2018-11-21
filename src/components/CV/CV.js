@@ -540,7 +540,7 @@ class CV extends Component {
     return (
       <Container>
         <Row>
-          <Col xs="4" lg="4">
+          <Col xs="8" lg="4">
             <Container>
               <Row>
                 <Col>
@@ -564,7 +564,7 @@ class CV extends Component {
               </Row>
             </Container>
           </Col>
-          <Col xs="4" lg="4">
+          <Col xs="8" lg="4">
             <Container>
               <Row>
                 <Col xs="12" lg="12">
@@ -580,7 +580,7 @@ class CV extends Component {
               </Row>
             </Container>
           </Col>
-          <Col xs="4" lg="4">
+          <Col xs="8" lg="4">
             <Container>
               <Row>
                 <Col xs="12" lg="12">
