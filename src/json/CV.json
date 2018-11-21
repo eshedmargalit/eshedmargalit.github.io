@@ -1,0 +1,309 @@
+{
+  "CV": {
+    "last_updated": "November 2018",
+    "pdf": {
+      "path": "2018.November.CV.pdf"
+    },
+    "awards": [
+      {
+        "name": "NSF Graduate Research Fellowship Program (GRFP) Fellow",
+        "dates": "2016 - 2021",
+        "description": "NSF fellowship recognizes and supports outstanding graduate students in NSF-supported science, technology, engineering, and mathematics disciplines",
+        "url": "https://www.nsfgrfp.org/"
+      },
+      {
+        "name": "USC Trustee's Award",
+        "dates": "2016",
+        "description": "Awarded to the undergraduate male with the highest GPA at the University",
+        "url": ""
+      },
+      {
+        "name": "Graduate Trainee, Stanford Mind, Brain, Computation, and Technology",
+        "dates": "2018",
+        "description": "Traineeship awarded for the pursuit of multi-disciplinary research in the area of computational neuroscience",
+        "url": ""
+      },
+      {
+        "name": "USC Neuroscience Outstanding Student of the Year",
+        "dates": "2016",
+        "description": "Awarded to USC's best neuroscience student with senior standing",
+        "url": "http://dornsife.usc.edu/usc-neuroscience/"
+      },
+      {
+        "name": "USC Brian Philip Rakusin Neuroscience Scholarship Award",
+        "dates": "2015",
+        "description": "Awarded to USC's best neuroscience student with junior standing",
+        "url": "http://dornsife.usc.edu/usc-neuroscience/"
+      },
+      {
+        "name": "Phi Beta Kappa Honor Society",
+        "dates": "2015",
+        "description": "Academic honor's society",
+        "url": "https://www.pbk.org/"
+      },
+      {
+        "name": "USC Discovery Scholar",
+        "dates": "2016",
+        "description": "Awarded to students who excel in the classroom while demonstrating the ability to create exceptional new scholarship.",
+        "url": "http://ahf.usc.edu/scholars/discovery/"
+      },
+      {
+        "name": "USC Provost's Undergraduate Research Fellowship",
+        "dates": "2013 - 2016",
+        "description": "6-time recipient of award supporting exceptional undergraduate research",
+        "url": "https://undergrad.usc.edu/experience/research/undergrad_research/"
+      },
+      {
+        "name": "George H. Mayr Scholarship",
+        "dates": "2015",
+        "description": "Awarded to outstanding students from California in the college of letters, arts, and sciences",
+        "url": ""
+      },
+      {
+        "name": "USC S.O.A.R. Grant",
+        "dates": "2015",
+        "description": "Provides funding to Dornsife undergraduates for participation as a research assistant in a faculty member’s project",
+        "url": "https://dornsife.usc.edu/soar"
+      },
+      {
+        "name": "USC Dean's Scholar",
+        "dates": "2012 - 2016",
+        "description": "Quarter tuition scholarship",
+        "url": "http://dornsife.usc.edu/trustee-presidential-deans-scholarships"
+      }
+    ],
+    "publications": {
+      "published": [
+        {
+          "title": "Neuromelanin marks the spot: Identifying a locus coeruleus biomarker of cognitive reserve in healthy aging",
+          "authors": [
+            "Clewett, D.",
+            "Lee, T.H.",
+            "Greening, S.G.",
+            "Ponzio, A.",
+            "Margalit, E.",
+            "Mather, M."
+          ],
+          "journal": "Neurobiology of Aging",
+          "year": "2016",
+          "volume": ", 37",
+          "pages": ", 117-126",
+          "url": "http://www.neurobiologyofaging.org/article/S0197-4580(15)00476-5/abstract",
+          "tag": "noa-2016-neuromelanin"
+        },
+        {
+          "title": "The lateral occipital complex shows no net response to object familiarity",
+          "authors": [
+            "Margalit, E.",
+            "Shah, M.P.",
+            "Tjan, B.S.",
+            "Biederman, I.",
+            "Keller, B.",
+            "Brenner, R."
+          ],
+          "journal": "Journal of Vision",
+          "year": "2016",
+          "volume": ", 16(3)",
+          "url": "https://jov.arvojournals.org/article.aspx?articleid=2551659",
+          "tag": "jov-2016-thelateral"
+        },
+        {
+          "title": "An applet for the Gabor scaling of the differences between complex stimuli",
+          "authors": [
+            "Margalit, E.",
+            "Herald, S.B.",
+            "Yue, X.",
+            "von der Malsburg, C.",
+            "Biederman, I."
+          ],
+          "journal": "Attention, Perception, and Psychophysics",
+          "year": "2016",
+          "volume": ", 78(8)",
+          "pages": ", 2298-2306",
+          "url": "https://link.springer.com/article/10.3758/s13414-016-1191-7",
+          "tag": "app-2016-anapplet"
+        },
+        {
+          "title": "What is actually affected by the scrambling of objects when localizing the lateral occipital complex?",
+          "authors": [
+            "Margalit, E.",
+            "Biederman, I.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Journal of Cognitive Neuroscience",
+          "year": "2017",
+          "volume": ", 20(9)",
+          "pages": ", 1595-1604",
+          "url": "https://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144",
+          "tag": "jocn-2017-whatis"
+        },
+        {
+          "title": "The cognitive neuroscience of person identification",
+          "authors": [
+            "Biederman, I.",
+            "Shilowich, B.E.",
+            "Herald, S.B.",
+            "Margalit, E.",
+            "Maarek, R.",
+            "Meschke, E.X.",
+            "Hacker, C.M."
+          ],
+          "journal": "Neuropsychologia",
+          "year": "2018",
+          "volume": ", 116B",
+          "pages": ", 205-214",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0028393218300423",
+          "tag": "neuropsychologia-2018-thecognitive"
+        }
+      ],
+      "preprints": [
+        {
+          "title": "A critical assessment of data quality and venous effects in ultra-high-resolution fMRI",
+          "authors": [
+            "Kay, K.N.",
+            "Jamison, K.",
+            "Vizioli, L.",
+            "Zhang, R.",
+            "Margalit, E.",
+            "Ugurbil, K."
+          ],
+          "journal": "bioRxiv",
+          "year": "2018",
+          "url": "https://www.biorxiv.org/content/early/2018/06/03/337667",
+          "tag": "biorxiv-2018-acritical"
+        }
+      ]
+    },
+    "presentations": {
+      "posters": [
+        {
+          "title": "Pinwheel-like Iso-Orientation Domains in a Convolutional Neural Network Model",
+          "authors": [
+            "Margalit, E.",
+            "Lee, H.",
+            "DiCarlo, J.J.",
+            "Yamins, D.L.K."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2018",
+          "url": "img/Margalit_et_al_VSS_2018.png",
+          "tag": "vss-2018-pinwheel"
+        },
+        {
+          "title": "What is the nature of the perceptual deficit in congenital prosopagnosia?",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Maarek, R.",
+            "Meschke, E.X.",
+            "Shilowich, B.E.",
+            "Hacker, C.M.",
+            "Juarez, J.J.",
+            "Seamans, T.J.",
+            "Herald, S.B."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2017",
+          "url": "http://geon.usc.edu/~biederman/presentations/PerceptualDeficit_VSS_17.pdf",
+          "tag": "vss-2017-whatis"
+        },
+        {
+          "title": "What is actually affected by the scrambling of objects when localizing the lateral occipital complex?",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Annual Meeting of the Society of Experimental Psychologists",
+          "year": "2016",
+          "url": "",
+          "tag": "sep-2016-whatis"
+        },
+        {
+          "title": "Vertices are effective in perceptual grouping (and ungrouping)",
+          "authors": [
+            "Irawan, I.",
+            "Margalit, E.",
+            "Herald, S.B.",
+            "Biederman, I."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "http://geon.usc.edu/~biederman/presentations/Irawan_et_al_VSS_16.pdf",
+          "tag": "vss-2016-vertices"
+        },
+        {
+          "title": "Impaired face and non-face discrimination in developmental prosopagnosics (DPs)",
+          "authors": ["Margalit, E.", "Yue, X.", "Biederman, I."],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "",
+          "tag": "vss-2016-impaired"
+        },
+        {
+          "title": "What is actually affected by the scrambling of objects when localizing LOC? (Talk)",
+          "authors": [
+            "Biederman, I.",
+            "Margalit, E.",
+            "Tjan, B.S.",
+            "Shah, M.P."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2016",
+          "url": "",
+          "tag": "vss-2016-whatis"
+        },
+        {
+          "title": "Neuromelanin marks the spot: a locus coeruleus substrate of cognitive reserve in healthy aging",
+          "authors": [
+            "Clewett, D.",
+            "Lee, T.H.",
+            "Greening, S.G.",
+            "Ponzio, A.",
+            "Margalit, E.",
+            "Mather, M."
+          ],
+          "journal": "USC Neuroscience Graduate Student Symposium",
+          "year": "2015",
+          "url": "",
+          "tag": "usc-2015-neuromelanin"
+        },
+        {
+          "title": "Phonagnosia, a voice homologue to prosopagnosia",
+          "authors": [
+            "Biederman, I.",
+            "Herald, S.B.",
+            "Xu, X.",
+            "Amir, O.",
+            "Shilowich, B.E.",
+            "Margalit, E."
+          ],
+          "journal": "Annual Meeting of the Vision Sciences Society",
+          "year": "2015",
+          "url": "http://geon.usc.edu/~biederman/presentations/BiedermanEtAl_VSS2015.pdf",
+          "tag": "vss-2015-phonagnosia"
+        }
+      ],
+      "talks": [
+        {
+          "title": "Differential representation of object category information across lateral and medial ventral temporal cortex revealed with ultra-high-resolution fMRI",
+          "authors": [
+            "Margalit, E.",
+            "Jamison, K.",
+            "Weiner, K.S.",
+            "Vizioli, L.",
+            "Zhang, R.",
+            "Kay, K.N.",
+            "Grill-Spector, K."
+          ],
+          "journal": "Society for Neuroscience Annual Conference",
+          "year": "2018",
+          "url": "https://www.abstractsonline.com/pp8/#!/4649/presentation/41470",
+          "tag": "sfn-2018-differential"
+        }
+      ]
+    }
+  }
+}
