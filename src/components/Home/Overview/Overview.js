@@ -20,13 +20,13 @@ class Overview extends Component {
                 of how information is transformed in neural networks and how
                 such networks develop.
               </p>
-              <Link to="/Research">
+              <Link to={process.env.PUBLIC_URL + "/Research"}>
                 <Button size="lg" color="secondary">
                   My Research
                 </Button>
               </Link>
               {` `}
-              <Link to="/CV">
+              <Link to={process.env.PUBLIC_URL + "/CV"}>
                 <Button size="lg" color="secondary">
                   My CV
                 </Button>

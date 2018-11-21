@@ -63,13 +63,13 @@ class Intro extends Component {
             </Container>
 
             <hr />
-            <Link to="/CV">
+            <Link to={process.env.PUBLIC_URL + "/CV"}>
               <Button outline color="primary">
                 CV
               </Button>
             </Link>
             {` `}
-            <Link to="/Research">
+            <Link to={process.env.PUBLIC_URL + "/Research"}>
               <Button outline color="primary">
                 Research
               </Button>
@@ -107,8 +107,10 @@ class Intro extends Component {
                     vision, computational neuroscience, artificial intelligence,
                     and neuroimaging! To learn more or to see some of my past
                     work, please check out my{" "}
-                    <Link to="/Research">research interests</Link>, or my{" "}
-                    <Link to="/CV">CV</Link>.
+                    <Link to={process.env.PUBLIC_URL + "/Research"}>
+                      research interests
+                    </Link>
+                    , or my <Link to={process.env.PUBLIC_URL + "/CV"}>CV</Link>.
                   </p>
                 </Col>
               </Row>
