@@ -30,7 +30,8 @@ import {
   FaGoogle,
   FaGraduationCap,
   FaTwitter,
-  FaLinkedin
+  FaLinkedin,
+  FaCommentDots
 } from "react-icons/fa";
 
 import PubGroup from "./PubGroup/PubGroup";
@@ -46,6 +47,7 @@ class CV extends Component {
     this.toggle_awards = this.toggle_awards.bind(this);
     this.toggle_teaching = this.toggle_teaching.bind(this);
     this.toggle_service = this.toggle_service.bind(this);
+    this.toggle_scicomm = this.toggle_scicomm.bind(this);
 
     this.cv = cv_file.CV;
 
@@ -57,7 +59,8 @@ class CV extends Component {
       skills_collapse: false,
       awards_collapse: false,
       teaching_collapse: false,
-      service_collapse: false
+      service_collapse: false,
+      scicomm_collapse: false
     };
   }
 
@@ -86,6 +89,9 @@ class CV extends Component {
   }
   toggle_service() {
     this.setState({ service_collapse: !this.state.service_collapse });
+  }
+  toggle_scicomm() {
+    this.setState({ scicomm_collapse: !this.state.scicomm_collapse });
   }
 
   render_education() {
@@ -491,6 +497,49 @@ class CV extends Component {
     );
   }
 
+  render_scicomm() {
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <ListGroup>
+              <ListGroupItem>
+                <h6>Back to Basics with Visual Feedbacks</h6>
+                <p>
+                  Summary of{" "}
+                  <a href="https://www.ncbi.nlm.nih.gov/pubmed/29662217">
+                    Marques et al., 2018
+                  </a>
+                </p>
+                <Button
+                  color="link"
+                  href="http://www.neuwritewest.org/blog/back-to-basics-with-visual-feedbacks"
+                >
+                  <FaLink size="1.5em" /> Link to Blog Post
+                </Button>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Nurturing the Study of Nature</h6>
+                <p>
+                  Summary of{" "}
+                  <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0148405">
+                    Grunspan et al., 2016
+                  </a>
+                </p>
+                <Button
+                  color="link"
+                  href="http://www.neuwritewest.org/blog/nurturing-the-study-of-nature"
+                >
+                  <FaLink size="1.5em" /> Link to Blog Post
+                </Button>
+              </ListGroupItem>
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
   render() {
     const BUTTON_ICON_SIZE = "1em";
     const ICON_SIZE = "2em";
@@ -532,6 +581,11 @@ class CV extends Component {
       <FaAngleDown />
     );
     const service_toggle_arrow = this.state.service_collapse ? (
+      <FaAngleUp />
+    ) : (
+      <FaAngleDown />
+    );
+    const scicomm_toggle_arrow = this.state.scicomm_collapse ? (
       <FaAngleUp />
     ) : (
       <FaAngleDown />
@@ -794,6 +848,27 @@ class CV extends Component {
             <Collapse isOpen={this.state.service_collapse}>
               <Card>
                 <CardBody>{this.render_service()}</CardBody>
+              </Card>
+            </Collapse>
+          </Col>
+        </Row>
+        <hr />
+        <Row>
+          <Col>
+            <Button
+              color="link"
+              id="scicomm-drop"
+              onClick={this.toggle_scicomm}
+            >
+              <h2>
+                <FaCommentDots size={BUTTON_ICON_SIZE} />
+                {` `}SciComm {scicomm_toggle_arrow}
+              </h2>
+            </Button>
+            <em>Writing and talking about cool science</em>
+            <Collapse isOpen={this.state.scicomm_collapse}>
+              <Card>
+                <CardBody>{this.render_scicomm()}</CardBody>
               </Card>
             </Collapse>
           </Col>
