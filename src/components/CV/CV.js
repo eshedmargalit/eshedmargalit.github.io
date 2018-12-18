@@ -492,7 +492,7 @@ class CV extends Component {
   }
 
   render() {
-    const BUTTON_ICON_SIZE = "2em";
+    const BUTTON_ICON_SIZE = "1em";
     const ICON_SIZE = "2em";
     const ICON_COLOR = "#8c1313";
 
