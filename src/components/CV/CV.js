@@ -452,6 +452,15 @@ class CV extends Component {
               </ListGroupItem>
               <ListGroupItem>
                 <h6>
+                  Co-Leader,{" "}
+                  <a href="http://stanford-cnjc.github.io">
+                    Computational Neuroscience Journal Club
+                  </a>
+                </h6>
+                <p>2018</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>
                   Stanford Neurosciences PhD Program Student Program Committee
                 </h6>
                 <p>2018</p>

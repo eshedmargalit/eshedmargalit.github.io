@@ -108,7 +108,11 @@ class Intro extends Component {
                     and neuroimaging! To learn more or to see some of my past
                     work, please check out my{" "}
                     <Link to="/Research">research interests</Link>, or my{" "}
-                    <Link to="/CV">CV</Link>.
+                    <Link to="/CV">CV</Link>. I also run the{" "}
+                    <a href="http://stanford-cnjc.github.io">
+                      Stanford Computational Neuroscience Journal Club
+                    </a>
+                    , check it out!
                   </p>
                 </Col>
               </Row>
