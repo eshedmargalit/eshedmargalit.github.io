@@ -81,7 +81,7 @@ class Intro extends Component {
               <Row>
                 <Col xs="12" lg="12">
                   <img
-                    src="img/clouds_rest.jpg"
+                    src="img/clouds_rest.png"
                     alt="Headshot of Eshed"
                     className="circle full-width"
                     id="clouds-rest"

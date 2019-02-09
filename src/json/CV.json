@@ -155,9 +155,7 @@
           "pages": ", 205-214",
           "url": "https://www.sciencedirect.com/science/article/pii/S0028393218300423",
           "tag": "neuropsychologia-2018-thecognitive"
-        }
-      ],
-      "preprints": [
+        },
         {
           "title": "A critical assessment of data quality and venous effects in ultra-high-resolution fMRI",
           "authors": [
@@ -168,12 +166,14 @@
             "Margalit, E.",
             "Ugurbil, K."
           ],
-          "journal": "bioRxiv",
-          "year": "2018",
-          "url": "https://www.biorxiv.org/content/early/2018/06/03/337667",
-          "tag": "biorxiv-2018-acritical"
+          "journal": "NeuroImage",
+          "year": "2019",
+          "volume": ", in press",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1053811919300928",
+          "tag": "neuroimage-2019-acritical"
         }
-      ]
+      ],
+      "preprints": []
     },
     "presentations": {
       "posters": [
