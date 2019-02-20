@@ -13,11 +13,47 @@ import snail_logo from "../../../assets/img/snail-sq.png";
 import vpnl_logo from "../../../assets/img/vpnl.png";
 import clouds_rest from "../../../assets/img/clouds_rest.png";
 
+const ICON_COLOR = "#8c1313";
+const ICON_SIZE = "40px";
+const buttons = [
+  {
+    link: "https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao",
+    text: "Google Scholar",
+    icon: <FaGraduationCap color={ICON_COLOR} size={ICON_SIZE} />
+  },
+  {
+    link: "https://github.com/eshedmargalit",
+    text: "GitHub",
+    icon: <FaGithub color={ICON_COLOR} size={ICON_SIZE} />
+  },
+  {
+    link: "https://twitter.com/eshedmargalit",
+    text: "Twitter",
+    icon: <FaTwitter color={ICON_COLOR} size={ICON_SIZE} />
+  },
+  {
+    link: "https://www.linkedin.com/in/eshed-margalit-437222a7",
+    text: "LinkedIn",
+    icon: <FaLinkedin color={ICON_COLOR} size={ICON_SIZE} />
+  }
+];
 class Intro extends Component {
-  render() {
-    const ICON_SIZE = "2em";
-    const ICON_COLOR = "#8c1313";
+  render_buttons() {
+    const cols = buttons.map(button => {
+      return (
+        <Col lg="3" xs="3">
+          <Button color="link">
+            <a href={button.link} target="_blank" rel="noopener noreferrer">
+              {button.icon}
+            </a>
+          </Button>
+        </Col>
+      );
+    });
+    return <Row>{cols}</Row>;
+  }
 
+  render() {
     return (
       <Container className="vertical-align">
         <Row className="vertical-align">
@@ -115,49 +151,8 @@ class Intro extends Component {
                   </p>
                 </Col>
               </Row>
-              <Row>
-                <Col xs="12" lg="12">
-                  <Button
-                    outline
-                    color="secondary"
-                    href="https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao"
-                  >
-                    <FaGraduationCap size={ICON_SIZE} color={ICON_COLOR} />{" "}
-                    Google Scholar
-                  </Button>
-                  {` `}
-                  <Button
-                    outline
-                    color="secondary"
-                    href="https://github.com/eshedmargalit"
-                  >
-                    <FaGithub size={ICON_SIZE} color={ICON_COLOR} /> GitHub
-                  </Button>
-                </Col>
-              </Row>
-              <br />
-              <Row>
-                <Col xs="12" lg="12">
-                  <Button
-                    outline
-                    color="secondary"
-                    href="https://twitter.com/eshedmargalit"
-                  >
-                    <FaTwitter size={ICON_SIZE} color={ICON_COLOR} /> Twitter
-                  </Button>
-                  {` `}
-                  <Button
-                    outline
-                    color="secondary"
-                    href="https://www.linkedin.com/in/eshed-margalit-437222a7"
-                  >
-                    <FaLinkedin size={ICON_SIZE} color={ICON_COLOR} /> LinkedIn
-                  </Button>
-                </Col>
-                <Col lg="12">
-                  <hr />
-                </Col>
-              </Row>
+              {this.render_buttons()}
+              <hr />
             </Container>
           </Col>
         </Row>
