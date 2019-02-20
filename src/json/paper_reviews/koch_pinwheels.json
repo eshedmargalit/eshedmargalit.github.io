@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Functional implications of orientation maps in primary visual cortex.",
+    "authors": ["Koch, E", "Jin, J", "Alonso, JM", "Zaidi, Q"],
+    "institutions": ["State University of New York"],
+    "date": "2016-11",
+    "journal": "Nature Communications",
+    "doi": "10.1038/ncomms13529",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/27876796",
+    "keywords": ["pinwheel", "orientation", "V1", "cat", "BA17", "contrast"]
+  },
+  "review": {
+    "summary": [
+      "Neurons in orientation pinwheels are more broadly tuned to orientations and do not saturate as quickly with increasing contrast",
+      "Neurons in pinwheels are not as strongly suppressed by cross-orientation plaid gratings",
+      "Normalizing responses by local divisive normalization cannot account for empirical results, but normalizing by response of local interneurons can",
+      "Argues for functional implications of having pinwheels: having neurons be broadly tuned without suppression saturation is useful for recognizing textures composed of multiple orientations"
+    ],
+    "background": [
+      "Pinwheels in orientation-tuning maps are common in many animals but lacking in others. There is no consensus on whether there is functional utility to having orientation maps",
+      "Neurons in pinwheel centers are generally less orientation-selective, which may help with processing stimuli composed of many orientations. But! V1 neurons generally exhibit cross-orientation suppression, which would greatly weaken those responses."
+    ],
+    "approach": [
+      "Record from cat V1 using horizontal linear track electrodes separated by 100 microns.",
+      "Evaluate neuronal response characteristics for cells in iso-orientation domains and pinwheel centers.",
+      "Develop an image-computable model of V1 neurons that can explain the empirical data"
+    ],
+    "results": [
+      "Neurons in iso-orientation domains are strongly orientation selective (Figure 1a), exhibit strong response saturation (Figure 1c; 1g), and have strong cross-orientation suppression (Figures 1-3)",
+      "Model of thalamocortical projections and cortical normalization can reproduce empirical results if an excitation-normalization (EN) model (normalization by non-oriented nearby neurons) is used (Figure 4). The model predicts responses in an experiment with novel stimuli and 3 new subjects (cats), Figure 5)",
+      "Divisive normalization would yield results opposite the empirical findings unless unbiological assumptions are made re: the origin of inhibitory projections (Figure 6)",
+      "Using a horizontal linear track to record (as opposed to a 2D method) leads to similar conclusions re: whether you're in a pinhweel or iso-orientation domain"
+    ],
+    "conclusions": [
+      "Neurons in pinwheels respond differently to inputs and experience different normalization from surround cells. This allows them to represent multi-orientation patterns without suffering from suppression and saturation",
+      "Animals without pinwheels (or any orientation map) may sacrifice pattern recognition for robust edge detection",
+      "Local divisive normalization does not account for the empirical results, as it would have the effect of broadening tuning curves in iso-orientation domains and narrowing them at pinwheel centers."
+    ],
+    "other": [
+      "Follow-up reading: Levy, M., Lu, Z., Dion, G. & Kara, P. The shape of dendritic arbors in different functional domains of the cortical orientation map. J. Neurosci. 34, 3231–3236 (2014)."
+    ]
+  }
+}

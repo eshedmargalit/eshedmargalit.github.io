@@ -3,7 +3,7 @@ import { Button, Jumbotron, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import "./Overview.css";
-
+import vtc_fade from "../../../assets/img/vtc_fade.gif";
 class Overview extends Component {
   render() {
     return (
@@ -37,7 +37,7 @@ class Overview extends Component {
           <Row>
             <Col xs="6" lg="4">
               <img
-                src="img/vtc_fade.gif"
+                src={vtc_fade}
                 className="full-width"
                 alt="GIF cycling through fMRI data from human ventral temporal cortex"
               />

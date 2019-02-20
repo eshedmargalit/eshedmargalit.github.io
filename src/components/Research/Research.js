@@ -26,6 +26,7 @@ class Research extends Component {
           </Button>
         );
       }
+      const img_src = require(`../../assets/${project.img_src}`);
       return (
         <span key={project.name}>
           <ListGroupItem>
@@ -37,7 +38,7 @@ class Research extends Component {
               </Col>
               <Col lg="3">
                 <img
-                  src={project.img_src}
+                  src={img_src}
                   alt={project.alt}
                   id={project.id}
                   className="circle full-width"

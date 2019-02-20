@@ -9,6 +9,9 @@ import {
 import { Link } from "react-router-dom";
 
 import "./Intro.css";
+import snail_logo from "../../../assets/img/snail-sq.png";
+import vpnl_logo from "../../../assets/img/vpnl.png";
+import clouds_rest from "../../../assets/img/clouds_rest.png";
 
 class Intro extends Component {
   render() {
@@ -39,7 +42,7 @@ class Intro extends Component {
                 </Col>
                 <Col xs="4" lg="5">
                   <img
-                    src="img/snail-sq.png"
+                    src={snail_logo}
                     alt="SNAIL Logo"
                     className="full-width"
                   />
@@ -53,11 +56,7 @@ class Intro extends Component {
                   <p>PI: Kalanit Grill-Spector</p>
                 </Col>
                 <Col xs="4" lg="5">
-                  <img
-                    src="img/vpnl.png"
-                    alt="VPNL Logo"
-                    className="full-width"
-                  />
+                  <img src={vpnl_logo} alt="VPNL Logo" className="full-width" />
                 </Col>
               </Row>
             </Container>
@@ -81,7 +80,7 @@ class Intro extends Component {
               <Row>
                 <Col xs="12" lg="12">
                   <img
-                    src="img/clouds_rest.png"
+                    src={clouds_rest}
                     alt="Headshot of Eshed"
                     className="circle full-width"
                     id="clouds-rest"

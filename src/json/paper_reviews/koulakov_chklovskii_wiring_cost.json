@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "title": "Orientation Preference Patterns in Mammalian Visual Cortex: A Wire Length Minimization Approach",
+    "authors": ["Koulakov, KA", "Chklovskii, DB"],
+    "institutions": ["Salk Institute", "Cold Spring Harbor Laboratory"],
+    "date": "2001-02",
+    "journal": "Neuron",
+    "doi": "",
+    "url": "",
+    "keywords": ["pinwheel", "wiring cost", "icecube", "orientation", "V1"]
+  },
+  "review": {
+    "summary": [
+      "Purpose of pinwheels in orientation tuning maps is unknown -- which cost function (task-based, physiological, etc) do they help minimize?"
+    ],
+    "background": [
+      "Self-organizing map models, e.g., Durbin and Mitchison, suggest that pinwheels are a developmental irregularity that occurs if what you're _actually_ trying to do is end up with an Icecube-like structure (repeating bands), see Wolf and Geisel 1998",
+      "60% of cortical volume is axons and dendrites (Brait- enberg and Schüz, 1998), so minimizing neurite length is important for keeping brains small",
+      "Most inputs to cortical cells are cortical as opposed to thalamic, so minimizing intracortical wiring length was likely selected for over evolutionary time"
+    ],
+    "approach": [
+      "Model orientation tuning maps by minimizing wiring-cost functions of different forms. Specifically, compute wiring-length after deciding on a neuron-connection function (which neurons connect with which other neurons, given their orientation preference?)",
+      "Test which functions give maps consistent with biological findings"
+    ],
+    "results": [
+      "If each neuron connects to an equal number of neurons of all preferred orientations, i.e., connection does not depend on orientation preference, the optimal layout is a salt and pepper pattern as observed in rats (Figure 2a-b)",
+      "A wide Gaussian connection function, i.e., generally connected to neurons of like orientations, yields the Icecube layout (Figure 2c-d)",
+      "A narrow Gaussian function yields pinwheel-like structures, as neurons need to connect both to like-orientation neurons and cross-orientation neurons (Figure 3)",
+      "Periodicity of icecube and pinwheel maps depends on the number of connections each neuron is thought to make-- more connections means a higher frequency pattern",
+      "Wire-length minimization applied to direction-preference maps are consistent with empirical findings, suggesting it may apply in that context as well (Figure 5)",
+      "Irregularities in maps in other animals can be attributed, in part, to incomplete development due to biological noise, blood vessels, anchoring to other maps, etc, see Figure 6."
+    ],
+    "conclusions": [
+      "Emergence of pinwheels can be explained by a simple wiring-cost minimization paradigm. This same rule can explain the emergence of linear zones (as on the V1/V2 boundary) if one assumes a different connection function for those neurons -- this seems reasonable to me",
+      "Lack of structure, as in rat, may also be due to a different connection function for V1 neurons",
+      "Coupling with other maps is likely weak, given that the same orientation map is seen in many species, including those without maps like ocular dominance (EM: but lots of evidence for alignment between maps nonetheless)",
+      "Continuity-based approaches like self-organizing maps are implicitly enforcing a wiring-cost minimization"
+    ],
+    "other": [
+      "Koulakov and Chklovskii write 'we postpone the treatment of the interaction between different cortical maps until more experimental evidence is available.' -- is there sufficient evidence now?",
+      "The authors find these maps by updating one neuron's orientation preference, recomputing connections, then recomputing wiring, which can be really slow-- they write that it takes almost 20 days to optimize a grid of 3600 neurons!"
+    ]
+  }
+}

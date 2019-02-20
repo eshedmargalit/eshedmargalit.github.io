@@ -33,6 +33,9 @@ import {
   FaLinkedin,
   FaCommentDots
 } from "react-icons/fa";
+import StanfordSeal from "../../assets/img/SU_Seal_Red.png";
+import usc_seal from "../../assets/img/USC_Seal.png";
+import headshot from "../../assets/img/headshot-sq.png";
 
 import PubGroup from "./PubGroup/PubGroup";
 
@@ -102,7 +105,7 @@ class CV extends Component {
             <Row>
               <Col xs="6" lg="2">
                 <img
-                  src="img/SU_Seal_Red.png"
+                  src={StanfordSeal}
                   alt="Stanford official seal"
                   className="full-width"
                 />
@@ -121,7 +124,7 @@ class CV extends Component {
             <Row>
               <Col xs="6" lg="2">
                 <img
-                  src="img/USC_Seal.png"
+                  src={usc_seal}
                   alt="USC official seal"
                   className="full-width"
                 />
@@ -632,7 +635,7 @@ class CV extends Component {
               <Row>
                 <Col xs="12" lg="12">
                   <img
-                    src="img/headshot-sq.png"
+                    src={headshot}
                     alt="Headshot of Eshed"
                     className="circle full-width"
                   />
