@@ -57,7 +57,7 @@ class CV extends Component {
     this.state = {
       research_collapse: false,
       education_collapse: false,
-      publications_collapse: false,
+      publications_collapse: true,
       presentations_collapse: false,
       skills_collapse: false,
       awards_collapse: false,
