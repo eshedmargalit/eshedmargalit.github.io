@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Orthogonal micro-organization of orientation and spatial frequency in primate primary visual cortex",
+    "authors": ["Nauhaus, I", "Nielsen, KJ", "Disney, AA", "Callaway, EM"],
+    "institutions": ["Salk Institute"],
+    "date": "2012-12",
+    "journal": "Nature Neuroscience",
+    "doi": "10.1038/nn.3255",
+    "url": "https://www.nature.com/articles/nn.3255",
+    "keywords": [
+      "orientation",
+      "spatial frequency",
+      "orthogonality",
+      "clustering",
+      "calcium",
+      "macaque",
+      "V1"
+    ]
+  },
+  "review": {
+    "summary": [
+      "Orientation and spatial frequency maps are consistent across cortical depth in macaque V1",
+      "At both microscopic (200x200 microns) and mesoscopic (800x800 microns) scales, orientation and spatial frequency maps are clustered and run orthogonal to each other",
+      "Orientation and spatial frequency maps are surprisingly smooth at the scale of a few tens of microns, suggesting that smoothness in intrinsic imaging maps is not solely an artifact of blur"
+    ],
+    "background": [
+      "Maps of spatial frequency tuning have been in rare in macaque and rarely give complete picture due to methodological limitations (resolution and/or sparsity of sampling)",
+      "While interactions between orientation and spatial frequency maps have been reported in cats and ferrets, direct evidence in macaques has been elusive"
+    ],
+    "approach": [
+      "2P Ca2+ imaging of layer 2/3 macaque V1 neurons at two spatial scales and two depths",
+      "Compute tuning curves for each pixel in the large scale map and each neuron in the fine-scale map",
+      "Compare tuning for orientations and spatial frequency"
+    ],
+    "results": [
+      "Both orientation and spatial frequency maps are clustered (tuning curves more correlated at closer distances), although spatial frequency maps have more scatter (Figure 4)",
+      "Large scale (smooth) maps for orientation and spatial frequency intersect each other at 90-degree angles (Figure 5)",
+      "Maps are periodic (2D autocorrelations begin to rise again after about 500 microns (Figure 5)",
+      "At fine scale, direction of maximum tuning curve change is orthogonal for orientation and spatial frequency maps (Figure 6)",
+      "For a pair of cells, the correlation between tuning curves for orientations is anti-correlated with correlation between tuning curves for spatial frequencies at larger distances"
+    ],
+    "conclusions": [
+      "Maps for both parameters are relatively continuous and have lawful relationships to one another",
+      "This is the first study to examine both maps with sufficiently high spatial resolution and density of sampling",
+      "Fine-scale maps reveal very smoooth progression of peak tuning curve values"
+    ],
+    "other": [
+      "Would be interesting to see color tuning in these imaging regions!"
+    ]
+  }
+}
