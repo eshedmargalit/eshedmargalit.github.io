@@ -9,6 +9,9 @@ import {
   Form,
   FormGroup,
   Label,
+  Nav,
+  NavItem,
+  NavLink,
   Input
 } from "reactstrap";
 import "./PaperReviews.css";
@@ -23,7 +26,10 @@ class PaperAWeek extends Component {
 
     this.state = {
       query: "",
-      searchbar_value: ""
+      searchbar_value: "",
+      active_paper: null,
+      viewing_paper: false,
+      current_paper_short_title: "Margalit et al., 2019"
     };
   }
 
@@ -142,10 +148,41 @@ class PaperAWeek extends Component {
     return results;
   };
 
+  review_clicked = review => {
+    const year = review.metadata.date.substring(0, 4);
+    const authors = review.metadata.authors;
+    const n_authors = authors.length;
+
+    let author_string;
+    if (n_authors === 2) {
+      author_string =
+        authors[0].split(",")[0] + " and " + authors[1].split(",")[0];
+    } else if (n_authors === 1) {
+      author_string = authors[0].split(",")[0];
+    } else {
+      author_string = authors[0].split(",")[0] + " et al.";
+    }
+
+    const tab_str = author_string + ", " + year;
+
+    this.setState({
+      active_paper: review,
+      viewing_paper: true,
+      current_paper_short_title: tab_str
+    });
+  };
+
   render_papers = papers => {
     const mapped_papers = papers.map(paper => {
       return (
-        <ListGroupItem action key={paper.metadata.title} className="review-lgi">
+        <ListGroupItem
+          action
+          key={paper.metadata.title}
+          className="review-lgi"
+          onClick={e => {
+            this.review_clicked(paper);
+          }}
+        >
           {this.render_paper_metadata(paper.metadata)}
         </ListGroupItem>
       );
@@ -153,8 +190,42 @@ class PaperAWeek extends Component {
     return <ListGroup>{mapped_papers}</ListGroup>;
   };
 
-  render() {
+  render_review = paper => {
     return (
+      <Container>
+        <Row>
+          <Col>
+            <h5>{paper.metadata.title}</h5>
+            <p>
+              Quis nostrud exercitation veniam irure non enim minim. Dolor
+              labore ut officia id nisi aliquip dolor irure nostrud laboris
+              reprehenderit. In officia sint est deserunt labore quis occaecat
+              culpa nostrud irure minim est voluptate officia. Do ex culpa
+              eiusmod sint dolore et commodo cillum magna aute fugiat qui
+              exercitation consectetur. Eu irure anim eiusmod nisi duis occaecat
+              exercitation veniam incididunt quis dolor sit aliqua eiusmod.
+              Proident ad occaecat non voluptate dolore. Aliqua ea nisi commodo
+              laboris consectetur minim dolore laboris voluptate reprehenderit.
+              Consequat cillum fugiat officia incididunt sunt. Veniam amet est
+              et proident eu elit reprehenderit culpa eu ex occaecat nisi.
+              Proident ad ipsum tempor do sint nostrud non nisi dolore excepteur
+              quis exercitation qui velit. Commodo sint labore commodo cillum
+              irure non tempor sunt. Consectetur ipsum ut amet tempor. Laborum
+              pariatur velit incididunt ad mollit laborum Lorem dolor fugiat
+              dolor ipsum. Nulla deserunt amet do do reprehenderit minim
+              aliquip. Dolor do magna consequat ad ex. Ipsum exercitation
+              proident ullamco est sit qui eiusmod consectetur qui. Consectetur
+              eiusmod deserunt fugiat sunt labore deserunt excepteur veniam aute
+              exercitation labore aute.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    );
+  };
+
+  render() {
+    const directory = (
       <Container>
         <Row>
           <Col>
@@ -178,6 +249,62 @@ class PaperAWeek extends Component {
           <Col>{this.render_papers(this.trim_reviews(this.papers))}</Col>
         </Row>
       </Container>
+    );
+
+    let to_render = directory;
+
+    let nav = (
+      <Nav tabs>
+        <NavItem>
+          <NavLink
+            onClick={e => {
+              this.setState({ viewing_paper: false });
+            }}
+            active={!this.state.viewing_paper}
+          >
+            Directory
+          </NavLink>
+        </NavItem>
+      </Nav>
+    );
+
+    if (this.state.active_paper) {
+      if (this.state.viewing_paper) {
+        to_render = this.render_review(this.state.active_paper);
+      } else {
+        to_render = directory;
+      }
+      nav = (
+        <Nav tabs>
+          <NavItem>
+            <NavLink
+              onClick={e => {
+                this.setState({ viewing_paper: false });
+              }}
+              active={!this.state.viewing_paper}
+            >
+              Directory
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={e => {
+                this.setState({ viewing_paper: true });
+              }}
+              active={this.state.viewing_paper}
+            >
+              {this.state.current_paper_short_title}
+            </NavLink>
+          </NavItem>
+        </Nav>
+      );
+    }
+    return (
+      <div>
+        {nav}
+        <br />
+        {to_render}
+      </div>
     );
   }
 }
