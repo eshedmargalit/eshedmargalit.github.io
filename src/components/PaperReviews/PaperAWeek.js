@@ -179,7 +179,6 @@ class PaperAWeek extends Component {
     const mapped_papers = papers.map(paper => {
       return (
         <ListGroupItem
-          action
           key={paper.metadata.title}
           className="review-lgi"
           onClick={e => {

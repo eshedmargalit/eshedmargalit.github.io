@@ -13,6 +13,7 @@
 
 .review-lgi:hover {
   cursor: pointer;
+  background-color: rgb(224, 224, 224) !important;
 }
 
 .nav-tab:hover {
