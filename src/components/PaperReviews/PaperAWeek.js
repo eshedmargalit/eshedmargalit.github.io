@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {
   Badge,
+  Button,
   Container,
   Row,
   Col,
@@ -14,6 +15,8 @@ import {
   NavLink,
   Input
 } from "reactstrap";
+import { FaArrowLeft } from "react-icons/fa";
+import moment from "moment";
 import "./PaperReviews.css";
 import Fuse from "fuse.js";
 import review_filenames from "../../json/paper_reviews/index.js";
@@ -191,33 +194,114 @@ class PaperAWeek extends Component {
   };
 
   render_review = paper => {
+    const summary = (
+      <div>
+        <h6>General Summary</h6>
+        <ul>
+          {paper.review.summary.map(summary_point => {
+            return <li>{summary_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const background = (
+      <div>
+        <h6>Background</h6>
+        <ul>
+          {paper.review.background.map(background_point => {
+            return <li>{background_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const approach = (
+      <div>
+        <h6>Approach and Methods</h6>
+        <ul>
+          {paper.review.approach.map(approach_point => {
+            return <li>{approach_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const results = (
+      <div>
+        <h6>Results</h6>
+        <ul>
+          {paper.review.results.map(results_point => {
+            return <li>{results_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const conclusions = (
+      <div>
+        <h6>Conclusions</h6>
+        <ul>
+          {paper.review.conclusions.map(conclusions_point => {
+            return <li>{conclusions_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const other = (
+      <div>
+        <h6>Other information</h6>
+        <ul>
+          {paper.review.other.map(other_point => {
+            return <li>{other_point}</li>;
+          })}
+        </ul>
+      </div>
+    );
+
+    const date_str = moment(paper.metadata.date, "YYYY-MM").format("MMMM YYYY");
+    let doi_tag = null;
+    if (paper.metadata.doi) {
+      doi_tag = (
+        <a
+          href={"http://dx.doi.org/" + paper.metadata.doi}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ({paper.metadata.doi})
+        </a>
+      );
+    }
+
     return (
       <Container>
         <Row>
           <Col>
-            <h5>{paper.metadata.title}</h5>
-            <p>
-              Quis nostrud exercitation veniam irure non enim minim. Dolor
-              labore ut officia id nisi aliquip dolor irure nostrud laboris
-              reprehenderit. In officia sint est deserunt labore quis occaecat
-              culpa nostrud irure minim est voluptate officia. Do ex culpa
-              eiusmod sint dolore et commodo cillum magna aute fugiat qui
-              exercitation consectetur. Eu irure anim eiusmod nisi duis occaecat
-              exercitation veniam incididunt quis dolor sit aliqua eiusmod.
-              Proident ad occaecat non voluptate dolore. Aliqua ea nisi commodo
-              laboris consectetur minim dolore laboris voluptate reprehenderit.
-              Consequat cillum fugiat officia incididunt sunt. Veniam amet est
-              et proident eu elit reprehenderit culpa eu ex occaecat nisi.
-              Proident ad ipsum tempor do sint nostrud non nisi dolore excepteur
-              quis exercitation qui velit. Commodo sint labore commodo cillum
-              irure non tempor sunt. Consectetur ipsum ut amet tempor. Laborum
-              pariatur velit incididunt ad mollit laborum Lorem dolor fugiat
-              dolor ipsum. Nulla deserunt amet do do reprehenderit minim
-              aliquip. Dolor do magna consequat ad ex. Ipsum exercitation
-              proident ullamco est sit qui eiusmod consectetur qui. Consectetur
-              eiusmod deserunt fugiat sunt labore deserunt excepteur veniam aute
-              exercitation labore aute.
-            </p>
+            <h4>{paper.metadata.title}</h4>
+            {this.render_authors(paper.metadata.authors)}
+            Published in {paper.metadata.journal} in {date_str}
+            {` `}
+            {doi_tag}
+            <hr />
+            {summary}
+            {background}
+            {approach}
+            {results}
+            {conclusions}
+            {other}
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button
+              onClick={e => {
+                this.setState({ viewing_paper: false });
+              }}
+              color="primary"
+            >
+              <FaArrowLeft /> Back to Review List
+            </Button>
           </Col>
         </Row>
       </Container>
@@ -252,17 +336,18 @@ class PaperAWeek extends Component {
     );
 
     let to_render = directory;
-
     let nav = (
       <Nav tabs>
         <NavItem>
           <NavLink
+            className="nav-tab"
+            action
             onClick={e => {
               this.setState({ viewing_paper: false });
             }}
             active={!this.state.viewing_paper}
           >
-            Directory
+            Review List
           </NavLink>
         </NavItem>
       </Nav>
@@ -278,16 +363,18 @@ class PaperAWeek extends Component {
         <Nav tabs>
           <NavItem>
             <NavLink
+              className="nav-tab"
               onClick={e => {
                 this.setState({ viewing_paper: false });
               }}
               active={!this.state.viewing_paper}
             >
-              Directory
+              Review List
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
+              className="nav-tab"
               onClick={e => {
                 this.setState({ viewing_paper: true });
               }}
