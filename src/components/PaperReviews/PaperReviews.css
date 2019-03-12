@@ -1,0 +1,16 @@
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.review-lgi:hover {
+  cursor: pointer;
+}
