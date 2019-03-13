@@ -102,6 +102,7 @@ class PaperAWeek extends Component {
               color="secondary"
               className="tag-badge"
               onClick={e => {
+                e.stopPropagation();
                 e.preventDefault();
                 this.handleSearch(`${e.target.innerHTML}`);
               }}
@@ -179,6 +180,7 @@ class PaperAWeek extends Component {
     const mapped_papers = papers.map(paper => {
       return (
         <ListGroupItem
+          action
           key={paper.metadata.title}
           className="review-lgi"
           onClick={e => {
@@ -198,7 +200,7 @@ class PaperAWeek extends Component {
         <h6>General Summary</h6>
         <ul>
           {paper.review.summary.map(summary_point => {
-            return <li>{summary_point}</li>;
+            return <li key={summary_point}>{summary_point}</li>;
           })}
         </ul>
       </div>
@@ -209,7 +211,7 @@ class PaperAWeek extends Component {
         <h6>Background</h6>
         <ul>
           {paper.review.background.map(background_point => {
-            return <li>{background_point}</li>;
+            return <li key={background_point}>{background_point}</li>;
           })}
         </ul>
       </div>
@@ -220,7 +222,7 @@ class PaperAWeek extends Component {
         <h6>Approach and Methods</h6>
         <ul>
           {paper.review.approach.map(approach_point => {
-            return <li>{approach_point}</li>;
+            return <li key={approach_point}>{approach_point}</li>;
           })}
         </ul>
       </div>
@@ -231,7 +233,7 @@ class PaperAWeek extends Component {
         <h6>Results</h6>
         <ul>
           {paper.review.results.map(results_point => {
-            return <li>{results_point}</li>;
+            return <li key={results_point}>{results_point}</li>;
           })}
         </ul>
       </div>
@@ -242,7 +244,7 @@ class PaperAWeek extends Component {
         <h6>Conclusions</h6>
         <ul>
           {paper.review.conclusions.map(conclusions_point => {
-            return <li>{conclusions_point}</li>;
+            return <li key={conclusions_point}>{conclusions_point}</li>;
           })}
         </ul>
       </div>
@@ -253,7 +255,7 @@ class PaperAWeek extends Component {
         <h6>Other information</h6>
         <ul>
           {paper.review.other.map(other_point => {
-            return <li>{other_point}</li>;
+            return <li key={other_point}>{other_point}</li>;
           })}
         </ul>
       </div>
@@ -340,10 +342,10 @@ class PaperAWeek extends Component {
         <NavItem>
           <NavLink
             className="nav-tab"
-            action
-            onClick={e => {
-              this.setState({ viewing_paper: false });
-            }}
+            // action
+            // onClick={e => {
+            //   this.setState({ viewing_paper: false });
+            // }}
             active={!this.state.viewing_paper}
           >
             Review List
