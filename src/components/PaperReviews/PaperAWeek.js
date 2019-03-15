@@ -117,6 +117,9 @@ class PaperAWeek extends Component {
       });
     }
 
+    const review_date_render = moment(meta.review_date, "YYYY-MM-DD").format(
+      "MMMM DD, YYYY"
+    );
     return (
       <div>
         <div>
@@ -124,6 +127,7 @@ class PaperAWeek extends Component {
           {this.render_authors(meta.authors)}
         </div>
         <div>{tag_render}</div>
+        <div>Read on: {review_date_render}</div>
       </div>
     );
   };
@@ -177,7 +181,11 @@ class PaperAWeek extends Component {
   };
 
   render_papers = papers => {
-    const mapped_papers = papers.map(paper => {
+    papers.sort(
+      (a, b) =>
+        -moment(a.metadata.review_date).diff(moment(b.metadata.review_date))
+    ); // descending sort
+    var mapped_papers = papers.map(paper => {
       return (
         <ListGroupItem
           action
@@ -191,6 +199,7 @@ class PaperAWeek extends Component {
         </ListGroupItem>
       );
     });
+
     return <ListGroup>{mapped_papers}</ListGroup>;
   };
 
@@ -340,14 +349,7 @@ class PaperAWeek extends Component {
     let nav = (
       <Nav tabs>
         <NavItem>
-          <NavLink
-            className="nav-tab"
-            // action
-            // onClick={e => {
-            //   this.setState({ viewing_paper: false });
-            // }}
-            active={!this.state.viewing_paper}
-          >
+          <NavLink className="nav-tab" active={!this.state.viewing_paper}>
             Review List
           </NavLink>
         </NavItem>
