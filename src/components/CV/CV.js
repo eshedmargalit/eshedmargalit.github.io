@@ -36,6 +36,10 @@ import {
 import StanfordSeal from "../../assets/img/SU_Seal_Red.png";
 import usc_seal from "../../assets/img/USC_Seal.png";
 import headshot from "../../assets/img/headshot-sq.png";
+import snail_logo from "../../assets/img/snail-sq.png";
+import vpnl_logo from "../../assets/img/vpnl.png";
+import iul_logo from "../../assets/img/geon_brain.png";
+import emcog_logo from "../../assets/img/emcog.jpg";
 
 import PubGroup from "./PubGroup/PubGroup";
 
@@ -154,7 +158,14 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col>
+                <Col lg="2" xs="2">
+                  <img
+                    src={snail_logo}
+                    className="full-width"
+                    alt="Stanford NeuroAI Lab Logo"
+                  />
+                </Col>
+                <Col lg="10" xs="10">
                   <h3>
                     Stanford NeuroAI Lab{` `}
                     <Button
@@ -185,7 +196,10 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col>
+                <Col lg="2" xs="2">
+                  <img src={vpnl_logo} className="full-width" alt="VPNL logo" />
+                </Col>
+                <Col lg="10" xs="10">
                   <h3>
                     Stanford Vision and Perception Neuroscience Lab{` `}
                     <Button
@@ -219,7 +233,14 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col>
+                <Col lg="2" xs="2">
+                  <img
+                    src={iul_logo}
+                    className="full-width"
+                    alt="IUL lab logo"
+                  />
+                </Col>
+                <Col lg="10" xs="10">
                   <h3>
                     USC Image Understanding Lab{` `}
                     <Button
@@ -250,7 +271,14 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col>
+                <Col lg="2" xs="2">
+                  <img
+                    src={emcog_logo}
+                    className="full-width"
+                    alt="Emotion and Cognition Lab Logo"
+                  />
+                </Col>
+                <Col lg="10" xs="10">
                   <h3>
                     USC Emotion and Cognition Lab{` `}
                     <Button

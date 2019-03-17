@@ -4,8 +4,8 @@
       "name": "Modeling the Functional Architecture of the Visual System",
       "description": "The visual system is full of rich and interesting phenomena, many of which are poorly understood. We are using deep convolutional neural networks to model the development of the ventral visual system, which is thought to be responsible for recognizing objects. Large-scale models of the development of this system will enable us to understand how an animal's experience may affect the structure and development of its visual system.",
       "img_src": "img/spacenet.png",
-      "url": "",
-      "url_text": "",
+      "url": "img/Margalit_et_al_VSS_2018.png",
+      "url_text": "VSS Poster (11MB)",
       "alt": "Orientation tuning map from a computational model of primary visual cortex",
       "id": "func-arch"
     },
