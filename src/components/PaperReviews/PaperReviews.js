@@ -11,15 +11,15 @@ class PaperReviews extends Component {
           <Col xs="8" lg="8">
             <br />
             <h1>Paper-a-Week</h1>
-            One of my goals for my PhD is to develop a literature-reading habit
-            that:
+            In recent years, I've been trying to develop a literature-reading
+            habit that:
             <ul>
-              <li>allows me to jot down thoughts in a consistent format</li>
-              <li>provides a way to search through those thoughts</li>
-              <li>keeps me accountable to a schedule</li>
+              <li>allows me to jot down notes in a consistent format</li>
+              <li>provides a way to search through notes and paper metadata</li>
+              <li>keeps me accountable to reading on a schedule</li>
             </ul>
-            Enter <strong> Paper-a-Week</strong>, my attempt to meet those
-            goals! I've seen{" "}
+            Enter <strong>Paper-a-Week</strong>, my attempt to meet those
+            objectives! I've seen{" "}
             <a
               href="https://github.com/shagunsodhani/papers-I-read"
               target="_blank"
@@ -27,11 +27,11 @@ class PaperReviews extends Component {
             >
               things like this
             </a>{" "}
-            elsewhere, but this will be tailored to my personal interests and
-            goals.
+            elsewhere, but the format and content of these entries are meant to
+            serve my own interests.
           </Col>
         </Row>
-        <hr />
+        <br />
         <Row>
           <Col>
             <PaperAWeek />

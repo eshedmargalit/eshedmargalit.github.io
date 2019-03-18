@@ -310,7 +310,7 @@ class PaperAWeek extends Component {
               }}
               color="primary"
             >
-              <FaArrowLeft /> Back to Review List
+              <FaArrowLeft /> Back to List of Reviews
             </Button>
           </Col>
         </Row>
@@ -350,7 +350,7 @@ class PaperAWeek extends Component {
       <Nav tabs>
         <NavItem>
           <NavLink className="nav-tab" active={!this.state.viewing_paper}>
-            Review List
+            List of Reviews
           </NavLink>
         </NavItem>
       </Nav>
@@ -372,7 +372,7 @@ class PaperAWeek extends Component {
               }}
               active={!this.state.viewing_paper}
             >
-              Review List
+              List of Reviews
             </NavLink>
           </NavItem>
           <NavItem>
