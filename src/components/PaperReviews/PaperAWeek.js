@@ -127,7 +127,12 @@ class PaperAWeek extends Component {
           {this.render_authors(meta.authors)}
         </div>
         <div>{tag_render}</div>
-        <div>Read on: {review_date_render}</div>
+        <div>
+          <strong>TL;DR:</strong> {meta.one_sentence}
+        </div>
+        <div>
+          <em>Read on {review_date_render}</em>
+        </div>
       </div>
     );
   };

@@ -8,7 +8,8 @@
     "doi": "",
     "url": "",
     "keywords": ["pinwheel", "wiring cost", "icecube", "orientation", "V1"],
-    "review_date": "2019-03-07"
+    "review_date": "2019-03-07",
+    "one_sentence": "A simple wiring-cost minimzation model is suggested as the underlying explanation for the appearance of orientation-tuning maps in primary visual cortex"
   },
   "review": {
     "summary": [

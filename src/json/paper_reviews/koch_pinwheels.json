@@ -8,7 +8,8 @@
     "doi": "10.1038/ncomms13529",
     "url": "https://www.ncbi.nlm.nih.gov/pubmed/27876796",
     "keywords": ["pinwheel", "orientation", "V1", "cat", "BA17", "contrast"],
-    "review_date": "2019-02-28"
+    "review_date": "2019-02-28",
+    "one_sentence": "This work establishes the functional properties of pinwheel-center neurons in cat V1 and proposes that these neurons may be useful for recognition of multi-orientation textures"
   },
   "review": {
     "summary": [
