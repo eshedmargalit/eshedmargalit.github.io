@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "title": "Anatomy and Physiology of a Color System in the Primate Visual Cortex",
+    "authors": ["Livingstone, MS", "Hubel, DH"],
+    "institutions": ["Harvard Medical School"],
+    "date": "1984-01",
+    "journal": "J. Neurosci",
+    "doi": "10.1523/JNEUROSCI.04-01-00309.1984",
+    "url": "http://www.jneurosci.org/content/4/1/309.long",
+    "keywords": ["color", "CO", "V1", "V2", "macaque", "blob"],
+    "review_date": "2019-03-21",
+    "one_sentence": "A seminal paper in the field of color vision, this work establishes the functional properties of cytochrome oxidase blobs in V1 and their relationship to stripes in V2"
+  },
+  "review": {
+    "summary": [
+      "A blob thus seems to be made up of a core of unoriented cells surrounded by a shell of poorly oriented cells (p. 315).",
+      "Blobs are color-selective",
+      "Blobs project to stripes in V2"
+    ],
+    "background": [
+      "V1 has modular organization defined by functional characteristics such as retinotopic position, ocular dominance, and orientation. There are also blobs that can be identified with cytochrome oxidase (CO) staining. The blobs are found along the tangential pattern of ocular dominance columns in animals that have ocular dominance columns.",
+      "Blobs probably consume more energy than non-blobs, as indicated by 1) their labeling with CO, a mitochondrial enzyme, and 2) their uptake of 2-deoxyglucose. That means that there's either different neuronal machinery in blobs, are that they're less selective to simuli and thus fire more often in general",
+      "Unknown at the time how these neurons may differ functionally from non-blobs neighbors and if they have different pattersn of projection to downstream areas"
+    ],
+    "approach": [
+      "Present stimuli to anesthetized macaques and squirrel monkeys while making single-unit recordings. Electrode penetrations were about 4-5mm each, with responses recorded every 50 microns on the track",
+      "After stimulus presentation and recording, perfuse the animal and stain for CO"
+    ],
+    "results": [
+      "Upon approaching a blob in a penetration, orientation selectivity fell off dramatically and background activity increased. See track reconstructions in Figure 2. Lack of orientation found in 63/72 recorded cells in macaque and 8/8 in squirrel monkey",
+      "In macaque, CO blobs are more monocular than surrounding cells. Not so in squirrel monkey, where there is no registration of CO blobs with ocularity maps",
+      "Blobs interrupt orientaiton selectivity, but do not perturb it: the smooth varying pattern is usually preserved on the other side of the blob (Figure 5)",
+      "Of unoriented cells, the vast majority were double-opponent (center-surround with flipped color preference in center and surround), followed by broad-band (generally center-surround without strong color tuning) -- see Table 1 on p. 322",
+      "Staining of V1/V2 demonstrate that blobs project to thin stripes in V2, and interblobs project to interstripe regions in V2"
+    ],
+    "conclusions": [
+      "CO blobs in primary visual cortex are functionally and physiologically distinct from inter-blob regions, but do not disrupt existing patterns (e.g., of orientation tuning) and are in register with other maps (e.g., of ocular dominance)",
+      "CO blobs are color selective and project to stripes in area V2"
+    ],
+    "other": [
+      "Interesting self-reference: The historically minded reader may have wondered how so prominent a group of cells could have been missed by so prominent a pair of investigators (Hubel and Wiesel, 1968,1974a).' They conclude that these unoriented cells were either considered damaged, had no clear spatial pattern, were in layer 4C, or that the impression that they weren't there was 'ill-begotten'"
+    ]
+  }
+}
