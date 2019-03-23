@@ -326,7 +326,7 @@ class PaperAWeek extends Component {
   render() {
     let clear_button_render = null;
 
-    if (!this.state.searchbar_value == "") {
+    if (this.state.searchbar_value) {
       clear_button_render = (
         <Col lg="2" xs="2">
           <Button
