@@ -15,7 +15,7 @@ import {
   NavLink,
   Input
 } from "reactstrap";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaBackspace } from "react-icons/fa";
 import moment from "moment";
 import "./PaperReviews.css";
 import Fuse from "fuse.js";
@@ -324,10 +324,25 @@ class PaperAWeek extends Component {
   };
 
   render() {
+    let clear_button_render = null;
+
+    if (!this.state.searchbar_value == "") {
+      clear_button_render = (
+        <Col lg="2" xs="2">
+          <Button
+            style={{ position: "absolute", bottom: "15px" }}
+            onClick={e => this.setState({ query: "", searchbar_value: "" })}
+            color="danger"
+          >
+            <FaBackspace /> Clear Search
+          </Button>
+        </Col>
+      );
+    }
     const directory = (
       <Container>
         <Row>
-          <Col>
+          <Col lg="9" xs="9">
             <Form>
               <FormGroup>
                 <Label for="search_input">
@@ -343,6 +358,7 @@ class PaperAWeek extends Component {
               </FormGroup>
             </Form>
           </Col>
+          {clear_button_render}
         </Row>
         <Row>
           <Col>{this.render_papers(this.trim_reviews(this.papers))}</Col>
@@ -373,7 +389,11 @@ class PaperAWeek extends Component {
             <NavLink
               className="nav-tab"
               onClick={e => {
-                this.setState({ viewing_paper: false });
+                this.setState({
+                  viewing_paper: false,
+                  query: "",
+                  searchbar_value: ""
+                });
               }}
               active={!this.state.viewing_paper}
             >
