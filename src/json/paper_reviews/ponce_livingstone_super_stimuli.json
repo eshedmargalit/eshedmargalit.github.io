@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Evolving super stimuli for real neurons using deep generative networks",
+    "authors": [
+      "Ponce, CR",
+      "Xiao, W",
+      "Schade, PF",
+      "Hartmann, TS",
+      "Kreiman, G",
+      "Livingstone, MS"
+    ],
+    "institutions": ["Harvard University"],
+    "date": "2019-01",
+    "journal": "bioRxiv",
+    "doi": "10.1101/516484",
+    "url": "https://www.biorxiv.org/content/10.1101/516484v1",
+    "keywords": ["generative", "genetic algorithm", "IT", "macaque", "face"],
+    "review_date": "2019-03-28",
+    "one_sentence": "A closed loop paradigm to identify the best stimulus to drive a neuron is applied to recordings of macaque IT"
+  },
+  "review": {
+    "summary": [
+      "A combination of a deep generative network and a genetic algorithm synthesizes stimuli that drive neurons better than natural images",
+      "Natural images that are similar to synthesized images, given the encoding used, also drive higher firing rates than those dissimilar to the synthesized images"
+    ],
+    "background": [
+      "Identifying the optimal stimulus for a neuron is difficult, and is often approximated with hand-crafted stimuli of a certain form. This approach breaks down further in the ventral visual stream",
+      "Deep generative networks have recently been used to produce realistic stimuli that drive neural network units optimally"
+    ],
+    "approach": [
+      "Begin with a group of images, convert them to textures via the Portilla and Simoncelli algorithm, convert those to 4096-dim vectors. Evaluate 'fitness' of each code by using a deep generative network to conver the code to an image and measure the firing rate in response to that image. Finally, use a genetic algorithm to modify the code such that it will lead to higher firing rates in the future. Repeat.",
+      "Recordings were made from IT in 5 monkeys and V1 in 1 monkey as a control. Mostly chronic array recordings were used, but one monkey had a recording chamber."
+    ],
+    "results": [
+      "The synthesis procedure gradually produces better and better stimuli, and at the end stage of synthesis, responses to these images are higher than to a large collection of natural images (Figures 4 and 5)",
+      "The images are (sort of?) realistic, and produce different categories of objects for different neurons, such as faces for face-selective neurons and scene-like images for scene-selective neurons (Figure 6)",
+      "Finding natural images that are close to the synthetic image in the encoded space yields higher firing rates than expected by choosing random images, suggesting that the synthetic images lie near a 'manifold' of natural stimuli that drive high firing rates",
+      "Firing rates are more invariant to natural image rotation, scaling, and position shifts than to the synthesized images (Figure S3)"
+    ],
+    "conclusions": [
+      "This generative evolutionary approach is successful in identifying stimuli that drive the target neurons",
+      "The synthesized images are abstract and hard to describe, maybe an indicator that IT neurons aren't selective to objects per se, but to abstract axes of objects, as posed by Doris Tsao?",
+      "The approach is closed-loop and requires a lot of iterative data acquisition. Furthermore, it's not clear to what degree the choice of initial images constrains the space of images that the synthesizer might find",
+      "Most importantly, I was left unsure of why such a complicated approach was needed -- what was the justification for the genetic algorithm? Would gradient ascent not work for these neurons for some reason?"
+    ],
+    "other": [
+      "Related work: Neural Population Control via Deep Image Synthesis by Bashivan, Kar, and DiCarlo. The advantage of this alternative approach is that it is more generally flexible (does not impose priors on what sorts of image can be generated) and only requires data acquisition at two time points (once to establish a linear mapping from a model, e.g., a convolutional neural network, to the neuron of interest, and again to validate the method with the stimuli"
+    ]
+  }
+}
