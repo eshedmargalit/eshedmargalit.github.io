@@ -264,16 +264,19 @@ class PaperAWeek extends Component {
       </div>
     );
 
-    const other = (
-      <div>
-        <h6>Other information</h6>
-        <ul>
-          {paper.review.other.map(other_point => {
-            return <li key={other_point}>{other_point}</li>;
-          })}
-        </ul>
-      </div>
-    );
+    let other = null;
+    if (paper.review.other.length > 0) {
+      other = (
+        <div>
+          <h6>Other information</h6>
+          <ul>
+            {paper.review.other.map(other_point => {
+              return <li key={other_point}>{other_point}</li>;
+            })}
+          </ul>
+        </div>
+      );
+    }
 
     const date_str = moment(paper.metadata.date, "YYYY-MM").format("MMMM YYYY");
     let doi_tag = null;
