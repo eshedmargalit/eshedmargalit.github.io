@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "title": "Orientation Selectivity in Macaque V1: Diversity and Laminar Dependence",
+    "authors": ["Ringach, DL", "Shapley, RM", "Hawken, MJ"],
+    "institutions": ["UCLA", "NYU"],
+    "date": "2002-07",
+    "journal": "J. Neurosci",
+    "doi": "10.1523/JNEUROSCI.22-13-05639.2002",
+    "url": "http://www.jneurosci.org/content/22/13/5639.long",
+    "keywords": [
+      "macaqe",
+      "V1",
+      "orientation",
+      "circular variance",
+      "bandwidth",
+      "laminar"
+    ],
+    "review_date": "2019-04-03",
+    "one_sentence": "Ringach and colleagues establish a variety of orientation selectivity metrics throughout different cortical layers of macaque V1"
+  },
+  "review": {
+    "summary": [
+      "Many V1 cells are poorly tuned for orientation with a median circular variance of 0.6 (0 is perfectly orientation-selective, 1 is perfectly non-selective)",
+      "Orientation selectivity correlates weakly with spontaneous activity and more strongly with modulation ratio (a measure of how simple or complex a cell is)",
+      "Despite both measuring orientation tuning selectivity, circular variance and bandwidth can give different views on a distribution of cells"
+    ],
+    "background": [
+      "V1 neurons are known to be selective for particular orientations, but the exact distribution of selectivity in different cortical layers in macaque is unknown",
+      "Bandwidth of orientation tuning is an often used but potentially inaccurate method, as it does not consider responses distant from the preferred orientation of a cell",
+      "Unoriented cells were primarily thought to reside in layers 2/3, where CO blobs are often found (see Livingstone and Hubel, 1984 for more), and to some degree in layer 4C"
+    ],
+    "approach": [
+      "Electrode penetrations from 26 anesthetized macaques",
+      "Monocular stimulation with drifting sinusoidal grating in steps of 10, 15, or 20 degrees (depending on experimenter's interpretation of how sharply tuned a cell was)",
+      "Compute modulation ratio, circular variance, bandwidth, and spontaneous activity level for all isolated single units. See paper for definitions of these quantities"
+    ],
+    "results": [
+      "V1 cells span the range of circular variances, with a median circular variance of 0.61, and skew to lower bandwidths (median == 23.5 deg) (Figures 1, 2)",
+      "Circular variance and bandwidth both vary substantially at all cortical depths (Figures 4, 5)",
+      "Bandwidth and circular variance are correlated, but there are many low-bandwidth neurons with high circular variance (Figure 3).",
+      "Both metrics are correlated with a third metric: the ratio of response to the anti-preferred (orthogonal) orientation and the preferred orientation. This relationship is tighter for circular variance (Figure 6)",
+      "Low spontaneous activity appears to be associated with higher orientation selectivity (Figure 8)",
+      "Modulation ratio (low == more like a complex cell, high == more like a simple cell) varies by cortical depth, with highest values in layer 4C and lowest values in layer 3B and 5. Cells with high circular variance typically have low modulation ratios, suggesting that complex cells have lower selectivity than simple cells (Figures 11, 12)",
+      "Complex cells have higher spontaneous activity than simple cells (Figure 14)"
+    ],
+    "conclusions": [
+      "V1 has a diversity of functional properties across cortical depth, challenging the idea that there are sharp differences in tuning at layer boundaries. Importantly, cells poorly tuned for orientation are found throughout the cortical depth",
+      "Metrics matter! Circular variance appears reliable and is a measure of global tuning curve structure, but in other cases one may genuinely care about other metrics. Whenever possible, comparison to previously reported metrics helps bring many results into alignment, and is a really useful approach"
+    ],
+    "other": []
+  }
+}
