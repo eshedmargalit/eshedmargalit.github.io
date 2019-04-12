@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Receptive Fields and Functional Architecture in Two Nonstriate Visual Areas (18 and 19) of the Cat",
+    "authors": ["Hubel, DH", "Wiesel, TN"],
+    "institutions": ["Harvard"],
+    "date": "1965-03",
+    "journal": "J. Neurophysiol.",
+    "doi": "10.1152/jn.1965.28.2.229",
+    "url": "http://dx.doi.org/10.1152/jn.1965.28.2.229",
+    "keywords": ["cat", "V2", "V3", "complex", "hypercomplex"],
+    "review_date": "2019-04-11",
+    "one_sentence": "Hubel and Wiesel's discovery of hypercomplex cells in cat V2 and V3 fuels a tradition of hand-picking stimuli that might cause cells to spike"
+  },
+  "review": {
+    "summary": [
+      "V2 and V3 are topographically arranged in the cat brain and exhibit columnar organization",
+      "Hypercomplex cells, which are typically end-stopped, compose 10% of cells in V2 and about 50% in V3",
+      "V2 and V3 align with regions defined by microscopic anatomy and receive projections from V1"
+    ],
+    "background": [
+      "In H&W's 1962 exploration of V1, simple cells were established by their sensitivity to bar orientation, spatial frequency, and position. Complex cells additionally have position invariance and are found co-columnar with simple cells of the same orientation and spatial frequency preference",
+      "Cytoarchitectonically distinct regions 18 and 19 had been established in the cat visual cortex, but the functional nature of these cells was unkonwn"
+    ],
+    "approach": [
+      "Microelectrode penetrations in 17 cats in and around areas 17, 18, and 19",
+      "Pick some stimuli to show to the cell, try to identify its preferred stimulus",
+      "Histology to see where the cells were in the cortical sheet"
+    ],
+    "results": [
+      "V2 and V3 have a topographic representation of visual space (Figures 1-3)",
+      "Transitions between areas identified functionally coincide with boundaries seen in Nissl and myelin stains (very unclear to the untrained eye; Figure 3)",
+      "Both V2 and V3 have hypercomplex cells, which prefer bars or slits of light (or dark) within the 'activating region' of the receptive field, but decrease activity if the light (or dark) extends into the 'antagonistic region' (Figures 8-22)",
+      "Some hypercomplex cells are invariant to 90 degree rotations, and both orientations are found in the preferences of cells in the same column (Figure 30). These cells are given the designation 'higher-order'",
+      "Orientation tuning changes gradually parallel to the cortical surface and is stable perpendicular to the cortical surface in both V2 and V3 (Figure 32)",
+      "Puncturing V1 with a 25 gauge needle and tracing degenerating axons shows that V1 projects to discrete parts of V2, V3, and the suprasylvian gyrus"
+    ],
+    "conclusions": [
+      "Much as simple cells are thought to form from LGN projections into layer 4C of V1 and complex cells are thought to form from simple cell projections within a V1 column, hypercomplex cells might form from a combination of excitatory and inhibitory projections onto cells in V2 and V3",
+      "Higher-order hypercomplex cells are a neat example of a transformation that both increases generalization and specificity",
+      "These experiments are a far way off from explaining perception, but they are a start"
+    ],
+    "other": [
+      "On the term 'hypercomplex', they write 'The word hypercomplex, while ugly and  unwieldy, and perhaps also unwise in view of the  possibility of finding even more complex cells,  is  at least relatively neutral.'",
+      "While the results have been undoubtedly impactful, I have two main criticisms of this work, although both may be artifacts of their time. First, there is tremendous bias in the neurons chosen to record from and the images selected by the authors to present to the animals. Second, these results have not propagated very far in the modern visual neuroscience discourse -- the term hypercomplex is rarely used and no longer taught in many introductory courses. Do characterizations of this nature still have value?"
+    ]
+  }
+}
