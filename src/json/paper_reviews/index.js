@@ -5,7 +5,8 @@ const filenames = [
   "nauhaus_orthogonality.json",
   "ponce_livingstone_super_stimuli.json",
   "ringach_orientation_selectivity.json",
-  "hubel_wiesel_v2v3.json"
+  "hubel_wiesel_v2v3.json",
+  "dicarlo_untangling.json"
 ];
 
 export default filenames;

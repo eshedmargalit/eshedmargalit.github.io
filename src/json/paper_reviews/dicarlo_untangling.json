@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "title": "Untangling invariant object recognition",
+    "authors": ["DiCarlo, JJ", "Cox, DD"],
+    "institutions": ["MIT"],
+    "date": "2007-07",
+    "journal": "Trends Cogn. Sci.",
+    "doi": "10.1016/j.tics.2007.06.010",
+    "url": "http://dx.doi.org/10.1016/j.tics.2007.06.010",
+    "keywords": ["IT", "object recognition", "manifold", "hierarchy"],
+    "review_date": "2019-04-18",
+    "one_sentence": "DiCarlo and Cox argue that the role of the primate ventral stream functions to untangle retinal representations into representations from which useful information can be linearly decoded"
+  },
+  "review": {
+    "summary": [
+      "Linear decoding of information such as facial identity is more difficult from the representation of a group of retinal ganglion cells than it is from a group of IT neurons",
+      "The role of the primate visual system may be to progressively untangle the retinal representation",
+      "The untangling perspective largely ignores biological features such as recurrence, noting that the timecourse of feedforward decodability precludes feedback as a necessity"
+    ],
+    "background": [
+      "The ability of primates to rapidly and reliably recognize visual objects under a wide range of lighting/viewpoint/pose conditions is attributed to a series of cortical areas termed the 'ventral visual stream'",
+      "The last stage of the ventral visual stream in macaque, inferotemporal (IT) cortex contains neurons from which object identity can be easily, i.e., linearly, decoded",
+      "One important point is that all of the information available to IT comes from the retina! It's just that the information in the retina is not formatted properly for efficient readout"
+    ],
+    "approach": [
+      "Theoretical arguments supported by some simulations of what manifolds for different objects in different representational spaces might look like"
+    ],
+    "results": [
+      "Pixel-like (maybe retina-like?) representations of two facial identities at different viewpoints are deeply tangled such that linear decoding would fail (Figure 1)",
+      "A V1-like simulation shows some disentangling of the retinal representation, but the IT-like representation is quite good at separating identities while maintaining some sensitivity to variables that may matter, such as viewpoint and pose. The authors not this differs from the 'classical' model of IT, in which information about those variables is discarded to maximize sensitivity to identity (Figure 2)"
+    ],
+    "conclusions": [
+      "Untangling of representations moves us away from thinking about single neuron response properties, and instead emphasizes where representations lie in a space spanned by a population of neurons",
+      "The task of the ventral stream is to separate identities of objects, but to simultaneously balance tolerance and generalizability to identity-preserving transformations of that object",
+      "Local and iterative 'flattening' of manifolds may be the implementational strategy of the ventral stream"
+    ],
+    "other": []
+  }
+}
