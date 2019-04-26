@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "title": "Emergence of simple-cell receptive field properties by learning a sparse code for natural images",
+    "authors": ["Olshausen, BA", "Field, DJ"],
+    "institutions": ["Cornell"],
+    "date": "1996-06",
+    "journal": "Nature",
+    "doi": "10.1038/381607a0",
+    "url": "https://www.nature.com/articles/381607a0",
+    "keywords": ["V1", "Gabor", "sparse coding", "natural image"],
+    "review_date": "2019-04-25",
+    "one_sentence": "Olshausen and Field provide a normative argument for V1 receptive fields: they are the optimal basis for sparse reconstruction of patches of natural images"
+  },
+  "review": {
+    "summary": [
+      "Minimizing a combination of image reconstruction loss and a sparsity constraint via gradient descent leads to a Gabor-like filterbank",
+      "This coding scheme gives more biological results than PCA, due to the non-Gaussian distribution of image pixel values"
+    ],
+    "background": [
+      "V1 neurons have receptive fields that are tuned to spatial frequency, orientation, and stimulus position",
+      "Nearly all natural images exhibit higher-order correlations, making methods relying on pairwise linear correlation, e.g., PCA, unhelpful in recovering the image structure"
+    ],
+    "approach": [
+      "Learn a 192-filter bank of 16x16 black and white filters, trained on small portions of natural images of the American northwest",
+      "Define the loss function as a sum of pixel-wise reconstruction loss and a penalty on large filter coefficients",
+      "Whiten images, then perform conjugate gradient method (more efficient than steepest descent) for roughly 400,000 image presentations to minimize the desired loss function"
+    ],
+    "results": [
+      "PCA fails to recover biological filters. Instead, it finds unbiological checkerboard-like patterns (Figure 1)",
+      "The resulting filters are an overcomplete set of Gabor-like filters selective for different orientations, spatial frequencies, and positions (Figure 4)",
+      "The result depends on the use of natural images, as learning sparse decompositions of other types of stimuli is ineffective (Figure 3)"
+    ],
+    "conclusions": [
+      "V1 receptive fields are the way that they are because it's a good way to encode the visual scene under sparsity constraints!"
+    ],
+    "other": [
+      "This is one of my favorite results in visual neuroscience. In a way, these results have been reproduced in the deep-learning era, as networks trained with regularization and a limited number of channels in early convolutional layer learn that Gabor-like filters are a good basis set for representing natural images. Whether or not the basis is as good as the one in this paper is a difficult question to answer, but may be a relevant one in years to come."
+    ]
+  }
+}
