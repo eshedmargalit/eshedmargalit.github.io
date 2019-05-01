@@ -7,7 +7,8 @@ const filenames = [
   "ringach_orientation_selectivity.json",
   "hubel_wiesel_v2v3.json",
   "dicarlo_untangling.json",
-  "olshausen_field_sparse_coding.json"
+  "olshausen_field_sparse_coding.json",
+  "kriegeskorte_monkey_human.json"
 ];
 
 export default filenames;

@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "title": "Matching categorical object representations in inferior temporal cortex of man and monkey",
+    "authors": [
+      "Kriegeskorte, N",
+      "Mur, M",
+      "Ruff, DA",
+      "Kiani, R",
+      "Bodurka, J",
+      "Esteky, H",
+      "Tanaka, K",
+      "Bandettini, PA"
+    ],
+    "institutions": [
+      "NIH",
+      "Mastricht University",
+      "University of Washington",
+      "Shaheed Beheshti University",
+      "Institute for Studies in Theoretical Physics and Mathematics",
+      "RIKEN Brain Science Institute"
+    ],
+    "date": "2008-12",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2008.10.043",
+    "url": "http://www.sciencedirect.com/science/article/pii/S0896627308009434",
+    "keywords": ["macaque", "human", "RSA", "MDS"],
+    "review_date": "2019-04-30",
+    "one_sentence": "Monkey and human representations of objects are strikingly similar despite differences in species and acquisition techniques"
+  },
+  "review": {
+    "summary": [
+      "Images of 92 objects were presented to both human and macaque subjects, and representational distance matrices (RDM) were compared",
+      "Both RDMs and multi-dimensional scaling point to striking similarity between representations in the two species"
+    ],
+    "background": [
+      "Macaque is one of the most often used model organisms for human vision, yet direct comparisons of the visual system are mired by difference in neuroanatomy and recording techniques",
+      "Some progress has been made by using fMRI in both species, but this doesn't solve the issue of mapping parts of the monkey brain to parts of the human brain"
+    ],
+    "approach": [
+      "In two macaques, record 674 single neurons in anterior IT",
+      "In four humans, run a rapid event-related design at a spatial resolution of 1.95 x 1.95 x 2 mm, then define human-IT anatomically",
+      "Construct RDMs and MDS embeddings in each species, then compare",
+      "Also compare early visual cortex responses in humans to human-IT responses"
+    ],
+    "results": [
+      "RDMs, MDS embeddings, and hierarchical clustering trees look qualitatively similar between monkeys and humans (Figures 1, 2, and 4)",
+      "Quantitatively, the similarity of the dissimmilarity vectors across species is fairly high for many different kinds of stimuli. One place this interspecies similarity breaks down is within images of human faces or within images of macaque faces (Figure 3)",
+      "Category boundaries are strong in macaque IT and human-IT, but weak in early visual cortex in humans. Still more category structure than expected by chance in V1, but much noisier than in IT. The dissimilarity in early visual cortex is predictive of dissimilarity in higher visual cortex (Figures 5 and 6)"
+    ],
+    "conclusions": [
+      "'[...] even if a fine-grained representation is unique in each individual, like a fingerprint, the region containing the representation may be homologous, like a finger—serving the same function in both species' (p. 1126)",
+      "fMRI and single-cell physiology may not be that different after all, at least not at this level of analysis",
+      "Exclusion of category-selective regions doesn't really change the representational structure, suggesting that the strong modularity hypothesis is not totally correct",
+      "Monkeys are probably a pretty good model system for human object recognition, keep plugging away!"
+    ],
+    "other": [
+      "The fiber-flow diagram in Figure 2 is really cool, I'd be curious to find out how they made it although I'm not entirely convinced it's an intuitive representation of interspecies similarity"
+    ]
+  }
+}
