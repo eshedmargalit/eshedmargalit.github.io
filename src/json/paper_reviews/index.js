@@ -8,7 +8,8 @@ const filenames = [
   "hubel_wiesel_v2v3.json",
   "dicarlo_untangling.json",
   "olshausen_field_sparse_coding.json",
-  "kriegeskorte_monkey_human.json"
+  "kriegeskorte_monkey_human.json",
+  "grill_spector_functional_architecture.json"
 ];
 
 export default filenames;

@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "The functional architecture of the ventral temporal cortex and its role in categorization",
+    "authors": ["Grill-Spector, K", "Weiner, KS"],
+    "institutions": ["Stanford University"],
+    "date": "2014-08",
+    "journal": "Nat. Rev. Neurosci.",
+    "doi": "10.1038/nrn3747",
+    "url": "https://www.nature.com/articles/nrn3747",
+    "keywords": [
+      "VTC",
+      "human",
+      "higher visual cortex",
+      "functional architecture"
+    ],
+    "review_date": "2019-05-10",
+    "one_sentence": "Grill-Spector and Weiner review evidence for the central role of VTC in object categorization"
+  },
+  "review": {
+    "summary": [
+      "VTC is organized in a nested spatial hierarchy, such that coarse object distinctions are represented at coarse spatial scales and fine-scale distinctions are represented at fine spatial scales."
+    ],
+    "background": [
+      "The ventral visual stream (V1, V2, V3, V4, IT) is involved in visual perception and the recognition of objects",
+      "Neurons are VTC are not arranged randomly, but instead organize into reliable topologies"
+    ],
+    "approach": [
+      "Most results reported use either fMRI (human and non-primate) or electrophysiology (non-human primate)"
+    ],
+    "results": [
+      "VTC is bounded by a set of anatomical landmarks: from the ptCoS to the anterior tip of the MFS along the A-P axis, and by the OTS and CoS on either side (Box 1)",
+      "VTC representations support categorization, but with some degree of tolerance for identity-preserving transformations. That is, generalization with specificity (Figures 1, 2)",
+      "Neurons selective for different ecological object categories cluster in higher visual cortex (Figure 3)",
+      "The MFS marks transitions in anatomical and function properties. Within each half of VTC (split at the MFS) there is a nested spatial hierarchy of object information (Figures 4, 5)"
+    ],
+    "conclusions": [
+      "The functional architecture of VTC, and in particular, the superimposition of representations at different semantic scales, allows information to both converge and diverge through different routes",
+      "This flexibility allows rapid and reliable categorization, but the exact implementation details of how representations are superimposed remains an open question"
+    ],
+    "other": []
+  }
+}
