@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Inputs to directionally selective simple cells in macaque striate cortex",
+    "authors": ["De Valois, RL", "Cottaris, NP"],
+    "institutions": ["UC Berkeley"],
+    "date": "1998-11",
+    "journal": "PNAS",
+    "doi": "",
+    "url": "",
+    "keywords": [
+      "macaque",
+      "V1",
+      "direction",
+      "magnocellular",
+      "parvocellular",
+      "biphasic"
+    ],
+    "review_date": "2019-05-16",
+    "one_sentence": "De Valois and Cottaris demonstrate that two classes of direction-nonselective simple cells, likely inheriting responses from distinct LGN pathways, drive direction-selective V1 cell activity"
+  },
+  "review": {
+    "summary": [
+      "Spatiotemporal receptive fields of V1 cells in macaque can be strongly biphasic, and many are direction selective",
+      "The activity of direction-selective cells can be explained by two principal components, a biphasic and a monophasic component",
+      "These components match the timecourses of two classes of V1 simple cells without direction selectivity nearly perfectly"
+    ],
+    "background": [
+      "Theories had suggested that the inputs to direction-selective cells might be matched in preference for orientation and spatial frequency, but differ in phase. No experimental evidence had existed to support that claim",
+      "Existing motion models posit that the inputs to these cells would both have biphasic temporal response profiles"
+    ],
+    "approach": [
+      "Single cells in the central 5 degrees of macaque V1 were recorded, and selectivity for spatial frequency, orientation, and phase was mapped with drifting gratings (for determining preference) and black and white bars (for determing STRFs)",
+      "For each cell, a direction-selectivity index and a biphasic index were computed. Cells with a biphasic index less than 0.3 were considered weakly biphasic (except in Figure 3, for which the threshold switches to 0.4)",
+      "SVD was used to determine the first two principal components of the STRFs of direction-selective V1 cells"
+    ],
+    "results": [
+      "Many V1 cells have receptive fields that vary in time (Figure 1A, C), although some have monophasic and unchanging responses (Figure 1B)",
+      "Many V1 cells are biphasic in their temporal responses, although the majority are not (Figure 2)",
+      "The timecourses of non-directional-selective simple cells match the first two principal components of the direction-selective cells' receptive field (Figure 3)",
+      "Alternative models which posit that all inputs to direction-selective cells are biphasic do not fit the empirical data as well (Figure 4)",
+      "Most of the strongly biphasic cells preferred black and white to chromatic stimuli, while most of the weakly biphasic cells exhibited spectral opponency."
+    ],
+    "conclusions": [
+      "The inputs to direction-selective V1 cells are likely arriving from simple cells who, in turn, receive inputs from magnocellular and parvocellular LGN neurons. This conclusions is supported by measurements of repsonse latency and spectral opponency."
+    ],
+    "other": [
+      "It would have been great to see any attempt at quantification for either 1) how well the simple cell timecourses actually match the derived principal components and 2) how well the models described fit the data recorded."
+    ]
+  }
+}

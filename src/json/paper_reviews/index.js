@@ -9,7 +9,8 @@ const filenames = [
   "dicarlo_untangling.json",
   "olshausen_field_sparse_coding.json",
   "kriegeskorte_monkey_human.json",
-  "grill_spector_functional_architecture.json"
+  "grill_spector_functional_architecture.json",
+  "devalois_direction_selectivity.json"
 ];
 
 export default filenames;
