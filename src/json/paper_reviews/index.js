@@ -13,4 +13,8 @@ const filenames = [
   "devalois_direction_selectivity.json"
 ];
 
-export default filenames;
+const filenames_with_prefix = filenames.map(filename => {
+  return "review_jsons/" + filename;
+});
+
+export default filenames_with_prefix;
