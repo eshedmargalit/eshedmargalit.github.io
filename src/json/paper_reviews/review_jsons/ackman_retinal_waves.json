@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Retinal waves coordinate patterned activity throughout the developing visual system",
+    "authors": ["Ackman, JB", "Burbridge, TJ", "Crair, MC"],
+    "institutions": ["Yale University"],
+    "date": "2012-10",
+    "journal": "Nature",
+    "doi": "doi:10.1038/nature11529",
+    "url": "",
+    "keywords": ["retinal waves", "mouse", "superior colliculus", "V1"],
+    "review_date": "2019-05-22",
+    "one_sentence": "Retinal waves are measured in vivo for the first time, demonstrating that they propagate to the superior colliculus, V1, and extrastriate visual areas in neonatal mice"
+  },
+  "review": {
+    "summary": [
+      "Retinal waves propagate in vivo in neonatal mice, travel from the retina to V1 and beyond, and depend on cholinergic transmission",
+      "The correspondence between in vitro and in vivo values suggests that the in vitro measurements are useful tools, but this approach led to novel findings, such as a preferred wave-initiation site within the retina and coordination of waves between the retina of each eye"
+    ],
+    "background": [
+      "Spontaneous retinal waves had been demonstrated in vitro, and their blockade had been associated with poor refinement of visual circuits in the dorsal LGN and visual cortex. Until this paper, they had never been observed in vivo",
+      ""
+    ],
+    "approach": [
+      "Calcium indicator CaGr-Dx was injected into the retina of P3-P9 mice, and wide field imaging was performed over the superior colliculus to identify the retinal terminals",
+      "To measure cell activity in the SC, bulk load calcium indicator OGB1- AM. Repeat this procedure in visual cortex to measure responses there too."
+    ],
+    "results": [
+      "Retinal waves spread throughout the most superficial layer of the superior colliculus at speeds consistent with in vitro measurements. Their propagation can be blocked with TTX application the contralateral eye (Figure 1)",
+      "Waves propagate within SC cells themselves at the same position, spread, and velocity as the incoming waves measured at RGC terminals, suggesting a direct link between RGC waves and the induced waves in the SC (Figure 2)",
+      "Waves preferentially begin in the ventrotemporal retina, and suprisingly, are sometimes coordinated between eyes (Figure 3)",
+      "Waves also appear in V1, and their direction matches that of SC waves after correcting for the mirroring and rotation of the retinotopic maps between the two regions (Figure 4)",
+      "Waves can be observed in extrastriate areas, but they appear to be more independent, and abolishing waves has less of an impact on their activity (Figure 5)",
+      "The mechanism of wave transmission is likely cholinergic, as blocking nicotinic acetylcholine receptors abolishes waves throughout the system (Figure 6)"
+    ],
+    "conclusions": [
+      "In vitro measurements are supported and reinforced by these in vivo results, which demonstrate retinal wave propagation throughout the visual system for at least a week (P3 - P9)",
+      "Retinal waves, beginning before birth, may very well play a role in the patterned development of the entire visual system (although these results suggest that past V1, their influence is lower)"
+    ],
+    "other": [
+      "I really like this paper as a clearly-written and communicated tour de force, and it has nice movies you can download too!"
+    ]
+  }
+}

@@ -10,7 +10,8 @@ const filenames = [
   "olshausen_field_sparse_coding.json",
   "kriegeskorte_monkey_human.json",
   "grill_spector_functional_architecture.json",
-  "devalois_direction_selectivity.json"
+  "devalois_direction_selectivity.json",
+  "ackman_retinal_waves.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
