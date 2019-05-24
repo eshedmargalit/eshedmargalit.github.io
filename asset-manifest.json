@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.42d38090.chunk.css",
-  "main.js": "/static/js/main.22a9ae89.chunk.js",
-  "main.js.map": "/static/js/main.22a9ae89.chunk.js.map",
+  "main.js": "/static/js/main.bba5c11d.chunk.js",
+  "main.js.map": "/static/js/main.bba5c11d.chunk.js.map",
   "static/css/1.5fadb846.chunk.css": "/static/css/1.5fadb846.chunk.css",
   "static/js/1.d7f9b766.chunk.js": "/static/js/1.d7f9b766.chunk.js",
   "static/js/1.d7f9b766.chunk.js.map": "/static/js/1.d7f9b766.chunk.js.map",
@@ -23,9 +23,9 @@
   "static/media/gabor_grab.PNG": "/static/media/gabor_grab.95cec5fe.PNG",
   "static/media/spacenet.png": "/static/media/spacenet.4f23cab6.png",
   "static/media/vtc_faces.png": "/static/media/vtc_faces.eae46f35.png",
-  "static/css/main.42d38090.chunk.css.map": "/static/css/main.42d38090.chunk.css.map",
   "static/css/1.5fadb846.chunk.css.map": "/static/css/1.5fadb846.chunk.css.map",
+  "static/css/main.42d38090.chunk.css.map": "/static/css/main.42d38090.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.801d6715e90655f820f8698f75180282.js": "/precache-manifest.801d6715e90655f820f8698f75180282.js",
+  "precache-manifest.a0fad9718bf251d08a66122ede1e8d12.js": "/precache-manifest.a0fad9718bf251d08a66122ede1e8d12.js",
   "service-worker.js": "/service-worker.js"
 }
