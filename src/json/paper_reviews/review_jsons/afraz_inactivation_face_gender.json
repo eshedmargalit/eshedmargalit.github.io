@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "Optogenetic and pharmacological suppression of spatial clusters of face neurons reveal their causal role in face gender discrimination",
+    "authors": ["Afraz, A", "Boyden, ES", "DiCarlo, JJ"],
+    "institutions": ["MIT"],
+    "date": "2015-03",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.1423328112",
+    "url": "",
+    "keywords": ["macaque", "face", "inactivation", "gender"],
+    "review_date": "2019-05-30",
+    "one_sentence": "Inactivation of regions enriched for face-detecting neurons leads to a deficit in face-gender discrimination, both with optogenetic and pharmacological perturbations."
+  },
+  "review": {
+    "summary": [
+      "Optogenetic and pharmacological inactivation of face patches leads to deficits in discrimination of facial gender"
+    ],
+    "background": [
+      "Face cells have been observed for decades, yet no causal evidence exists to support their role in visually-guided behaviors relating to faces",
+      "Are the neurons in face-selective clusters necessary to discriminate the gender of a face, or can the distributed IT population handle it alone?"
+    ],
+    "approach": [
+      "Identify the middle face patch in macaque IT of two monkeys, then inactivate a 1mm chunk of face-selective cortex (or nearby nonselective cortex) with either optogenetic tools or pharmacological methods. Note that both methods are reversible and do not require lesions."
+    ],
+    "results": [
+      "The optogenetic manipulation effectively 'deletes' a median of 33% of visually-evoked spikes (Figure 2)",
+      "Inactivation reduces face-gender discrimination performance by 2% when faces are in the contralateral visual field, but no significant decrease in the ipsilateral field. The degree of behavioral deficit correlated with the degree of face selectivity for that site (Figure 3)",
+      "The face-gender discrimination deficits was not observed for stimulation of nearby sites that were not enriched with face-selective neurons (Figure 3)",
+      "The better a site is at separating face gender, the more the monkey is impacted by its inactivation (Figure 4)",
+      "Optogenetic effects are consistent with effects from well-established muscimol microinjection. Notably optogenetic perturbation has much higher spatial and temporal resolution than muscimol (Figure 5)"
+    ],
+    "conclusions": [
+      "At least for this one face task, it appears that the monkey relies on activity of face-preferring IT sites more than nearby nonselective sites",
+      "It is possible that as a general pattern, regions that are best at some task are used for that task. This is a more general statement that should encompass results beyond the face patch system. And, importantly, it should not hold for regions from which behavior is not linearly decodable, e.g., V4",
+      "The contra vs. ipsi results here cast doubt on the idea that receptive fields in IT are so large that laterality is irrelevant"
+    ],
+    "other": [
+      "See Rangalijam et al., 2018 for more on reversible inactivation and task deficits in IT",
+      "This paper makes the interesting prediction that tasks that see little effect of, e.g., cortical cooling, may not be choosing tasks that appropriately require the ventral stream (e.g., invariance)"
+    ]
+  }
+}

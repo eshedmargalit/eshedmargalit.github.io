@@ -11,7 +11,8 @@ const filenames = [
   "kriegeskorte_monkey_human.json",
   "grill_spector_functional_architecture.json",
   "devalois_direction_selectivity.json",
-  "ackman_retinal_waves.json"
+  "ackman_retinal_waves.json",
+  "afraz_inactivation_face_gender.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
