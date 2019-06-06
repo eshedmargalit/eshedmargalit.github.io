@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Reversible inactivation of different millimeter-scale regions of primate IT results in different patterns of core object recognition deficits",
+    "authors": ["Rajalingham, R", "DiCarlo, JJ"],
+    "institutions": ["MIT"],
+    "date": "2019-04",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2019.02.001",
+    "url": "",
+    "keywords": ["inactivation", "macaque", "IT", "object recognition"],
+    "review_date": "2019-06-06",
+    "one_sentence": "Muscimol injections in arbitrarily-selected millimeter scale regions of IT suggests a heterogeneous yet spatially continuous layout of IT with respect to core object recognition"
+  },
+  "review": {
+    "summary": [
+      "Inactivation of small regions of IT negatively affects some object discrimination subtasks, but not others",
+      "Nearby injections yield similar patterns of behavioral deficits",
+      "Decoding models suggest that local discriminability, not local selectivity, are best predictive of the behavioral effects of inactivation"
+    ],
+    "background": [
+      "A large body of work supports the idea that activity in IT is correlated with behavior. However, in the visual motion literature, recent evidence has suggested that regions with behavior-correlated activity are not necessary to support that behavior, i.e., it is epiphenomenal",
+      "Previous attempts at causal manipulations have overwhelming been targeted to face patches and to face-specific tasks"
+    ],
+    "approach": [
+      "Inactivate many regions along the ventral surface of IT with muscimol injections (about 2.5mm spread), evaluate effects on object recognition performance on a set of 6 (or 10, in one experiment) subtasks, where each subtask is a pairwise discrimination such as dog vs. elephant",
+      "Collect neuron responses in the same regions that are inactivated during a passive fixation task, then compare decoders that predict how neuronal activity translates to behavioral deficits during inactivation"
+    ],
+    "results": [
+      "Inactivation results are hetereogeneous: inactivation of any given site only affects some subtasks (Figures 2, 4), but no task is affected more than others when averaging across all subtasks (Figure 5)",
+      "The strongest effect of inactivation is seen when the object of interest is in the visual field contralateral to the injection site and peaks around a d' difference of 0.6 (Figure 3)",
+      "Inactivation of nearby sites yields similar behavioral deficits (Figures 6, 7), with correlations that drop to 0 after about 10mm",
+      "Models that predict inactivation from response selectivity perform worse than models that predict inactivation from the accuracy of an SVM trained on responses of those neurons (Figure 8)"
+    ],
+    "conclusions": [
+      "IT is necessary for object discrimination behavior, and different regions support different subtasks. It is not the case that all non-face regions are necessary for all non-face tasks",
+      "Local discriminability is a strong predictor of the effects of inactivation, suggesting one possible readout mechanism from IT to downstream regions"
+    ],
+    "other": [
+      "See last week's paper-a-week (Afraz et al., 2015) for more inactivation work from the DiCarlo lab, but targeted specifically to face patches",
+      "These effects are small in terms of balanced accuracy, and the monkeys are generally at ceiling on these tasks to begin with. There's a very fair and careful justification of using d' instead of accuracy/choice bias/other, and in general the work is incredible carefully done and impressive"
+    ]
+  }
+}
