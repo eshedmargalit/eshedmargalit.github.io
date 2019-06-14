@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Dissociations and Associations between Shape and Category Representations in the Two Visual Pathways",
+    "authors": ["Bracci, S", "Op de Beeck, H"],
+    "institutions": ["KU Leuven"],
+    "date": "2016-01",
+    "journal": "J. Neurosci.",
+    "doi": "10.1523/JNEUROSCI.2314-15.2016",
+    "url": "http://www.jneurosci.org/cgi/pmidlookup?view=long&pmid=26758835",
+    "keywords": ["shape", "category", "fMRI", "human", "RSA"],
+    "review_date": "2019-06-12",
+    "one_sentence": "Bracci and Op de Beeck create a clever stimulus set to demonstrate that ventral and dorsal regions represent object category even when accounting for perceived object shape"
+  },
+  "review": {
+    "summary": [
+      "Higher visual cortical regions in both the ventral and dorsal streams represent object shape as well as category",
+      "The emergence of category information from posterior to anterior areas (even when explicitly controlling for object shape) supports models of visual cortex function that posit a disentangling of category information along each stream"
+    ],
+    "background": [
+      "Representations of objects in higher visual areas are thought to represent object category as well as visual features. For example, we can describe regions as being 'face-selective' or 'curvature-selective' depending on the specific question.",
+      "Most studies do not account for correlation between category and object shape (although many do account for correlations between, e.g., Fourier decompositions of stimuli."
+    ],
+    "approach": [
+      "Create a stimulus set in which shape and category are orthogonal: each object in a given category has a distinct shape, and for each shape, every category has an exemplar of that shape",
+      "Show the stimulus set to subjects to 1) collect responses in an event-related fMRI design and 2) judge behavioral similarity by the 'multiarrangement method'. Note that the subject pools for (1) and (2) are independent",
+      "Formalize three models: similarity in representations based on silhouettes, on shapes, or on categories, and identify regions whose activity is consistent with the predictions of those models",
+      "Use localizer and anatomical atlas to define ROIs in early visual cortex, the ventral stream, and the dorsal stream in each subject"
+    ],
+    "results": [
+      "The placement of objects in 2D when subjects were instructed to organize based on shape was indpendent of the placement when organizing by category (Figure 2), supporting the validity of the stimulus set",
+      "The activity of many ROIs correlates significantly with the shape-based model, whereas a smaller subset correlates with the category-based model (Figure 4). To me, this is the core result: that even when controlling for shape explicitly, traditionally category-selective regions still show substantial category-level information",
+      "Similarity in responses across ROIs, across subjects, suggests organization primarily along the posterior-to-anterior axis and secondarily along a ventral-to-dorsal axis (Figure 4)",
+      "Although both have category-level information, dorsal and ventral regions cluster differently, suggesting different types of category information in each subset of ROIs. Ventral ROIs are more consistent with an animacy model, whereas dorsal ROIs were more consistent with an action vs. non-action model (Figure 5)."
+    ],
+    "conclusions": [
+      "Many visual areas contain information about both shape and category, but this sitmulus set allows us to conclude that there is category-information above and beyond shape.",
+      "Category-information appears to proceed primarily along an A-P axis, consistent with existing theories of the emergence of category information outside of primary visual cortex (see DiCarlo et al., 2012)"
+    ],
+    "other": [
+      "The main result is interesting, but I don't know what to make of the post-hoc analyses. The stimulus set was designed to test a clear hypothesis, but the additional models (animacy, action, etc) used to explain the dissociation in activity between clusters were not explicitly controlled in the same way."
+    ]
+  }
+}

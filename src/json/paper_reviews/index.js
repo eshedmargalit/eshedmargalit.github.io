@@ -13,7 +13,8 @@ const filenames = [
   "devalois_direction_selectivity.json",
   "ackman_retinal_waves.json",
   "afraz_inactivation_face_gender.json",
-  "rajalingham_inactivation.json"
+  "rajalingham_inactivation.json",
+  "bracci_ventral_shape.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
