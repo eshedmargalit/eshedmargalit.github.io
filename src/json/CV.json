@@ -173,7 +173,24 @@
           "tag": "neuroimage-2019-acritical"
         }
       ],
-      "preprints": []
+      "preprints": [
+        {
+          "title": "Visual Noise Consisting of X-Junctions Has Only a Minimal Effect on Object Recognition",
+          "authors": [
+            "Margalit, E.",
+            "Herald, S.B.",
+            "Meschke, E.X.",
+            "Irawan, I.",
+            "Maarek, R.",
+            "Biederman, I."
+          ],
+          "journal": "PsyArxiv",
+          "year": "2019",
+          "volume": "",
+          "url": "https://psyarxiv.com/cje3y/",
+          "tag": "psyarxiv-2019-xvert"
+        }
+      ]
     },
     "presentations": {
       "posters": [
