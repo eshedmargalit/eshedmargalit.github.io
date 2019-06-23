@@ -14,7 +14,8 @@ const filenames = [
   "ackman_retinal_waves.json",
   "afraz_inactivation_face_gender.json",
   "rajalingham_inactivation.json",
-  "bracci_ventral_shape.json"
+  "bracci_ventral_shape.json",
+  "jacobs_jordan_short_connections.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

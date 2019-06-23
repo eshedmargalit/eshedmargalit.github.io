@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": " Computational Consequences of a Bias toward Short Connections",
+    "authors": ["Jacobs, RA", "Jordan, MI"],
+    "institutions": ["MIT"],
+    "date": "1992-09",
+    "journal": "Journal of Cognitive Neuroscience",
+    "doi": "10.1162/jocn.1992.4.4.323 ",
+    "url": "https://www.mitpressjournals.org/doi/abs/10.1162/jocn.1992.4.4.323",
+    "keywords": ["neural network", "wiring cost", "spatial"],
+    "review_date": "2019-06-19",
+    "one_sentence": "Jacobs and Jordan show that simple neural networks optimized for task and a 'short connection bias' allows the network to learn multiple tasks in a spatially-efficient way"
+  },
+  "review": {
+    "summary": [
+      "Short connections obtained via pruning are sufficient to explain modularity in a variety of computational settings",
+      "The emergence of topographic maps may be explained by a realtively simple supervised cost that favors short connections"
+    ],
+    "background": [
+      "Whether the apparent modularity of the brain is genetic or learned is a matter of debate among neuroscientists",
+      "Modularity is efficient from a space, energy, and multi-task learning perspective; that is, it is one way to avoid 'catastrophic forgetting'",
+      "Much work on modularity occurs in an unsupervised context, e.g., Kohonen maps that represent inputs to the system topographically. Supervised approaches to understanding modularity are more rare",
+      "Modularity could arise either by selective addition of connections, or selective pruning of connections"
+    ],
+    "approach": [
+      "Assign neural network units positions in a 3D space, such that the distance between any pair of units can be evaluated",
+      "Train relatively simple (my modern standards) neural networks to perform tasks while adhering to a spatial constraint. The network can learn to set some weights to zero, akin to the pruning hypothesis for modularity",
+      "The spatial constraint used is for a pair of units is d * w ** 2 / (1 + w ** 2), where d is the distance between them and w is the weight between them",
+      "Evaluate the 'spatial' structure of network weights following optimization"
+    ],
+    "results": [
+      "For a network trained on a simulataneous 'what/where' task (identifying or locating a pattern), half the weights are used for the first task and half are used for the second task (Figures 5, 6). If the output nodes for the two tasks are brought closer together, there is more spatial continuity to the structure of the non-zero weights (Figure 7)",
+      "In a temporal shift detection task, units in adjacent layers form short local loops (as found in cortex; Figure 9)",
+      "In a dimensionality reduction task, hidden layers units form a topographic representation of the input, serving as a supervised analogue to the unsupervised methods of Kohonen or Durbin/Mitchison"
+    ],
+    "conclusions": [
+      "This work supports the framework that cortex is initially homogenous, and that a learning rule that favors short local connections can explain the emergence of modularity. Of course, that hypothesis neglects the tremendous genetic variability in the developing brain, but is nevertheless useful in thinking about neurodevelopment",
+      "That all connections are initialized as non-zero here, and some are learned to be zero, is taken as evidence that elimination of synapses may be the dominant mechanism in pruning that contributes to modularity",
+      "Whether systems start with long connections and prune down or have many short connections that are pruned reamins an open question"
+    ],
+    "other": [
+      "'If biological neural systems are biased to use short connections, then it is important to know how neurons determine their relative positions.' Very true! This is likely genetic, but may also be instructed in some way by spontaneous activity preceding eye opening",
+      "How would the supervised loss (applied via backprop) actually be biologicall instantiated?"
+    ]
+  }
+}
