@@ -69,7 +69,7 @@ class PubGroup extends Component {
       link_render = null;
     } else {
       link_render = (
-        <Button color="link" href={pub.url}>
+        <Button color="link" target="_blank" href={pub.url}>
           <FaLink size="1.5em" />
         </Button>
       );
