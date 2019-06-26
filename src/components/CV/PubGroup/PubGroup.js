@@ -107,7 +107,7 @@ class PubGroup extends Component {
         <Row>
           <Col>
             <ListGroup>
-              <h3>{this.props.name}</h3>
+              <h4>{this.props.name}</h4>
               {this.render_pubs(this.props.pubs)}
             </ListGroup>
           </Col>

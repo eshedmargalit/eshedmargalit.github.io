@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
-  Collapse,
-  Card,
-  CardBody,
   Container,
   Row,
   Col,
@@ -23,8 +21,6 @@ import {
   FaLaptopCode,
   FaChalkboardTeacher,
   FaAward,
-  FaAngleDown,
-  FaAngleUp,
   FaLink,
   FaGithub,
   FaGoogle,
@@ -42,63 +38,13 @@ import iul_logo from "../../assets/img/geon_brain.png";
 import emcog_logo from "../../assets/img/emcog.jpg";
 
 import PubGroup from "./PubGroup/PubGroup";
+import CVSection from "./CVSection";
 
 class CV extends Component {
   constructor(props) {
     super(props);
-    this.toggle_research = this.toggle_research.bind(this);
-    this.toggle_education = this.toggle_education.bind(this);
-    this.toggle_publications = this.toggle_publications.bind(this);
-    this.toggle_presentations = this.toggle_presentations.bind(this);
-    this.toggle_skills = this.toggle_skills.bind(this);
-    this.toggle_awards = this.toggle_awards.bind(this);
-    this.toggle_teaching = this.toggle_teaching.bind(this);
-    this.toggle_service = this.toggle_service.bind(this);
-    this.toggle_scicomm = this.toggle_scicomm.bind(this);
 
     this.cv = cv_file.CV;
-
-    this.state = {
-      research_collapse: false,
-      education_collapse: false,
-      publications_collapse: true,
-      presentations_collapse: false,
-      skills_collapse: false,
-      awards_collapse: false,
-      teaching_collapse: false,
-      service_collapse: false,
-      scicomm_collapse: false
-    };
-  }
-
-  toggle_research() {
-    this.setState({ research_collapse: !this.state.research_collapse });
-  }
-  toggle_education() {
-    this.setState({ education_collapse: !this.state.education_collapse });
-  }
-  toggle_publications() {
-    this.setState({ publications_collapse: !this.state.publications_collapse });
-  }
-  toggle_presentations() {
-    this.setState({
-      presentations_collapse: !this.state.presentations_collapse
-    });
-  }
-  toggle_skills() {
-    this.setState({ skills_collapse: !this.state.skills_collapse });
-  }
-  toggle_awards() {
-    this.setState({ awards_collapse: !this.state.awards_collapse });
-  }
-  toggle_teaching() {
-    this.setState({ teaching_collapse: !this.state.teaching_collapse });
-  }
-  toggle_service() {
-    this.setState({ service_collapse: !this.state.service_collapse });
-  }
-  toggle_scicomm() {
-    this.setState({ scicomm_collapse: !this.state.scicomm_collapse });
   }
 
   render_education() {
@@ -115,7 +61,7 @@ class CV extends Component {
                 />
               </Col>
               <Col lg="10">
-                <h3>Stanford University</h3>
+                <h5>Stanford University</h5>
                 <p>2016 - Present</p>
                 <p>PhD Candidate, Neurosciences PhD Program</p>
               </Col>
@@ -134,7 +80,7 @@ class CV extends Component {
                 />
               </Col>
               <Col lg="10">
-                <h3>University of Southern California</h3>
+                <h5>University of Southern California</h5>
                 <p>2012 - 2016</p>
                 <p>
                   B.S. with Honors in Computational Neuroscience
@@ -153,7 +99,7 @@ class CV extends Component {
   render_research() {
     return (
       <Fragment>
-        <h2>Current</h2>
+        <h5>Current</h5>
         <ListGroup>
           <ListGroupItem>
             <Container>
@@ -166,7 +112,7 @@ class CV extends Component {
                   />
                 </Col>
                 <Col lg="10" xs="10">
-                  <h3>
+                  <h6>
                     Stanford NeuroAI Lab{` `}
                     <Button
                       outline
@@ -176,11 +122,11 @@ class CV extends Component {
                     >
                       <FaLink />
                     </Button>
-                  </h3>
+                  </h6>
                   <p>
                     2016 - Present
                     <br />
-                    <strong>PI: </strong> Dan Yamins
+                    PI: Dan Yamins
                   </p>
                   <p>
                     <em>
@@ -200,7 +146,7 @@ class CV extends Component {
                   <img src={vpnl_logo} className="full-width" alt="VPNL logo" />
                 </Col>
                 <Col lg="10" xs="10">
-                  <h3>
+                  <h6>
                     Stanford Vision and Perception Neuroscience Lab{` `}
                     <Button
                       outline
@@ -210,11 +156,11 @@ class CV extends Component {
                     >
                       <FaLink />
                     </Button>
-                  </h3>
+                  </h6>
                   <p>
                     2016 - Present
                     <br />
-                    <strong>PI: </strong> Kalanit Grill-Spector
+                    PI: Kalanit Grill-Spector
                   </p>
                   <p>
                     <em>
@@ -228,7 +174,7 @@ class CV extends Component {
           </ListGroupItem>
         </ListGroup>
         <br />
-        <h2>Past</h2>
+        <h5>Past</h5>
         <ListGroup>
           <ListGroupItem>
             <Container>
@@ -241,7 +187,7 @@ class CV extends Component {
                   />
                 </Col>
                 <Col lg="10" xs="10">
-                  <h3>
+                  <h6>
                     USC Image Understanding Lab{` `}
                     <Button
                       outline
@@ -251,7 +197,7 @@ class CV extends Component {
                     >
                       <FaLink />
                     </Button>
-                  </h3>
+                  </h6>
                   <p>
                     2014 - 2016
                     <br />
@@ -279,7 +225,7 @@ class CV extends Component {
                   />
                 </Col>
                 <Col lg="10" xs="10">
-                  <h3>
+                  <h6>
                     USC Emotion and Cognition Lab{` `}
                     <Button
                       outline
@@ -289,7 +235,7 @@ class CV extends Component {
                     >
                       <FaLink />
                     </Button>
-                  </h3>
+                  </h6>
                   <p>
                     2013 - 2014
                     <br />
@@ -573,6 +519,15 @@ class CV extends Component {
                   <FaLink size="1.5em" /> Link to Blog Post
                 </Button>
               </ListGroupItem>
+              <ListGroupItem>
+                <h6>Paper a Week</h6>
+                <p>
+                  {" "}
+                  For more, check out my{" "}
+                  <Link to="/PaperReviews">Paper-A-Week</Link> page, where I
+                  review in detail one paper each week!{" "}
+                </p>
+              </ListGroupItem>
             </ListGroup>
           </Col>
         </Row>
@@ -584,52 +539,6 @@ class CV extends Component {
     const BUTTON_ICON_SIZE = "1em";
     const ICON_SIZE = "2em";
     const ICON_COLOR = "#8c1313";
-
-    const education_toggle_arrow = this.state.education_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const research_toggle_arrow = this.state.research_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const publications_toggle_arrow = this.state.publications_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const presentations_toggle_arrow = this.state.presentations_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const skills_toggle_arrow = this.state.skills_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const awards_toggle_arrow = this.state.awards_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const teaching_toggle_arrow = this.state.teaching_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const service_toggle_arrow = this.state.service_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
-    const scicomm_toggle_arrow = this.state.scicomm_collapse ? (
-      <FaAngleUp />
-    ) : (
-      <FaAngleDown />
-    );
 
     return (
       <Container>
@@ -735,182 +644,109 @@ class CV extends Component {
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="education-drop"
-              onClick={this.toggle_education}
-            >
-              <h2>
-                <FaUniversity size={BUTTON_ICON_SIZE} />
-                {` `}Education {education_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Education history and current affiliations</em>
-            <Collapse isOpen={this.state.education_collapse}>
-              <Card>
-                <CardBody>{this.render_education()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Education"
+              icon=<FaUniversity size={BUTTON_ICON_SIZE} />
+              description="Education history and current affiliations"
+              internal={this.render_education()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="research-drop"
-              onClick={this.toggle_research}
-            >
-              <h2>
-                <FaBrain size={BUTTON_ICON_SIZE} />
-                {` `}Research {research_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Labs I've worked in</em>
-            <Collapse isOpen={this.state.research_collapse}>
-              <Card>
-                <CardBody>{this.render_research()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Research"
+              icon=<FaBrain size={BUTTON_ICON_SIZE} />
+              description="Labs I've worked in"
+              internal={this.render_research()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="publications-drop"
-              onClick={this.toggle_publications}
-            >
-              <h2>
-                <FaPenNib size={BUTTON_ICON_SIZE} />
-                {` `}Publications {publications_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Peer-reviewed publications</em>
-            <Collapse isOpen={this.state.publications_collapse}>
-              <Card>
-                <CardBody>{this.render_publications()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Publications"
+              icon=<FaPenNib size={BUTTON_ICON_SIZE} />
+              description="Peer-reviewed publications"
+              internal={this.render_publications()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="presentations-drop"
-              onClick={this.toggle_presentations}
-            >
-              <h2>
-                <FaUserTie size={BUTTON_ICON_SIZE} />
-                {` `}Presentations {presentations_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Conference posters and talks</em>
-            <Collapse isOpen={this.state.presentations_collapse}>
-              <Card>
-                <CardBody>{this.render_presentations()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Presentations"
+              icon=<FaUserTie size={BUTTON_ICON_SIZE} />
+              description="Conference posters and talks"
+              internal={this.render_presentations()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button color="link" id="skills-drop" onClick={this.toggle_skills}>
-              <h2>
-                <FaLaptopCode size={BUTTON_ICON_SIZE} />
-                {` `}Skills {skills_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Methods, programming experience, and other training</em>
-            <Collapse isOpen={this.state.skills_collapse}>
-              <Card>
-                <CardBody>{this.render_skills()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Skills"
+              icon=<FaLaptopCode size={BUTTON_ICON_SIZE} />
+              description="Methods, programming, and other training"
+              internal={this.render_skills()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button color="link" id="awards-drop" onClick={this.toggle_awards}>
-              <h2>
-                <FaAward size={BUTTON_ICON_SIZE} />
-                {` `}Awards {awards_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Grants and awards</em>
-            <Collapse isOpen={this.state.awards_collapse}>
-              <Card>
-                <CardBody>{this.render_awards()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Awards"
+              icon=<FaAward size={BUTTON_ICON_SIZE} />
+              description="Grants, awards, and recognitions"
+              internal={this.render_awards()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="teaching-drop"
-              onClick={this.toggle_teaching}
-            >
-              <h2>
-                <FaChalkboardTeacher size={BUTTON_ICON_SIZE} />
-                {` `}Teaching {teaching_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Teaching experience</em>
-            <Collapse isOpen={this.state.teaching_collapse}>
-              <Card>
-                <CardBody>{this.render_teaching()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Teaching"
+              icon=<FaChalkboardTeacher size={BUTTON_ICON_SIZE} />
+              description="Teaching experience"
+              internal={this.render_teaching()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="service-drop"
-              onClick={this.toggle_service}
-            >
-              <h2>
-                <FaHandHoldingHeart size={BUTTON_ICON_SIZE} />
-                {` `}Service {service_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Mentorship and volunteer work</em>
-            <Collapse isOpen={this.state.service_collapse}>
-              <Card>
-                <CardBody>{this.render_service()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Service"
+              icon=<FaHandHoldingHeart size={BUTTON_ICON_SIZE} />
+              description="Mentorship and volunteer work"
+              internal={this.render_service()}
+            />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <Button
-              color="link"
-              id="scicomm-drop"
-              onClick={this.toggle_scicomm}
-            >
-              <h2>
-                <FaCommentDots size={BUTTON_ICON_SIZE} />
-                {` `}SciComm {scicomm_toggle_arrow}
-              </h2>
-            </Button>
-            <em>Writing and talking about cool science</em>
-            <Collapse isOpen={this.state.scicomm_collapse}>
-              <Card>
-                <CardBody>{this.render_scicomm()}</CardBody>
-              </Card>
-            </Collapse>
+            <CVSection
+              default_open={true}
+              title="Science Communication"
+              icon=<FaCommentDots size={BUTTON_ICON_SIZE} />
+              description="Writing about others' science"
+              internal={this.render_scicomm()}
+            />
           </Col>
         </Row>
       </Container>
