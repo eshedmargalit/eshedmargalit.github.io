@@ -31,6 +31,30 @@ class PaperReviews extends Component {
             serve my own interests.
           </Col>
         </Row>
+        <hr />
+        <Row>
+          <Col>
+            <h6> How this works </h6>
+            <ul>
+              <li>
+                {" "}
+                Click through each paper to see my notes about background,
+                methods, results, conclusions, and more{" "}
+              </li>
+              <li>
+                {" "}
+                The selected paper stays open in a new 'tab', so you can browse
+                the rest of the list while leaving the current review open{" "}
+              </li>
+              <li>
+                {" "}
+                Each paper has a number of tags, each of which has a unique
+                background color. Click tags to search by that keyword!
+              </li>
+              <li> The search bar allows you to search by title and author </li>
+            </ul>
+          </Col>
+        </Row>
         <br />
         <Row>
           <Col>

@@ -49,9 +49,10 @@ class PaperAWeek extends Component {
       hash = tag.charCodeAt(i) + ((hash << 5) - hash);
     }
 
-    var c = (hash & 0x00ffffff).toString(16).toUpperCase();
     var shortened = hash % 360;
-    return "hsl(" + shortened + ",100%,30%)";
+    const saturation = "80%";
+    const lightness = "30%";
+    return "hsl(" + shortened + "," + saturation + "," + lightness + ")";
   };
 
   render_authors = authors => {
