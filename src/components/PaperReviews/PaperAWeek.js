@@ -43,6 +43,17 @@ class PaperAWeek extends Component {
     });
   };
 
+  get_tag_color = tag => {
+    var hash = 0;
+    for (var i = 0; i < tag.length; i++) {
+      hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    var c = (hash & 0x00ffffff).toString(16).toUpperCase();
+    var shortened = hash % 360;
+    return "hsl(" + shortened + ",100%,30%)";
+  };
+
   render_authors = authors => {
     return authors.map((author, i) => {
       let to_render;
@@ -99,7 +110,7 @@ class PaperAWeek extends Component {
         return (
           <span key={tag}>
             <Badge
-              color="secondary"
+              style={{ background: this.get_tag_color(tag) }}
               className="tag-badge"
               onClick={e => {
                 e.stopPropagation();
