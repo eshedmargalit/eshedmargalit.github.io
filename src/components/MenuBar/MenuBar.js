@@ -9,6 +9,7 @@ import {
   Nav,
   NavLink
 } from "reactstrap";
+import { FaRegCalendar, FaBrain, FaRegListAlt } from "react-icons/fa";
 
 class MenuBar extends Component {
   constructor(props) {
@@ -35,13 +36,22 @@ class MenuBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <LinkContainer to="/CV">
-                <NavLink>CV</NavLink>
+                <NavLink>
+                  <FaRegListAlt />
+                  {` `}CV
+                </NavLink>
               </LinkContainer>
               <LinkContainer to="/Research">
-                <NavLink>Research</NavLink>
+                <NavLink>
+                  <FaBrain />
+                  {` `}Research
+                </NavLink>
               </LinkContainer>
               <LinkContainer to="/PaperReviews">
-                <NavLink>Paper-a-Week</NavLink>
+                <NavLink>
+                  <FaRegCalendar />
+                  {` `}Paper-a-Week
+                </NavLink>
               </LinkContainer>
             </Nav>
           </Collapse>
