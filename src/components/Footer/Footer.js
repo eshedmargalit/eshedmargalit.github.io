@@ -13,7 +13,7 @@ class Footer extends Component {
           <Col xs="12" lg="12">
             <hr />
             <p>
-              Please get in touch! I'd love to hear from you.{` `}
+              Please get in touch, I'd love to hear from you.{` `}
               <FaEnvelope color="" id={"gmail_address"} size="1.5em" />
               <UncontrolledTooltip
                 autohide={false}
@@ -32,7 +32,7 @@ class Footer extends Component {
               </UncontrolledTooltip>
             </p>
             <p>
-              Website designed by Eshed, hosted by GitHub:
+              Website designed by Eshed, browse the source code on Github:
               <Button
                 color="link"
                 href="http://github.com/eshedmargalit/eshedmargalit.github.io"
