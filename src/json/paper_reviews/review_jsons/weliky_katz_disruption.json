@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "title": "Disruption of orientation tuning in visual cortex by artificially correlated neuronal activity",
+    "authors": ["Weliky, M", "Katz, LC"],
+    "institutions": ["HHMI", "Duke University"],
+    "date": "1997-04",
+    "journal": "Nature",
+    "doi": "10.1038/386680a0",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9109486",
+    "keywords": ["ferret", "V1", "orientation", "stimulation"],
+    "review_date": "2019-06-28",
+    "one_sentence": "Weliky and Katz demonstrate that the introduction of artifically correlated activity in the ferret optic nerve weakens orientation selectivity in cortex while leaving orientation maps intact"
+  },
+  "review": {
+    "summary": [
+      "Stimulation of the optic nerve during development reduces orientation tuning and direction selectivity for single cells, but leaves the spatial pattern of orientation tuning across the cortical surface relatively intact"
+    ],
+    "background": [
+      "Orientation selectivity is apparent at birth, but that selectivity is weak relative to adults",
+      "Visual deprivation experiments suggest that visual experience is necessary for orientation map development, but it's unclear whether that's because visual experience provides general input (i.e., preserves # of action potentials) or because the input is structured and thus, instructive"
+    ],
+    "approach": [
+      "'Play in' competing patterns of activity to the visual system via artificial stimulation of the optic nerve in ferrets. Current delivered to a cuff was used to drive optic nerve activity",
+      "Stimulate between P25 and P35, then allow 7-10 days of natural visual experience (same as for control ferrets)",
+      "Extracellular, spike-sorted recordings in visual cortex in response to drifting bars at 18 orientations",
+      "Compute the orientation selectivity index (OSI), where higher values indicate more selectivity",
+      "Intrinsic optical imaging (ISI) used to evaluate the spatial pattern of orientation tuning"
+    ],
+    "results": [
+      "Compared to control ferrets (60% of cells significantly orientation selective), ferrets receiving cuff stimulation had significantly fewer orientation selective cells (17%). The decreases in orientation selectivity was accompanied by a decrease in direction selective (Figure 2)",
+      "The decrease in orientation selectivity was not due simply to decreased firing rate: in both control and stimulated animals, there was no correlation between orientation selectivity and peak firing rate (but could there be a difference in mean firing rate?)",
+      "In stimulated animals, no observed effects of cortical depth on orientation selectivity, although along an electrode penetration, OSI varied smoothly. In control animals however, OSI were significantly higher in superficial and deep cortical depths (Figure 3)",
+      "ON/OFF LGN responses appeared similar in control and stimulated animals, suggesting a cortical origin in the orientation selectivity deficits (Figure 4)",
+      "Despite changes in OSI, the pattern of orientation selectivity across cortex, including size, spacing, and pattern of iso-orientation domains, appears unaffected. The authors note that the signal magnitude in these imaging experiments is markedly reduced in stimulated animals (Figure 5)"
+    ],
+    "conclusions": [
+      "Replacing patterned spontaneous activity from retinal waves with artificially correlated activity disrupts the development of sharp orientation tuning",
+      "The persistence of the orientation maps might be due to the earlier origins of those maps, where thalamic projections begin to colonize layer 4 around P10.",
+      "One shortcoming of this technique is that it doesn't entirely replace ongoing endogenous activity, it simply adds to it in an artifical way. Still, this proves an effective technique for influencing the developing circuit"
+    ],
+    "other": [
+      "This work finds significantly higher OSI in superficial and deep layers than in middle layers, but Ringach et al., 2002 find uniformity in orientation selectivity across cortical depths. Is this due to species differences, metric differences (OSI vs. CV), stimulus differences, or recording differences?"
+    ]
+  }
+}

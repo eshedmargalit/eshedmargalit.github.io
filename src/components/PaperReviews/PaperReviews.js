@@ -51,7 +51,11 @@ class PaperReviews extends Component {
                 Each paper has a number of tags, each of which has a unique
                 background color. Click tags to search by that keyword!
               </li>
-              <li> The search bar allows you to search by title and author </li>
+              <li>
+                {" "}
+                The search bar allows you to search by title, author,
+                publication year, or keyword{" "}
+              </li>
             </ul>
           </Col>
         </Row>

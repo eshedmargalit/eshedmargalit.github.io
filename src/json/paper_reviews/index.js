@@ -15,7 +15,8 @@ const filenames = [
   "afraz_inactivation_face_gender.json",
   "rajalingham_inactivation.json",
   "bracci_ventral_shape.json",
-  "jacobs_jordan_short_connections.json"
+  "jacobs_jordan_short_connections.json",
+  "weliky_katz_disruption.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
