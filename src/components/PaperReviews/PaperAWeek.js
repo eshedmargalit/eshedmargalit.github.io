@@ -119,7 +119,6 @@ class PaperAWeek extends Component {
                 this.handleSearch(`${e.target.innerHTML}`);
               }}
               href="#"
-              pill
             >
               {tag}
             </Badge>
