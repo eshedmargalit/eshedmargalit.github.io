@@ -24,3 +24,7 @@
 .dark-hover:hover {
   color: "white";
 }
+
+.hover-button:hover > a {
+  opacity: 0.8;
+}

@@ -37,12 +37,13 @@ const buttons = [
     icon: <FaLinkedin color={ICON_COLOR} size={ICON_SIZE} />
   }
 ];
+
 class Intro extends Component {
   render_buttons() {
     const cols = buttons.map(button => {
       return (
         <Col lg="3" xs="3">
-          <Button color="link">
+          <Button className="hover-button" color="link">
             <a href={button.link} target="_blank" rel="noopener noreferrer">
               {button.icon}
             </a>
