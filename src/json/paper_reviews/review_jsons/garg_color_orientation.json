@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "title": "Color and orientation are jointly coded and spatially organized in primate primary visual cortex",
+    "authors": ["Garg, A.K.*", "Li, P.*", "Rashid, M.S.", "Callaway, E.M."],
+    "institutions": ["Salk Institute", "UCSD"],
+    "date": "2019-06",
+    "journal": "Science",
+    "doi": "10.1126/science.aaw5868",
+    "url": "https://science.sciencemag.org/content/364/6447/1275",
+    "keywords": ["macaque", "color", "orientation", "CO"],
+    "review_date": "2019-07-01",
+    "one_sentence": "Garg, Li, et al. find that many orientation-tuned macaque V1 cells are also tuned to specific hues (and organized with respect to CO blobs), challenging standing models of V1 functional architecture that posit spatial and functional separation between color and oriention tuning"
+  },
+  "review": {
+    "summary": [
+      "Instead of being strictly segregated, many V1 neurons jointly code stimulus color and orientation",
+      "Neurons were clustered with respect to hue preference and generally (but not completely) aligned with CO-dense regions"
+    ],
+    "background": [
+      "The canonical model of V1 is that there are orientation-selective cells outside of CO blobs, and these cells are generally not color-selctive",
+      "Eshed's note: when training deep convolutional neural networks to do object recognition tasks, many of the early filters violate this separate and show both chromatic and orientation tuning in the same units"
+    ],
+    "approach": [
+      "GCaMP6f imaging in macaque of 4,531 cells in superficial layers of V1 from four animals and fourteen imaging sites",
+      "Responses collected in response to square-wave gratings (eight orientations, four spatial frequencies) that were either achromatic or one of 12 equally spaced colors in CIE space",
+      "CO staining after euthanasia at imaging sites to determine correspondence between color/orientation tuning and CO",
+      "Measurements at multiple depths to determine columnar structure",
+      "Only consider responses from visually-responsive neurons"
+    ],
+    "results": [
+      "Over 46% of cells preferred chromatic stimuli to achromatic stimuli, and 11% of all cells were both strongly orientation selective and strongly color selective (Figure 3A)",
+      "Orientation selectivity generally decreased as CO intensity increased, while color preference increased with CO intensity, consistent with prior findings (Figure 3B, 3C)",
+      "97% of color preferring neurons were also tuned to at least one specific hue, with the majority of hue-selective neurons tuned to blue and red (likely due to cone contrast in the retina)",
+      "Neurons generally clustered in the xy-plane on the basis of hue preference and were organized similarly at nearby cortical depths (Figure 4A)"
+    ],
+    "conclusions": [
+      "Shape and color may be jointly processed by a population of cells outside of CO blobs that likely project to V2 pale stripes",
+      "These recordings were made in superficial layers, but deeper layers (closer to LGN input in layer IV) may show different functional signatures"
+    ],
+    "other": [
+      "Was there any tuning with respect to spatial frequency? If not, how were those data used?",
+      "Looking at the supplement, it's clear that there is clustering with respect to orientation and color tuning, but the typical patterns (e.g., pinwheels) are hard to see in these maps. I imagine they would look cleaner in ISI maps than these fine-grained 2P imaging maps"
+    ]
+  }
+}
