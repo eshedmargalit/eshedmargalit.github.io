@@ -26,6 +26,7 @@ class PaperAWeek extends Component {
     super(props);
     this.load_and_concat_reviews = this.load_and_concat_reviews.bind(this);
     this.papers = this.load_and_concat_reviews(review_filenames);
+    this.navRef = React.createRef();
 
     this.state = {
       query: "",
@@ -326,6 +327,7 @@ class PaperAWeek extends Component {
             <Button
               onClick={e => {
                 this.setState({ viewing_paper: false });
+                window.scrollTo(0, this.navRef.current.offsetTop);
               }}
               color="primary"
             >
@@ -429,7 +431,7 @@ class PaperAWeek extends Component {
       );
     }
     return (
-      <div>
+      <div ref={this.navRef}>
         {nav}
         <br />
         {to_render}
