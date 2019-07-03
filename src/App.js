@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import CV from "./components/CV/CV";
 import Research from "./components/Research/Research";
 import PaperReviews from "./components/PaperReviews/PaperReviews";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Clipboard from "clipboard";
 
 import "./App.css";
@@ -18,14 +19,16 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        <div className="App">
-          <Route path="/" component={MenuBar} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/CV" component={CV} />
-          <Route exact path="/Research" component={Research} />
-          <Route exact path="/PaperReviews" component={PaperReviews} />
-          <Route path="/" component={Footer} />
-        </div>
+        <ScrollToTop>
+          <div className="App">
+            <Route path="/" component={MenuBar} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/CV" component={CV} />
+            <Route exact path="/Research" component={Research} />
+            <Route exact path="/PaperReviews" component={PaperReviews} />
+            <Route path="/" component={Footer} />
+          </div>
+        </ScrollToTop>
       </HashRouter>
     );
   }
