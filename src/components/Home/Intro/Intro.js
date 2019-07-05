@@ -42,7 +42,7 @@ class Intro extends Component {
   render_buttons() {
     const cols = buttons.map(button => {
       return (
-        <Col lg="3" xs="3">
+        <Col lg="3" xs="3" key={button.link}>
           <Button className="hover-button" color="link">
             <a href={button.link} target="_blank" rel="noopener noreferrer">
               {button.icon}
