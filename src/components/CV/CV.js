@@ -144,7 +144,7 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col lg="2" xs="2">
+                <Col lg="2" xs="6">
                   <img
                     src={snail_logo}
                     className="full-width"
@@ -182,7 +182,7 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col lg="2" xs="2">
+                <Col lg="2" xs="6">
                   <img src={vpnl_logo} className="full-width" alt="VPNL logo" />
                 </Col>
                 <Col lg="10" xs="10">
@@ -219,7 +219,7 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col lg="2" xs="2">
+                <Col lg="2" xs="6">
                   <img
                     src={iul_logo}
                     className="full-width"
@@ -257,7 +257,7 @@ class CV extends Component {
           <ListGroupItem>
             <Container>
               <Row>
-                <Col lg="2" xs="2">
+                <Col lg="2" xs="6">
                   <img
                     src={emcog_logo}
                     className="full-width"
