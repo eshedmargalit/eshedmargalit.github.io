@@ -101,7 +101,9 @@ class PubGroup extends Component {
       return null;
     }
     // descending sort
-    this.props.pubs.sort((a, b) => -moment(a.year).diff(moment(b.year)));
+    this.props.pubs.sort(
+      (a, b) => -moment(new Date(a.year)).diff(moment(new Date(b.year)))
+    );
     return (
       <Container>
         <Row>
