@@ -31,20 +31,18 @@ class PaperReviews extends Component {
     return Number.parseFloat(sorted_dates.length / total_weeks).toFixed(3);
   }
 
-  compute_running_avg() {
+  compute_cumulative_number() {
     const sorted_dates = this.review_dates.sort((a, b) => a.diff(b));
 
-    const running_avg = [1.0];
+    var cumulative_number = [];
+    var counter = 0;
     for (var i = 0; i < sorted_dates.length - 1; i++) {
-      var weeks_from_start =
-        sorted_dates[i + 1].diff(sorted_dates[0], "days") / 7.0;
-      console.log(weeks_from_start);
-      console.log(i + 1);
-      running_avg.push((i + 1) / weeks_from_start);
+      var diff = sorted_dates[i + 1].diff(sorted_dates[i], "days");
+      counter += diff;
+      cumulative_number.push(counter);
     }
 
-    console.log(running_avg);
-    return running_avg;
+    return cumulative_number;
   }
 
   render() {
@@ -76,13 +74,18 @@ class PaperReviews extends Component {
           <Col>
             <br />
             <h5> How am I doing? </h5>
-            <p> Papers / week: {this.compute_ppw()} </p>
-            <Sparklines data={this.compute_running_avg()} height={75}>
-              <SparklinesCurve style={{ fill: "none" }} />
+            <p>
+              {" "}
+              Papers / week: <strong>{this.compute_ppw()}</strong>{" "}
+            </p>
+            <Sparklines data={this.compute_cumulative_number()} height={75}>
+              <SparklinesCurve />
               <SparklinesSpots />
             </Sparklines>
-            <p>
-              <em>Running average of papers read per week</em>
+            <p className="float-right">
+              <em>
+                Cumulative review count: <strong>{this.papers.length}</strong>
+              </em>
             </p>
           </Col>
         </Row>
