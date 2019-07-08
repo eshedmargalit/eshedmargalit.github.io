@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "",
+    "authors": ["Kim, T", "Blair, W", "Pasupathy, A"],
+    "institutions": ["University of Washington"],
+    "date": "2019-06",
+    "journal": "J. Neurosci",
+    "doi": "10.1523/JNEUROSCI.3073-18.2019",
+    "url": "http://www.jneurosci.org/content/jneuro/39/24/4760.full.pdf",
+    "keywords": ["macaque", "V4", "shape", "texture"],
+    "review_date": "2019-07-08",
+    "one_sentence": "Kim et al. demonstrate that V4 neurons encode both an object's shape and its texture, with stronger selectivity and faster responses on average for shape stimuli"
+  },
+  "review": {
+    "summary": [
+      "Individual V4 neurons lie on a continuum between strongly shape-selective and strongly texture-selective",
+      "The populations are thus 'partially overlapping'. Indeed, individual neurons that are strongly selective for shape can be observed"
+    ],
+    "background": [
+      "V4 neurons have been found to be selective for shape and surface properties such as color and brightness, but less attention has been given to texture",
+      "Adelson, Movshon, Simoncelli, and others argue that early/intermediate visual areas are responsible for the representation of 'stuff' instead of 'things'",
+      "It is unknown how V4 accomplishes the joint representation of shape, color, texture, and more. It could be performed by groups of neurons, each tackling part of the problem, or it could be the case that individual neurons jointly encode multiple dimensions of stimuli"
+    ],
+    "approach": [
+      "Single unit recordings (N=101) from V4 in two macaques. Grayscale stimuli presented at two sizes: entirely within unit's RF or at twice the RF diameter",
+      "Stimuli were drawn from 225 shapes (from prior work) or 168 textures defined by three axes: directional/nondirectional, regular/irregular, and coarse/fine"
+    ],
+    "results": [
+      "52 of the 101 neurons had a higher peak response for shapes than peak response for texture (after controlling for number of stimuli in each set), whereas only 19 neurons had a stronger peak response to texture (Figure 2)",
+      "HMax can predict neuron responses to shape stimuli, but not texture stimuli (Figure 3)",
+      "Tuning for shape and texture in individual neurons (note, this is a subset of the original 101 neurons) is largely independent (Figure 7)",
+      "The onset of selectivity was significantly later for texture stimuli than shape stimuli (Figure 8)"
+    ],
+    "conclusions": [
+      "Given that shape generally yielded stronger and faster selectivity than texture is consistent with frameworks suggesting that it is an object's outline that determines our percept (see the work of I. Biederman), instead of texture",
+      "Notably, recent work (Geirhos et al., 2018) has shown that leading neural network models default to using texture information, indicating a disconnect between artificial and biological vision systems",
+      "We shouldn't completely ignore texture, since a substantial portion of V4 neurons do encode texture along seemingly relevant dimensions"
+    ],
+    "other": [
+      "Given my personal interest in functional architecture, it would have been great to see where these units were and how their responses correlated with their cortical positions. Are functionally overlapping populations also spatially overlapping?"
+    ]
+  }
+}
