@@ -18,7 +18,8 @@ const filenames = [
   "jacobs_jordan_short_connections.json",
   "weliky_katz_disruption.json",
   "garg_color_orientation.json",
-  "kim_pasupathy_texture_shape_v4.json"
+  "kim_pasupathy_texture_shape_v4.json",
+  "haxby_hyperalignment.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

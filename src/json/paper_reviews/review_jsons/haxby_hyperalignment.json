@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "A common, high-dimensional model of the representational space in human ventral temporal cortex",
+    "authors": [
+      "Haxby, JV",
+      "Guntupalli, JS",
+      "Connolly, AC",
+      "Halchenko, YO",
+      "Conroy, BR",
+      "Gobbini, MI",
+      "Hanke, M",
+      "Ramadge, PJ"
+    ],
+    "institutions": [
+      "Dartmouth College",
+      "Universita degli studi di Trento",
+      "Princeton University",
+      "Universita di Bologna"
+    ],
+    "date": "2011-10",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2011.08.026",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/22017997",
+    "keywords": ["human", "fMRI", "MVPA", "hyperalignment", "VTC"],
+    "review_date": "2019-07-16",
+    "one_sentence": "Haxby and colleagues introduce a method for aligning brain data between subjects that outperforms anatomical alignment in between-subjects classification"
+  },
+  "review": {
+    "summary": [
+      "Individual brain data can be mapped into a high-dimensional space that is common to all subjects. This space can be used to achieve very high between-subject's classification that does not require anatomical alignment"
+    ],
+    "background": [
+      "Multi-variate pattern analyses are widespread in human neuroimaging. In many studies, classifiers are built to predict a variable of interest from the distributed pattern of activity in a single brain area. But because each brain is different, this requires a new representational space (defined by a set of voxels) in each subject, making intersubject comparison tricky",
+      "Getting around this problem has been approach in a couple of ways: 1) the anatomy is abstracted away in approaches like representational similarity analysis (RSA), or 2) individual anatomies are warped into a space common to all subjects"
+    ],
+    "approach": [
+      "3 experiments: In E1, 21 subject watched Raiders of the Los Ark. In E2, 10 of those 21 also viewed images of object categories, and in E3 11 subjects viewed images of animal species.",
+      "Hyperaligment in E1 begins with 42 matrices (21 subjects, left and right VTC). Each matrix is 500 voxels x 2205 time points. A procedure based on iterative Procrustean transformation (rigid transforms) are performed to bring every subject into a common 1000-D space (2 hemispheres x 500 dimensions x 2205 time points). Finally, those 1000-D vectors are reduced to 35 dimensions via PCA",
+      "Perform between-subject classification to determine the validity of the common space. Predict one subject's brain activity from the other 20. The between-subject performance is then compared to both within-subject performance and Talairach-space-aligned brains"
+    ],
+    "results": [
+      "Hyperaligned between-subjects classification of which portion (18 seconds) of the movie was being seen at a given time was at 70.6%, far higher than the anatomically-aligned classifier at 32.0%. (Figure 2)",
+      "In E2, hyperalignment performs at 63.9%, which was significantly higher than the 44.6% afforded by anatomical alignment. For comparison, within-subjects classification also achieves 63% (Figure 2) In E3, hyperalignment also performs much better than anatomical alignment (Figure 2)",
+      "Classification accuracy improves up to about 20 PCs (from the original 1000), but somewhat plateaus above that. It only takes about 12 PCs to accurately decode the faces and objects, and only 9 to decode the animal species (Figure 3)",
+      "Building the common space with complex stimuli (the movie) is generally effective regardless of the 'test' data, but creating the common space based on simple or narrow datasets does not generalize well to complex stimuli (Figure 4)",
+      "The first few principal components of the 35D space don't map onto hand-drawn ROIs (e.g., FFA; Figure 5) very well, but specifically searching for dimensions that have a high faces vs. places contrast aligns very well with hand-drawn ROIs (Figure 6)"
+    ],
+    "conclusions": [
+      "Hyperalignment is useful for estimating the dimensionality of human VTC as well as predicting brain activity in held out subjects. The validity of this common space depends on acquiring rich, complex data"
+    ],
+    "other": [
+      "See Guntupalli et al., 2016 (Cereb. Cortex) for an application and extension of hyperalignment",
+      "I haven't seen this method get used as often as anatomical alignment techniques. Is that because acquiring a rich enough dataset is difficult?"
+    ]
+  }
+}
