@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Object Representation in Inferior Temporal Cortex Is Organized Hierarchically in a Mosaic-Like Structure",
+    "authors": [
+      "Sato, T",
+      "Uchida, G",
+      "Lescroart, MD",
+      "Kitazono, J",
+      "Okada, M",
+      "Tanifuji, M"
+    ],
+    "institutions": [
+      "RIKEN",
+      "UC Berkeley",
+      "University of Tokyo",
+      "Waseda University",
+      "National Yang-Ming University"
+    ],
+    "date": "2013-10",
+    "journal": "J. Neurosci",
+    "doi": "10.1523/JNEUROSCI.5557-12.2013",
+    "url": "http://www.jneurosci.org/content/jneuro/33/42/16642.full.pdf",
+    "keywords": ["macaque", "IT", "category", "topography"],
+    "review_date": "2019-07-25",
+    "one_sentence": "Sato and colleagues demonstrate that macaque IT is organized hierarchically in its responses: columns form 'domains', and similar domains cluster on the cortical surface"
+  },
+  "review": {
+    "summary": [
+      "Electrophysiological assessment of IT reveals domains on the scale of multiple mm that are tuned to particular categories of objects, e.g., faces and bodies. This supports and explains existing literature using fMRI and intrinsic signal imaging."
+    ],
+    "background": [
+      "Two competing models for IT organization are the modular theory, which posits that computation proceeds from spatially-distinct module to module (e.g., the face patch network), and the distributed theory, which posits that computation proceeds from the assembly of general visual features that represent objects",
+      "Much of the support for the two theories comes from fMRI and optical intrinsic signal imaging (OISI), which are indirectly coupled to neuron activity and have poor spatial resolution. So it remains unclear what the fine-scale spatial organization of IT is with respect to rich visual features."
+    ],
+    "approach": [
+      "Extracellular recordings in the right hemisphere of three monkeys (total of 99 sites across monkeys). At each site, record from three electrodes in a triangle pattern and at five cortical depths. These 15 sites (3 electrodes x 5 depths) are averaged to produce the 'local activity' for that site",
+      "Present images of 7 categories: faces, scrambled faces, monkey hands, monkey bodies, nonprimate bodies, foods/veggies, and man-made objects",
+      "Determine correlation of responses to each image across sites, then perform hierarchical clustering to try and identify structure in the correlations"
+    ],
+    "results": [
+      "Hierarchical clustering suggests that there are between 7-8 distinct response groups, and these groups also tend to be spatially co-localized (Figure 2). The extent of these 'domains' were multiple mm in diameter.",
+      "Hierarchical clustering suggests that there are between 7-8 distinct response groups, and these groups also tend to be spatially co-localized (Figure 2). The extent of these 'domains' were multiple mm in diameter. Note: this implies functional domains are larger than single columns!",
+      "The identified clusters are robust to variations in stimuli like color or silhouette/full, and are further robust to the choice of clustering algorithm (Figures 3, 4)",
+      "Selectivity analysis of the domains indicates that some are face selective, some are body selective, some are anti face-selective, and some appear nonselective. (Eshed's note: this is cool, I've always wondered if there are spatially-contiguous regions that respond especially poorly to faces!) (Figure 5)",
+      "Optical intrinsic imaging suggests that the domains are composed of columns (sites on the order of 0.5mm in diameter) (Figure 10)"
+    ],
+    "conclusions": [
+      "IT is organized hierarchically with respect to topography; domains are composed of multiple feature columns, and regions are likely to be contiguous domains",
+      "Results indicating that modality of measurement doesn't matter (e.g., Kriegeskorte et al., 2008) may arise from the fact that randomly sampling within a domain is the same as recording aggregate domain activity"
+    ],
+    "other": [
+      "The outstanding question in my mind is why we observe this hierarchial structure. That is both 1) why is it hierarchical, and 2) why this particular structure with respect to faces, bodies, etc",
+      "See Rajalingham et al., 2018 for a causal manipulation of arbitrarily selected IT sites. Their results are generally aligned with these; that IT is a heterogeneous landscape with some local spatial dependencies in the response profiles"
+    ]
+  }
+}
