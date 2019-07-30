@@ -56,7 +56,7 @@ class PaperAWeek extends Component {
     return "hsl(" + shortened + "," + saturation + "," + lightness + ")";
   };
 
-  render_authors = authors => {
+  render_comma_sep_list = authors => {
     return authors.map((author, i) => {
       let to_render;
       if (i === authors.length - 1) {
@@ -136,7 +136,7 @@ class PaperAWeek extends Component {
       <div>
         <div>
           <h5>{meta.title}</h5>
-          {this.render_authors(meta.authors)}
+          {this.render_comma_sep_list(meta.authors)}
         </div>
         <div>{tag_render}</div>
         <div>
@@ -309,7 +309,8 @@ class PaperAWeek extends Component {
         <Row>
           <Col>
             <h4>{paper.metadata.title}</h4>
-            {this.render_authors(paper.metadata.authors)}
+            {this.render_comma_sep_list(paper.metadata.authors)}
+            {this.render_comma_sep_list(paper.metadata.institutions)}
             Published in {paper.metadata.journal} in {date_str}
             {` `}
             {doi_tag}
