@@ -33,7 +33,8 @@ class PaperAWeek extends Component {
       searchbar_value: "",
       active_paper: null,
       viewing_paper: false,
-      current_paper_short_title: "Margalit et al., 2019"
+      current_paper_short_title: "Margalit et al., 2019",
+      sort_mode: "review date (descending)"
     };
   }
 
@@ -103,6 +104,12 @@ class PaperAWeek extends Component {
     });
   };
 
+  handleSort = sort_mode => {
+    this.setState({
+      sort_mode: sort_mode
+    });
+  };
+
   render_paper_metadata = meta => {
     const tags = meta.keywords;
 
@@ -132,11 +139,15 @@ class PaperAWeek extends Component {
     const review_date_render = moment(meta.review_date, "YYYY-MM-DD").format(
       "MMMM DD, YYYY"
     );
+    const publication_date_render = moment(meta.date, "YYYY-MM").format(
+      "MMMM YYYY"
+    );
     return (
       <div>
         <div>
           <h5>{meta.title}</h5>
           {this.render_comma_sep_list(meta.authors)}
+          Published {publication_date_render}
         </div>
         <div>{tag_render}</div>
         <div>
@@ -147,6 +158,27 @@ class PaperAWeek extends Component {
         </div>
       </div>
     );
+  };
+
+  sort_reviews = reviews => {
+    if (this.state.sort_mode === "review date (descending)") {
+      return reviews.sort(
+        (a, b) =>
+          -moment(a.metadata.review_date).diff(moment(b.metadata.review_date))
+      );
+    } else if (this.state.sort_mode === "review date (ascending)") {
+      return reviews.sort((a, b) =>
+        moment(a.metadata.review_date).diff(moment(b.metadata.review_date))
+      );
+    } else if (this.state.sort_mode === "publication date (descending)") {
+      return reviews.sort(
+        (a, b) => -moment(a.metadata.date).diff(moment(b.metadata.date))
+      );
+    } else if (this.state.sort_mode === "publication date (ascending)") {
+      return reviews.sort((a, b) =>
+        moment(a.metadata.date).diff(moment(b.metadata.date))
+      );
+    }
   };
 
   trim_reviews = reviews => {
@@ -198,10 +230,6 @@ class PaperAWeek extends Component {
   };
 
   render_papers = papers => {
-    papers.sort(
-      (a, b) =>
-        -moment(a.metadata.review_date).diff(moment(b.metadata.review_date))
-    ); // descending sort
     var mapped_papers = papers.map(paper => {
       return (
         <ListGroupItem
@@ -359,7 +387,7 @@ class PaperAWeek extends Component {
     const directory = (
       <Container>
         <Row>
-          <Col lg="9" xs="9">
+          <Col lg="7" xs="7">
             <Form>
               <FormGroup>
                 <Label for="search_input">
@@ -375,10 +403,31 @@ class PaperAWeek extends Component {
               </FormGroup>
             </Form>
           </Col>
+          <Col lg="3" xs="3">
+            <Form>
+              <FormGroup>
+                <Label for="sort_input">Sort by:</Label>
+                <Input
+                  type="select"
+                  id="sort_input"
+                  onChange={e => this.handleSort(`${e.target.value}`)}
+                >
+                  <option>review date (descending)</option>
+                  <option>review date (ascending) </option>
+                  <option>publication date (ascending)</option>
+                  <option>publication date (descending)</option>
+                </Input>
+              </FormGroup>
+            </Form>
+          </Col>
           {clear_button_render}
         </Row>
         <Row>
-          <Col>{this.render_papers(this.trim_reviews(this.papers))}</Col>
+          <Col>
+            {this.render_papers(
+              this.sort_reviews(this.trim_reviews(this.papers))
+            )}
+          </Col>
         </Row>
       </Container>
     );
