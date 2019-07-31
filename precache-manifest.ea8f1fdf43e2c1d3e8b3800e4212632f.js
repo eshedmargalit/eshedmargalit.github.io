@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/emcog.421510d6.jpg"
   },
   {
-    "revision": "3ca9200e36bee546d926",
+    "revision": "4a981498003005fe04ef",
     "url": "/static/css/main.f90be36a.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/static/media/USC_Seal.f3cde9dd.png"
   },
   {
-    "revision": "3ca9200e36bee546d926",
-    "url": "/static/js/main.3ca9200e.chunk.js"
+    "revision": "4a981498003005fe04ef",
+    "url": "/static/js/main.4a981498.chunk.js"
   },
   {
     "revision": "479e4fef90c98e8b6f4d7f11acf56d98",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.869f7bd9.chunk.css"
   },
   {
-    "revision": "ca78bf7b35098d37db9d86c8d80d8a0e",
+    "revision": "7c7fd60c0a67660628c9d175f78307c2",
     "url": "/index.html"
   }
 ];
