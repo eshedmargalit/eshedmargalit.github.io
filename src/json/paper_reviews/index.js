@@ -20,7 +20,8 @@ const filenames = [
   "garg_color_orientation.json",
   "kim_pasupathy_texture_shape_v4.json",
   "haxby_hyperalignment.json",
-  "sato_mosaic.json"
+  "sato_mosaic.json",
+  "arcaro_universal_mechanisms.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

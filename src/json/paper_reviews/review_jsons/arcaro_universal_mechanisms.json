@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "Universal Mechanisms and the Development of the Face Network: What You See Is What You Get",
+    "authors": ["Arcaro, MJ", "Schade, PF", "Livingstone, MS"],
+    "institutions": ["Harvard University"],
+    "date": "2019-06",
+    "journal": "Annual Review of Vision Science",
+    "doi": "10.1146/annurev-vision-091718-014917",
+    "url": "https://www.annualreviews.org/doi/abs/10.1146/annurev-vision-091718-014917",
+    "keywords": ["review", "macaque", "IT", "faces", "development"],
+    "review_date": "2019-07-30",
+    "one_sentence": "Arcaro et al. argue against a 'face-specific developmental program', and propose instead that there exists some set of developmental rules that applies equally throughout higher visual cortex"
+  },
+  "review": {
+    "summary": [
+      "The face-processing network in primates can be understood by appealing to simple rules like the dominance of retinotopic maps, plasticity and development rules in other cortical areas, and visual experience. This perspective opposes the alternative view that faces are 'special' and have unique hardware or associated learning rules"
+    ],
+    "background": [
+      "Faces are of obvious ecological relevance, and primates spend an extraordinary amount of time looking at faces. Regions selectively responding to faces have been localized to stereoptypes locations in humans and non-human primates alike (along with regions selective for other categories, e.g., body parts, places), as supported by reports of acquired prosopagnosia",
+      "The belief that the face processing system is 'special' depends on the assumption that either 1) the neural hardware involved in face processing is unique or 2) the developmental program acting on that hardware is unique"
+    ],
+    "approach": [
+      "This is a review paper which primarily draws on studies using fMRI and electrophysiological recording in humans and macaques"
+    ],
+    "results": [
+      "Visual Hierarchy: Expansion of cortical territory by the formation of multiple mirrored maps appears to be a universal principle in brain development. Through this lens, the multiplicity of face regions at different stages is unsurprising (Figure 2; see also Conway 2018)",
+      "Developmental Rules: In early visual cortex, the patterns of orientation tuning, ocular dominance, etc, can be understood as self-organizing, activity-dependent mechanisms. I'm not sure I agree that this means that V1 doesn't 'serve a particular function but rather arises as a consequence of more general wiring rules', though. The authors propose that activity-dependent self-organization continues into all extrastriate regions, allowing each stage to represent some features across all of visual space",
+      "Developmental Rules: The fact that face-selective domains span multiple retinotopic maps instead of being isolated to a single retinotopic map suggests either 1) a break in the expected hierarchy, or 2) a lack of sufficiently high-resolution and high-coverage recording techniques.",
+      "How it Gets its Spots: The kinds of push-pull models that succeed in explaining early visual cortical phenomenology, e.g., ocular dominance stripes, might be useful in understanding how higher visual areas get parcelled out for different categories (see Plaut/Behrmann 2011)",
+      "How it Gets its Spots: The correlation between semantic category, curvature selectivty, and eccentricity makes it almost impossible to figure out in adults, and figuring out which feature set explains emergence first (in developmental time) has eluded current methods. The authors' stance is that in any case, regions of IT are effectively not specialized until later in life, although retinotopy appears present at birth.",
+      "Just Look for the Bare Necessities: Converging lines of evidence suggest that innate preference for face stimuli may result from a combination of an upper-visual-field bias and the saliency of small, round, dark things (i.e., eyes)",
+      "The final two sections of the paper discuss how 1) face regions continue to develop in adulthood and 2) how recent results from cross-modal stimulation suggesting that face regions always process face-like-stimuli may be explained by general connectivity patterns from IT cortex to other sensory regions in the brain."
+    ],
+    "conclusions": [
+      "Parsimonious explanations are both desirable and available for understanding the face processing system. The authors argue that the face-processing system emerges from simple rules that apply generally throughout cortex",
+      "They interpret this parsimony to mean that instead of asking what a brain region does, we should ask how universal rules act on environmental reinforcement. I mostly agree with that point, although I think the difference is rather semantic at that point. Isn't understanding how a brain region allows complex behavior via enviornmental reinforcement the same as asking what it does, or what it's good for? Ultimately, it may be that theories about how the system actually develops will separate these two apparently similar positions"
+    ],
+    "other": [
+      "This reads in many ways like a rebuttal to other recent reviews worth looking into, including Powell et al., 2019 and Op de Beeck et al., 2019"
+    ]
+  }
+}
