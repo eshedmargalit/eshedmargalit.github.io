@@ -1,117 +1,72 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-
-import * as d3 from "d3";
+import { AreaChart, Area, Legend, Tooltip, XAxis, YAxis } from "recharts";
 
 class Chart extends Component {
-  componentDidMount() {
-    this.drawChart();
-  }
-
-  componentDidUpdate() {
-    d3.select("#chart")
-      .selectAll("*")
-      .remove();
-    this.drawChart();
-  }
-
-  drawChart() {
-    const width = 1000;
-    const height = 500;
-    const data = this.getData();
-    var x = d3.scaleLinear().range([0, width]);
-    var y = d3.scaleLinear().range([height * (2 / 3), 6]);
-    var line = d3
-      .line()
-      .x(function(d) {
-        return x(d.q);
-      })
-      .y(function(d) {
-        return y(d.p);
-      });
-    var area = d3
-      .area()
-      .x(function(d) {
-        return x(d.q);
-      })
-      .y0(0)
-      .y1(function(d) {
-        return y(d.p);
-      });
-
-    var svg = d3
-      .select("#chart")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .append("g");
-
-    x.domain(
-      d3.extent(data, function(d) {
-        return d.q;
-      })
-    );
-
-    y.domain(
-      d3.extent(data, function(d) {
-        return d.p;
-      })
-    );
-
-    svg
-      .append("path")
-      .datum(data)
-      .attr("class", "area")
-      .attr("d", area);
-
-    svg
-      .append("path")
-      .datum(data)
-      .attr("class", "line")
-      .attr("d", line);
-  }
-
   getData() {
     var data = [];
-    for (var i = 0; i < 1000; i++) {
-      var q = this.normal(); // calc random draw from normal dist
-      var p = this.gaussian(q); // calc prob of rand draw
+    for (var i = 0; i < 100; i++) {
+      var signal = this.signal_gaussian(i);
+      var noise = this.noise_gaussian(i);
       var el = {
-        q: q,
-        p: p
+        x: i,
+        noise: noise,
+        signal: signal
       };
       data.push(el);
     }
 
     data.sort(function(x, y) {
-      return x.q - y.q;
+      return x.i - y.i;
     });
 
     return data;
   }
-  normal() {
-    var x = 0;
-    var y = 0;
-    var rds, c;
-    do {
-      x = Math.random() * 2 - 1;
-      y = Math.random() * 2 - 1;
-      rds = x * x + y * y;
-    } while (rds == 0 || rds > 1);
-    c = Math.sqrt((-2 * Math.log(rds)) / rds); // Box-Muller transform
-    return Math.abs(x * c) > 3 ? this.normal() : x * c; // throw away extra sample y * c
+
+  signal_gaussian(x) {
+    var gaussianConstant = 1 / Math.sqrt(2 * Math.PI);
+    x = (x - this.props.signal_mean) / this.props.signal_sigma;
+    return (
+      (gaussianConstant * Math.exp(-0.5 * x * x)) / this.props.signal_sigma
+    );
   }
 
-  gaussian(x) {
+  noise_gaussian(x) {
     var gaussianConstant = 1 / Math.sqrt(2 * Math.PI);
-    x = (x - this.props.mean) / this.props.sigma;
-    return (gaussianConstant * Math.exp(-0.5 * x * x)) / this.props.sigma;
+    x = (x - this.props.noise_mean) / this.props.noise_sigma;
+    return (gaussianConstant * Math.exp(-0.5 * x * x)) / this.props.noise_sigma;
   }
 
   render() {
     return (
       <Container>
-        <div id="chart"></div>
+        <div>
+          <AreaChart
+            width={600}
+            height={300}
+            data={this.getData()}
+            margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+          >
+            <XAxis dataKey="x" />
+            <YAxis />
+            <Area
+              name="signal"
+              type="monotone"
+              dataKey="signal"
+              stroke={this.props.signal_color}
+              fill={this.props.signal_color}
+            />
+            <Area
+              name="noise"
+              type="monotone"
+              dataKey="noise"
+              stroke={this.props.noise_color}
+              fill={this.props.noise_color}
+            />
+            <Tooltip />
+            <Legend verticalAlign="top" height={36} />
+          </AreaChart>
+        </div>
       </Container>
     );
   }

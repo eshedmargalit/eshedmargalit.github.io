@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { exp, dotPow, sqrt, pi, subtract, dotDivide } from "mathjs";
-import { Container } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import Slider from "react-rangeslider";
+import { TwitterPicker } from "react-color";
 
 import "react-rangeslider/lib/index.css";
 import Chart from "./Chart.js";
@@ -10,63 +10,108 @@ class Calc extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      x: 1,
-      mean: 2,
-      sigma: 3
+      signal_mean: 5,
+      signal_sigma: 2,
+      signal_color: "#0d5e08",
+      noise_mean: 2,
+      noise_sigma: 3,
+      noise_color: "#960f0f"
     };
-
-    this.data = [1, 2, 3];
   }
 
-  gaussian(x, mean, sigma) {
-    // x is a vector, mean and sigma are scalars
-    const a = subtract(0, dotPow(subtract(x, mean), 2.0));
-    const b = 2.0 * dotPow(sigma, 2.0);
-    const scaling = sqrt(2.0 * pi) * sigma;
-    return dotDivide(exp(dotDivide(a, b)), scaling);
-  }
-
-  handleOnChangeX = value => {
-    console.log(value);
+  handleOnChangeSignalMu = value => {
     this.setState({
-      x: value
-    });
-
-    this.data = [value, this.data[1], this.data[2]];
-  };
-
-  handleOnChangeMu = value => {
-    this.setState({
-      mean: value
+      signal_mean: value
     });
   };
 
-  handleOnChangeSigma = value => {
+  handleOnChangeSignalSigma = value => {
     this.setState({
-      sigma: value
+      signal_sigma: value
+    });
+  };
+
+  handleColorChangeSignal = (color, event) => {
+    this.setState({
+      signal_color: color.hex
+    });
+  };
+
+  handleOnChangeNoiseMu = value => {
+    this.setState({
+      noise_mean: value
+    });
+  };
+
+  handleOnChangeNoiseSigma = value => {
+    this.setState({
+      noise_sigma: value
+    });
+  };
+
+  handleColorChangeNoise = (color, event) => {
+    this.setState({
+      noise_color: color.hex
     });
   };
 
   render() {
-    let { x, mean, sigma } = this.state;
     return (
       <Container>
-        <Chart mean={this.state.mean} sigma={this.state.sigma} />
-        <Slider
-          value={x}
-          orientation="horizontal"
-          onChange={this.handleOnChangeX}
+        <Chart
+          signal_mean={this.state.signal_mean}
+          signal_sigma={this.state.signal_sigma}
+          signal_color={this.state.signal_color}
+          noise_mean={this.state.noise_mean}
+          noise_sigma={this.state.noise_sigma}
+          noise_color={this.state.noise_color}
         />
-        <Slider
-          value={mean}
-          orientation="horizontal"
-          onChange={this.handleOnChangeMu}
-        />
-        <Slider
-          value={sigma}
-          orientation="horizontal"
-          onChange={this.handleOnChangeSigma}
-        />
+        <Row>
+          <Col lg="4" xs="4">
+            <Slider
+              min={0}
+              max={100}
+              value={this.state.signal_mean}
+              orientation="horizontal"
+              onChange={this.handleOnChangeSignalMu}
+            />
+          </Col>
+          <Col lg="4" xs="4">
+            <Slider
+              value={this.state.signal_sigma}
+              orientation="horizontal"
+              onChange={this.handleOnChangeSignalSigma}
+            />
+          </Col>
+          <Col lg="4" xs="4">
+            <TwitterPicker
+              color={this.state.signal_color}
+              onChangeComplete={this.handleColorChangeSignal}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg="4" xs="4">
+            <Slider
+              value={this.state.noise_mean}
+              orientation="horizontal"
+              onChange={this.handleOnChangeNoiseMu}
+            />
+          </Col>
+          <Col lg="4" xs="4">
+            <Slider
+              value={this.state.noise_sigma}
+              orientation="horizontal"
+              onChange={this.handleOnChangeNoiseSigma}
+            />
+          </Col>
+          <Col lg="4" xs="4">
+            <TwitterPicker
+              color={this.state.noise_color}
+              onChangeComplete={this.handleColorChangeNoise}
+            />
+          </Col>
+        </Row>
       </Container>
     );
   }
