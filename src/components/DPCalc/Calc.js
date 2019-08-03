@@ -322,7 +322,14 @@ class Calc extends Component {
           <Col lg="4" xs="12">
             <h4 style={{ float: "right" }}>ROC Curve</h4>
             <br />
-            <ROCCurve size={300} roc_data={this.getROCCurve()} />
+            <ROCCurve
+              size={300}
+              roc_data={this.getROCCurve()}
+              hit_rate={this.state.hits}
+              fp_rate={this.state.fp}
+              signal_color={this.state.signal_color}
+              noise_color={this.state.noise_color}
+            />
           </Col>
         </Row>
         <hr />
