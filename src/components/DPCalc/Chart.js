@@ -58,6 +58,7 @@ class Chart extends Component {
             type="monotone"
             dataKey="signal"
             stroke={this.props.signal_color}
+            strokeWidth={2}
             fill={this.props.signal_color}
           />
           <ReferenceLine
@@ -70,6 +71,7 @@ class Chart extends Component {
             type="monotone"
             dataKey="noise"
             stroke={this.props.noise_color}
+            strokeWidth={2}
             fill={this.props.noise_color}
           />
           <ReferenceLine
@@ -80,7 +82,8 @@ class Chart extends Component {
           <ReferenceLine
             x={this.props.criterion}
             stroke="black"
-            strokeOpacity={1}
+            strokeWidth={2}
+            strokeOpacity={0.5}
             label={{
               value: "Criterion",
               angle: -90,

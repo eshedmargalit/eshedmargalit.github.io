@@ -179,7 +179,7 @@ class Calc extends Component {
     return (
       <Container>
         <Row>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <div>
               Signal Present Mean:
               <br /> <strong>{this.state.signal_mean}</strong>
@@ -192,7 +192,7 @@ class Calc extends Component {
               onChange={this.handleOnChangeSignalMu}
             />
           </Col>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <div>
               Signal Absent Mean:
               <br /> <strong>{this.state.noise_mean}</strong>
@@ -205,7 +205,7 @@ class Calc extends Component {
               onChange={this.handleOnChangeNoiseMu}
             />
           </Col>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <div>
               Criterion:
               <br /> <strong>{this.state.criterion}</strong>
@@ -220,7 +220,7 @@ class Calc extends Component {
           </Col>
         </Row>
         <Row>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <div>
               Signal Present Std:
               <br /> <strong>{this.state.signal_sigma}</strong>
@@ -233,7 +233,7 @@ class Calc extends Component {
               onChange={this.handleOnChangeSignalSigma}
             />
           </Col>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <div>
               Signal Absent Std:
               <br /> <strong>{this.state.noise_sigma}</strong>
@@ -246,7 +246,7 @@ class Calc extends Component {
               onChange={this.handleOnChangeNoiseSigma}
             />
           </Col>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             <Form>
               <FormGroup check>
                 <Label check>
@@ -277,20 +277,28 @@ class Calc extends Component {
         <Row>
           <Col>
             <h5>
-              d-prime:{` `}
+              d&#39;:{` `}
               <strong>{rounded_dprime}</strong>
             </h5>
           </Col>
         </Row>
         <hr />
-
+        <Row>
+          <Col>
+            <h5>Values at Given Criterion</h5>
+          </Col>
+        </Row>
         <Row>
           <Col lg="6" xs="6">
-            Hits:{` `}
+            Hits:
+            <br />
+            {` `}
             <strong>{rounded_hits}</strong>
           </Col>
           <Col lg="6" xs="6">
-            Misses:{` `}
+            Misses:
+            <br />
+            {` `}
             <strong>{rounded_misses}</strong>
           </Col>
         </Row>
@@ -298,10 +306,12 @@ class Calc extends Component {
         <Row>
           <Col lg="6" xs="6">
             False Positives:{` `}
+            <br />
             <strong>{rounded_fp}</strong>
           </Col>
           <Col lg="6" xs="6">
             Correct Rejections:{` `}
+            <br />
             <strong>{rounded_cr}</strong>
           </Col>
         </Row>
@@ -317,7 +327,7 @@ class Calc extends Component {
             <h4 style={{ float: "right" }}>Normal Distributions</h4>
             <br />
             <Chart
-              height={300}
+              height={250}
               signal_mean={this.state.signal_mean}
               signal_sigma={this.state.signal_sigma}
               signal_color={this.state.signal_color}
@@ -331,7 +341,7 @@ class Calc extends Component {
             <h4 style={{ float: "right" }}>ROC Curve</h4>
             <br />
             <ROCCurve
-              size={300}
+              size={250}
               roc_data={this.getROCCurve()}
               hit_rate={this.state.hits}
               fp_rate={this.state.fp}
@@ -342,10 +352,10 @@ class Calc extends Component {
         </Row>
         <hr />
         <Row>
-          <Col lg="9" xs="9">
+          <Col lg="8" xs="8">
             {this.renderSliders()}
           </Col>
-          <Col lg="3" xs="3">
+          <Col lg="4" xs="4">
             {this.renderFields()}
           </Col>
         </Row>

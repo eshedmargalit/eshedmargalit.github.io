@@ -9,7 +9,12 @@ import {
   Nav,
   NavLink
 } from "reactstrap";
-import { FaRegCalendar, FaBrain, FaRegListAlt } from "react-icons/fa";
+import {
+  FaCalculator,
+  FaRegCalendar,
+  FaBrain,
+  FaRegListAlt
+} from "react-icons/fa";
 
 class MenuBar extends Component {
   constructor(props) {
@@ -51,6 +56,12 @@ class MenuBar extends Component {
                 <NavLink>
                   <FaRegCalendar />
                   {` `}Paper-a-Week
+                </NavLink>
+              </LinkContainer>
+              <LinkContainer to="/DPCalc">
+                <NavLink>
+                  <FaCalculator />
+                  {` `}d&#39; Calculator
                 </NavLink>
               </LinkContainer>
             </Nav>
