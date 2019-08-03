@@ -10,7 +10,7 @@ class DPCalc extends Component {
         <Row>
           <Col xs="8" lg="8">
             <br />
-            <h1>d-prime Calculator</h1>
+            <h1>d&#39; Calculator</h1>
             <Calc />
           </Col>
         </Row>
