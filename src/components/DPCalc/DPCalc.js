@@ -10,12 +10,7 @@ class DPCalc extends Component {
         <Row>
           <Col xs="8" lg="8">
             <br />
-            <h1>Projects I've worked on</h1>
-            <p>
-              This is an incomplete list of projects that have interested me,
-              please get in touch if you'd like to chat further about any of
-              these things!
-            </p>
+            <h1>d-prime Calculator</h1>
             <Calc />
           </Col>
         </Row>
