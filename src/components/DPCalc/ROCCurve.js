@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Line, Label, LineChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  ReferenceLine,
+  Line,
+  Label,
+  LineChart,
+  CartesianGrid,
+  XAxis,
+  YAxis
+} from "recharts";
 
 class ROCCurve extends Component {
   render() {
@@ -14,6 +22,16 @@ class ROCCurve extends Component {
           <Label value="False Positives" offset={-5} position="insideBottom" />
         </XAxis>
         <YAxis label={{ value: "Hits", angle: -90, position: "insideLeft" }} />
+        <ReferenceLine
+          y={this.props.hit_rate}
+          stroke={this.props.signal_color}
+          strokeWidth={2}
+        />
+        <ReferenceLine
+          x={this.props.fp_rate}
+          stroke={this.props.noise_color}
+          strokeWidth={2}
+        />
         <Line
           type="monotone"
           dataKey="hits"
