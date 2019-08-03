@@ -4,6 +4,7 @@ import {
   AreaChart,
   Area,
   ReferenceLine,
+  Label,
   Legend,
   XAxis,
   YAxis
@@ -23,10 +24,6 @@ class Chart extends Component {
       data.push(el);
     }
 
-    data.sort(function(x, y) {
-      return x.i - y.i;
-    });
-
     return data;
   }
 
@@ -45,14 +42,17 @@ class Chart extends Component {
   }
 
   render() {
+    const xticks = [0, 5, 10, 15, 20, 25, 30];
     return (
       <ResponsiveContainer width="100%" height={this.props.height}>
-        <AreaChart
-          data={this.getData()}
-          margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-        >
-          <XAxis dataKey="x" />
-          <YAxis />
+        <AreaChart data={this.getData()}>
+          <XAxis dataKey="x" ticks={xticks}>
+            <Label value="x" offset={0} position="insideBottom" />
+          </XAxis>
+          <YAxis
+            domain={[0, 0.2]}
+            label={{ value: "P(x)", angle: -90, position: "insideLeft" }}
+          />
           <Area
             name="Signal Distribution"
             type="monotone"
@@ -63,7 +63,7 @@ class Chart extends Component {
           <ReferenceLine
             x={this.props.signal_mean}
             stroke={this.props.signal_color}
-            strokeDasharray="3 3"
+            strokeOpacity={0.2}
           />
           <Area
             name="Noise Distribution"
@@ -75,7 +75,12 @@ class Chart extends Component {
           <ReferenceLine
             x={this.props.noise_mean}
             stroke={this.props.noise_color}
-            strokeDasharray="3 3"
+            strokeOpacity={0.2}
+          />
+          <ReferenceLine
+            x={this.props.criterion}
+            stroke="black"
+            strokeOpacity={1}
           />
           <Legend verticalAlign="top" height={36} />
         </AreaChart>
