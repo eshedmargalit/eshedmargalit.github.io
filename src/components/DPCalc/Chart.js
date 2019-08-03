@@ -81,6 +81,7 @@ class Chart extends Component {
             x={this.props.criterion}
             stroke="black"
             strokeOpacity={1}
+            label={{ value: "Criterion", angle: -90, position: "insideTop" }}
           />
           <Legend verticalAlign="top" height={36} />
         </AreaChart>
