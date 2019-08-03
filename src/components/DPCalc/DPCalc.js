@@ -154,6 +154,11 @@ class DPCalc extends Component {
               detection and how to compute d&#39;! If you have any issues or
               find bugs, please let me know via email.
             </p>
+            <p>
+              <strong>Disclaimer: </strong> This webpage hasn't yet been
+              optimized for mobile devices, sorry about that. For the best
+              experience, view on a laptop/desktop.
+            </p>
             <Calc />
             <hr />
             {this.renderDprimer()}
