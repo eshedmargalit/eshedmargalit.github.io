@@ -33,38 +33,40 @@ class Calc extends Component {
   }
 
   updateMetrics() {
-    this.setState({
-      dprime:
-        (this.state.signal_mean - this.state.noise_mean) /
-        Math.sqrt(
-          0.5 *
-            (Math.pow(this.state.signal_sigma, 2) +
-              Math.pow(this.state.noise_sigma, 2))
+    this.setState((prevState, props) => {
+      return {
+        dprime:
+          (prevState.signal_mean - prevState.noise_mean) /
+          Math.sqrt(
+            0.5 *
+              (Math.pow(prevState.signal_sigma, 2) +
+                Math.pow(prevState.noise_sigma, 2))
+          ),
+        hits:
+          1 -
+          this.cdfNormal(
+            prevState.criterion,
+            prevState.signal_mean,
+            prevState.signal_sigma
+          ),
+        misses: this.cdfNormal(
+          prevState.criterion,
+          prevState.signal_mean,
+          prevState.signal_sigma
         ),
-      hits:
-        1 -
-        this.cdfNormal(
-          this.state.criterion,
-          this.state.signal_mean,
-          this.state.signal_sigma
-        ),
-      misses: this.cdfNormal(
-        this.state.criterion,
-        this.state.signal_mean,
-        this.state.signal_sigma
-      ),
-      fp:
-        1 -
-        this.cdfNormal(
-          this.state.criterion,
-          this.state.noise_mean,
-          this.state.noise_sigma
-        ),
-      cr: this.cdfNormal(
-        this.state.criterion,
-        this.state.noise_mean,
-        this.state.noise_sigma
-      )
+        fp:
+          1 -
+          this.cdfNormal(
+            prevState.criterion,
+            prevState.noise_mean,
+            prevState.noise_sigma
+          ),
+        cr: this.cdfNormal(
+          prevState.criterion,
+          prevState.noise_mean,
+          prevState.noise_sigma
+        )
+      };
     });
   }
 
@@ -110,6 +112,9 @@ class Calc extends Component {
   }
 
   handleOnChangeSignalMu = value => {
+    // this.setState({
+    //   signal_mean: value
+    // }, () => this.updateMetrics());
     this.setState({
       signal_mean: value
     });
@@ -167,6 +172,7 @@ class Calc extends Component {
         signal_sigma: this.state.noise_sigma
       });
     }
+    this.updateMetrics();
   };
 
   renderSliders() {
@@ -175,7 +181,7 @@ class Calc extends Component {
         <Row>
           <Col lg="3" xs="3">
             <div>
-              Signal Mean:
+              Signal Present Mean:
               <br /> <strong>{this.state.signal_mean}</strong>
             </div>
             <Slider
@@ -188,7 +194,7 @@ class Calc extends Component {
           </Col>
           <Col lg="3" xs="3">
             <div>
-              Noise Mean:
+              Signal Absent Mean:
               <br /> <strong>{this.state.noise_mean}</strong>
             </div>
             <Slider
@@ -216,7 +222,7 @@ class Calc extends Component {
         <Row>
           <Col lg="3" xs="3">
             <div>
-              Signal Std:
+              Signal Present Std:
               <br /> <strong>{this.state.signal_sigma}</strong>
             </div>
             <Slider
@@ -229,7 +235,7 @@ class Calc extends Component {
           </Col>
           <Col lg="3" xs="3">
             <div>
-              Noise Std:
+              Signal Absent Std:
               <br /> <strong>{this.state.noise_sigma}</strong>
             </div>
             <Slider
@@ -249,7 +255,7 @@ class Calc extends Component {
                     onClick={this.toggleCheckbox}
                     type="checkbox"
                   />{" "}
-                  Assume equal sigmas?
+                  Assume equal standard deviations?
                 </Label>
               </FormGroup>
             </Form>
@@ -270,8 +276,10 @@ class Calc extends Component {
       <Container>
         <Row>
           <Col>
-            d-prime:{` `}
-            <strong>{rounded_dprime}</strong>
+            <h5>
+              d-prime:{` `}
+              <strong>{rounded_dprime}</strong>
+            </h5>
           </Col>
         </Row>
         <hr />
