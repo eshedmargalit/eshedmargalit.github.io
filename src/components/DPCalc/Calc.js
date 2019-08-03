@@ -324,7 +324,7 @@ class Calc extends Component {
       <Container>
         <Row>
           <Col lg="8" xs="12">
-            <h4 style={{ float: "right" }}>Normal Distributions</h4>
+            <h4 className="center">Normal Distributions</h4>
             <br />
             <Chart
               height={250}
@@ -338,7 +338,7 @@ class Calc extends Component {
             />
           </Col>
           <Col lg="4" xs="12">
-            <h4 style={{ float: "right" }}>ROC Curve</h4>
+            <h4 className="center">ROC Curve</h4>
             <br />
             <ROCCurve
               size={250}
