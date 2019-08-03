@@ -26,11 +26,13 @@ class ROCCurve extends Component {
           y={this.props.hit_rate}
           stroke={this.props.signal_color}
           strokeWidth={2}
+          strokeOpacity={0.4}
         />
         <ReferenceLine
           x={this.props.fp_rate}
           stroke={this.props.noise_color}
           strokeWidth={2}
+          strokeOpacity={0.4}
         />
         <Line
           type="monotone"

@@ -54,7 +54,7 @@ class Chart extends Component {
             label={{ value: "P(x)", angle: -90, position: "insideLeft" }}
           />
           <Area
-            name="Signal Distribution"
+            name="Signal Present"
             type="monotone"
             dataKey="signal"
             stroke={this.props.signal_color}
@@ -66,7 +66,7 @@ class Chart extends Component {
             strokeOpacity={0.2}
           />
           <Area
-            name="Noise Distribution"
+            name="Signal Absent"
             type="monotone"
             dataKey="noise"
             stroke={this.props.noise_color}
@@ -81,7 +81,12 @@ class Chart extends Component {
             x={this.props.criterion}
             stroke="black"
             strokeOpacity={1}
-            label={{ value: "Criterion", angle: -90, position: "insideTop" }}
+            label={{
+              value: "Criterion",
+              angle: -90,
+              position: "insideTop",
+              offset: 30
+            }}
           />
           <Legend verticalAlign="top" height={36} />
         </AreaChart>
