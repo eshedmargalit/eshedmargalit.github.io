@@ -13,10 +13,10 @@
       "alt": "Orientation tuning map from a computational model of primary visual cortex"
     },
     {
-      "name": "Interactive Signal Detection Theory Notebook",
-      "url": "https://github.com/eshedmargalit/dprime_gui",
+      "name": "Interactive Signal Detection Theory Tutorial",
+      "url": "www.eshedmargalit.com/#/DPCalc",
       "img_src": "dp_gui_screenshot.png",
-      "alt": "Screenshot of interactive notebook describing signal detection theory"
+      "alt": "Screenshot of interactive webpage describing signal detection theory"
     },
     {
       "name": "How are object parts represented in the human brain?",

@@ -6,7 +6,6 @@ import projects from "../../../json/featured_projects.json";
 class FeaturedProjects extends Component {
   render_featured_projects = projects => {
     return projects.map(project => {
-      // const img_src = "img/" + project.img_src;
       const url = project.url;
       const alt_text = project.alt;
 

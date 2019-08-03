@@ -54,19 +54,6 @@ class Chart extends Component {
             label={{ value: "P(x)", angle: -90, position: "insideLeft" }}
           />
           <Area
-            name="Signal Present"
-            type="monotone"
-            dataKey="signal"
-            stroke={this.props.signal_color}
-            strokeWidth={2}
-            fill={this.props.signal_color}
-          />
-          <ReferenceLine
-            x={this.props.signal_mean}
-            stroke={this.props.signal_color}
-            strokeOpacity={0.2}
-          />
-          <Area
             name="Signal Absent"
             type="monotone"
             dataKey="noise"
@@ -77,6 +64,19 @@ class Chart extends Component {
           <ReferenceLine
             x={this.props.noise_mean}
             stroke={this.props.noise_color}
+            strokeOpacity={0.2}
+          />
+          <Area
+            name="Signal Present"
+            type="monotone"
+            dataKey="signal"
+            stroke={this.props.signal_color}
+            strokeWidth={2}
+            fill={this.props.signal_color}
+          />
+          <ReferenceLine
+            x={this.props.signal_mean}
+            stroke={this.props.signal_color}
             strokeOpacity={0.2}
           />
           <ReferenceLine
