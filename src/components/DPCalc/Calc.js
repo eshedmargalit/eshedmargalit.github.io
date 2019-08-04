@@ -352,10 +352,10 @@ class Calc extends Component {
         </Row>
         <hr />
         <Row>
-          <Col lg="8" xs="8">
+          <Col lg="8" md="12" xs="12">
             {this.renderSliders()}
           </Col>
-          <Col lg="4" xs="4">
+          <Col lg="4" md="12" xs="12">
             {this.renderFields()}
           </Col>
         </Row>
