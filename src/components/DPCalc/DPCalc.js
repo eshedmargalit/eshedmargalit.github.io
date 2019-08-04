@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import { InlineMath, BlockMath } from "react-katex";
+import { FaLink } from "react-icons/fa";
 import "katex/dist/katex.min.css";
 import dp_table from "../../assets/img/dp_table.png";
 
@@ -58,7 +59,15 @@ class DPCalc extends Component {
               so knowing the hit rate gives you the miss rate, and knowing the
               false positive rate gives you the correct rejection rate.
             </p>
-            <img src={dp_table} alt="outcome table" className="quarter-width" />
+            <Row>
+              <Col lg={{ size: 3, offset: 4 }} xs={{ size: 6, offset: 3 }}>
+                <img
+                  src={dp_table}
+                  alt="outcome table"
+                  className="full-width"
+                />
+              </Col>
+            </Row>
             <br />
             <br />
 
@@ -124,13 +133,23 @@ class DPCalc extends Component {
             </p>
             <hr />
             <h5> References and Future Reading </h5>
-            <a href="http://www.cns.nyu.edu/~david/handouts/sdt/sdt.html">
-              <Button>David Heeger's Signal Detection Theory Handout</Button>
+            <a
+              href="http://www.cns.nyu.edu/~david/handouts/sdt/sdt.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button color="link">
+                David Heeger's Signal Detection Theory Webpage <FaLink />
+              </Button>
             </a>
-            <br />
-            <br />
-            <a href="https://en.wikipedia.org/wiki/Sensitivity_index">
-              <Button>Wikipedia Page for Sensitivity</Button>
+            <a
+              href="https://en.wikipedia.org/wiki/Sensitivity_index"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button color="link">
+                Wikipedia Page for Sensitivity <FaLink />
+              </Button>
             </a>
           </Col>
         </Row>
@@ -145,6 +164,9 @@ class DPCalc extends Component {
           <Col xs="12" lg="12">
             <br />
             <h1>d&#39; Calculator</h1>
+            <h5>
+              An interactive tool for learning about signal detection theory
+            </h5>
             <p>
               This webpage was designed to help students in PSYCH 30, a large
               undergradate class on Perception at Stanford University,
@@ -153,11 +175,6 @@ class DPCalc extends Component {
               calculator below, and scroll down to read more about signal
               detection and how to compute d&#39;! If you have any issues or
               find bugs, please let me know via email.
-            </p>
-            <p>
-              <strong>Disclaimer: </strong> This webpage hasn't yet been
-              optimized for mobile devices, sorry about that. For the best
-              experience, view on a laptop/desktop.
             </p>
             <Calc />
             <hr />
