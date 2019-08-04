@@ -45,7 +45,7 @@ class ROCCurve extends Component {
           type="monotone"
           dataKey="false_positives"
           dot={false}
-          stroke="#888"
+          stroke="#bbb"
           strokeWidth={3}
         />
       </LineChart>

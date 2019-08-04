@@ -171,10 +171,10 @@ class DPCalc extends Component {
               This webpage was designed to help students in PSYCH 30, a large
               undergradate class on Perception at Stanford University,
               understand the basics of Signal Detection Theory and the
-              sensitivity index, d&#39;. Please feel free to play with the
-              calculator below, and scroll down to read more about signal
-              detection and how to compute d&#39;! If you have any issues or
-              find bugs, please let me know via email.
+              sensitivity index, d&#39;. Play with the calculator below and
+              scroll down to read more about signal detection and how to compute
+              d&#39;. If you have any issues or find bugs, please let me know
+              via email!
             </p>
             <Calc />
             <hr />
