@@ -320,6 +320,7 @@ class Calc extends Component {
   }
 
   render() {
+    const CALC_HEIGHT = 250;
     return (
       <Container>
         <Row>
@@ -327,7 +328,7 @@ class Calc extends Component {
             <h4 className="center">Normal Distributions</h4>
             <br />
             <Chart
-              height={250}
+              height={CALC_HEIGHT}
               signal_mean={this.state.signal_mean}
               signal_sigma={this.state.signal_sigma}
               signal_color={this.state.signal_color}
@@ -341,7 +342,7 @@ class Calc extends Component {
             <h4 className="center">ROC Curve</h4>
             <br />
             <ROCCurve
-              size={250}
+              size={CALC_HEIGHT}
               roc_data={this.getROCCurve()}
               hit_rate={this.state.hits}
               fp_rate={this.state.fp}
