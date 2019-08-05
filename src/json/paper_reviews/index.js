@@ -21,7 +21,8 @@ const filenames = [
   "kim_pasupathy_texture_shape_v4.json",
   "haxby_hyperalignment.json",
   "sato_mosaic.json",
-  "arcaro_universal_mechanisms.json"
+  "arcaro_universal_mechanisms.json",
+  "op_de_beeck_factors.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

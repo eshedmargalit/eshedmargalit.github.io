@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "Factors Determining Where Category-Selective Areas Emerge in Visual Cortex",
+    "authors": ["Op de Beeck, HP", "Pillet, I", "Ritchie JB"],
+    "institutions": ["KU Leuven"],
+    "date": "2019-07",
+    "journal": "TICS",
+    "doi": "10.1016/j.tics.2019.06.006",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S1364661319301585",
+    "keywords": [
+      "human",
+      "VTC",
+      "fMRI",
+      "category",
+      "topography",
+      "development"
+    ],
+    "review_date": "2019-08-04",
+    "one_sentence": "Op de Beeck et al. argue that the functional organization of human VTC can be understood by considering three factors: which visual features a region represents, how the visual features area processed, and the cognitive/semantic domain associated with the category"
+  },
+  "review": {
+    "summary": [
+      "The functional architecture of higher visual cortex can be understood by considering the features represented, how those features factor into a hierarchical computational framework, and the cognitive domain they are associated with",
+      "Visual features and categories cannot be meaningfully divorced from each other; instead, we should consider pre-existing preference for visual features predictors of where regions for categories consisting of those features will emerge"
+    ],
+    "background": [
+      "Category-selective regions have long been studied in human VTC, but theories predicted their specific spatial organization with respect to anatomy and to each other have been lacking",
+      "Whether these regions are strictly experience-dependent, activity-dependent, or innate/genetically-programmed has been a matter of debate"
+    ],
+    "approach": [
+      "This is a review paper which primarily draws on studies using fMRI in humans"
+    ],
+    "results": [
+      "VTC category preference is a lot stickier than people like to make it seem. Regions often have graded selectivity and cluster according to superordinate dimensions such as object size and animacy. 'Metaphorically speaking, a category-selective area is not a lone functional peak in an otherwise flat functional landscape, like a neural Kilimanjaro. Rather, it is one of many hilltops in a Yellowstone-like complex, of which the origin can only be understood by investigating the larger-scale environment'",
+      "Categories and category-typical features are tightly correlated, e.g., faces have a typical shape and are viewed in the same position of the visual field. Nevertheless, category-selective areas have been shown to respond to a given category even when controlling for such factors (Box 1)",
+      "Within the occiptotemporal cortex (OTC), regions with similar preference connect with each other. Connections reaching outside OTC, however, diverge in their targets. For example, word-form areas preferentially connect to left hemisphere language regions",
+      "Congenitally blind individuals provide a unique perspective on the developmental emergence of category-selective regions. The fact that the same general topography emerges in these individuals suggests that visual experience itself is not required for the formation of category-selective regions (but see Arcaro et al., 2017)",
+      "The eccentricity bias theory (that VTC layout is determined by typical viewing eccentricity; see Gomez et al., 2019's Pokemon study) has been popular in the field, but studies that support it have insufficiently separated typical viewing eccentricity from the other factors listed here"
+    ],
+    "conclusions": [
+      "While the three factors described (features, computation, and domain/connectivity) are clearly important, none of them is sufficient in isolation to explain the functional organization observed"
+    ],
+    "other": [
+      "Reviewing this paper was inspired by last week's review of Arcaro et al., 2019",
+      "A huge missing piece in my reading of this is: 'what about anatomy?! Beyond connectivity, that is.'. We know that different regions of higher visual cortex have microanatomical differences, and presumably these dictate the layout at a much more specific level than what is offered here.",
+      "While I agree with virtually everything in this very nice review, I find it a bit unsatisfying that these observations don't bring us closer to answering a questions like 'why is there a face-selective region on the lateral fusiform, and not somewhere else? What determines its size?"
+    ]
+  }
+}
