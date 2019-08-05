@@ -14,7 +14,7 @@
     },
     {
       "name": "Interactive Signal Detection Theory Tutorial",
-      "url": "www.eshedmargalit.com/#/DPCalc",
+      "url": "#/DPCalc",
       "img_src": "dp_gui_screenshot.png",
       "alt": "Screenshot of interactive webpage describing signal detection theory"
     },
