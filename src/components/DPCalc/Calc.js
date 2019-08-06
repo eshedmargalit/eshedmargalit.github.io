@@ -5,7 +5,7 @@ import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 import Chart from "./Chart.js";
 import ROCCurve from "./ROCCurve.js";
-import "./Chart.css";
+import "./Calc.css";
 import { erf } from "mathjs";
 
 class Calc extends Component {
