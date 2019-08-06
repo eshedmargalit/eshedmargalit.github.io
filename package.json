@@ -8,6 +8,7 @@
     "clipboard": "^2.0.4",
     "d3": "^5.9.7",
     "fuse.js": "^3.4.4",
+    "gaussian": "^1.1.0",
     "gh-pages": "2.0",
     "lodash": "^4.17.11",
     "mathjs": "^6.0.3",

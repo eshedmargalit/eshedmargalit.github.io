@@ -19,7 +19,9 @@ class Calc extends Component {
       noise_sigma: 4,
       noise_color: "#960f0f",
       criterion: 12,
-      sigma_lock: true
+      sigma_lock: true,
+      isEditingHits: false,
+      isEditingFP: false
     };
     this.updateMetrics = this.updateMetrics.bind(this);
   }
@@ -32,6 +34,13 @@ class Calc extends Component {
     return (1 - erf((mean - x) / (Math.sqrt(2) * standardDeviation))) / 2;
   }
 
+  invnorm(value, std) {
+    var gaussian = require("gaussian");
+    var distribution = gaussian(0, Math.pow(std, 2));
+    var sample = distribution.ppf(value);
+    return sample;
+  }
+
   updateMetrics() {
     this.setState((prevState, props) => {
       return {
@@ -42,25 +51,27 @@ class Calc extends Component {
               (Math.pow(prevState.signal_sigma, 2) +
                 Math.pow(prevState.noise_sigma, 2))
           ),
-        hits:
+        hits: this.roundTruncate(
           1 -
-          this.cdfNormal(
-            prevState.criterion,
-            prevState.signal_mean,
-            prevState.signal_sigma
-          ),
+            this.cdfNormal(
+              prevState.criterion,
+              prevState.signal_mean,
+              prevState.signal_sigma
+            )
+        ),
         misses: this.cdfNormal(
           prevState.criterion,
           prevState.signal_mean,
           prevState.signal_sigma
         ),
-        fp:
+        fp: this.roundTruncate(
           1 -
-          this.cdfNormal(
-            prevState.criterion,
-            prevState.noise_mean,
-            prevState.noise_sigma
-          ),
+            this.cdfNormal(
+              prevState.criterion,
+              prevState.noise_mean,
+              prevState.noise_sigma
+            )
+        ),
         cr: this.cdfNormal(
           prevState.criterion,
           prevState.noise_mean,
@@ -112,9 +123,6 @@ class Calc extends Component {
   }
 
   handleOnChangeSignalMu = value => {
-    // this.setState({
-    //   signal_mean: value
-    // }, () => this.updateMetrics());
     this.setState({
       signal_mean: value
     });
@@ -265,12 +273,133 @@ class Calc extends Component {
     );
   }
 
+  roundTruncate = x => {
+    var rounded = Math.round(x * 100) / 100;
+    if (rounded > 1) {
+      rounded = 1;
+    } else if (rounded < 0) {
+      rounded = 0;
+    }
+    return rounded;
+  };
+
+  toggleEditingHits() {
+    this.setState({ isEditingHits: !this.state.isEditingHits });
+  }
+
+  toggleEditingFPs() {
+    this.setState({ isEditingFP: !this.state.isEditingFP });
+  }
+
+  updateHitsInput = e => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    var new_signal_mean =
+      this.state.criterion + this.invnorm(value, this.state.signal_sigma);
+
+    new_signal_mean = Math.round(new_signal_mean * 100) / 100;
+
+    this.setState({
+      hits: value,
+      signal_mean: new_signal_mean,
+      dprime:
+        (new_signal_mean - this.state.noise_mean) /
+        Math.sqrt(
+          0.5 *
+            (Math.pow(this.state.signal_sigma, 2) +
+              Math.pow(this.state.noise_sigma, 2))
+        ),
+      misses: 1 - value
+    });
+  };
+
+  updateFPsInput = e => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    var new_noise_mean =
+      this.state.criterion + this.invnorm(value, this.state.noise_sigma);
+
+    new_noise_mean = Math.round(new_noise_mean * 100) / 100;
+
+    this.setState({
+      fp: value,
+      noise_mean: new_noise_mean,
+      dprime:
+        (this.state.signal_mean - new_noise_mean) /
+        Math.sqrt(
+          0.5 *
+            (Math.pow(this.state.signal_sigma, 2) +
+              Math.pow(this.state.noise_sigma, 2))
+        ),
+      cr: 1 - value
+    });
+  };
+
   renderFields() {
     var rounded_dprime = (Math.round(this.state.dprime * 100) / 100).toFixed(2);
     var rounded_hits = (Math.round(this.state.hits * 100) / 100).toFixed(2);
     var rounded_misses = (Math.round(this.state.misses * 100) / 100).toFixed(2);
     var rounded_fp = (Math.round(this.state.fp * 100) / 100).toFixed(2);
     var rounded_cr = (Math.round(this.state.cr * 100) / 100).toFixed(2);
+
+    let hitsBox;
+    if (this.state.isEditingHits) {
+      hitsBox = (
+        <Input
+          type="number"
+          name="hits"
+          id="hitsInput"
+          value={this.state.hits}
+          onChange={this.updateHitsInput}
+          onClick={this.incrementHits}
+          onBlur={this.toggleEditingHits.bind(this)}
+          min={0}
+          max={1}
+          step={0.1}
+        />
+      );
+    } else {
+      hitsBox = (
+        <Input
+          type="text"
+          name="hits"
+          id="hitsInput"
+          value={rounded_hits}
+          onFocus={this.toggleEditingHits.bind(this)}
+          readOnly
+        />
+      );
+    }
+
+    let FPBox;
+    if (this.state.isEditingFP) {
+      FPBox = (
+        <Input
+          type="number"
+          name="FPs"
+          id="FPsInput"
+          value={this.state.fp}
+          onChange={this.updateFPsInput}
+          onBlur={this.toggleEditingFPs.bind(this)}
+          min={0}
+          max={1}
+          step={0.1}
+        />
+      );
+    } else {
+      FPBox = (
+        <Input
+          type="text"
+          name="FPs"
+          id="FPsInput"
+          value={rounded_fp}
+          onFocus={this.toggleEditingFPs.bind(this)}
+          readOnly
+        />
+      );
+    }
 
     return (
       <Container>
@@ -290,10 +419,10 @@ class Calc extends Component {
         </Row>
         <Row>
           <Col lg="6" xs="6">
-            Hits:
-            <br />
-            {` `}
-            <strong>{rounded_hits}</strong>
+            <FormGroup>
+              <Label for="hitsInput">Hits:</Label>
+              {hitsBox}
+            </FormGroup>
           </Col>
           <Col lg="6" xs="6">
             Misses:
@@ -305,9 +434,10 @@ class Calc extends Component {
 
         <Row>
           <Col lg="6" xs="6">
-            False Positives:{` `}
-            <br />
-            <strong>{rounded_fp}</strong>
+            <FormGroup>
+              <Label for="FPsInput">False Positives:</Label>
+              {FPBox}
+            </FormGroup>
           </Col>
           <Col lg="6" xs="6">
             Correct Rejections:{` `}
