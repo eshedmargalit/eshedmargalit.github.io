@@ -30,6 +30,16 @@ class Calc extends Component {
     this.updateMetrics();
   }
 
+  roundTruncate = x => {
+    var rounded = Math.round(x * 100) / 100;
+    if (rounded > 1) {
+      rounded = 1;
+    } else if (rounded < 0) {
+      rounded = 0;
+    }
+    return rounded;
+  };
+
   cdfNormal(x, mean, standardDeviation) {
     return (1 - erf((mean - x) / (Math.sqrt(2) * standardDeviation))) / 2;
   }
@@ -59,10 +69,12 @@ class Calc extends Component {
               prevState.signal_sigma
             )
         ),
-        misses: this.cdfNormal(
-          prevState.criterion,
-          prevState.signal_mean,
-          prevState.signal_sigma
+        misses: this.roundTruncate(
+          this.cdfNormal(
+            prevState.criterion,
+            prevState.signal_mean,
+            prevState.signal_sigma
+          )
         ),
         fp: this.roundTruncate(
           1 -
@@ -72,10 +84,12 @@ class Calc extends Component {
               prevState.noise_sigma
             )
         ),
-        cr: this.cdfNormal(
-          prevState.criterion,
-          prevState.noise_mean,
-          prevState.noise_sigma
+        cr: this.roundTruncate(
+          this.cdfNormal(
+            prevState.criterion,
+            prevState.noise_mean,
+            prevState.noise_sigma
+          )
         )
       };
     });
@@ -273,22 +287,20 @@ class Calc extends Component {
     );
   }
 
-  roundTruncate = x => {
-    var rounded = Math.round(x * 100) / 100;
-    if (rounded > 1) {
-      rounded = 1;
-    } else if (rounded < 0) {
-      rounded = 0;
-    }
-    return rounded;
-  };
-
   toggleEditingHits() {
     this.setState({ isEditingHits: !this.state.isEditingHits });
   }
 
+  toggleEditingMisses() {
+    this.setState({ isEditingMisses: !this.state.isEditingMisses });
+  }
+
   toggleEditingFPs() {
     this.setState({ isEditingFP: !this.state.isEditingFP });
+  }
+
+  toggleEditingCRs() {
+    this.setState({ isEditingCR: !this.state.isEditingCR });
   }
 
   updateHitsInput = e => {
@@ -314,6 +326,30 @@ class Calc extends Component {
     });
   };
 
+  updateMissesInput = e => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    const hits = 1 - value;
+    var new_signal_mean =
+      this.state.criterion + this.invnorm(hits, this.state.signal_sigma);
+
+    new_signal_mean = Math.round(new_signal_mean * 100) / 100;
+
+    this.setState({
+      misses: value,
+      signal_mean: new_signal_mean,
+      dprime:
+        (new_signal_mean - this.state.noise_mean) /
+        Math.sqrt(
+          0.5 *
+            (Math.pow(this.state.signal_sigma, 2) +
+              Math.pow(this.state.noise_sigma, 2))
+        ),
+      hits: hits
+    });
+  };
+
   updateFPsInput = e => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
@@ -334,6 +370,30 @@ class Calc extends Component {
               Math.pow(this.state.noise_sigma, 2))
         ),
       cr: 1 - value
+    });
+  };
+
+  updateCRsInput = e => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    const FP = 1 - value;
+    var new_noise_mean =
+      this.state.criterion + this.invnorm(FP, this.state.noise_sigma);
+
+    new_noise_mean = Math.round(new_noise_mean * 100) / 100;
+
+    this.setState({
+      fp: FP,
+      noise_mean: new_noise_mean,
+      dprime:
+        (this.state.signal_mean - new_noise_mean) /
+        Math.sqrt(
+          0.5 *
+            (Math.pow(this.state.signal_sigma, 2) +
+              Math.pow(this.state.noise_sigma, 2))
+        ),
+      cr: value
     });
   };
 
@@ -373,6 +433,35 @@ class Calc extends Component {
       );
     }
 
+    let missesBox;
+    if (this.state.isEditingMisses) {
+      missesBox = (
+        <Input
+          type="number"
+          name="misses"
+          id="missesInput"
+          value={this.state.misses}
+          onChange={this.updateMissesInput}
+          onClick={this.incrementMisses}
+          onBlur={this.toggleEditingMisses.bind(this)}
+          min={0}
+          max={1}
+          step={0.1}
+        />
+      );
+    } else {
+      missesBox = (
+        <Input
+          type="text"
+          name="misses"
+          id="missesInput"
+          value={rounded_misses}
+          onFocus={this.toggleEditingMisses.bind(this)}
+          readOnly
+        />
+      );
+    }
+
     let FPBox;
     if (this.state.isEditingFP) {
       FPBox = (
@@ -396,6 +485,34 @@ class Calc extends Component {
           id="FPsInput"
           value={rounded_fp}
           onFocus={this.toggleEditingFPs.bind(this)}
+          readOnly
+        />
+      );
+    }
+
+    let CRBox;
+    if (this.state.isEditingCR) {
+      CRBox = (
+        <Input
+          type="number"
+          name="CRs"
+          id="CRsInput"
+          value={this.state.cr}
+          onChange={this.updateCRsInput}
+          onBlur={this.toggleEditingCRs.bind(this)}
+          min={0}
+          max={1}
+          step={0.1}
+        />
+      );
+    } else {
+      CRBox = (
+        <Input
+          type="text"
+          name="CRs"
+          id="CRsInput"
+          value={rounded_cr}
+          onFocus={this.toggleEditingCRs.bind(this)}
           readOnly
         />
       );
@@ -425,10 +542,10 @@ class Calc extends Component {
             </FormGroup>
           </Col>
           <Col lg="6" xs="6">
-            Misses:
-            <br />
-            {` `}
-            <strong>{rounded_misses}</strong>
+            <FormGroup>
+              <Label for="missesInput">Misses:</Label>
+              {missesBox}
+            </FormGroup>
           </Col>
         </Row>
 
@@ -440,9 +557,10 @@ class Calc extends Component {
             </FormGroup>
           </Col>
           <Col lg="6" xs="6">
-            Correct Rejections:{` `}
-            <br />
-            <strong>{rounded_cr}</strong>
+            <FormGroup>
+              <Label for="CRsInput">Correct Rejections:</Label>
+              {CRBox}
+            </FormGroup>
           </Col>
         </Row>
       </Container>
