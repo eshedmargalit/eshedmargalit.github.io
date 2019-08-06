@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Container, Row, Col } from "reactstrap";
 import Slider from "react-rangeslider";
-
-import "react-rangeslider/lib/index.css";
 import Chart from "./Chart.js";
 import ROCCurve from "./ROCCurve.js";
+
+// utils
+import {
+  roundTruncate,
+  getROCCurve,
+  normalCDF,
+  normalICDF
+} from "./mathUtils.js";
+
+// stylesheets
+import "react-rangeslider/lib/index.css";
 import "./Calc.css";
-import { erf } from "mathjs";
 
 class Calc extends Component {
   constructor(props) {
@@ -14,41 +22,22 @@ class Calc extends Component {
     this.state = {
       signal_mean: 15,
       signal_sigma: 4,
-      signal_color: "#0d5e08",
       noise_mean: 10,
       noise_sigma: 4,
-      noise_color: "#960f0f",
       criterion: 12,
       sigma_lock: true,
       isEditingHits: false,
-      isEditingFP: false
+      isEditingFP: false,
+      isEditingMisses: false,
+      isEditingCR: false
     };
+    this.signal_color = "#0d5e08";
+    this.noise_color = "#960f0f";
     this.updateMetrics = this.updateMetrics.bind(this);
   }
 
   componentDidMount() {
     this.updateMetrics();
-  }
-
-  roundTruncate = x => {
-    var rounded = Math.round(x * 100) / 100;
-    if (rounded > 1) {
-      rounded = 1;
-    } else if (rounded < 0) {
-      rounded = 0;
-    }
-    return rounded;
-  };
-
-  cdfNormal(x, mean, standardDeviation) {
-    return (1 - erf((mean - x) / (Math.sqrt(2) * standardDeviation))) / 2;
-  }
-
-  invnorm(value, std) {
-    var gaussian = require("gaussian");
-    var distribution = gaussian(0, Math.pow(std, 2));
-    var sample = distribution.ppf(value);
-    return sample;
   }
 
   updateMetrics() {
@@ -61,31 +50,31 @@ class Calc extends Component {
               (Math.pow(prevState.signal_sigma, 2) +
                 Math.pow(prevState.noise_sigma, 2))
           ),
-        hits: this.roundTruncate(
+        hits: roundTruncate(
           1 -
-            this.cdfNormal(
+            normalCDF(
               prevState.criterion,
               prevState.signal_mean,
               prevState.signal_sigma
             )
         ),
-        misses: this.roundTruncate(
-          this.cdfNormal(
+        misses: roundTruncate(
+          normalCDF(
             prevState.criterion,
             prevState.signal_mean,
             prevState.signal_sigma
           )
         ),
-        fp: this.roundTruncate(
+        fp: roundTruncate(
           1 -
-            this.cdfNormal(
+            normalCDF(
               prevState.criterion,
               prevState.noise_mean,
               prevState.noise_sigma
             )
         ),
-        cr: this.roundTruncate(
-          this.cdfNormal(
+        cr: roundTruncate(
+          normalCDF(
             prevState.criterion,
             prevState.noise_mean,
             prevState.noise_sigma
@@ -95,47 +84,7 @@ class Calc extends Component {
     });
   }
 
-  getROCCurve() {
-    var data = [];
-    for (var criterion = 0; criterion < 30; criterion += 0.1) {
-      var hits =
-        1 -
-        this.cdfNormal(
-          criterion,
-          this.state.signal_mean,
-          this.state.signal_sigma
-        );
-      var false_positives =
-        1 -
-        this.cdfNormal(
-          criterion,
-          this.state.noise_mean,
-          this.state.noise_sigma
-        );
-      var el = {
-        false_positives: false_positives,
-        hits: hits
-      };
-      data.push(el);
-    }
-
-    // make sure extremes are represented
-    data.push({
-      false_positives: 0,
-      hits: 0
-    });
-    data.push({
-      false_positives: 1,
-      hits: 1
-    });
-
-    data.sort((a, b) => {
-      return a.false_positives - b.false_positives;
-    });
-
-    return data;
-  }
-
+  // slider update handlers
   handleOnChangeSignalMu = value => {
     this.setState({
       signal_mean: value
@@ -185,6 +134,7 @@ class Calc extends Component {
     this.updateMetrics();
   };
 
+  // checkbox toggle handler
   toggleCheckbox = e => {
     this.setState({
       sigma_lock: e.target.checked
@@ -287,6 +237,7 @@ class Calc extends Component {
     );
   }
 
+  // field edit toggles
   toggleEditingHits() {
     this.setState({ isEditingHits: !this.state.isEditingHits });
   }
@@ -308,7 +259,7 @@ class Calc extends Component {
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
     var new_signal_mean =
-      this.state.criterion + this.invnorm(value, this.state.signal_sigma);
+      this.state.criterion + normalICDF(value, this.state.signal_sigma);
 
     new_signal_mean = Math.round(new_signal_mean * 100) / 100;
 
@@ -332,7 +283,7 @@ class Calc extends Component {
 
     const hits = 1 - value;
     var new_signal_mean =
-      this.state.criterion + this.invnorm(hits, this.state.signal_sigma);
+      this.state.criterion + normalICDF(hits, this.state.signal_sigma);
 
     new_signal_mean = Math.round(new_signal_mean * 100) / 100;
 
@@ -355,7 +306,7 @@ class Calc extends Component {
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
     var new_noise_mean =
-      this.state.criterion + this.invnorm(value, this.state.noise_sigma);
+      this.state.criterion + normalICDF(value, this.state.noise_sigma);
 
     new_noise_mean = Math.round(new_noise_mean * 100) / 100;
 
@@ -379,7 +330,7 @@ class Calc extends Component {
 
     const FP = 1 - value;
     var new_noise_mean =
-      this.state.criterion + this.invnorm(FP, this.state.noise_sigma);
+      this.state.criterion + normalICDF(FP, this.state.noise_sigma);
 
     new_noise_mean = Math.round(new_noise_mean * 100) / 100;
 
@@ -577,10 +528,10 @@ class Calc extends Component {
               height={CALC_HEIGHT}
               signal_mean={this.state.signal_mean}
               signal_sigma={this.state.signal_sigma}
-              signal_color={this.state.signal_color}
+              signal_color={this.signal_color}
               noise_mean={this.state.noise_mean}
               noise_sigma={this.state.noise_sigma}
-              noise_color={this.state.noise_color}
+              noise_color={this.noise_color}
               criterion={this.state.criterion}
             />
           </Col>
@@ -589,7 +540,12 @@ class Calc extends Component {
             <br />
             <ROCCurve
               size={CALC_HEIGHT}
-              roc_data={this.getROCCurve()}
+              roc_data={getROCCurve(
+                this.state.signal_mean,
+                this.state.signal_sigma,
+                this.state.noise_mean,
+                this.state.noise_sigma
+              )}
               hit_rate={this.state.hits}
               fp_rate={this.state.fp}
               signal_color={this.state.signal_color}
