@@ -413,7 +413,6 @@ class Calc extends Component {
           id="hitsInput"
           value={this.state.hits}
           onChange={this.updateHitsInput}
-          onClick={this.incrementHits}
           onBlur={this.toggleEditingHits.bind(this)}
           min={0}
           max={1}
@@ -442,7 +441,6 @@ class Calc extends Component {
           id="missesInput"
           value={this.state.misses}
           onChange={this.updateMissesInput}
-          onClick={this.incrementMisses}
           onBlur={this.toggleEditingMisses.bind(this)}
           min={0}
           max={1}
