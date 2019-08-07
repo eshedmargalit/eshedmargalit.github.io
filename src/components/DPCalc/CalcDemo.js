@@ -37,7 +37,8 @@ class CalcDemo extends Component {
       show_signal_gaussian: false,
       show_noise_gaussian: false,
       show_signal_counts: true,
-      show_noise_counts: true
+      show_noise_counts: true,
+      part: 1
     };
   }
 
@@ -137,13 +138,9 @@ class CalcDemo extends Component {
   };
 
   renderInstructions() {
-    return (
-      <Container>
-        <Row>
-          <Col>
-            <br />
-          </Col>
-        </Row>
+    let part_to_render;
+    if (this.state.part === 1) {
+      part_to_render = (
         <Row>
           <Col>
             Let's collect some data! First, we'll build up our understanding of
@@ -155,7 +152,7 @@ class CalcDemo extends Component {
               onClick={e => {
                 var value_dict_copy = this.state.value_dict;
                 value_dict_copy[18 - 1].signal_count = 1;
-                this.setState({ value_dict: value_dict_copy });
+                this.setState({ value_dict: value_dict_copy, part: 2 });
               }}
             >
               Collect Trial #1
@@ -163,6 +160,9 @@ class CalcDemo extends Component {
             <hr />
           </Col>
         </Row>
+      );
+    } else if (this.state.part === 2) {
+      part_to_render = (
         <Row>
           <Col>
             Great! It's tempting to conclude that "the neuron's response to a
@@ -173,12 +173,19 @@ class CalcDemo extends Component {
               onClick={e => {
                 var value_dict_copy = this.state.value_dict;
                 value_dict_copy[20 - 1].signal_count = 1;
-                this.setState({ value_dict: value_dict_copy });
+                this.setState({ value_dict: value_dict_copy, part: 3 });
               }}
             >
               Collect Trial #2.
             </Button>
             <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part == 3) {
+      part_to_render = (
+        <Row>
+          <Col>
             Oh dear... It looks like our neuron isn't as reliable as we thought.
             In practice, we refer to this variability as 'noise', and you'll
             hear neuroscientistis say that a neuron is "noisy" if its response
@@ -188,7 +195,7 @@ class CalcDemo extends Component {
             <Button
               onClick={e => {
                 var value_dict_copy = this.incrementSignalCounts(250);
-                this.setState({ value_dict: value_dict_copy });
+                this.setState({ value_dict: value_dict_copy, part: 4 });
               }}
             >
               {" "}
@@ -197,6 +204,9 @@ class CalcDemo extends Component {
             <hr />
           </Col>
         </Row>
+      );
+    } else if (this.state.part == 4) {
+      part_to_render = (
         <Row>
           <Col>
             Now that we've invested the time and effort into collecting 253
@@ -219,6 +229,21 @@ class CalcDemo extends Component {
               Fit that curve!
             </Button>
             <hr />
+          </Col>
+        </Row>
+      );
+    }
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <br />
+          </Col>
+        </Row>
+        {part_to_render}
+        <Row>
+          <Col>
+            <Button> Reset the story </Button>
           </Col>
         </Row>
       </Container>
