@@ -8,61 +8,34 @@ class CalcDemo extends Component {
   constructor(props) {
     super(props);
     this.chartHeight = 400;
-    this.value_options = [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30
-    ];
+    this.value_options = [];
+
+    for (let i = 1; i <= 30; i++) {
+      this.value_options.push(i);
+    }
     var value_dict = this.value_options.map(val => {
       return { x: val, signal_count: 0, noise_count: 0 };
     });
 
     var gaussian = require("gaussian");
-    this.signal_distribution_mean = 15;
-    this.signal_distribution_variance = 16;
+    this.signal_distribution_mean = 20;
+    this.signal_distribution_variance = 9;
     this.signal_distribution = gaussian(
       this.signal_distribution_mean,
       this.signal_distribution_variance
     );
 
-    this.noise_distribution_mean = 12;
-    this.noise_distribution_variance = 16;
+    this.noise_distribution_mean = 10;
+    this.noise_distribution_variance = 9;
     this.noise_distribution = gaussian(
       this.noise_distribution_mean,
       this.noise_distribution_variance
     );
 
     this.state = {
-      ylabel: "Count",
       value_dict: value_dict,
       show_signal_gaussian: false,
+      show_noise_gaussian: false,
       show_signal_counts: true,
       show_noise_counts: true
     };
@@ -173,55 +146,79 @@ class CalcDemo extends Component {
         </Row>
         <Row>
           <Col>
-            <Button onClick={this.signalIncOneHandler}>SignalInc</Button>
-            <br />
-            <br />
-
-            <Button onClick={this.signalIncTenHandler}>SignalInc10</Button>
-            <br />
-            <br />
-
-            <Button onClick={this.signalIncHundredHandler}>SignalInc100</Button>
-            <br />
-            <br />
+            Let's collect some data! First, we'll build up our understanding of
+            how this neuron responds when we play the beep. If we run a single
+            trial of this experiment, we might observe some firing rate from the
+            neuron, like 18 spikes per second.
+            <hr />
+            <Button
+              onClick={e => {
+                var value_dict_copy = this.state.value_dict;
+                value_dict_copy[18 - 1].signal_count = 1;
+                this.setState({ value_dict: value_dict_copy });
+              }}
+            >
+              Collect Trial #1
+            </Button>
+            <hr />
           </Col>
+        </Row>
+        <Row>
           <Col>
-            <Button onClick={this.noiseIncOneHandler}>NoiseInc</Button>
-            <br />
-            <br />
-
-            <Button onClick={this.noiseIncTenHandler}>NoiseInc10</Button>
-            <br />
-            <br />
-
-            <Button onClick={this.noiseIncHundredHandler}>NoiseInc100</Button>
-            <br />
-            <br />
+            Great! It's tempting to conclude that "the neuron's response to a
+            beep is to fire at a rate of 18 spikes per second, but biology is
+            messy. Let's repeat our experiment and see what happens.
+            <hr />
+            <Button
+              onClick={e => {
+                var value_dict_copy = this.state.value_dict;
+                value_dict_copy[20 - 1].signal_count = 1;
+                this.setState({ value_dict: value_dict_copy });
+              }}
+            >
+              Collect Trial #2.
+            </Button>
+            <hr />
+            Oh dear... It looks like our neuron isn't as reliable as we thought.
+            In practice, we refer to this variability as 'noise', and you'll
+            hear neuroscientistis say that a neuron is "noisy" if its response
+            to the same stimulus (our beep) is unpredictable. Let's run 250 more
+            trials of our experiment to see how noisy this neuron is.
+            <hr />
+            <Button
+              onClick={e => {
+                var value_dict_copy = this.incrementSignalCounts(250);
+                this.setState({ value_dict: value_dict_copy });
+              }}
+            >
+              {" "}
+              Collect Trials #3 - #253.
+            </Button>
+            <hr />
           </Col>
+        </Row>
+        <Row>
           <Col>
-            <Button onClick={this.toggleSignalGaussianHandler}>
-              ToggleSignalGaussian
+            Now that we've invested the time and effort into collecting 253
+            trials of "play a beep and measure neuron firing rate", we have a
+            pretty good idea of how noisy this neuron is. In practice, we can
+            summarize this <em>distribution</em> of firing rates by fitting a
+            Gaussian curve to the histogram. Gaussian distributions are nice
+            because we only need two numbers to describe them: a mean (the
+            center of mass) and the variance (a measure of spread, or how far
+            values are on average from the center of mass). Notice that higher
+            variance means that the neuron's response to a beep is{" "}
+            <em>noisier</em>, or less reliable.
+            <hr />
+            <Button
+              onClick={e => {
+                this.setState({ show_signal_gaussian: true });
+              }}
+            >
+              {" "}
+              Fit that curve!
             </Button>
-            <br />
-            <br />
-
-            <Button onClick={this.toggleNoiseGaussianHandler}>
-              ToggleNoiseGaussian
-            </Button>
-            <br />
-            <br />
-
-            <Button onClick={this.toggleSignalCountHandler}>
-              ToggleSignalBars
-            </Button>
-            <br />
-            <br />
-
-            <Button onClick={this.toggleNoiseCountHandler}>
-              ToggleNoiseBars
-            </Button>
-            <br />
-            <br />
+            <hr />
           </Col>
         </Row>
       </Container>
@@ -231,37 +228,27 @@ class CalcDemo extends Component {
   constructData() {
     const valdict = this.state.value_dict;
 
-    const signalMaxCount = _.maxBy(valdict, function(o) {
-      return o.signal_count;
-    }).signal_count;
-    var signal_mult_factor =
-      (1 / this.signal_distribution.pdf(this.signal_distribution_mean)) *
-      signalMaxCount;
-
-    const noiseMaxCount = _.maxBy(valdict, function(o) {
-      return o.noise_count;
-    }).noise_count;
-    var noise_mult_factor =
-      (1 / this.noise_distribution.pdf(this.noise_distribution_mean)) *
-      noiseMaxCount;
-
+    // set up base values
     var data = valdict.map(item => {
       return {
         x: item.x
       };
     });
 
+    // add pieces as needed
     if (this.state.show_signal_gaussian) {
       for (let i = 0; i < data.length; i++) {
-        data[i].signal_gaussian_value =
-          this.signal_distribution.pdf(valdict[i].x) * signal_mult_factor;
+        data[i].signal_gaussian_value = this.signal_distribution.pdf(
+          valdict[i].x
+        );
       }
     }
 
     if (this.state.show_noise_gaussian) {
       for (let i = 0; i < data.length; i++) {
-        data[i].noise_gaussian_value =
-          this.noise_distribution.pdf(valdict[i].x) * noise_mult_factor;
+        data[i].noise_gaussian_value = this.noise_distribution.pdf(
+          valdict[i].x
+        );
       }
     }
 
@@ -277,6 +264,7 @@ class CalcDemo extends Component {
       }
     }
 
+    // sort the data
     data.sort((a, b) => {
       return a.x - b.x;
     });
@@ -292,11 +280,7 @@ class CalcDemo extends Component {
             <br />
             <br />
             <br />
-            <DemoChart
-              ylabel={this.state.ylabel}
-              data={this.constructData()}
-              height={this.chartHeight}
-            />
+            <DemoChart data={this.constructData()} height={this.chartHeight} />
             <br />
             <br />
             <br />

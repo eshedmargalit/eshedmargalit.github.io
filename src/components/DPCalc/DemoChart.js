@@ -17,31 +17,58 @@ class DemoChart extends Component {
     const noise_color = "#960f0f";
     return (
       <ResponsiveContainer width="100%" height={this.props.height}>
-        <ComposedChart width={730} height={250} data={this.props.data}>
+        <ComposedChart data={this.props.data}>
           <XAxis dataKey="x" ticks={xticks}>
             <Label value="Firing Rate" offset={0} position="insideBottom" />
           </XAxis>
           <YAxis
+            yAxisId="left"
             label={{
-              value: this.props.ylabel,
+              value: "Counts",
               angle: -90,
               position: "insideLeft"
             }}
+          />
+          <YAxis
+            yAxisId="right"
+            label={{
+              value: "Probability",
+              angle: -90,
+              position: "right",
+              height: 20
+            }}
+            orientation="right"
           />
           <CartesianGrid stroke="#f5f5f5" />
           <Area
             dataKey="signal_gaussian_value"
             type="monotone"
             fill={signal_color}
+            stroke={signal_color}
+            yAxisId="right"
           />
-          <Bar dataKey="signal_count" barSize={20} fill={signal_color} />
+          <Bar
+            yAxisId="left"
+            dataKey="signal_count"
+            barSize={50}
+            fill={signal_color}
+            stroke={signal_color}
+          />
 
           <Area
             dataKey="noise_gaussian_value"
             type="monotone"
             fill={noise_color}
+            stroke={noise_color}
+            yAxisId="right"
           />
-          <Bar dataKey="noise_count" barSize={20} fill={noise_color} />
+          <Bar
+            yAxisId="left"
+            dataKey="noise_count"
+            barSize={50}
+            fill={noise_color}
+            stroke={noise_color}
+          />
         </ComposedChart>
       </ResponsiveContainer>
     );
