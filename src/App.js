@@ -8,6 +8,7 @@ import Research from "./components/Research/Research";
 import PaperReviews from "./components/PaperReviews/PaperReviews";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import DPCalc from "./components/DPCalc/DPCalc";
+import CalcDemo from "./components/DPCalc/CalcDemo";
 import Clipboard from "clipboard";
 
 import "./App.css";
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/Research" component={Research} />
             <Route exact path="/PaperReviews" component={PaperReviews} />
             <Route exact path="/DPCalc" component={DPCalc} />
+            <Route exact path="/CalcDemo" component={CalcDemo} />
             <Route path="/" component={Footer} />
           </div>
         </ScrollToTop>
