@@ -138,6 +138,28 @@ class CalcDemo extends Component {
   };
 
   renderInstructions() {
+    const reset_button = (
+      <Button
+        color="danger"
+        onClick={e => {
+          const blank_value_dict = this.value_options.map(val => {
+            return { x: val, signal_count: 0, noise_count: 0 };
+          });
+          this.setState({
+            value_dict: blank_value_dict,
+            show_signal_gaussian: false,
+            show_noise_gaussian: false,
+            show_signal_counts: true,
+            show_noise_counts: true,
+            part: 1
+          });
+        }}
+      >
+        {" "}
+        Reset the Story{" "}
+      </Button>
+    );
+
     let part_to_render;
     if (this.state.part === 1) {
       part_to_render = (
@@ -182,7 +204,7 @@ class CalcDemo extends Component {
           </Col>
         </Row>
       );
-    } else if (this.state.part == 3) {
+    } else if (this.state.part === 3) {
       part_to_render = (
         <Row>
           <Col>
@@ -205,7 +227,7 @@ class CalcDemo extends Component {
           </Col>
         </Row>
       );
-    } else if (this.state.part == 4) {
+    } else if (this.state.part === 4) {
       part_to_render = (
         <Row>
           <Col>
@@ -219,14 +241,173 @@ class CalcDemo extends Component {
             values are on average from the center of mass). Notice that higher
             variance means that the neuron's response to a beep is{" "}
             <em>noisier</em>, or less reliable.
+            <br />
+            <br />
+            <em> Fun side note:</em> in reality, firing rates don't often follow
+            a Gaussian distribution. Instead, they follow what's called a
+            Poisson distribution. Under a Poisson distribution, the mean and
+            variance are equal, so neurons that fire more rapidly are also less
+            reliable in how rapidly they fire!
             <hr />
             <Button
               onClick={e => {
-                this.setState({ show_signal_gaussian: true });
+                this.setState({ show_signal_gaussian: true, part: 5 });
               }}
             >
               {" "}
               Fit that curve!
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part === 5) {
+      part_to_render = (
+        <Row>
+          <Col>
+            Congratulations! You've just run a challenging electrophysiology
+            experiment! We can now say that this neuron fires about 20 spikes
+            per second, on average, when a beep is played. So, what do you
+            think? Is this neuron good at detecting beeps?
+            <br />
+            <br />
+            You might find this question difficult to answer. After all, what
+            makes a signal detector <em>good</em>? Intuitively, we want the
+            neuron to respond differently when there is a beep to detect and
+            when there isn't a beep to detect. If it also fires 20 spikes per
+            second when there's no beep to detect, then it's a pretty lousy
+            detector. As an analogy, imagine a radiologist that gives the same
+            diagnosis regardless of whether there is or is not a tumor in an
+            medical image.
+            <br />
+            <br />
+            The way out of this uncertainty is to measure how the neuron
+            responds when no beep is played. Let's run a trial of our experiment
+            to figure out the firing rate when we don't play a beep. Imagine
+            pressing a button that looks the same as your Beep Button, but isn't
+            wired up to the speakers.
+            <hr />
+            <Button
+              onClick={e => {
+                var value_dict_copy = this.state.value_dict;
+                value_dict_copy[6 - 1].noise_count = 1;
+                this.setState({ value_dict: value_dict_copy, part: 6 });
+              }}
+            >
+              Collect NoBeep Trial #1
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part === 6) {
+      part_to_render = (
+        <Row>
+          <Col>
+            6 spikes per second, cool! Like earlier, you might notice that this
+            single datapoint doesn't tell us much. Does this neuron always fire
+            6 spikes per second in the NoBeep condition? Let's collect a{" "}
+            <strong> lot </strong> more data in this condition to get a better
+            idea of how this neuron behaves.
+            <hr />
+            <Button
+              onClick={e => {
+                var value_dict_copy = this.incrementNoiseCounts(251);
+                this.setState({ value_dict: value_dict_copy, part: 7 });
+              }}
+            >
+              {" "}
+              Collect NoBeep Trials #2 - #253.
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part === 7) {
+      part_to_render = (
+        <Row>
+          <Col>
+            As before, let's fit a Gaussian distribution to these data.
+            <hr />
+            <Button
+              onClick={e => {
+                this.setState({ show_noise_gaussian: true, part: 8 });
+              }}
+            >
+              {" "}
+              Fit that Curve!
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part === 8) {
+      part_to_render = (
+        <Row>
+          <Col>
+            Now we have the information we need to ask "is this neuron a good
+            signal detector"? It certainly looks that way: we can see that the
+            neuron fires more on average when the Beep <em>is</em> played than
+            when it <em>is not</em> played. But notice it isn't perfect. If the
+            neuron fires 15 spikes per second, we can't be sure if there was
+            actually a Beep played or not. Engineers have, unsurpringly,
+            abandoned these subjective evaluations of "good" and "bad" signal
+            detectors with hard numbers. The{" "}
+            <strong> sensitivity index </strong>, or d&#39;, is a measure of how
+            sensitive a sensor is. If the sensor (our neuron) responds more
+            strongly to the signal (our Beep) than when there is no signal, it
+            has a high d&#39;. Another important way to think about d&#39; is
+            that it measures how well-separated the Signal Present (green) and
+            Signal Absent (red) distributions are. One consequence of this
+            definition is that if the means of the distributions get farther
+            apart, d&#39; will increase.
+            <br />
+            <br />
+            Right now, these distributions correspond to a d' of 3.33. Let's see
+            what happens if the means drift farther apart:
+            <hr />
+            <Button
+              onClick={e => {
+                var new_value_dict = this.value_options.map(val => {
+                  return { x: val, signal_count: 0, noise_count: 0 };
+                });
+
+                var gaussian = require("gaussian");
+                var signal_distribution = gaussian(24, 9);
+                var noise_distribution = gaussian(6, 9);
+
+                for (let i = 0; i < 250; i++) {
+                  var signal_sample = Math.floor(
+                    signal_distribution.ppf(Math.random())
+                  );
+                  var noise_sample = Math.floor(
+                    noise_distribution.ppf(Math.random())
+                  );
+
+                  if (signal_sample < 1) {
+                    signal_sample = 1;
+                  } else if (signal_sample > 30) {
+                    signal_sample = 30;
+                  }
+
+                  if (noise_sample < 1) {
+                    noise_sample = 1;
+                  } else if (noise_sample > 30) {
+                    noise_sample = 30;
+                  }
+
+                  new_value_dict[signal_sample - 1].signal_count++;
+                  new_value_dict[noise_sample - 1].noise_count++;
+                }
+                this.setState({
+                  value_dict: new_value_dict,
+                  show_signal_gaussian: false,
+                  show_noise_gaussian: false
+                });
+              }}
+            >
+              {" "}
+              Move those Means!
             </Button>
             <hr />
           </Col>
@@ -242,9 +423,7 @@ class CalcDemo extends Component {
         </Row>
         {part_to_render}
         <Row>
-          <Col>
-            <Button> Reset the story </Button>
-          </Col>
+          <Col>{reset_button}</Col>
         </Row>
       </Container>
     );
