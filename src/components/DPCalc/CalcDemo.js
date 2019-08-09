@@ -1,56 +1,68 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
-import _ from "lodash";
+import gaussian from "gaussian";
 
 import DemoChart from "./DemoChart.js";
 
 class CalcDemo extends Component {
   constructor(props) {
     super(props);
-    this.chartHeight = 400;
     this.value_options = [];
 
     for (let i = 1; i <= 30; i++) {
       this.value_options.push(i);
     }
-    var value_dict = this.value_options.map(val => {
+    var blank_value_dict = this.value_options.map(val => {
       return { x: val, signal_count: 0, noise_count: 0 };
     });
 
-    var gaussian = require("gaussian");
-    this.signal_distribution_mean = 20;
-    this.signal_distribution_variance = 9;
-    this.signal_distribution = gaussian(
-      this.signal_distribution_mean,
-      this.signal_distribution_variance
-    );
-
-    this.noise_distribution_mean = 10;
-    this.noise_distribution_variance = 9;
-    this.noise_distribution = gaussian(
-      this.noise_distribution_mean,
-      this.noise_distribution_variance
-    );
+    this.chartHeight = 400;
 
     this.state = {
-      value_dict: value_dict,
+      value_dict: blank_value_dict,
       show_signal_gaussian: false,
       show_noise_gaussian: false,
       show_signal_counts: true,
       show_noise_counts: true,
-      part: 1
+      show_dprime: false,
+      signal_mean: 20,
+      noise_mean: 11,
+      signal_variance: 16,
+      noise_variance: 16,
+      part: 0
     };
+  }
+
+  componentDidMount() {
+    var blank_value_dict = this.getBlankValueDict();
+    this.setState({
+      value_dict: blank_value_dict
+    });
+  }
+
+  getBlankValueDict() {
+    var value_dict = this.value_options.map(val => {
+      return { x: val, signal_count: 0, noise_count: 0 };
+    });
+    return value_dict;
   }
 
   incrementSignalCounts(n) {
     var value_dict_copy = this.state.value_dict;
-    for (let i = 0; i < n; i++) {
-      var sample = Math.floor(this.signal_distribution.ppf(Math.random()));
+    var signal_distribution = gaussian(
+      this.state.signal_mean,
+      this.state.signal_variance
+    );
+    var min = Math.min(...this.value_options);
+    var max = Math.max(...this.value_options);
 
-      if (sample < 1) {
-        sample = 1;
-      } else if (sample > 30) {
-        sample = 30;
+    for (let i = 0; i < n; i++) {
+      var sample = Math.floor(signal_distribution.ppf(Math.random()));
+
+      if (sample < min) {
+        sample = min;
+      } else if (sample > max) {
+        sample = max;
       }
       value_dict_copy[sample - 1].signal_count++;
     }
@@ -60,13 +72,20 @@ class CalcDemo extends Component {
 
   incrementNoiseCounts(n) {
     var value_dict_copy = this.state.value_dict;
-    for (let i = 0; i < n; i++) {
-      var sample = Math.floor(this.noise_distribution.ppf(Math.random()));
+    var noise_distribution = gaussian(
+      this.state.noise_mean,
+      this.state.noise_variance
+    );
+    var min = Math.min(...this.value_options);
+    var max = Math.max(...this.value_options);
 
-      if (sample < 1) {
-        sample = 1;
-      } else if (sample > 30) {
-        sample = 30;
+    for (let i = 0; i < n; i++) {
+      var sample = Math.floor(noise_distribution.ppf(Math.random()));
+
+      if (sample < min) {
+        sample = min;
+      } else if (sample > max) {
+        sample = max;
       }
       value_dict_copy[sample - 1].noise_count++;
     }
@@ -74,83 +93,21 @@ class CalcDemo extends Component {
     return value_dict_copy;
   }
 
-  signalIncOneHandler = e => {
-    const update_dict = this.incrementSignalCounts(1);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-  signalIncTenHandler = e => {
-    const update_dict = this.incrementSignalCounts(10);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-  signalIncHundredHandler = e => {
-    const update_dict = this.incrementSignalCounts(100);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-
-  noiseIncOneHandler = e => {
-    const update_dict = this.incrementNoiseCounts(1);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-  noiseIncTenHandler = e => {
-    const update_dict = this.incrementNoiseCounts(10);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-  noiseIncHundredHandler = e => {
-    const update_dict = this.incrementNoiseCounts(100);
-    this.setState({
-      value_dict: update_dict
-    });
-  };
-
-  toggleSignalGaussianHandler = e => {
-    this.setState({
-      show_signal_gaussian: !this.state.show_signal_gaussian
-    });
-  };
-
-  toggleNoiseGaussianHandler = e => {
-    this.setState({
-      show_noise_gaussian: !this.state.show_noise_gaussian
-    });
-  };
-
-  toggleSignalCountHandler = e => {
-    this.setState({
-      show_signal_counts: !this.state.show_signal_counts
-    });
-  };
-
-  toggleNoiseCountHandler = e => {
-    console.log(this.state);
-    this.setState({
-      show_noise_counts: !this.state.show_noise_counts
-    });
-  };
-
   renderInstructions() {
     const reset_button = (
       <Button
         color="danger"
         onClick={e => {
-          const blank_value_dict = this.value_options.map(val => {
-            return { x: val, signal_count: 0, noise_count: 0 };
-          });
+          const blank_value_dict = this.getBlankValueDict();
           this.setState({
             value_dict: blank_value_dict,
             show_signal_gaussian: false,
             show_noise_gaussian: false,
             show_signal_counts: true,
             show_noise_counts: true,
+            show_dprime: false,
+            signal_mean: 20,
+            noise_mean: 11,
             part: 1
           });
         }}
@@ -161,7 +118,31 @@ class CalcDemo extends Component {
     );
 
     let part_to_render;
-    if (this.state.part === 1) {
+    if (this.state.part === 0) {
+      part_to_render = (
+        <Row>
+          <Col>
+            Imagine you have the good fortune to be a neuroscientist studying
+            the auditory system. Your goal for the day is to{" "}
+            <strong>test a hypothesis</strong>: that neurons in a given brain
+            area can detect a beep being played over a loudspeaker. You prepare
+            for the experiment by positioning a recording electrode next to a
+            single neuron, so that you can measure how fast the neuron is firing
+            (in units of spikes per second) at any given moment. How can we now
+            test our hypothesis?
+            <hr />
+            <Button
+              onClick={e => {
+                this.setState({ part: 1 });
+              }}
+            >
+              Let's get started!
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
+    } else if (this.state.part === 1) {
       part_to_render = (
         <Row>
           <Col>
@@ -331,7 +312,11 @@ class CalcDemo extends Component {
             <hr />
             <Button
               onClick={e => {
-                this.setState({ show_noise_gaussian: true, part: 8 });
+                this.setState({
+                  show_noise_gaussian: true,
+                  show_dprime: true,
+                  part: 8
+                });
               }}
             >
               {" "}
@@ -349,7 +334,7 @@ class CalcDemo extends Component {
             signal detector"? It certainly looks that way: we can see that the
             neuron fires more on average when the Beep <em>is</em> played than
             when it <em>is not</em> played. But notice it isn't perfect. If the
-            neuron fires 15 spikes per second, we can't be sure if there was
+            neuron fires 18 spikes per second, we can't be too sure if there was
             actually a Beep played or not. Engineers have, unsurpringly,
             abandoned these subjective evaluations of "good" and "bad" signal
             detectors with hard numbers. The{" "}
@@ -363,18 +348,17 @@ class CalcDemo extends Component {
             apart, d&#39; will increase.
             <br />
             <br />
-            Right now, these distributions correspond to a d' of 3.33. Let's see
+            Right now, these distributions correspond to a d' of 2.25. Let's see
             what happens if the means drift farther apart:
             <hr />
             <Button
               onClick={e => {
-                var new_value_dict = this.value_options.map(val => {
-                  return { x: val, signal_count: 0, noise_count: 0 };
-                });
+                var new_value_dict = this.getBlankValueDict();
 
-                var gaussian = require("gaussian");
-                var signal_distribution = gaussian(24, 9);
-                var noise_distribution = gaussian(6, 9);
+                var signal_distribution = gaussian(24, 16);
+                var noise_distribution = gaussian(6, 16);
+                var min = Math.min(...this.value_options);
+                var max = Math.max(...this.value_options);
 
                 for (let i = 0; i < 250; i++) {
                   var signal_sample = Math.floor(
@@ -384,16 +368,16 @@ class CalcDemo extends Component {
                     noise_distribution.ppf(Math.random())
                   );
 
-                  if (signal_sample < 1) {
-                    signal_sample = 1;
-                  } else if (signal_sample > 30) {
-                    signal_sample = 30;
+                  if (signal_sample < min) {
+                    signal_sample = min;
+                  } else if (signal_sample > max) {
+                    signal_sample = max;
                   }
 
-                  if (noise_sample < 1) {
-                    noise_sample = 1;
-                  } else if (noise_sample > 30) {
-                    noise_sample = 30;
+                  if (noise_sample < min) {
+                    noise_sample = min;
+                  } else if (noise_sample > max) {
+                    noise_sample = max;
                   }
 
                   new_value_dict[signal_sample - 1].signal_count++;
@@ -401,8 +385,9 @@ class CalcDemo extends Component {
                 }
                 this.setState({
                   value_dict: new_value_dict,
-                  show_signal_gaussian: false,
-                  show_noise_gaussian: false
+                  signal_mean: 24,
+                  noise_mean: 6,
+                  part: 9
                 });
               }}
             >
@@ -413,7 +398,70 @@ class CalcDemo extends Component {
           </Col>
         </Row>
       );
+    } else if (this.state.part === 9) {
+      part_to_render = (
+        <Row>
+          <Col>
+            We see that if the means are more widely separated, d' goes up!
+            Notice that now if the neuron fires 18 spikes per second, we can be
+            much more confident a Beep was actually played.
+            <br />
+            <br />
+            d' is also sensitive to the <em>variance</em> of the distribution,
+            or how reliable the neuron is. If our neuron becomes less reliable
+            from trial-to-trial, then the distribution of firing rates when the
+            beep is played or is not played will come closer together, reducing
+            d'. Let's see what that looks like:
+            <hr />
+            <Button
+              onClick={e => {
+                var new_value_dict = this.getBlankValueDict();
+
+                var signal_distribution = gaussian(20, 49);
+                var noise_distribution = gaussian(11, 49);
+                var min = Math.min(...this.value_options);
+                var max = Math.max(...this.value_options);
+
+                for (let i = 0; i < 250; i++) {
+                  var signal_sample = Math.floor(
+                    signal_distribution.ppf(Math.random())
+                  );
+                  var noise_sample = Math.floor(
+                    noise_distribution.ppf(Math.random())
+                  );
+
+                  if (signal_sample < min) {
+                    signal_sample = min;
+                  } else if (signal_sample > max) {
+                    signal_sample = max;
+                  }
+
+                  if (noise_sample < min) {
+                    noise_sample = min;
+                  } else if (noise_sample > max) {
+                    noise_sample = max;
+                  }
+
+                  new_value_dict[signal_sample - 1].signal_count++;
+                  new_value_dict[noise_sample - 1].noise_count++;
+                }
+                this.setState({
+                  value_dict: new_value_dict,
+                  signal_variance: 49,
+                  noise_variance: 49,
+                  part: 10
+                });
+              }}
+            >
+              {" "}
+              Decrease Neuron Reliability
+            </Button>
+            <hr />
+          </Col>
+        </Row>
+      );
     }
+
     return (
       <Container>
         <Row>
@@ -441,18 +489,22 @@ class CalcDemo extends Component {
 
     // add pieces as needed
     if (this.state.show_signal_gaussian) {
+      var signal_distribution = gaussian(
+        this.state.signal_mean,
+        this.state.signal_variance
+      );
       for (let i = 0; i < data.length; i++) {
-        data[i].signal_gaussian_value = this.signal_distribution.pdf(
-          valdict[i].x
-        );
+        data[i].signal_gaussian_value = signal_distribution.pdf(valdict[i].x);
       }
     }
 
     if (this.state.show_noise_gaussian) {
+      var noise_distribution = gaussian(
+        this.state.noise_mean,
+        this.state.noise_variance
+      );
       for (let i = 0; i < data.length; i++) {
-        data[i].noise_gaussian_value = this.noise_distribution.pdf(
-          valdict[i].x
-        );
+        data[i].noise_gaussian_value = noise_distribution.pdf(valdict[i].x);
       }
     }
 
@@ -477,6 +529,15 @@ class CalcDemo extends Component {
   }
 
   render() {
+    let dp_render = null;
+    if (this.state.show_dprime) {
+      var dp =
+        (this.state.signal_mean - this.state.noise_mean) /
+        Math.sqrt(
+          0.5 * (this.state.signal_variance + this.state.noise_variance)
+        );
+      dp_render = <h4>d': {dp}</h4>;
+    }
     return (
       <Container>
         <Row>
@@ -486,6 +547,7 @@ class CalcDemo extends Component {
             <br />
             <DemoChart data={this.constructData()} height={this.chartHeight} />
             <br />
+            {dp_render}
             <br />
             <br />
           </Col>

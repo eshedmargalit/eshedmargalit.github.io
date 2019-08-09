@@ -29,16 +29,7 @@ class DemoChart extends Component {
               position: "insideLeft"
             }}
           />
-          <YAxis
-            yAxisId="right"
-            label={{
-              value: "Probability",
-              angle: -90,
-              position: "right",
-              height: 20
-            }}
-            orientation="right"
-          />
+          <YAxis yAxisId="right" orientation="right" />
           <CartesianGrid stroke="#f5f5f5" />
           <Area
             dataKey="signal_gaussian_value"
