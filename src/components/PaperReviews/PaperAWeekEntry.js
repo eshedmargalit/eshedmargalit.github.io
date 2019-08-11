@@ -18,12 +18,14 @@ class PaperAWeekEntry extends Component {
   constructor(props) {
     super(props);
 
+    // debounce search to avoid repeated calls to API
     this.ms_search_throttled = _.debounce(this.ms_search, 200);
 
     this.state = {
       query: "",
       searchbar_value: "",
-      entities: []
+      entities: [],
+      selectedEntity: null
     };
   }
 
@@ -35,14 +37,14 @@ class PaperAWeekEntry extends Component {
         if (authors.length === 1) {
           to_render = (
             <span>
-              {author}
+              {author.name}
               <br />
             </span>
           );
         } else {
           to_render = (
             <span>
-              and {author}
+              and {author.name}
               <br />
             </span>
           );
@@ -51,7 +53,7 @@ class PaperAWeekEntry extends Component {
         // penultimate
         to_render = (
           <span>
-            {author}
+            {author.name}
             {` `}
           </span>
         );
@@ -59,11 +61,11 @@ class PaperAWeekEntry extends Component {
         //all others
         to_render = (
           <span>
-            {author},{` `}
+            {author.name},{` `}
           </span>
         );
       }
-      return <span key={author.tag + author}>{to_render}</span>;
+      return <span key={author.paper_id + author.name}>{to_render}</span>;
     });
   };
 
@@ -89,9 +91,10 @@ class PaperAWeekEntry extends Component {
     }
     var value = resp.interpretations[0].rules[0].output.value;
 
+    // attributes, in order, are: Author name, author order, DOI, Paper name, Journal Name, Affilitation display name
     parameters = {
       expr: value,
-      attributes: "AA.DAuN,AA.AfN,AA.S,E.DOI,E.DN,E.BV,LKA.Afn,Y",
+      attributes: "AA.DAuN,AA.S,E.DOI,E.DN,E.BV,LKA.Afn,Y",
       count: 5
     };
 
@@ -115,9 +118,18 @@ class PaperAWeekEntry extends Component {
     });
   };
 
+  handlePaperClick = paperid => {
+    // find the provided ID in entities
+    let ent = _.find(this.state.entities, { Id: paperid });
+    this.setState({
+      selectedEntity: ent,
+      query: "",
+      searchbar_value: ""
+    });
+  };
+
   renderHits() {
     const lg_items = this.state.entities.map(ent => {
-      console.log(ent);
       let authors = ent.AA;
 
       // sort by author order
@@ -128,7 +140,15 @@ class PaperAWeekEntry extends Component {
       ]);
 
       let author_names = authors.map(author => {
-        return author.DAuN;
+        return {
+          name: author.DAuN,
+          paper_id: ent.Id
+        };
+      });
+
+      //remove duplicate authors (multiple affiliations)
+      author_names = _.uniqBy(author_names, function(o) {
+        return o.name;
       });
 
       let author_names_list = this.render_comma_sep_list(author_names);
@@ -136,9 +156,12 @@ class PaperAWeekEntry extends Component {
       let year = ent.Y;
 
       return (
-        <div>
-          <ListGroupItem key={ent.Id}>
-            <strong>{ent.DN}</strong> <hr /> {author_names_list}
+        <div key={ent.Id}>
+          <ListGroupItem>
+            <Button color="link" onClick={() => this.handlePaperClick(ent.Id)}>
+              <strong>{ent.DN}</strong>
+            </Button>
+            <hr /> {author_names_list}
             <em>
               {journal_name}, {year}
             </em>
@@ -149,6 +172,36 @@ class PaperAWeekEntry extends Component {
     });
 
     return <ListGroup>{lg_items}</ListGroup>;
+  }
+
+  renderPAWForm() {
+    let entTitle = "";
+    if (this.state.selectedEntity) {
+      entTitle = this.state.selectedEntity.DN;
+    }
+
+    return (
+      <Container>
+        <Row>
+          <Col>
+            <Form>
+              <FormGroup>
+                <Label for="title_field">
+                  <strong>Title</strong>
+                </Label>
+                <Input
+                  type="text"
+                  id="title_field"
+                  placeholder="e.g., Receptive fields, binocular interaction and functional architecture in the cat's visual cortex"
+                  onChange={e => console.log(e.target.value)}
+                  value={entTitle}
+                />
+              </FormGroup>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    );
   }
 
   render() {
@@ -181,7 +234,7 @@ class PaperAWeekEntry extends Component {
                   type="text"
                   id="search_input"
                   onChange={e => this.handleSearch(`${e.target.value}`)}
-                  placeholder="e.g., orthogonal"
+                  placeholder="e.g., Receptive fields, binocular interaction and functional architecture in the cat's visual cortex"
                   value={this.state.searchbar_value}
                 />
               </FormGroup>
@@ -210,6 +263,8 @@ class PaperAWeekEntry extends Component {
         <br />
         {directory}
         {results}
+        <hr />
+        {this.renderPAWForm()}
       </div>
     );
   }
