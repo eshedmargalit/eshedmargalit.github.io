@@ -18,7 +18,7 @@ class PaperAWeekEntry extends Component {
   constructor(props) {
     super(props);
 
-    this.handleSearchThrottled = _.throttle(this.handleSearch, 1000);
+    this.ms_search_throttled = _.debounce(this.ms_search, 200);
 
     this.state = {
       query: "",
@@ -107,7 +107,7 @@ class PaperAWeekEntry extends Component {
   }
 
   handleSearch = search_term => {
-    this.ms_search(search_term);
+    this.ms_search_throttled(search_term);
 
     this.setState({
       query: search_term,
