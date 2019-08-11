@@ -22,7 +22,8 @@ const filenames = [
   "haxby_hyperalignment.json",
   "sato_mosaic.json",
   "arcaro_universal_mechanisms.json",
-  "op_de_beeck_factors.json"
+  "op_de_beeck_factors.json",
+  "jang_orientation_classification.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "title": "Classification of columnar and salt-and-pepper organization in mammalian visual cortex",
+    "authors": ["Jang, J", "Song, M", "Paik, S-B"],
+    "institutions": ["Korea Advanced Institute of Science and Technology"],
+    "date": "2019-07",
+    "journal": "biorXiv",
+    "doi": "10.1101/698043",
+    "url": "https://www.biorxiv.org/content/10.1101/698043v1",
+    "keywords": ["orientation", "retina", "Moire", "V1", "Nyquist", "pinwheel"],
+    "review_date": "2019-08-10",
+    "one_sentence": "Jang et al., demonstrate that whether an animal's V1 is organized in a columnar or salt-and-pepper pattern can be predicted empirically by the ratio of retinal neurons to V1 neurons and theoretically by the Nyquist sampling ratio"
+  },
+  "review": {
+    "summary": [
+      "While the presence of orientation columns or salt-and-pepper tuning cannot be predicted from a single parameter, e.g., V1 size, it can be predicted by the combination of V1 size and retina size",
+      "The retina/V1 size ratio that separates columnar from salt-and-pepper species is predicted by the Nyquist sampling theorem"
+    ],
+    "background": [
+      "While neurons in V1 are tuned to specific orientations in many species, the organization of such orientation-selective neurons varies both parallel and perpendicular to the cortical sheet. The organization parallel to the cortical sheet has been the subject of intense study, as in some (but not all) mammals the neurons are organized into columns that change smoothly in their orientation preference",
+      "A somewhat common viewpoint is that the difference between species emerges not from species-specific developmental mechanisms, but from a universal developmental mechanism that acts on differences in particular parameters between species",
+      "To date, V1 size, retina size, and orientation tuning spatial structure have been thoroughly described in eight mammalian species: Tree shrew [C(olumnar)], Ferret [C], Cat [C], Macaque [C], Mouse [S(alt and ) P(epper)], Rat [SP], Squirrel [SP], and Rabbit [SP]"
+    ],
+    "approach": [
+      "Modeling of retinal ganglion cell (RGC) connectivity to V1 by assuming Gaussian receptive fields, then computing orientation tuning of model V1 neurons (Extended Data Figure 2)",
+      "The specific model used here is that of retinal mosaics in a Moire interference pattern (see Paik/Ringach '11 for details). This model uses the observed offsets in positions of ON/OFF RGC feedforward afferent pairs to V1 to predict the resulting orientation tuning in the retinotopically matched V1 region to which they project.",
+      "Comparison to 1) measured V1 size, retinal area, and number of RGCs in each animal species and 2) orientation tuning patterns observed (or not observed) in each animal"
+    ],
+    "results": [
+      "The presence of columnar organization cannot be well predicted by V1 acuity, body weight, retina size, or V1 size (Eshed's note: you can come very close to a clean separation with V1 size alone, suggesting that projecting onto an additional dimension that is even slightly independent will allow perfect classification. This seems like an area where more data from other species would be very helpful; Figure 1)",
+      "Classifying species in a 2-D space defined jointly by V1 and retina size allows for perfect separation, whether going by surface area or by estimated number of neurons (Figure 1)",
+      "Assuming the same exact retinal mosaic and varying only the ratio of V1 to RGC cells, the resulting orientation maps can shift from columnar to salt-and-pepper (Figure 2). Values near those recorded for the cat (V1:RGC = 2.5) yield columnar structure, while those recorded for the mouse (V1:RGC = 0.1) yield salt-and-pepper structure. Eshed's note: kind of? The salt-and-pepper map is so sparse that even if it were columnar it would be hard to tell.",
+      "Because a V1:RGC ratio of less than 2 might be susceptible to sample aliasing by the Nyquist Sampling Theorem, i.e., the sampling of orientations from the full spectrum might appear lower frequency than it really is, the authors predict and show that there is a phase transition between columnar and salt-and-pepper maps at a sampling ratio of 2. Indeed, this value separates the 6 species for which the data are fully available into their correct pattern groups (columnar or not). (Figure 2)"
+    ],
+    "conclusions": [
+      "Columnar and salt-and-pepper organizations, while obviously different, might share a common developmental mechanism and act on differences in the V1:RGC sampling ratio",
+      "There are many differences between, e.g., mice and cats, including RGC types and convergence ratios from RGCs to the LGN neurons. However, the authors here argue that those results are dwarfed by the similarities in ON/OFF afferents across species.",
+      "Eshed's note: in general I support the idea that common developmental mechanism act on different substrates, and I think the appeal to alias sampling theory is elegant here. However, it appears that a more rigorous match to specific patterns, e.g., pinwheel density, is lacking."
+    ],
+    "other": [
+      "This paper is the latest in an installment of arguments between two groups: the Paik/Ringach group (this paper) and the Wolf/Kaschube group, who argue that this retinal mosaic model fails to capture the correct statistics of V1 in four divergent species and ignores large-scale cortical organization principles in favor of randomness. See Kaschube et al., 2010, Schottdorf et al., 2014, 2015 for the Wolf/Kaschube perspective, and this paper + Paik & Ringach, 2011, for more."
+    ]
+  }
+}
