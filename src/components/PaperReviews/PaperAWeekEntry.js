@@ -79,7 +79,7 @@ class PaperAWeekEntry extends Component {
   updateInstitutionsHandler(new_value, institution_idx) {
     let institution_names = this.state.institution_names;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       institution_names.splice(institution_idx, 1);
     } else {
       institution_names[institution_idx] = new_value;
@@ -91,7 +91,7 @@ class PaperAWeekEntry extends Component {
   updateSummaryHandler(new_value, summary_point_idx) {
     let summary_points = this.state.summary_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       summary_points.splice(summary_point_idx, 1);
     } else {
       summary_points[summary_point_idx] = new_value;
@@ -103,7 +103,7 @@ class PaperAWeekEntry extends Component {
   updateBackgroundHandler(new_value, background_point_idx) {
     let background_points = this.state.background_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       background_points.splice(background_point_idx, 1);
     } else {
       background_points[background_point_idx] = new_value;
@@ -115,7 +115,7 @@ class PaperAWeekEntry extends Component {
   updateApproachHandler(new_value, approach_point_idx) {
     let approach_points = this.state.approach_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       approach_points.splice(approach_point_idx, 1);
     } else {
       approach_points[approach_point_idx] = new_value;
@@ -127,7 +127,7 @@ class PaperAWeekEntry extends Component {
   updateResultsHandler(new_value, results_point_idx) {
     let results_points = this.state.results_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       results_points.splice(results_point_idx, 1);
     } else {
       results_points[results_point_idx] = new_value;
@@ -139,7 +139,7 @@ class PaperAWeekEntry extends Component {
   updateConclusionsHandler(new_value, conclusions_point_idx) {
     let conclusions_points = this.state.conclusions_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       conclusions_points.splice(conclusions_point_idx, 1);
     } else {
       conclusions_points[conclusions_point_idx] = new_value;
@@ -151,7 +151,7 @@ class PaperAWeekEntry extends Component {
   updateOtherHandler(new_value, other_point_idx) {
     let other_points = this.state.other_points;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       other_points.splice(other_point_idx, 1);
     } else {
       other_points[other_point_idx] = new_value;

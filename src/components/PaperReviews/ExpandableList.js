@@ -11,7 +11,7 @@ class ExpandableList extends Component {
     let items_list = this.props.items.map((item, i) => {
       return (
         <Row>
-          <Col lg="6">
+          <Col lg="11">
             <Input
               type="text"
               key={"input_num" + i}
