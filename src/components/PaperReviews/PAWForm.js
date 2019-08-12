@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Form, FormGroup, Label, Input } from "reactstrap";
-import { capitalCase } from "./utils.js";
 import ExpandableList from "./ExpandableList";
 
 class PAWForm extends Component {
@@ -11,7 +10,16 @@ class PAWForm extends Component {
     let author_fields = (
       <ExpandableList
         items={this.props.author_names}
+        item_name="author name"
         itemUpdateHandler={this.props.updateAuthorsHandler}
+      />
+    );
+
+    let institution_fields = (
+      <ExpandableList
+        items={this.props.institution_names}
+        item_name="institution"
+        itemUpdateHandler={this.props.updateInstitutionsHandler}
       />
     );
 
@@ -31,7 +39,7 @@ class PAWForm extends Component {
                     <Input
                       type="text"
                       id="title_field"
-                      placeholder="e.g., Receptive fields, binocular interaction and functional architecture in the cat's visual cortex"
+                      placeholder="e.g., Retinal waves coordinate patterend activity throughout the developing visual system"
                       onChange={e => console.log(e.target.value)}
                       value={this.props.title}
                     />
@@ -45,7 +53,7 @@ class PAWForm extends Component {
                     <Input
                       type="text"
                       id="date_field"
-                      placeholder="MM-YYYY"
+                      placeholder="2012-10"
                       onChange={e => console.log(e.target.value)}
                       value={this.props.date}
                     />
@@ -62,7 +70,7 @@ class PAWForm extends Component {
                 <Col lg="6" xs="12">
                   <FormGroup>
                     <h5> Unique Institutions </h5>
-                    {author_fields}
+                    {institution_fields}
                   </FormGroup>
                 </Col>
               </Row>
@@ -90,6 +98,7 @@ class PAWForm extends Component {
                     <Input
                       type="text"
                       id="doi_field"
+                      placeholder="doi:/10.1038/nature11529"
                       onChange={e => console.log(e.target.value)}
                       value={this.props.doi}
                     />
@@ -103,6 +112,7 @@ class PAWForm extends Component {
                     <Input
                       type="text"
                       id="url_field"
+                      placeholder="https://www.nature.com/articles/nature11529"
                       onChange={e => console.log(e.target.value)}
                       value={this.props.url}
                     />
@@ -119,7 +129,7 @@ class PAWForm extends Component {
                     <Input
                       type="text"
                       id="tldr_field"
-                      placeholder="Authors et al. show that ..."
+                      placeholder="Ackman et al. show that ..."
                       onChange={e => console.log(e.target.value)}
                       value=""
                     />

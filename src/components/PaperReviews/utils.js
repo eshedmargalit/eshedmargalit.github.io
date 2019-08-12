@@ -1,6 +1,9 @@
 import React from "react";
 
-export function capitalCase(input_str) {
+export function capital_case(input_str) {
+  if (!input_str) {
+    return "";
+  }
   input_str = input_str.toLowerCase();
   const words = input_str.split(" ");
 

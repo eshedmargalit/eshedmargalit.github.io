@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 import _ from "lodash";
 import moment from "moment";
-import { render_comma_sep_list } from "./utils.js";
+import { render_comma_sep_list, capital_case } from "./utils.js";
 import PAWForm from "./PAWForm";
 
 import { FaBackspace } from "react-icons/fa";
@@ -28,14 +28,33 @@ class PaperAWeekEntry extends Component {
       query: "",
       searchbar_value: "",
       entities: [],
-      author_names: []
+      author_names: [],
+      institution_names: []
     };
   }
 
   updateAuthorsHandler(new_value, author_idx) {
     let author_names = this.state.author_names;
-    author_names[author_idx] = new_value;
+
+    if (new_value === "") {
+      author_names.splice(author_idx, 1);
+    } else {
+      author_names[author_idx] = new_value;
+    }
+
     this.setState({ author_names: author_names });
+  }
+
+  updateInstitutionsHandler(new_value, institution_idx) {
+    let institution_names = this.state.institution_names;
+
+    if (new_value === "") {
+      institution_names.splice(institution_idx, 1);
+    } else {
+      institution_names[institution_idx] = new_value;
+    }
+
+    this.setState({ institution_names: institution_names });
   }
 
   async ms_search(query) {
@@ -105,13 +124,19 @@ class PaperAWeekEntry extends Component {
       return author.DAuN;
     });
 
+    let author_institutions = authors.map(author => {
+      return capital_case(author.AfN);
+    });
+
     //remove duplicate items (multiple affiliations)
     author_names = _.uniq(author_names);
+    author_institutions = _.uniq(author_institutions);
 
     this.setState({
       query: "",
       searchbar_value: "",
       author_names: author_names,
+      institution_names: author_institutions,
       title: ent.DN,
       date: moment(ent.D, "YYYY-MM-DD").format("MMMM YYYY"),
       doi: ent.DOI,
@@ -186,17 +211,18 @@ class PaperAWeekEntry extends Component {
         <Row>
           <br />
           <Col lg="9" xs="9">
-            <h1> Literature Search </h1>
+            <h3> Literature Search </h3>
             <Form>
               <FormGroup>
                 <Label for="search_input">
-                  Choose a paper here to autopopulate the fields below.
+                  Search Microsoft Academic Search for papers to autopopulate
+                  the fields below!
                 </Label>
                 <Input
                   type="text"
                   id="search_input"
                   onChange={e => this.handleSearch(`${e.target.value}`)}
-                  placeholder="e.g., Receptive fields, binocular interaction and functional architecture in the cat's visual cortex"
+                  placeholder="e.g., Retinal waves nature 2012"
                   value={this.state.searchbar_value}
                 />
               </FormGroup>
@@ -233,7 +259,9 @@ class PaperAWeekEntry extends Component {
           doi={this.state.doi}
           url={this.state.url}
           author_names={this.state.author_names}
+          institution_names={this.state.institution_names}
           updateAuthorsHandler={this.updateAuthorsHandler.bind(this)}
+          updateInstitutionsHandler={this.updateInstitutionsHandler.bind(this)}
         />
       </div>
     );

@@ -1,32 +1,38 @@
 import React, { Component } from "react";
-import { Container, Row, Col, FormGroup, Input } from "reactstrap";
+import { Button, Container, Row, Col, FormGroup, Input } from "reactstrap";
 
 class ExpandableList extends Component {
-  render() {
-    let list_render = null;
-    if (this.props.items) {
-      let items_list = this.props.items.map((item, i) => {
-        return (
-          <Input
-            type="text"
-            key={"input_num" + i}
-            value={item}
-            onChange={e => this.props.itemUpdateHandler(e.target.value, i)}
-          />
-        );
-      });
+  addNewHandler = () => {
+    this.props.itemUpdateHandler("New Item", this.props.items.length);
+  };
 
-      list_render = <FormGroup>{items_list}</FormGroup>;
-    } else {
-      list_render = <FormGroup>Oh</FormGroup>;
-    }
+  render() {
+    let items_list = this.props.items.map((item, i) => {
+      return (
+        <Input
+          type="text"
+          key={"input_num" + i}
+          value={item}
+          onChange={e => this.props.itemUpdateHandler(e.target.value, i)}
+        />
+      );
+    });
+
+    let list_render = <FormGroup>{items_list}</FormGroup>;
+
+    // new button
+    let new_button = (
+      <Button color="primary" onClick={this.addNewHandler}>
+        Add {this.props.item_name}
+      </Button>
+    );
 
     return (
-      <Container>
-        <Row>
-          <Col>{list_render}</Col>
-        </Row>
-      </Container>
+      <div>
+        {list_render}
+        {new_button}
+        <br />
+      </div>
     );
   }
 }
