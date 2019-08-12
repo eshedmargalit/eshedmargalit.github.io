@@ -28,9 +28,14 @@ class PaperAWeekEntry extends Component {
       query: "",
       searchbar_value: "",
       entities: [],
-      author_names: [],
-      institution_names: [],
-      summary_points: []
+      author_names: ["New item"],
+      institution_names: ["New item"],
+      summary_points: ["New item"],
+      background_points: ["New item"],
+      approach_points: ["New item"],
+      results_points: ["New item"],
+      conclusions_points: ["New item"],
+      other_points: ["New item"]
     };
   }
 
@@ -68,6 +73,66 @@ class PaperAWeekEntry extends Component {
     }
 
     this.setState({ summary_points: summary_points });
+  }
+
+  updateBackgroundHandler(new_value, background_point_idx) {
+    let background_points = this.state.background_points;
+
+    if (new_value === "") {
+      background_points.splice(background_point_idx, 1);
+    } else {
+      background_points[background_point_idx] = new_value;
+    }
+
+    this.setState({ background_points: background_points });
+  }
+
+  updateApproachHandler(new_value, approach_point_idx) {
+    let approach_points = this.state.approach_points;
+
+    if (new_value === "") {
+      approach_points.splice(approach_point_idx, 1);
+    } else {
+      approach_points[approach_point_idx] = new_value;
+    }
+
+    this.setState({ approach_points: approach_points });
+  }
+
+  updateResultsHandler(new_value, results_point_idx) {
+    let results_points = this.state.results_points;
+
+    if (new_value === "") {
+      results_points.splice(results_point_idx, 1);
+    } else {
+      results_points[results_point_idx] = new_value;
+    }
+
+    this.setState({ results_points: results_points });
+  }
+
+  updateConclusionsHandler(new_value, conclusions_point_idx) {
+    let conclusions_points = this.state.conclusions_points;
+
+    if (new_value === "") {
+      conclusions_points.splice(conclusions_point_idx, 1);
+    } else {
+      conclusions_points[conclusions_point_idx] = new_value;
+    }
+
+    this.setState({ conclusions_points: conclusions_points });
+  }
+
+  updateOtherHandler(new_value, other_point_idx) {
+    let other_points = this.state.other_points;
+
+    if (new_value === "") {
+      other_points.splice(other_point_idx, 1);
+    } else {
+      other_points[other_point_idx] = new_value;
+    }
+
+    this.setState({ other_points: other_points });
   }
 
   async ms_search(query) {
@@ -274,9 +339,19 @@ class PaperAWeekEntry extends Component {
           author_names={this.state.author_names}
           institution_names={this.state.institution_names}
           summary_points={this.state.summary_points}
+          background_points={this.state.background_points}
+          approach_points={this.state.approach_points}
+          results_points={this.state.results_points}
+          conclusions_points={this.state.conclusions_points}
+          other_points={this.state.other_points}
           updateAuthorsHandler={this.updateAuthorsHandler.bind(this)}
           updateInstitutionsHandler={this.updateInstitutionsHandler.bind(this)}
           updateSummaryHandler={this.updateSummaryHandler.bind(this)}
+          updateBackgroundHandler={this.updateBackgroundHandler.bind(this)}
+          updateApproachHandler={this.updateApproachHandler.bind(this)}
+          updateResultsHandler={this.updateResultsHandler.bind(this)}
+          updateConclusionsHandler={this.updateConclusionsHandler.bind(this)}
+          updateOtherHandler={this.updateOtherHandler.bind(this)}
         />
       </div>
     );

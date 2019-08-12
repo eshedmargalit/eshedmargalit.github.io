@@ -142,14 +142,73 @@ class PAWForm extends Component {
 
         <h4> Paper Review </h4>
         <Row>
-          <Col>
-            <strong>Summary</strong>
-            <br />
-            <br />
+          <Col lg="10">
+            <hr />
+            <h5>Summary</h5>
             <ExpandableList
               items={this.props.summary_points}
               item_name="summary point"
               itemUpdateHandler={this.props.updateSummaryHandler}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg="10">
+            <hr />
+            <h5>Background</h5>
+            <ExpandableList
+              items={this.props.background_points}
+              item_name="background point"
+              itemUpdateHandler={this.props.updateBackgroundHandler}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg="10">
+            <hr />
+            <h5>Approach</h5>
+            <ExpandableList
+              items={this.props.approach_points}
+              item_name="approach point"
+              itemUpdateHandler={this.props.updateApproachHandler}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg="10">
+            <hr />
+            <h5>Results</h5>
+            <ExpandableList
+              items={this.props.results_points}
+              item_name="results point"
+              itemUpdateHandler={this.props.updateResultsHandler}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg="10">
+            <hr />
+            <h5>Conclusions</h5>
+            <ExpandableList
+              items={this.props.conclusions_points}
+              item_name="conclusions point"
+              itemUpdateHandler={this.props.updateConclusionsHandler}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg="10">
+            <hr />
+            <h5>Other</h5>
+            <ExpandableList
+              items={this.props.other_points}
+              item_name="other point"
+              itemUpdateHandler={this.props.updateOtherHandler}
             />
           </Col>
         </Row>

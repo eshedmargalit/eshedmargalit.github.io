@@ -22,7 +22,7 @@ class ExpandableList extends Component {
 
     // new button
     let new_button = (
-      <Button color="primary" onClick={this.addNewHandler}>
+      <Button outline size="sm" color="primary" onClick={this.addNewHandler}>
         Add {this.props.item_name}
       </Button>
     );
