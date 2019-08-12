@@ -27,6 +27,7 @@ class PaperAWeekEntry extends Component {
     this.state = {
       query: "",
       searchbar_value: "",
+      json_name: "temp.json",
       entities: [],
       author_names: ["New item"],
       institution_names: ["New item"],
@@ -38,6 +39,30 @@ class PaperAWeekEntry extends Component {
       other_points: ["New item"]
     };
   }
+
+  updateTitleHandler = new_title => {
+    this.setState({ title: new_title });
+  };
+
+  updateDateHandler = new_date => {
+    this.setState({ date: new_date });
+  };
+
+  updateJournalHandler = new_journal => {
+    this.setState({ journal: new_journal });
+  };
+
+  updateDOIHandler = new_DOI => {
+    this.setState({ DOI: new_DOI });
+  };
+
+  updateURLHandler = new_URL => {
+    this.setState({ URL: new_URL });
+  };
+
+  updateTLDRHandler = new_TLDR => {
+    this.setState({ tldr: new_TLDR });
+  };
 
   updateAuthorsHandler(new_value, author_idx) {
     let author_names = this.state.author_names;
@@ -269,6 +294,16 @@ class PaperAWeekEntry extends Component {
     return <ListGroup>{lg_items}</ListGroup>;
   }
 
+  saveJSON() {
+    console.log(this.state);
+  }
+
+  changeJSONName(new_name) {
+    this.setState({
+      json_name: new_name
+    });
+  }
+
   render() {
     let clear_button_render;
     if (this.state.searchbar_value) {
@@ -336,6 +371,7 @@ class PaperAWeekEntry extends Component {
           journal={this.state.journal}
           doi={this.state.doi}
           url={this.state.url}
+          tldr={this.state.tldr}
           author_names={this.state.author_names}
           institution_names={this.state.institution_names}
           summary_points={this.state.summary_points}
@@ -344,6 +380,13 @@ class PaperAWeekEntry extends Component {
           results_points={this.state.results_points}
           conclusions_points={this.state.conclusions_points}
           other_points={this.state.other_points}
+          json_name={this.state.json_name}
+          updateTitleHandler={this.updateTitleHandler.bind(this)}
+          updateDateHandler={this.updateDateHandler.bind(this)}
+          updateJournalHandler={this.updateJournalHandler.bind(this)}
+          updateDOIHandler={this.updateDOIHandler.bind(this)}
+          updateURLHandler={this.updateURLHandler.bind(this)}
+          updateTLDRHandler={this.updateTLDRHandler.bind(this)}
           updateAuthorsHandler={this.updateAuthorsHandler.bind(this)}
           updateInstitutionsHandler={this.updateInstitutionsHandler.bind(this)}
           updateSummaryHandler={this.updateSummaryHandler.bind(this)}
@@ -352,6 +395,8 @@ class PaperAWeekEntry extends Component {
           updateResultsHandler={this.updateResultsHandler.bind(this)}
           updateConclusionsHandler={this.updateConclusionsHandler.bind(this)}
           updateOtherHandler={this.updateOtherHandler.bind(this)}
+          changeJSONName={this.changeJSONName.bind(this)}
+          saveJSON={this.saveJSON.bind(this)}
         />
       </div>
     );

@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input
+} from "reactstrap";
 import ExpandableList from "./ExpandableList";
 
 class PAWForm extends Component {
@@ -40,7 +49,9 @@ class PAWForm extends Component {
                       type="text"
                       id="title_field"
                       placeholder="e.g., Retinal waves coordinate patterend activity throughout the developing visual system"
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e =>
+                        this.props.updateTitleHandler(e.target.value)
+                      }
                       value={this.props.title}
                     />
                   </FormGroup>
@@ -54,7 +65,9 @@ class PAWForm extends Component {
                       type="text"
                       id="date_field"
                       placeholder="2012-10"
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e =>
+                        this.props.updateDateHandler(e.target.value)
+                      }
                       value={this.props.date}
                     />
                   </FormGroup>
@@ -85,7 +98,9 @@ class PAWForm extends Component {
                       type="text"
                       id="journal_field"
                       placeholder="Nature"
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e =>
+                        this.props.updateJournalHandler(e.target.value)
+                      }
                       value={this.props.journal}
                     />
                   </FormGroup>
@@ -99,7 +114,9 @@ class PAWForm extends Component {
                       type="text"
                       id="doi_field"
                       placeholder="doi:/10.1038/nature11529"
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e =>
+                        this.props.updateDOIHandler(e.target.value)
+                      }
                       value={this.props.doi}
                     />
                   </FormGroup>
@@ -113,7 +130,9 @@ class PAWForm extends Component {
                       type="text"
                       id="url_field"
                       placeholder="https://www.nature.com/articles/nature11529"
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e =>
+                        this.props.updateURLHandler(e.target.value)
+                      }
                       value={this.props.url}
                     />
                   </FormGroup>
@@ -130,8 +149,10 @@ class PAWForm extends Component {
                       type="text"
                       id="tldr_field"
                       placeholder="Ackman et al. show that ..."
-                      onChange={e => console.log(e.target.value)}
-                      value=""
+                      onChange={e =>
+                        this.props.updateTLDRHandler(e.target.value)
+                      }
+                      value={this.props.tldr}
                     />
                   </FormGroup>
                 </Col>
@@ -210,6 +231,23 @@ class PAWForm extends Component {
               item_name="other point"
               itemUpdateHandler={this.props.updateOtherHandler}
             />
+          </Col>
+        </Row>
+
+        <hr />
+        <Row>
+          <Col lg="5" xs="5">
+            <Input
+              type="text"
+              value={this.props.json_name}
+              onChange={e => this.props.changeJSONName(e.target.value)}
+            />
+          </Col>
+          <Col lg="3" xs="3">
+            <Button color="danger" onClick={this.props.saveJSON}>
+              {" "}
+              Save to JSON{" "}
+            </Button>
           </Col>
         </Row>
       </Container>
