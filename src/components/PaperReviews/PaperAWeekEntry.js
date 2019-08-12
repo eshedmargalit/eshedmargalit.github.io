@@ -29,14 +29,14 @@ class PaperAWeekEntry extends Component {
       searchbar_value: "",
       json_name: "temp.json",
       entities: [],
-      author_names: ["New item"],
-      institution_names: ["New item"],
-      summary_points: ["New item"],
-      background_points: ["New item"],
-      approach_points: ["New item"],
-      results_points: ["New item"],
-      conclusions_points: ["New item"],
-      other_points: ["New item"]
+      author_names: [],
+      institution_names: [],
+      summary_points: [],
+      background_points: [],
+      approach_points: [],
+      results_points: [],
+      conclusions_points: [],
+      other_points: []
     };
   }
 
@@ -67,7 +67,7 @@ class PaperAWeekEntry extends Component {
   updateAuthorsHandler(new_value, author_idx) {
     let author_names = this.state.author_names;
 
-    if (new_value === "") {
+    if (new_value === "_DELETE") {
       author_names.splice(author_idx, 1);
     } else {
       author_names[author_idx] = new_value;

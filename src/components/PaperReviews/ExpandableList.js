@@ -1,20 +1,34 @@
 import React, { Component } from "react";
-import { Button, FormGroup, Input } from "reactstrap";
+import { Row, Col, Button, FormGroup, Input } from "reactstrap";
+import { FaTimes } from "react-icons/fa";
 
 class ExpandableList extends Component {
   addNewHandler = () => {
-    this.props.itemUpdateHandler("New Item", this.props.items.length);
+    this.props.itemUpdateHandler("", this.props.items.length);
   };
 
   render() {
     let items_list = this.props.items.map((item, i) => {
       return (
-        <Input
-          type="text"
-          key={"input_num" + i}
-          value={item}
-          onChange={e => this.props.itemUpdateHandler(e.target.value, i)}
-        />
+        <Row>
+          <Col lg="6">
+            <Input
+              type="text"
+              key={"input_num" + i}
+              value={item}
+              onChange={e => this.props.itemUpdateHandler(e.target.value, i)}
+            />
+            <br />
+          </Col>
+          <Col lg="1">
+            <Button
+              color="danger"
+              onClick={() => this.props.itemUpdateHandler("_DELETE", i)}
+            >
+              <FaTimes />
+            </Button>
+          </Col>
+        </Row>
       );
     });
 
