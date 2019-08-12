@@ -139,6 +139,20 @@ class PAWForm extends Component {
             </Form>
           </Col>
         </Row>
+
+        <h4> Paper Review </h4>
+        <Row>
+          <Col>
+            <strong>Summary</strong>
+            <br />
+            <br />
+            <ExpandableList
+              items={this.props.summary_points}
+              item_name="summary point"
+              itemUpdateHandler={this.props.updateSummaryHandler}
+            />
+          </Col>
+        </Row>
       </Container>
     );
   }

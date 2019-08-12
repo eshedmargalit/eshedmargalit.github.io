@@ -29,7 +29,8 @@ class PaperAWeekEntry extends Component {
       searchbar_value: "",
       entities: [],
       author_names: [],
-      institution_names: []
+      institution_names: [],
+      summary_points: []
     };
   }
 
@@ -55,6 +56,18 @@ class PaperAWeekEntry extends Component {
     }
 
     this.setState({ institution_names: institution_names });
+  }
+
+  updateSummaryHandler(new_value, summary_point_idx) {
+    let summary_points = this.state.summary_points;
+
+    if (new_value === "") {
+      summary_points.splice(summary_point_idx, 1);
+    } else {
+      summary_points[summary_point_idx] = new_value;
+    }
+
+    this.setState({ summary_points: summary_points });
   }
 
   async ms_search(query) {
@@ -260,8 +273,10 @@ class PaperAWeekEntry extends Component {
           url={this.state.url}
           author_names={this.state.author_names}
           institution_names={this.state.institution_names}
+          summary_points={this.state.summary_points}
           updateAuthorsHandler={this.updateAuthorsHandler.bind(this)}
           updateInstitutionsHandler={this.updateInstitutionsHandler.bind(this)}
+          updateSummaryHandler={this.updateSummaryHandler.bind(this)}
         />
       </div>
     );
