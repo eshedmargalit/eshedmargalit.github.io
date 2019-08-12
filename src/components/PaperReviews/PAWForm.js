@@ -32,6 +32,14 @@ class PAWForm extends Component {
       />
     );
 
+    let keyword_fields = (
+      <ExpandableList
+        items={this.props.keywords}
+        item_name="keyword"
+        itemUpdateHandler={this.props.updateKeywordsHandler}
+      />
+    );
+
     return (
       <Container>
         <Row>
@@ -75,15 +83,22 @@ class PAWForm extends Component {
               </Row>
 
               <Row>
-                <Col lg="6" xs="12">
+                <Col lg="4" xs="12">
                   <h5> Authors </h5>
                   {author_fields}
                 </Col>
 
-                <Col lg="6" xs="12">
+                <Col lg="4" xs="12">
                   <FormGroup>
                     <h5> Unique Institutions </h5>
                     {institution_fields}
+                  </FormGroup>
+                </Col>
+
+                <Col lg="4" xs="12">
+                  <FormGroup>
+                    <h5> Keywords </h5>
+                    {keyword_fields}
                   </FormGroup>
                 </Col>
               </Row>

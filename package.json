@@ -8,6 +8,7 @@
     "clipboard": "^2.0.4",
     "cognitive-services": "^1.2.3",
     "d3": "^5.9.7",
+    "fs": "^0.0.1-security",
     "fuse.js": "^3.4.4",
     "gaussian": "^1.1.0",
     "gh-pages": "2.0",

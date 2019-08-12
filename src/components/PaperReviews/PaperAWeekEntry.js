@@ -28,9 +28,11 @@ class PaperAWeekEntry extends Component {
       query: "",
       searchbar_value: "",
       json_name: "temp.json",
+      json_copy: "",
       entities: [],
       author_names: [],
       institution_names: [],
+      keywords: [],
       summary_points: [],
       background_points: [],
       approach_points: [],
@@ -74,6 +76,18 @@ class PaperAWeekEntry extends Component {
     }
 
     this.setState({ author_names: author_names });
+  }
+
+  updateKeywordsHandler(new_value, keyword_idx) {
+    let keywords = this.state.keywords;
+
+    if (new_value === "_DELETE") {
+      keywords.splice(keyword_idx, 1);
+    } else {
+      keywords[keyword_idx] = new_value;
+    }
+
+    this.setState({ keywords: keywords });
   }
 
   updateInstitutionsHandler(new_value, institution_idx) {
@@ -295,7 +309,34 @@ class PaperAWeekEntry extends Component {
   }
 
   saveJSON() {
-    console.log(this.state);
+    let author_names = this.state.author_names;
+    let todays_date = moment().format("YYYY-MM-DD");
+    let date = moment(this.state.date, "MMMM YYYY").format("YYYY-MM");
+
+    const json_obj = {
+      metadata: {
+        title: this.state.title,
+        authors: author_names,
+        institutions: this.state.institutions,
+        date: date,
+        journal: this.state.journal,
+        doi: this.state.doi,
+        url: this.state.url,
+        keywords: this.state.keywords,
+        review_date: todays_date,
+        one_sentence: this.state.tldr
+      },
+      review: {
+        summary: this.state.summary_points,
+        background: this.state.background_points,
+        approach: this.state.approach_points,
+        results: this.state.results_points,
+        conclusions: this.state.conclusions_points,
+        other: this.state.other_points
+      }
+    };
+
+    this.setState({ json_copy: JSON.stringify(json_obj) });
   }
 
   changeJSONName(new_name) {
@@ -373,6 +414,7 @@ class PaperAWeekEntry extends Component {
           url={this.state.url}
           tldr={this.state.tldr}
           author_names={this.state.author_names}
+          keywords={this.state.keywords}
           institution_names={this.state.institution_names}
           summary_points={this.state.summary_points}
           background_points={this.state.background_points}
@@ -387,6 +429,7 @@ class PaperAWeekEntry extends Component {
           updateDOIHandler={this.updateDOIHandler.bind(this)}
           updateURLHandler={this.updateURLHandler.bind(this)}
           updateTLDRHandler={this.updateTLDRHandler.bind(this)}
+          updateKeywordsHandler={this.updateKeywordsHandler.bind(this)}
           updateAuthorsHandler={this.updateAuthorsHandler.bind(this)}
           updateInstitutionsHandler={this.updateInstitutionsHandler.bind(this)}
           updateSummaryHandler={this.updateSummaryHandler.bind(this)}
@@ -398,6 +441,14 @@ class PaperAWeekEntry extends Component {
           changeJSONName={this.changeJSONName.bind(this)}
           saveJSON={this.saveJSON.bind(this)}
         />
+
+        <Container>
+          <Row>
+            <Col>
+              <p>{this.state.json_copy}</p>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
