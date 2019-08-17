@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "Highly ordered arrangement of single neurons in orientation pinwheels.",
+    "authors": [
+      "Ohki, K",
+      "Chung, S",
+      "Kara, P",
+      "Hübener, M",
+      "Bonhoeffer, T",
+      "Reid, RC"
+    ],
+    "institutions": [
+      "Harvard Medical School",
+      "Max Planck Institute of Neurobiology",
+      "Korea Institute of Science and Technology",
+      "Medical University of South Carolina"
+    ],
+    "date": "2006-08",
+    "journal": "Nature",
+    "doi": "10.1038/nature05019",
+    "url": "http://ctx.kist.re.kr/Teams/ctx/PDFs/Ohki%20et%20al%20Nature%202006.pdf",
+    "keywords": ["cat", "V1", "calcium imaging", "pinwheel", "orientation"],
+    "review_date": "2019-08-16",
+    "one_sentence": "Ohki et al. demonstrate that at a single-neuron level, pinwheel structure is held up by sharply tuned neurons that obey the radial structure of the pinwheel"
+  },
+  "review": {
+    "summary": [
+      "Single neurons in orientation pinwheels are tightly arranged, suggesting that the pinwheel center goes down to the single neuron level instead of being an artifact of intrinsic imaging methods",
+      "Neurons in pinwheel centers have lower activity levels and are more broadly tuned than neurons peripheral to the pinwheel center"
+    ],
+    "background": [
+      "Prior study of orientation tuning maps have either lacked coverage (electrode/tetrode recording) or spatial specificity (electrophysiology, intrinsic optical imaging), leaving open the question of how pinwheel centers were organized at the single neuron level",
+      "Intrinsic imaging has suggested that pinwheel centers are more broadly tuned than iso-orientation domains (see, e.g., Bartfeld and Grinvald '92). Note: this is also observed in subsequent calcium imaging studies, e.g., Nauhaus et al., 2008"
+    ],
+    "approach": [
+      "Label neurons near pinwheel centers in V1 of 28-35 day old cats with a calcium indicator (Oregon Green BAPTA-1)",
+      "Perform 2-photon calcium imaging at 9 different cortical depths while presenting bars at orientations separated by 45 degrees to the cat"
+    ],
+    "results": [
+      "Neurons near pinwheel centers are organized with a very low degree of 'scatter', indicating that the pinwheel structure is valid down to individual cell bodies (Figure 1, 3B)",
+      "Neuron tuning is columnar, with highly similar orientation preference across depths (Figure 1)",
+      "At the pinwheel center, spatially adjacent neurons can have very different tuning (Figure 2)",
+      "Neurons in the pinwheel center had lower responses and broader tuning in every experiment performed (Figure 3). The difference in tuning width between pinwheel center and periphery increased even more when bar orientations were separated by smaller steps (22.5 degrees), but they were still fairly sharply tuned (or at least, more than people might have expected?)"
+    ],
+    "conclusions": [
+      "Neurons in pinwheel centers are sharply tuned and don't deviate from the expected radial structure of the maps by much. This suggests a precise developmental mechanism at play, given that these patterns are fairly well-established early in life",
+      "One important mechanism to figure out is how dendritic arbors might be A) arranged to sample input differently, or B) might receive inputs of different strengths that drive this sharp tuning"
+    ],
+    "other": [
+      "This paper stands out to me as an example where biology isn't messy... The precision of these maps suggests that pinwheel centers might be important either for performing some task (see my review of Koch et al., 2016), or for reducing some metabolic cost."
+    ]
+  }
+}
