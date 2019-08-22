@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "title": "Development of orientation preference maps in ferret primary visual cortex",
+    "authors": ["Chapman, B", "Stryker, MP", "Bonhoeffer, T"],
+    "institutions": [
+      " Max Planck Society",
+      " University of California San Francisco"
+    ],
+    "date": "1996-10",
+    "journal": "The Journal of Neuroscience",
+    "doi": "10.1523/JNEUROSCI.16-20-06443.1996",
+    "url": "http://www.jneurosci.org/content/16/20/6443.full.pdf",
+    "keywords": [
+      "ferret",
+      "orientation",
+      "development",
+      "V1",
+      "optical imaging"
+    ],
+    "review_date": "2019-08-22",
+    "one_sentence": "Chapman and colleagues show that while orientation tuning maps in ferrets begin emerging at different times, they are remarkably stable over the course of maturation"
+  },
+  "review": {
+    "summary": [
+      "Ferret orientation maps appear between postnatal day 31 and 36, then mature with remarkable stability of iso-orientation domain position, size, etc",
+      "The emergence of orientation maps does not appear to be dependent on visual experience"
+    ],
+    "background": [
+      "Electrophysiological studies indicate that orientation maps in cats, monkeys, and other animals are mature very early in life, but the development of these maps in individual animals has not been observed",
+      "Ferrets are a desirable model organism as their gestation time is much shorter than the cat, although the development of the visual system is about equal in the two species. Thus, ferrets are physiologically more robust to do experiments on even as visual neuron selectivity is developing"
+    ],
+    "approach": [
+      "Intrinsic optical imaging of ferret V1 was conducted between P31 and P55 in eight animals",
+      "Animals were shown images of gratings at four orientations (horizontal, vertical, two obliques)",
+      "Orientation tuning was evaluated at each of multiple timepoints, then compared across timepoints or animals with a cross-correlation-inspired approach"
+    ],
+    "results": [
+      "V1 starts untuned to orientations, but develops orientation tuning between day 31 and 36, although this start is different in each animal (compare Figures 1, 2)",
+      "During maturation, tuning strength increases, although the location and size of iso-orientation domains is remarkably constant (Figures 1-3)",
+      "Selectivity emerged first for vertical and horizontal orientations in \"some, but not all, animals\"",
+      "The pattern of orientation tuning along the cortical surface varied from animal to animal: in some it was spotty, in others stripy, and in at least one, not organized at all (Figure 5). This seems to conflict with the \"common design\" proposed by Wolf, Kaschube, and colleagues? In animals that have stripy patterns, those strips mostly run perpendicular to the V1/V2 boundary (Figure 6)",
+      "Cells appear to acquire orientation tuning two days earlier when assessed with electrophysiology than when assessed with intrinsic imaging (Figure 7B)"
+    ],
+    "conclusions": [
+      "The stability of the maps, despite other changes thought to occur in V1 due to visual experience, points to the putative importance of orientation maps for... something",
+      "That orientation preference is detected earlier with electrophysiology suggests that either 1) something is insensitive about the optical imaging technique or 2) that cells with different tuning are more spatially mixed up early on (I don't think there's much support for this idea, in this paper or elsewhere)"
+    ],
+    "other": [
+      "The stability of maps aside, it's interesting how variable the onset of maturity and pattern of tuning on the cortical surface is across animals. In fact, it leads me to question how readily these results should be ported over to our thinking about other species, including humans"
+    ]
+  }
+}
