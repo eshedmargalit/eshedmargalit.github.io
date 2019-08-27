@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "title": "A global map of orientation tuning in mouse visual cortex",
+    "authors": [
+      "Fahey, PG",
+      "Muhammad, T",
+      "Smith, C",
+      "Froudarakis, E",
+      "Cobos, E",
+      "Fu, J",
+      "Walker, EY",
+      "Yatsenko, D",
+      "Sinz, FH",
+      "Reimer, J",
+      "Tolias, AS"
+    ],
+    "institutions": [
+      "Baylor College of Medicine",
+      "University of Tubingen",
+      "Rice University"
+    ],
+    "doi": "10.1101/745323",
+    "date": "2019-08",
+    "journal": "bioRxiv",
+    "keywords": ["mouse", "V1", "orientation", "pinwheel", "calcium imaging"],
+    "review_date": "2019-08-26",
+    "one_sentence": "Fahey and colleagues demonstrate that although small regions of mouse V1 may be salt-and-pepper (or micro-clustered) w.r.t. orientation tuning, there is a global orientation map that centers around one central pinwheel"
+  },
+  "review": {
+    "summary": [
+      "Wide-field calcium imaging in eight mice indicates a large, area-wide gradient of orientation tuning that converges at a central pinwheel",
+      "The function and origins of this map remain unknown, but its existence suggests 1) a revision of how we think about orientation maps in mice and rats and 2) a role for emerging systems neuroscience techniques to identify novel phenomena in a field that's been studied to death"
+    ],
+    "background": [
+      "Maps of orientation tuning in primary visual cortex have been identified and rigorously quantified in primates and most carnivores (e.g., cats), but the story in mice and rats has always been that they exhibit \"salt and pepper\" tuning, or, at best, micro-columns of small degrees of clustering by orientation preference",
+      "Cardinal bias (the over-representation of cells preferring vertical and horizontal orientations) has been previously reported in mice, and to a lesser degree, in primates. Already, this bias suggests that the orientation map in mice is not entirely random"
+    ],
+    "approach": [
+      "Measure calcium activity from L2/3 - L4 neurons in primary visual cortex in eight mice. Total imaging volume: 1800 x 1800 x 250-350 microns (very large!)",
+      "Play dynamic pink noise stimuli with coherent orientation and direction, then fit neuron responses with a two-peak von Mises function (similar to a circular Gaussian) for neurons that had more than 2.5% of variance explained. Total cells: 17k - 29k / animal"
+    ],
+    "results": [
+      "Many cells are strongly orientation tuned in V1, with a very large cardinal bias (Figure 1)",
+      "Collapsing neurons across depths makes it clear that there is a global orientation map, and projecting these points into stimulus-monitor space shows a clear pinwheel around the center of the screen (and thus, the center of retinotopic space; Figures 2, 3)",
+      "The pinwheel-like nature of the maps is relatively consistent across cortical depths (Figure 4)",
+      "The global pattern is obvious in individual animals, but the degree to which it's clearly pinwheel-like is less convincing (Extended Data Figures 3, 5)",
+      "The orientation bias cannot be easily explained by border effects, as it persists when stimuli are restricted away from the edges of the monitor (Extended Data Figure 7)"
+    ],
+    "conclusions": [
+      "The unprecedented scale of this recording was critical to discovering this large map that spans all of V1 and extends into neighboring areas -- if only focusing on small imaging regions, there is a lot of heterogeneity in tuning. Eshed's note: how do we reconcile this with the extreme precision of pinwheels in cats (Ohki et al., 2006)? What's different about the development of mice?",
+      "Large field-of-view imaging may be a useful tool in continuing to 'revisit' principles of cortical organization"
+    ],
+    "other": [
+      "I think this paper will be very impactful, as it disrupts a difficult-to-reconcile notion that despite the presence of orientation tuned cells, their position is totally irrelevant. In my mind, it's easier to think about these maps, both within and across species, as points on a continuum between extremely precise organization and more lax organization",
+      "What could be the computational or metabolic advantages of having one mega-pinwheel instead of regularly tiled pinwheels?"
+    ]
+  }
+}
