@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "Face Space Representations in Deep Convolutional Neural Networks",
+    "authors": [
+      "Alice J. O’Toole",
+      "Carlos D. Castillo",
+      "Connor J. Parde",
+      "Matthew Q. Hill",
+      "Rama Chellappa"
+    ],
+    "institutions": [
+      " University of Texas at Dallas",
+      " University of Maryland College Park"
+    ],
+    "date": "2018-08",
+    "journal": "Trends in Cognitive Sciences",
+    "doi": "10.1016/j.tics.2018.06.006",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1364661318301463",
+    "keywords": ["face", "DCNN", "face space"],
+    "review_date": "2019-09-03",
+    "one_sentence": "O'Toole et al. summarize recent advances in the use of deep convolutional neural networks for face recognition and as models of biological face processing"
+  },
+  "review": {
+    "summary": [
+      "Deep convolutional neural networks (DCNNs) achieve state-of-the-art on  demanding face recognition tasks",
+      "By considering how individual identities are represented in a high-dimensional \"face-space\", we see that DCNNs accomplish this task via rich yet compact representations, reminiscent of observations about how objects are represented in ImageNet-trained DCNNs"
+    ],
+    "background": [
+      "Early attempts at modeling the representation of faces relied on an image-based space commonly constructed by performing PCA directly on pixel inputs. This technique isn't terrible, but breaks down quickly when there are changes in viewpoint or luminance",
+      "Active appearance models (AAMs) emerged as an alternative to image-based models. They were more flexible in that they represented shape and texture information separately, allowing a generative model of faces at any viewpoint or illumination condition. Notably, though, there's no mechanistic understanding of how this division of labor might be accomplished in the brain, although there is evidence that face-selective neurons care about combinations of these dimensions (see Change and Tsao, 2017)",
+      "DCNNs have become clear favorites for object recognition tasks, and under some formulations of the task, one can consider face recognition an extension of object recognition task: critically, both require tolerance to identity-preserving transformations but specificity across identities",
+      "An important shortcoming of previous face-recognition models is that they don't account for 1) familiarity/\"training\" with certain identities and 2) similarity-based models don't explain changes in illumination and pose neatly, they only describe how similar two faces may be",
+      "As recently as 2012-2013, models trained to recognize faces only reached human performance on frontal views of faces but could not generalize to other viewpoints effectively"
+    ],
+    "approach": [
+      "This is a review paper that mostly cites work using deep convolutional neural networks trained on Labeled Faces in the Wild, IJB-A, and Mega-Face",
+      "The networks are often trained with some combination of good-old softmax loss and \"triplet loss\", which when given three faces (two of which are the same identity) is penalized for failing to separate the two unique identities",
+      "Networks are often, but not always, pre-trained on an object recognition task, then fine tuned on a face training set."
+    ],
+    "results": [
+      "Face representations in later DCNN layers provide readouts of many relevant variables, including identity, face viewpoint, pose, etc! This is consistent with similar observations for non-face objects reported in Hong et al., 2016 (Nature)",
+      "Some faces end up being coded robustly across many viewpoints, whereas others seem \"bound\" to a specific viewpoint. Whether this is a shortcoming of the training data or an indicator of properties specific to those identities remains to be seen",
+      "The DCNN face space appears to care quite a bit about image quality: images at low resolution or with a lot of occlusion are represented as more similar to each other than images where the face is clear, high-resolution, and unobstructed. Eshed's note: I doubt this is specific to face-trained networks, but is likely a property of any network in which classification becomes hard under occlusion"
+    ],
+    "conclusions": [
+      "The paper ends with a number of really important and interesting questions. In fact, this was probably my favorite part of the paper!",
+      "Q1) What should the training set be? Objects + faces? Objects then faces? Faces alone? How do we think face-recognition emerges in humans? As part of a more general system of networks (this is my camp), or as specialized hardware with a specialized training routine?",
+      "Q2) If you take a network and train it for faces or for objects, in which layer do you start to see appreciable differences? My guess is that it would be fairly late.",
+      "Q3) How can DCNNs be used to explain activity in face-selective brain areas?",
+      "Q4) Do DCNNs represent characteristics of faces such as gender and age?",
+      "Q5) How does the quality of the data (specifically, as a function of training stage) affect learned representations?",
+      "Q6) How much does the architecture of the DCNN matter?",
+      "Q7) How does neuroscience need to change to measure axes of the neural space that map onto semantically meaningful concepts?"
+    ],
+    "other": [
+      "I found this review very well-written and thoughtful, and I learned a lot about the state-of-the-art before the deep learning boom!"
+    ]
+  }
+}

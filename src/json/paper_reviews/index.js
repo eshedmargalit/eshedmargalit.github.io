@@ -26,7 +26,8 @@ const filenames = [
   "jang_orientation_classification.json",
   "ohki_pinwheel_order.json",
   "chapman_orientation_development.json",
-  "fahey_mouse_global_orientation.json"
+  "fahey_mouse_global_orientation.json",
+  "otoole_face_dcnn.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
