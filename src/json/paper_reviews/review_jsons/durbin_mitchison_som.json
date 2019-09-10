@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "authors": ["Durbin, R", "Mitchison, G"],
+    "institutions": ["King's College", "Stanford University"],
+    "keywords": ["self-organizing map", "orientation", "wiring"],
+    "title": "A dimension reduction framework for understanding cortical maps",
+    "journal": "Nature",
+    "doi": "10.1038/343644a0",
+    "url": "https://www.nature.com/articles/343644a0",
+    "date": "1990-01",
+    "one_sentence": "Durbin and Mitchison argue that maps in early visual cortex can be understood as the solution to a self-organizing map problem that minimizes wiring length and reduces dimensionality",
+    "review_date": "2019-09-10"
+  },
+  "review": {
+    "summary": [
+      "A self-organizing map approach to modeling the development of cortical maps is wiring-efficient, fast, and biologically plausible via Hebbian learning",
+      "Application of the self-organizing algorithm to stimuli defined by orientations and retinal position yield maps that are qualitatively similar to orientation maps observed in cat visual cortex"
+    ],
+    "background": [
+      "Retinotopy, ocular dominance, and orientation are all mapped relatively smoothly in the primary visual cortex of cats and macaques, which can be considered effectively 2D due to the columnar nature of V1 functional architecture",
+      "Because cortex is 2D and there are more than 2 stimulus dimensions to map (x, y, orientation, ocular dominance), the mapping from 'parameter space' to the cortical surface must contain imperfections",
+      "Prior work from these authors demonstrated that mapping a 2D parameter space onto a theoretical 1D cortex yields relatively smooth parameter maps when using a biological cost function that favors many short connections and allows relatively few long-range connections",
+      "Searching the space of all layouts becomes computationally difficult (and probably biologically implausible) in the mapping of 4+ dimensions to a 2D cortex, so we turn instead to self-organizing algorithms, e.g., Kohonen maps"
+    ],
+    "approach": [
+      "Create a Kohonen map in which each unit responds to some stimulus defined by (x, y, orientation angle, orientation tuning strength), and the update rule is based on a Gaussian neighborhood function",
+      "Compare the resulting map to orientation maps measured in cat primary visual cortex"
+    ],
+    "results": [
+      "For a simplified 2D parameter space -> 1D cortex mapping, applying a self-organizing algorithm yields results that are very similar in wiring cost and structure to the optimal layout (Figure 1c, d)",
+      "Mapping a 4D parameter space (x, y, orientation angle, orientation tuning) to a 2D space yields a mostly retinotopic map with singularities for orientation, as shown in cat (Figure 2). Of note is that the retinotopic map is warped near pinwheel centers in this model"
+    ],
+    "conclusions": [
+      "The self-organizing problem is both more biologically plausible and more efficient than direct minimization of wiring cost, yet it yields maps that are score very well on wire length minimization metrics",
+      "Brain evolution may have favored short connections and self-organizing maps as a way to quickly and robustly (although not perfectly) bootstrap the layout of stimulus features on the cortical surface"
+    ],
+    "other": [
+      "The self-organizing map algorithms require inputs that are fully formed stimuli, i.e., in this case they are points in a 4D space defining an orientation at some position in space. However, the maps are fully formed at birth. So, what are the stimuli/inputs to the model in utero? The authors cite Linsker '86 and Miller '89 for evidence that oriented, local inputs could drive development before eye opening."
+    ]
+  }
+}
