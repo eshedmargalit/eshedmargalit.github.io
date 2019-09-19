@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "authors": ["Linsker, R"],
+    "institutions": ["IBM"],
+    "keywords": ["hierarchical", "unsupervised", "neural network", "Hebbian"],
+    "title": "From basic network principles to neural architecture: emergence of spatial-opponent cells",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.83.19.7508",
+    "url": "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC386748/",
+    "date": "1986-09",
+    "review_date": "2019-09-18",
+    "one_sentence": "In the first of a 3-paper series, Linsker demonstrates how center-surround receptive fields might form in a modular, Hebbian network with random initial activity"
+  },
+  "review": {
+    "summary": [
+      "A three layer neural network, in which random activity patterns are generated in the first layer, gives rise to center-surround receptive fields in the third layer when trained with a  Hebbian learning rule and spatially localized synaptic projections from layer to layer",
+      "This architecture will serve as the foundation for the emergence of orientation-selective cells, and eventually columns in later papers in this series (Linsker 1986b,c)",
+      "Linsker emphasizes that the results here are not restricted to the visual system, but are easily understood through that lens"
+    ],
+    "background": [
+      "A highly reduced description of the early visual system includes center-surround cells in the retina and LGN, followed by orientation selectivity in primary visual cortex. Most of this structure is apparent at birth, ruling out strict forms of supervised learning (as performed in leading machine-learning frameworks today)",
+      "Spontaneous activity is known to be important in the early visual system (mostly in the form of retinal waves in mammals), although this paper takes as a starting point a theoretical system that has spatially random activity patterns"
+    ],
+    "approach": [
+      "Cells are laid out in a series of two-dimensional sheets; in this case there are three layers. The first layer is the input layer, which generates random activity patterns at some resolution (imagine a grid of some density, with each spot in the grid either being on or off at random)",
+      "Connect units in layer i to units in layer i + 1 such that corresponding points in each 2D sheet are more densely innervated. In practice this means that the connection strengths are initialized according to a Gaussian centered at the same location in the next sheet",
+      "Use a Hebbian update rule to learn layer 2 given a series of \"presentations\" in layer 1, then after those weights have stabilized, learn layer 3 from the activity of layer 2 (which in turn is a processed form of the input form layer 1)",
+      "Evaluate the mature weights of the system and compare to known biology"
+    ],
+    "results": [
+      "The weights in this system are unstable until they reach some boundary condition, e.g., +/- 1. That is, for a given postsynaptic cell, all (or all except one) synaptic weights onto that cell will be at extreme values.",
+      "There is a range of learning hyperparameters for which layer 2 develops all-excitatory, all-inhibitory, or mixed-sign responses. The author analyzes the all-excitatory case. For this case, layer 2 exhibits spatially local correlations.",
+      "Layer 3 emerges as a sheet of cells with center-surround tuning, as found in the retina and LGN of primates. Sometimes orientation-selective cells here, but the conditions under which that occurs are not described in detail."
+    ],
+    "conclusions": [
+      "A multilayer, unsupervised feedforward neural network with a Hebb-type learning rule yields spatial-opponent (center surround) cells in the final layer. A similar result could likely be obtained with other learning rules, although that isn't explored in this paper.",
+      "Linsker makes a point to say that this is not meant to be a model of the retina or its development, but is instead a proof of principle that a simple architecture with a simple learning rule and reasonable assumptions can give rise to a fairly complicated motif of the functional architecture of the visual system. I personally find that approach very inspiring, and believe there's a lot of work in this vein yet to be done!"
+    ],
+    "other": [
+      "This paper uses a TON of variable names and symbols. At some point it'd be great to see a simulation or even just a table of parameter names and their meaning..."
+    ]
+  }
+}
