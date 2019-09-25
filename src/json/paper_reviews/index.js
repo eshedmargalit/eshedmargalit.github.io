@@ -29,7 +29,8 @@ const filenames = [
   "fahey_mouse_global_orientation.json",
   "otoole_face_dcnn.json",
   "durbin_mitchison_som.json",
-  "linsker_spatial_opponent.json"
+  "linsker_spatial_opponent.json",
+  "khalig-razavi_dnn.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

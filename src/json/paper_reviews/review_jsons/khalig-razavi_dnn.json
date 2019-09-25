@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Deep supervised, but not unsupervised, models may explain IT cortical representation",
+    "authors": ["Khaligh-Razavi S-M", "Kriegeskorte N"],
+    "institutions": [
+      "Medical Research Council, Cognition and Brain Sciences Unit"
+    ],
+    "journal": "PLOS Computational Biology",
+    "doi": "10.1371/journal.pcbi.1003915",
+    "url": "http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003915",
+    "date": "2014-11",
+    "review_date": "2019-09-25",
+    "one_sentence": "Khaligh-Razavi and Kriegeskorte compare 37 computer vision models to the representational geometry of human and macaque IT, and find that only features from an ImageNet trained neural network (with recombination of features) was able to explain the data",
+    "keywords": [
+      "macaque",
+      "human",
+      "rsa",
+      "deep neural network",
+      "computer vision"
+    ]
+  },
+  "review": {
+    "summary": [
+      "Not-strongly-supervised models (those with no or relatively little supervision on object tasks) do not explain IT geometry even after feature reweighting and remixing",
+      "Features from a deep convolutional neural network are able to explain the representational geometry, but only after reweighting and remixing of features"
+    ],
+    "background": [
+      "Yamins et al., 2014 demonstrated that learning a linear mapping from object-recognition-trained neural networks to IT neurons beats a linear mapping from any other computer vision model. However, this approach requires a large amount of high-quality data",
+      "Representational similarity analysis (RSA) allows an alternative method to matching feature spaces to brain data in which the representational geometry of a stimulus set can be compared",
+      "There is an open question as to whether the response patterns in IT can be explained by an intelligently-selected feature space, or if supervised learning of massive neural networks is the only approach that yields a good fit to biological measurements"
+    ],
+    "approach": [
+      "Datasets include monkey electrophysiology from Kiani et al., 2007 and human fMRI data Kriegeskorte et al., 2008. In both cases, RDMs are constructed",
+      "37 candidate computer vision models are tested, ranging from V1-like models, to HMAX, to deep convnets. A variety of approaches to re-weighting the feature spaces produced by these models (stretching the feature space toward some end) or remixing the feature spaces (finding new linear combinations, i.e., affine transformations of the space) are performed",
+      "Kendall's Tau is used to compare feature spaces to biology. Furthermore, an interesting approach is introduced in which model RDMs are weighted in a least-squares regression to explain the observed RDM",
+      "In this context, \"remixing\" features means using SVM decision boundaries on three tasks: body vs nonbody, face vs. nonface, and animate vs. inanimate as new features and constructing RDMs from those. One expects that if the representation is able to perform these three tasks well, then these remixed features will match the IT representation (which we know is strongly categorical; Figure 4)"
+    ],
+    "results": [
+      "Of the not-strongly-supervised models (those without many labeled images used while learning the representation), most have only a small amount of similarity to human and macaque IT and do not show much categorality. A combination via feature concatenation of all of these models, termed \"combi27\", is the closest match to biological data but still leaves a substantial gap to be explained (Figures 1, 2, 3, 4)",
+      "Remixing or reweighting of the not-strongly-supervised models does not close the gap to biological data, presumably because their representations are not categorical in the way IT is (Figure 5)",
+      "Alexnet (trained on Imagenet) matches IT much better than the not-strongly-supervised models, but still requires feature remixing and reweighting to completely close the gap (Figures 6, 7, 8, 9, 10)"
+    ],
+    "conclusions": [
+      "Strong supervision is required to build a representation that matches that in human and macaque IT. However, strong supervision may not be enough: the categorical boundaries that are important to IT, e.g., animate vs. inanimate, need to be weighted more heavily than other boundaries.",
+      "This work raises an interesting question regarding the definition of visual object \"categories\", especially given that low-level differences explicitly available in, e.g., the retina, often correlate with semantic labels. They write that \"a representation is 'categorical' when it affords better category discriminability than any feature set that can be learned without category supervision, i.e., when it is designed to emphasize category divisions.\" This is an interesting, but perhaps nonstandard definition in my opinion."
+    ],
+    "other": [
+      "Compared to direct linear fits, the RSA approach seems to be less computationally intensive, but also requires complex post-hoc manipulation of features, e.g. constructing a new, warped feature space from SVMs fit on separate tasks. In practice I assume that the choice of methods (RSA vs. direct fits) likely doesn't matter all that much"
+    ]
+  }
+}
