@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "Learning Divisive Normalization in Primary Visual Cortex",
+    "authors": [
+      "Gunthner, MF",
+      "Cadena, SA",
+      "Denfield, GH",
+      "Walker, EY",
+      "Tolias, AS",
+      "Bethge, M",
+      "Ecker, AS"
+    ],
+    "institutions": [
+      "University of Tubingen",
+      "Bernstein Center for Computational Neuroscience",
+      "Baylor College of Medicine",
+      "Rice University"
+    ],
+    "journal": "bioRxiv",
+    "doi": "10.1101/767285",
+    "url": "http://dx.doi.org/10.1101/767285",
+    "date": "2019-09",
+    "review_date": "2019-10-02",
+    "one_sentence": "Gunthner and colleagues demonstrate that adding learned divisive normalization to a model of primate primary visual cortex offers a parameter-efficient improvement over basic linear-nonlinear models, but still falls short of 'black box' deep neural networks",
+    "keywords": [
+      "macaque",
+      "v1",
+      "divisive normalization",
+      "deep neural network",
+      "orientation"
+    ]
+  },
+  "review": {
+    "summary": [
+      "Adding divisive normalization to a neural network model of V1 firing rates in response to natural images closes most of the gap between a linear-nonlinear subunit model and a black-box CNN without relying on too many additional parameters.",
+      "The learned normalization weights suggest that normalization may be strongest between units with similar orientation tuning preferences."
+    ],
+    "background": [
+      "Divisive normalization (DN) is a nonlinear computation thought to be performed in primary visual cortex, whereby a neuron's output is normalized (likely by lateral inhibitory connections) by the output magnitude of its neighbors in cortex. Traditionally, DN has been thought to be non-specific; that is, neurons can be normalized by a \"pool\" of units that are selected without consideration of their response patterns/stimulus selectivity/etc",
+      "Recently, a deep neural network model has been introduced as the state-of-the-art model of macaque V1 spiking rates (Cadena et al., 2019), but that model does not include any computation resembling DN"
+    ],
+    "approach": [
+      "Build a neural-network model in which input images are passed through a divisive normalization \"core\" that consists of learned filters and learned normalization weights. The output of this model is then subjected to a linear readout mechanism which has been discussed at length in another publication (Klindt et al., 2017), but which boils down to learning weights on model output channels and receptive field positions separately.",
+      "Present black and white natural images spanning 2 degrees of visual input and record firing rates from macaque V1 neurons with silicon probes spanning multiple cortical layers. Use firing rates to train model weights. EM note: is it possible that one would learn different schemes of divisive normalization for A) different images or B) different recording locations?"
+    ],
+    "results": [
+      "A model with nonspecific divisive normalization (same normalization weights on all channels) significantly outperforms a simple subunit model. Eshed's note: the difference in terms of fraction of explainable variance (FEV) is actually quite small! But it's inflated by reporting performance relative to a black-box CNN (Figure 3)",
+      "A model with specific DN (learnable normalization weights per channel) outperforms the non-specific DN model by 0.6% FEV. (Figure 3)",
+      "The divisive normalization model has way fewer parameters than the full CNN: 6.5k parameters vs. 24k parameters (Table 1). EM note: Given that the relationship between number of parameters and FEV is non-linear, is it possible that a parameter-matched black-box CNN could be just as good as the DN model? I doubt it, but it would be a nice control to see.",
+      "When learning specific DN, it seems that features with similar orientation tuning have stronger weights on each other than features with dissimilar orientation tuning (Figures 5 and 6). Not sure what happens here with the filters learned that appear to have no orientation preference... are they ignored in this analysis?",
+      "As control analyses, the authors show that readout weights are not concentrated on only a handful of channels (Figure 7) and that effects of the size of the normalization pool support using a pool that is roughly matched to receptive field sizes (Figure 8). They note that a limitation of the dataset is that images were only shown to macaques in an area spanning twice the size of the estimated receptive field."
+    ],
+    "conclusions": [
+      "Divisive normalization is a compact (with respect to number of parameters) computation that helps fit neural data with learned convolutional features. ",
+      "This model suggests that divisive normalization may be stronger for units with similar orientation tuning, an idea that has had weak experimental support to date."
+    ],
+    "other": [
+      "The big question here lies in the tradeoff between parameters and FEV. How impressed are we by the parameter savings with respect to the hit in the model's ability to explain brain data?",
+      "How does this framework extend beyond V1? If we use a more general notion of tuning similarity (correlations of unit outputs instead of orientation preference estimates from the learned filters, for example), can we extend this mechanism to multiple stages in a deeper model that fits later brain areas well?"
+    ]
+  }
+}

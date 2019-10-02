@@ -30,7 +30,8 @@ const filenames = [
   "otoole_face_dcnn.json",
   "durbin_mitchison_som.json",
   "linsker_spatial_opponent.json",
-  "khalig-razavi_dnn.json"
+  "khalig-razavi_dnn.json",
+  "gunthner_divisive_normalization.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
