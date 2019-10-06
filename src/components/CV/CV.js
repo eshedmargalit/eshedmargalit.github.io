@@ -471,10 +471,14 @@ class CV extends Component {
                 <h6>
                   Co-Leader,{" "}
                   <a href="http://stanford-cnjc.github.io">
-                    Computational Neuroscience Journal Club
+                    Stanford Computational Neuroscience Journal Club (CNJC)
                   </a>
                 </h6>
-                <p>2018</p>
+                <p>2018, 2019</p>
+              </ListGroupItem>
+              <ListGroupItem>
+                <h6>Stanford Neurosciences PhD Program Student Mentor</h6>
+                <p>2019</p>
               </ListGroupItem>
               <ListGroupItem>
                 <h6>
@@ -484,7 +488,7 @@ class CV extends Component {
               </ListGroupItem>
               <ListGroupItem>
                 <h6>Mentor and workshop leader for NSF GRFP Application</h6>
-                <p>2017 - 2018</p>
+                <p>2017, 2018, 2019</p>
               </ListGroupItem>
               <ListGroupItem>
                 <h6>
@@ -495,7 +499,7 @@ class CV extends Component {
               </ListGroupItem>
               <ListGroupItem>
                 <h6>Mentor, Stanford Biosciences Student Association</h6>
-                <p>2017 - 2018</p>
+                <p>2017 - 2019</p>
               </ListGroupItem>
               <ListGroupItem>
                 <h6>
