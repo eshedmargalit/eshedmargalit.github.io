@@ -31,7 +31,8 @@ const filenames = [
   "durbin_mitchison_som.json",
   "linsker_spatial_opponent.json",
   "khalig-razavi_dnn.json",
-  "gunthner_divisive_normalization.json"
+  "gunthner_divisive_normalization.json",
+  "kietzmann_recurrence_rda.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

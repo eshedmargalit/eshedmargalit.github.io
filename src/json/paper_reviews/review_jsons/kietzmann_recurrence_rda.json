@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "title": "Recurrence is required to capture the representational dynamics of the human visual system",
+    "authors": [
+      "Kietzmann, TC",
+      "Spoerer, CJ",
+      "Sörensen, LKA",
+      "Cichy, RM",
+      "Hauk, O",
+      "Kriegeskorte, N"
+    ],
+    "institutions": [
+      "MRC Cognition and Brain Sciences Unit, University of Cambridge",
+      "Donders Institute for Brain, Cognition, and Behavior, Radboud University",
+      "University of Amsterdam",
+      "Freie Universitat Berlin",
+      "Columbia University"
+    ],
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.1905544116",
+    "url": "https://www.pnas.org/cgi/doi/10.1073/pnas.1905544116",
+    "date": "2019-10",
+    "review_date": "2019-10-09",
+    "one_sentence": "Kietzmann et al. use source-localized MEG to argue that recurrent connections (and recurrent neural network models) are needed to explain the dynamics of object representations in human visual cortex",
+    "keywords": [
+      "human",
+      "recurrence",
+      "feedback",
+      "RSA",
+      "deep neural network"
+    ]
+  },
+  "review": {
+    "summary": [
+      "The temporal dynamics of object representations throughout the ventral visual stream suggest that solely feedforward processing is unlikely",
+      "Deep neural networks trained to predict time-varying brain data do a better job when recurrence is built into the architecture, even when matching for overall number of parameters"
+    ],
+    "background": [
+      "Visual cortical regions are densely interconnected, yet most research treats the system in feedforward. In large part that's because much of 'core object recognition' can be explained that way, but vision scientists have suspected that recurrence and feedback are important for predicting brain measurements.",
+      "Most neural network models used to explain brain data are strictly feedforward, lacking recurrence. Note, however, recent work from the DiCarlo and Yamins groups demonstrating the importance of recurrence in explaining neuronal dynamics."
+    ],
+    "approach": [
+      "Record MEG data from 15 participants as they view many repetitions of 92 object stimuli",
+      "Create model RDMs (e.g., human faces on, everything else off) for those stimuli that make predictions about what structure may be there. Note: this procedure seems fairly important but is somewhat glossed over-- the choice of which model RDMs one uses aren't just important to the analysis, but to the entire presentation of results! In the methods, they clarify that '4 main and 10 additional control predictors were investigated', but an explanation for how those 14 are chosen and which are 'main' and which are 'control' is not provided. In a longer publication I would love to see more discussion of how these results compare to other reasonable choices of model RDM components",
+      "Evaluate contribution of each RDM component over time in each of three ROIs: early visual cortex, V4/LO, and IT/PHC. Another note: how much do these results depend on this grouping? What if V4 goes with V1-V3, and PHC isn't included with IT? Of note here is that the authors justify this selection by attempting to pick spatially distinct ROIs (to limit crosstalk) that are large (to maximize SNR)",
+      "Use Granger causality to infer directions of feedforward and feedback projections",
+      "Train two deep neural network classes to predict the MEG data directly: feedforward models with temporal ramping, and recurrent models, then test on same images humans saw and evaluate quality of fit"
+    ],
+    "results": [
+      "RDMs vary across ROIs and timepoints, suggesting that there are, in fact, dynamics to explain (Figure 1)",
+      "Early visual features explain the brain data at early time points, animacy has peaks in different ROIs at different times, face clustering has a well-defined peak, and real-world size has some interesting dynamical structure (Figure 1)",
+      "Causality analysis suggests that feedback from IT to V4 peaks at two distinct later time points, whereas feedforward contributions are early. Early visual cortex to V4 connections (feedforward and feedback) seem pretty well-aligned in time, with feedforward leading feedback by a bit (Figure 2)",
+      "Deep neural networks with recurrence exhibit temporal dynamics in how well they fit the data, but the peaks appear fairly consistent regardless of ROI (about 0.15s after stimulus presentation; Figure 3)",
+      "Recurrent DNNs outperform feedforwawrd alternatives in all ROIs (Figure 3)",
+      "Virtual 'cooling' (increasing dropout probability) suggests that the lateral and top-down connections in the recurrent models are actually important for explaining data in V4/LO and IT/PHC, but not in V1-V3 (Figure 4)"
+    ],
+    "conclusions": [
+      "Human ventral stream dyanmics likely arise from recurrence, which may be important for recognizing objects under difficult conditions (like occlusion)",
+      "We should probably use recurrent DNNs to explain brain data"
+    ],
+    "other": [
+      "The data appear very high-quality and the modeling results are clear, but I'm left wondering to what degree this is a fishing expedition. For instance, reasonable people may disagree or craft different stories about what they're seeing in the dynamics, and the choice of model RDM components matters tremendously to how that story looks! Nevertheless, I don't have specific gripes with the choices here. They seem reasonable and are well-grounded in prior work (e.g., animacy and human-face representations are RDM components most people in this field would likely choose)",
+      "The thrust of the argument here appears to be that the dynamics are difficult to explain without recurrence between the regions specified here. I think I agree, but it'd be interesting to hear if there are other strong alternative models that could explain what's happening. Are there candidate regions that could influence timecourses? To what extent does adaptation or decay explain some bit of these results? It would be unreasonable for the authors to completely explore that space, but if the data are made available it'd be fun to play with different architectures and alternative models",
+      "The use of an objective weight schedule here (Figure 3A, inset) is pretty interesting, I'd personally want to know why this one works, i.e., how alternative obejctive schedules fail. All that's provided here is that the value of 10:1 (category: neural fit) was chosen arbitrarily, which seem splausible"
+    ]
+  }
+}
