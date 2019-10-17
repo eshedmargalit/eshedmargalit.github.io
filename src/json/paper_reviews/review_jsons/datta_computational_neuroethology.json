@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "title": "Computational Neuroethology: A Call to Action",
+    "authors": [
+      "Sandeep Robert Datta",
+      "David J. Anderson",
+      "Kristin Branson",
+      "Pietro Perona",
+      "Andrew Leifer"
+    ],
+    "institutions": ["Caltech", "Janelia", "Harvard", "Princeton"],
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2019.09.038",
+    "url": "https://doi.org/10.1016/j.neuron.2019.09.038",
+    "date": "2019-10",
+    "review_date": "2019-10-17",
+    "one_sentence": "Datta and colleagues argue that now is the time for neuroscientists to push toward rich measurements of complex, naturalistic behaviors",
+    "keywords": ["ethology", "motion tracking", "behavior"]
+  },
+  "review": {
+    "summary": [
+      "Recent advances in hardware and software have made it possible to record the pose of an animal performing 'naturalistic' behaviors and to automatically segment and label such recordings",
+      "Because neural activity is high-dimensional, we may need high-dimensional measurements of brain output (behavior) to make sense of it"
+    ],
+    "background": [
+      "Ethology has traditionally been concerned with the construction of state transition probabilities, where states are animal behaviors that an ethologist manually identifies and labels",
+      "Until recently, marker-assisted tracking of animals was the best we could do. Instead, many trained animals to do stereotyped tasks to ask questions about how brain activity relates to behavior",
+      "In parallel, brain measurements are becoming increasingly high-dimensional and comprehensive, with high density, high coverage optical and electrophysiological systems in place for worms, flies, and mice"
+    ],
+    "approach": [
+      "This is a review paper that discusses a number of supervised and unsupervised approaches to labeling behavior from camera footage. The main techniques described are DeepLabCut, JABAA, CADABRA, MoSeq, and MotionMapper"
+    ],
+    "results": [
+      "The authors outline recent progress in tracking mice, zebrafish, and worms with the techniques described.",
+      "The bulk of the paper acknowledges that the really hard problems still need to be solved: at which spatiotemporal scale should behavior and neural activity be quantified? Should we want interpretable or predictive models, especially when we can't have both? How naturalistic of behaviors can or should be measured?"
+    ],
+    "conclusions": [
+      "While the core questions of the field remain open, the tools are arriving to take a meaningful bite out of the array of question marks. The \"call to action\" in the paper title is indeed for neuroscientists to begin employing these methods and to get serious about quantifying behavior."
+    ],
+    "other": [
+      "The authors seem to flip-flop a bit on whether models that are highly predictive but uninterpretable are better than models that are somewhat predictive and highly interpretable. This parallels a general tension in machine-learning-for-neuroscience that I've seen, and relates strongly to the \"Learning Divisive Normalization...\" paper that I wrote a review on recently"
+    ]
+  }
+}
