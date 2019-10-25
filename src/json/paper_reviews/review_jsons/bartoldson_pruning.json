@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "authors": ["Bartoldson, BR", "Morcos, AS", "Barbu, A", "Erlebacher, G"],
+    "institutions": ["Florida State University", "Facebook AI Research"],
+    "keywords": [
+      "neural network",
+      "pruning",
+      "generalization",
+      "deep learning"
+    ],
+    "title": "The Generalization-Stability Tradeoff in Neural Network Pruning",
+    "journal": "arXiv",
+    "doi": "",
+    "url": "https://arxiv.org/abs/1906.03728",
+    "date": "2019-09",
+    "review_date": "2019-10-25",
+    "one_sentence": "Bartoldson et al. demonstrate that pruning many large weights from a network can actually improve generalization, likely because it creates instability in much the same way that noise would"
+  },
+  "review": {
+    "summary": [
+      "Pruning -- the act of removing neural network parameters -- not only compresses the model description, but also improves generalization on held-out data",
+      "Pruning many large weights leads to better generalization gains and can be understood as creating large instability in model performance"
+    ],
+    "background": [
+      "Neural network models are likely vastly overparameterized for the tasks they perform, leading many to seek   lighter models that don't sacrifice task performance. One approach has been pruning small weights, or those that are unlikely to affect task performance",
+      "A counter-intuitive finding has been that in addition to reducing the number of weights needed, pruning can actually improve test-set generalization in some cases. However, because different pruning approaches are employed in the literature, it's unclear why it only sometimes improves generalization"
+    ],
+    "approach": [
+      "A few shallow models trained on CIFAR10 are hit with different types of pruning during training: pruning 1% of small weights, 13% of small weights, or 13% of big weights",
+      "Different styles of pruning are employed, ranging from pruning those with large L2-norms to E[BN] pruning, which allows feature strength to be evaluated even with batch normalization",
+      "To compare to the effects of pruning, two kinds of noise are added: zeroing noise, which holds certain weights at 0 for a fixed number of batches, and gaussian noise added for a fixed number of batches."
+    ],
+    "results": [
+      "For two networks, pruning many large weights led to 1) bigger immediate dips in performance on the next batch (instability), but 2) even higher performance once the network recovers (generalization). This correlation in general is fairly strong (Figure 1)",
+      "For both L2-norm and E[BN] pruning, pruning large weights leads to higher instability as pruning percentage increases, but in E[BN] pruning, you can hit higher instability while removing fewer units (Figure 4)",
+      "As long as noise (both zeroing and Gaussian) is applied for long enough, the same kinds of instability and then generalization boosts can be observed"
+    ],
+    "conclusions": [
+      "Instability in network parameters appears to be key in creating generalization boosts, and a fast/efficient way to achieve this instability is by pruning large weights according to the E[BN] pruning rule"
+    ],
+    "other": [
+      "These networks are fairly small and trained on a small dataset (CIFAR-10). I'd be curious to see how these results hold up with larger networks trained on ImageNet"
+    ]
+  },
+  "createdAt": { "$date": { "$numberLong": "1572027483364" } },
+  "updatedAt": { "$date": { "$numberLong": "1572027483364" } },
+  "__v": { "$numberInt": "0" }
+}
