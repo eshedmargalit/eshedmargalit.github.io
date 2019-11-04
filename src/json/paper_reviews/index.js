@@ -34,7 +34,8 @@ const filenames = [
   "gunthner_divisive_normalization.json",
   "kietzmann_recurrence_rda.json",
   "datta_computational_neuroethology.json",
-  "bartoldson_pruning.json"
+  "bartoldson_pruning.json",
+  "devalois_spatial_frequency.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

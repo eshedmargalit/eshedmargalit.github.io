@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "Spatial Frequency Selectivity of Cells in Macaque Visual Cortex",
+    "authors": ["De Valois, RL", "Albrecht, DG", "Thorell, LG"],
+    "institutions": ["UC Berkeley"],
+    "journal": "Vision Research",
+    "doi": "10.1016/0042-6989(82)90113-4",
+    "url": "https://www.sciencedirect.com/science/article/pii/0042698982901134",
+    "date": "1982-09",
+    "review_date": "2019-11-04",
+    "one_sentence": "De Valois et al. comprehensively measure the spatial frequency tuning of simple and complex cells in macaque V1 and find a range of preferences and tuning widths",
+    "keywords": ["macaque", "v1", "spatial frequency", "simple", "complex"]
+  },
+  "review": {
+    "summary": [
+      "Cells in macaque V1 are tuned to a range of spatial frequencies, and the bandwidth of this tuning varies considerably. ",
+      "Sharp tuning for orientations and spatial frequencies can be considered a signature of a role for V1 in performing a Fourier decomposition of visual inputs that either arises de-novo in V1 or is carried by parallel pathways that originate in the retina"
+    ],
+    "background": [
+      "At the time of this paper, a framework for the early visual system as a Fourier analyzer had been proposed, but cells with sharp tuning to particular spatial frequencies had not been conclusively identified in macaque",
+      "Psychophysical studies (without measurements of neural activity) had suggested that channels selective to specific spatial frequencies should exist"
+    ],
+    "approach": [
+      "Present sine wave gratings in the receptive field of a cell being recorded. Each grating was presented at multiple contrast levels and spatial frequencies to map the contrast sensitivity function of the cell. Orientation and temporal frequency were fixed at peak values for each cell while measuring spatial frequency tuning.",
+      "Cells recording varied from foveal to five degrees periphery, most cells were parafoveal (0 to 1.5 degrees)"
+    ],
+    "results": [
+      "Both simple and complex cells were identified by the spatial frequency mapping procedure. Simple cells were characterized by a peak response that started at the basal firing rate, peaked at some point, and came back down. Complex cells, on the other hand, had a baseline shift in firing rate but not much modulation in response to the grating (Figure 1)",
+      "Consistent with Hubel and Wiesel's statement that simple cells sum excitatory and inhibitory fields, simple cells in this sample that are evaluated with a counterphase flickering grading show stimulus positions at which excitation and inhibition balance to produce no response. This 'nullification' is not observed for complex cells. The authors note that these characteristics map onto retinal \"X\" and \"Y\" cells respectively",
+      "The range of tuning bandwidths among cells in the population is quite large (many narrowly tuned cells, many broadly-tuned cells), and the simple/complex or foveal/parafoveal distinctions are not strong predictors of a cells tuning bandwidth (Figures 4, 5).",
+      "Neurons were tuned to spatial frequencies between 0.5 and 15 cycles per degree of visual angle. Cells that are neighboring often have dramatically different spatial frequency tuning (Figure 6)."
+    ],
+    "conclusions": [
+      "As Hubel and Wiesel reported, simple and complex cells are easily differentiable and detectable in V1, although more simple cells were reported here than in H/W's work.",
+      "Because cells that are sharply orientation tuned are also sharply spatial-frequency tuned, one can consider these cells the basis of a Fourier-analysis role for V1. "
+    ],
+    "other": [
+      "The authors do some interesting math regarding what they call a \"cortical integration region (CIR)\" which is roughly a complete orientation and ocular dominance hypercolumn. This space would be roughly 1mm square in macaque, with about 100k neurons. Given the tuning distribution provided in Fig 6 of this paper, we expect that roughly 32k cells would be sharply tuned, leaving 1600 cells per orientation (assuming 20 distinct orientation)"
+    ]
+  }
+}
