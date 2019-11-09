@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "authors": ["Zhuang, C", "Zhai, AL", "Yamins, DLK"],
+    "institutions": ["Stanford University"],
+    "keywords": ["unsupervised learning", "neural network", "machine learning"],
+    "title": "Local Aggregation for Unsupervised Learning of Visual Embeddings",
+    "journal": "arXiv / ICCV",
+    "doi": "",
+    "url": "https://arxiv.org/abs/1903.12355",
+    "date": "2019-04",
+    "review_date": "2019-11-09",
+    "one_sentence": "Zhuang and colleagues demonstrate state-of-the-art performance from unsupervised features by embedding natural images into a lower-dimensional space where similar images are 'soft clustered' into groups at a variety of spatial scales"
+  },
+  "review": {
+    "summary": [
+      "Local aggregation (LA) aims to embed images into a low-dimensional space using a neural network as the embedding function. After the embedding function is learned, such that a local aggregation metric (described later) is optimized, that network can achieve very high performance on the ImageNet task (60% accuracy [top-1])"
+    ],
+    "background": [
+      "Supervised learning is an effective way to train networks but 1) requires way too many labeled examples for arbitrary tasks, i.e., we don't have the ImageNet dataset for everything, and 2) is not at all how humans and other animals learn",
+      "Unsupervised or semi-supervised methods can fill that gap, but their performance has historically been poor. One of the most promising previous approaches is instance recognition, where each image is treated as a distinct category, and different categories are embedded to maximize distance between them. ",
+      "The downside of instance recognition is that it separates things that _should_ be close together, so a different strategy is to iteratively assign images to clusters based on similarity, and to use those cluster assignments as new labels during the next batch of training. This approach suffers from potentially failing to separate images within a cluster."
+    ],
+    "approach": [
+      "Local aggregation aims to balance clustering and separation by identifying, for a given embedding function, the \"close neighbors\" and \"background neighbors\" of an image, then brings close neighbors closer (using background neighbors to calibrate what 'closer' means; Figure 1)",
+      "For dataset size and batch issues, a memory bank is used to store image vectors from batch to batch. This technique is introduced in the instance recognition work.",
+      "For robustness, multiple clusterings are performed per iteration, and results are aggregated across those clusterings"
+    ],
+    "results": [
+      "For four different architectures (Alexnet, VGG16, ResNet-{18,50}), local aggregation achieves better transfer learning than any other unsupervised method, peaking at 60.2% top-1 performance for the largest network (Table 1)",
+      "LA also achieves state of the art on scene-categorization and object-detection (Tables 2 and 3)",
+      "LA works by effectively increasing local density while keeping the embedding globally sparse (Figure 2)",
+      "Inspection of nearest neighbors of images (whether ultimately recognized correctly or not) looks qualitatively strong: visual similarity and image context in embedding neighbors is very high (Figure 3)"
+    ],
+    "conclusions": [
+      "LA is the strongest unsupervised learning algorithm to date, and is generally enough that it could easily be applied to other domains, including video and audio (as the authors plan to do)",
+      "It remains to be seen to what extent something like LA is done in the developing brain... If what we want is a biologically-realistic unsupervised learning algorithm, could LA be a reasonable description?"
+    ],
+    "other": [
+      "Disclaimer: this is work from one of the labs I'm in, so I'm biased to have a more favorable view on it. I do think it's really outstanding work, and I'm excited to see how it can be improved and applied to biological data."
+    ]
+  },
+  "createdAt": { "$date": { "$numberLong": "1573313945319" } },
+  "updatedAt": { "$date": { "$numberLong": "1573313945319" } },
+  "__v": { "$numberInt": "0" }
+}
