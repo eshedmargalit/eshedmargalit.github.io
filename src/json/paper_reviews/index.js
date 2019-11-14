@@ -36,7 +36,8 @@ const filenames = [
   "datta_computational_neuroethology.json",
   "bartoldson_pruning.json",
   "devalois_spatial_frequency.json",
-  "zhuang_local_aggregation.json"
+  "zhuang_local_aggregation.json",
+  "smith_v1_correlations.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

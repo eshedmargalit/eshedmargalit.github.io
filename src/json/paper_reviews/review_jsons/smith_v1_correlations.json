@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "title": "Distributed network interactions and their emergence in developing neocortex",
+    "authors": [
+      "Smith, GB",
+      "Hein, B",
+      "Whitney, DE",
+      "Fitzpatrick, D",
+      "Kaschube, M"
+    ],
+    "institutions": [
+      "Max Planck Florida Institute for Neuroscience",
+      "University of Minnesota",
+      "Frankfurt Institute for Advanced Studies",
+      "International Max Planck Research School for Neural Circuits",
+      "Goethe University"
+    ],
+    "journal": "Nature Neuroscience",
+    "doi": "10.1038/s41593-018-0247-5",
+    "url": "https://doi.org/10.1038/s41593-018-0247-5",
+    "date": "2018-11",
+    "review_date": "2019-11-14",
+    "one_sentence": "Smith and colleagues perform longitudinal Ca2+ imaging in ferret V1 and find that modular spontaneous correlation patterns before eye opening predict orientation maps after eye opening",
+    "keywords": ["ferret", "v1", "orientation", "correlation", "development"]
+  },
+  "review": {
+    "summary": [
+      "Before eye opening, activity in V1 is modular and distributed -- relative to some seed point, a patchy network of correlated regions emerges",
+      "This correlation structure does not depend on feedforward input from the retina or LGN and predicts orientation structure at about postnatal day 5 (P5)"
+    ],
+    "background": [
+      "Visual cortex is not silent before eye opening, but exhibits spontaneous, endogenous inputs",
+      "The capacity of this spontaneous input to produce maps organized at the scale of several millimeters has been unknown, given that intracortical horizontal connections continue to develop after eye opening"
+    ],
+    "approach": [
+      "Imaging of V1 in female ferrets spanning timepoints before and after eye opening",
+      "A model with anisotropic \"Mexican-hat\" tuning functions is proposed to explain the observed patterns of cortical activity"
+    ],
+    "results": [
+      "Spontaneous activity has local correlations on the scale of a few mm (dies off at about 3mm) and is relatively consistent whether examined at the cellular or wide-field scales, and whether the animal is awake or anesthetized (Figure 1)",
+      "The network of correlations observed in spontaneous activity can be used to predict orientation tuning maps, even when the area immediately surrounding a seed point is masked out of the analysis. This suggests that the patterns are robustly organized across many millimeters (Figure 2)",
+      "\"Fractures\" in the correlation structure, lines along which moving the seed point will lead to dramatically different correlation maps, perfectly coincide with traditionally-defined fractures in orientation maps (lines along with the orientation gradient is high) (Figure 3)",
+      "Measuring spontaneous activity before eye opening provides information to predict orientation tuning as early as 5 days after eye opening, suggesting a role for the spontaneous activity in setting up cortical networks (Figure 4)",
+      "After development, reversible inactivation of the retina (abolishing waves with TTX) or LGN (muscimol injection) does not abolish correlation structure, indicating a cortical locus for the correlations. Note: is it possible other thalamic regions are still online in this analysis (e.g., pulvinar?) (Figure 5)"
+    ],
+    "conclusions": [
+      "Visual cortex may have a 'fundamental modular structure' that is established early in development (but by which mechanisms?) and may prime the system for the patterns of, e.g., orientation tuning that are observed later. The authors also note that the spontaneous correlation patterns align somewhat with ocular dominance (OD) columns, but more weakly. How does that work? Given that there's supposed to be a regular orientation-OD relationship (see Hubener et al., 1997), shouldn't it be strongly predictive?",
+      "The feedforward inactivation results suggest that somehow, despite short horizontal connections, V1 is propagating these long-range correlation structures. The authors explain this with their anisotropic Mexican-hat tuning model (Figure 6), but are there alternative explanations? Similarly, is there empirical evidence for the kinds of receptive fields described here?"
+    ],
+    "other": [
+      "I really enjoyed reading this paper and thought the results go a long way in binding some confusing results about the timeline and robustness of orientation tuning maps early in development"
+    ]
+  }
+}
