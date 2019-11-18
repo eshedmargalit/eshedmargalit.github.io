@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.dda85670.chunk.css",
-  "main.js": "/static/js/main.a697aafe.chunk.js",
-  "main.js.map": "/static/js/main.a697aafe.chunk.js.map",
+  "main.js": "/static/js/main.f64a4720.chunk.js",
+  "main.js.map": "/static/js/main.f64a4720.chunk.js.map",
   "static/css/1.256124b4.chunk.css": "/static/css/1.256124b4.chunk.css",
   "static/js/1.e79a1a31.chunk.js": "/static/js/1.e79a1a31.chunk.js",
   "static/js/1.e79a1a31.chunk.js.map": "/static/js/1.e79a1a31.chunk.js.map",
@@ -25,9 +25,9 @@
   "static/media/spacenet.png": "/static/media/spacenet.4f23cab6.png",
   "static/media/vtc_faces.png": "/static/media/vtc_faces.eae46f35.png",
   "static/media/vpnl.png": "/static/media/vpnl.c5822a31.png",
-  "static/css/main.dda85670.chunk.css.map": "/static/css/main.dda85670.chunk.css.map",
   "static/css/1.256124b4.chunk.css.map": "/static/css/1.256124b4.chunk.css.map",
+  "static/css/main.dda85670.chunk.css.map": "/static/css/main.dda85670.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.359688babc18215ba1a46c4d12605a22.js": "/precache-manifest.359688babc18215ba1a46c4d12605a22.js",
+  "precache-manifest.24db1d343d721dd9e15c12f899038cf1.js": "/precache-manifest.24db1d343d721dd9e15c12f899038cf1.js",
   "service-worker.js": "/service-worker.js"
 }
