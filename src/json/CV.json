@@ -171,11 +171,9 @@
           "volume": ", in press",
           "url": "https://www.sciencedirect.com/science/article/pii/S1053811919300928",
           "tag": "neuroimage-2019-acritical"
-        }
-      ],
-      "preprints": [
+        },
         {
-          "title": "Visual Noise Consisting of X-Junctions Has Only a Minimal Effect on Object Recognition",
+          "title": "Visual noise consisting of X-junctions has only a minimal adverse effect on object recognition",
           "authors": [
             "Margalit, E.",
             "Herald, S.B.",
@@ -184,13 +182,14 @@
             "Maarek, R.",
             "Biederman, I."
           ],
-          "journal": "PsyArxiv",
+          "journal": "Attention, Perception, & Psychophysics",
           "year": "2019",
-          "volume": "",
-          "url": "https://psyarxiv.com/cje3y/",
-          "tag": "psyarxiv-2019-xvert"
+          "volume": ", in press",
+          "url": "https://link.springer.com/article/10.3758%2Fs13414-019-01840-2",
+          "tag": "atten-percep-2019-xvert"
         }
-      ]
+      ],
+      "preprints": []
     },
     "presentations": {
       "posters": [
