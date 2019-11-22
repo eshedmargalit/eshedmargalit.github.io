@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "authors": ["Arcaro, MJ", "Schade, PF", "Livingstone, MS"],
+    "institutions": ["Harvard University"],
+    "keywords": ["macaque", "somatosensory", "topography", "fmri"],
+    "title": "Body map proto-organization in newborn macaques",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.1912636116",
+    "url": "www.pnas.org/cgi/doi/10.1073/pnas.1912636116",
+    "date": "2019-11",
+    "review_date": "2019-11-21",
+    "one_sentence": "Arcaro et al. demonstrate the somatosensory topography is present at birth in macaques and is robust to dramatic differences in early experience (e.g., visual deprivation)"
+  },
+  "review": {
+    "summary": [
+      "Large-scale somatosensory topography is indistinguishable between monkeys 2 weeks and 2 years of age, whereas fine-scale topography continues to develop with experience",
+      "Visual deprivation does not alter the large scale topographic structure"
+    ],
+    "background": [
+      "Topographic maps are present throughout the sensory brain, including retinotopy for the visual system, tonotopy for the auditory system, and somatosensory maps for touch",
+      "Prior work has suggested that the somatosensory system is immature at birth, as neurons there do not respond strongly to touch at a young age"
+    ],
+    "approach": [
+      "fMRI of 9 monkeys (11 - 981 days of age) during somatotopic mapping, i.e., touching or stroking different parts of the body while the monkey is awake and alert. The primary body regions studied were the face, hands, and feet",
+      "ICA was used to identify response patterns that correspond to stimulation of a given region"
+    ],
+    "results": [
+      "The central sulcus exhibits clear topography (dorsal = hands, ventral = faces) in monkeys of all ages (Figures 1 and 2), including the youngest monkey at 11 days old. The maps showed little development in terms of cortical area devoted to each region (Figure 4)",
+      "Representations of individual fingers (digits) were not apparent in young monkeys, but were moderately strong in 2-7 m.o. monkeys and very clear in older monkeys (> 1 year) (Figure 6)",
+      "Monkeys raised in the absence of any visual input navigate their world primarily by touch, yet show no clear reorganization of these topographic patterns (Figure 7)"
+    ],
+    "conclusions": [
+      "With this piece of the cortical puzzle missing, it now appears that virtually all of cortex is laid out topographically at birth (Figure 8). The natural question for me is \"why\"? Surely there's some tradeoff between locking in some structure and being flexible to change, and in this case it seems that the maps don't reorganize under even the most dramatic differences in early experience.",
+      "The authors argue that these proto-maps evident at the large scale are useful for scaffolding the emergence of finer scale representations. What would some possible mechanisms for that actually look like, here or in the visual system?"
+    ],
+    "other": []
+  }
+}

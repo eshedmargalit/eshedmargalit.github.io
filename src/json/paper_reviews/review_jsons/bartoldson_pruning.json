@@ -41,8 +41,5 @@
     "other": [
       "These networks are fairly small and trained on a small dataset (CIFAR-10). I'd be curious to see how these results hold up with larger networks trained on ImageNet"
     ]
-  },
-  "createdAt": { "$date": { "$numberLong": "1572027483364" } },
-  "updatedAt": { "$date": { "$numberLong": "1572027483364" } },
-  "__v": { "$numberInt": "0" }
+  }
 }
