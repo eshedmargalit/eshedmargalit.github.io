@@ -38,7 +38,8 @@ const filenames = [
   "devalois_spatial_frequency.json",
   "zhuang_local_aggregation.json",
   "smith_v1_correlations.json",
-  "arcaro_body_protomap.json"
+  "arcaro_body_protomap.json",
+  "dahne_retinal_wave_sfa.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

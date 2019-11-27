@@ -1,0 +1,47 @@
+{
+  "review": {
+    "summary": [
+      "Slow feature analysis (SFA) on retinal-wave-like inputs results in functions consistent with measured complex cells in mammalian V1, suggesting slowness in temporal coding as an objective of the early visual system",
+      "The success of this unsupervised method suggests that the emergence of complex cells in utero is plausible, i.e., environmental feedback is not needed to get complex cells"
+    ],
+    "background": [
+      "The emergence of simple cells has been explained by sparse-coding of natural scenes (Olshausen and Field), but 1) receptive fields are formed prior to natural image inputs and 2) other unsupervised objectives are plausible",
+      "Slow feature analysis is an unsupervised feature learning method that, given a temporally-varying input, identifies functions that lead to slowly-varying and decorrelated scalar outputs",
+      "In the developing visual system, the time-varying input of interest is retinal waves: sweeps of endogenous and spontaneous activity that propagate from the retina to the midbrain and to visual cortex"
+    ],
+    "approach": [
+      "Simulate retinal-waves using a biologically-plausible model introduced in Godfrey and Swindale, 2007. Collect 289 \"movies\", each consisting of 3600 frames of size 16 x 16 pixels. Reduce the dimensionality of the input to 50 via PCA.",
+      "Perform SFA on the inputs and evaluate a number of characteristics, including orientation tuning and modulation ratio (simple vs. complex) by presenting a set of sine gratings at different orientations, spatial frequencies, and phases. Additionally, synthesize the optimal and least-optimal inputs for each learned SFA unit for visual inspection."
+    ],
+    "results": [
+      "Many optimal stimuli resemble oriented Gabors, as found in mammalian V1 (Figure 2). Note: many of these also don't look like \"textbook\" V1-cells, but that doesn't mean they're biologically incorrect... More on that later.",
+      "Many cells appear \"complex\" in that they respond similarly to gratings at all phases, and there is a spread of orientation selectivity indices (OSIs) that appear to loosely match biological distributions from postnatal week 6 in ferrets (Figures 3, 5).",
+      "The optimal inputs to phase-invariant SFA units resemble quadrature pairs, mirroring the mechanism proposed in studies of mammalian visual cortex (Figure 6)."
+    ],
+    "conclusions": [
+      "Slowness is a biologically-plausible unsupervised objective that may explain the presence of complex cells at birth. However, no claim is made that the algorithm used here is biologically valid.",
+      "This work makes the intriguing prediction that disruption of retinal waves' temporal structure while preserving aspects of the spatial structure should prevent emergence of complex cells at birth. To my knowledge, this has not been tested (and how could it be?)."
+    ],
+    "other": [
+      "The core claim of this paper rests on a series of ultimately qualitative comparisons to existing data. While the authors do a good job of showing a range of phenomena, they face two challenges. First, these results span multiple species and recording techniques due to lack of a unified measured dataset. Second, there is no quantitative fit to any such dataset! We simple don't know if this model is a better predictor of V1 firing rates than deep nets (Cadena et al., 2019), wavelet banks, ICA, sparse-coding, or any number of alternative explanations of V1 receptive field structure."
+    ]
+  },
+  "metadata": {
+    "authors": ["Dähne, S", "Wilbert, N", "Wiskott, L"],
+    "institutions": ["Humboldt University of Berlin", "Ruhr University Bochum"],
+    "keywords": [
+      "v1",
+      "complex cell",
+      "slow feature analysis",
+      "simulation",
+      "retinal waves"
+    ],
+    "title": "Slow Feature Analysis on Retinal Waves Leads to V1 Complex Cells",
+    "journal": "PLOS Computational Biology",
+    "doi": "10.1371/journal.pcbi.1003564",
+    "url": "https://core.ac.uk/display/87613734",
+    "date": "2014-05",
+    "review_date": "2019-11-27",
+    "one_sentence": "Dähne, Wilbert, and Wiskott show that given retinal-wave-like input, functions optimized to maximize temporal 'slowness' of outputs resemble V1 complex cells"
+  }
+}
