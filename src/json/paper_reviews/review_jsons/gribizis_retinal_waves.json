@@ -1,0 +1,55 @@
+{
+  "review": {
+    "summary": [
+      "While stage 2 retinal waves (first postnatal week) and stage 3 retinal waves (second postnatal week) both propagate reliably from retina -> LGN/SC, stage 3 waves have a much lesser influence on V1 activity",
+      "This paper introduces in-vivo simultaneous imaging of stage 3 retinal wave propagation for the first time, opening the door for more studies of early visual system development in rodents"
+    ],
+    "background": [
+      "Retinal waves are traveling waves of spontaneous activity in the developing visual system that have been implicated in retinotopic map refinement and feature selectivity (e.g., orientation tuning -- Weliky/Katz '97)",
+      "Retainl waves proceed in 3 stages: gap-junction mediated stage-1 waves in late gestation, acetylcholine mediated stage-2 waves in the first postnatal week, and glutamate mediated stage-3 waves in the second postnatal week -- up until eye opening",
+      "To date, stage 3 waves had not been measured and compared to stage 2 waves in vivo throughout the developing visual system"
+    ],
+    "approach": [
+      "Label pre- and post-synaptic populations (sometimes retina/SC, sometimes retina/LGN, etc) with genetically-encoded RCaMP and GCaMP, then perform simultaneous imaging sensitive to each fluorophore independently. This allows the experimenters to image different populations in vivo in the same field of view.",
+      "Measure spontaneous activity and describe the \"transfer\" of activity between regions using a regression model. The model simply predicts activity in the postsynaptic region as a weighted sum of the current post-synaptic activity and the incoming presynaptic activity",
+      "The authors use both genetic knockouts and injection of activity-blocking molecules to determine the necessity of different receptor types for the described transfer functions"
+    ],
+    "results": [
+      "Activity in the superior colliculus can be predicted from retinal activity in both stage 2 and stage 3 waves, unless waves in the retina are blocked by knockout of the nicotinic acetylcholine receptor (nAChR) (Figure 2)",
+      "Stage 3 waves measured in the superior colliculus are shorter and more punctate than stage 2 waves, but occur with higher frequency. Stage 3 waves also preferentially travel in the rostral-to-caudal direction (Figure 3)",
+      "The contribution of pre-synaptic (LGN) activity to post-synaptic (V1) activity is higher in stage 2 waves than in stage 3 waves (Figure 4)",
+      "While transfer from retina -> LGN was fairly robust throughout the first two postnatal weeks, the transfer from retina to V1 was more apparent in stage 2 than stage 3 (Figure 5)"
+    ],
+    "conclusions": [
+      "Stage 3 waves differ from stage 2 waves in vivo (in mice), leading V1 to become relatively independent of retinal activity in the second postnatal week. This independence may reflect the emergence of competing intracortical activity in V1 that overrides the retinal signals.",
+      "The methods introduced here can be broadly applicable to simultaneous imaging of two spatially-intermingled neuronal populations in-vivo"
+    ],
+    "other": [
+      "This was a very enjoyable read and the methods introduced here are awesome! One thing that always strikes me about retinal wave research is how intricate the progression of waves (stages 1 -> 2 -> 3) are, yet how simple the supposed results are (slightly lower retinotopic precision for an animal with already-poor visual acuity). I wonder if these new methods can somehow be used to make predictions about either V1 activity or animal behavior following this early developmental period. Can we predict those outcomes based on either retinal wave activity or the inferred transfer functions between regions? What about under all of these knockout and inhibition conditions?"
+    ]
+  },
+  "metadata": {
+    "authors": [
+      " Gribizis, A",
+      " Ge, X",
+      " Daigle, TL",
+      " Ackman, JB",
+      " Zeng, H",
+      " Lee, D",
+      " Crair, MC"
+    ],
+    "institutions": [
+      "Yale University",
+      "Allen Institute For Brain Science",
+      "University of California, Santa Cruz"
+    ],
+    "keywords": ["mouse", "v1", "retinal waves", "calcium imaging"],
+    "title": "Visual Cortex Gains Independence from Peripheral Drive before Eye Opening",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2019.08.015",
+    "url": "https://www.cell.com/neuron/fulltext/S0896-6273(19)30699-3",
+    "date": "2019-08",
+    "review_date": "2019-12-07",
+    "one_sentence": "Gribizis and colleagues develop a novel technique to simultaneously image pre- and post-synaptic contributions to retinal wave propagation and find that stage 3 retinal waves differ substantially from stage 2 waves in vivo"
+  }
+}
