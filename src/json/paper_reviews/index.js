@@ -40,7 +40,8 @@ const filenames = [
   "smith_v1_correlations.json",
   "arcaro_body_protomap.json",
   "dahne_retinal_wave_sfa.json",
-  "gribizis_retinal_waves.json"
+  "gribizis_retinal_waves.json",
+  "sharma_ferret_rewiring.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
