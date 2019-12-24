@@ -1,0 +1,45 @@
+{
+  "review": {
+    "summary": [
+      "When retinal inputs are redirected to auditory cortex in early life, ferrets exhibit orientation-tuned auditory cortex cells that arrange into maps",
+      "The apparently instructive activity from the retina appears to change the nature of intracortical horizontal connections, yet doesn't fully recapitulate visual-cortex-like structure"
+    ],
+    "background": [
+      "Many approaches to study whether visual inputs are instructive or permissive of V1 functional architecture use either 1) deprivation, which is not specific enough to get at mechanism, or 2) perturbation later in the animal's development after some orientation tuning is already formed",
+      "An open debate (still to this day, I think) pertains to the genetically-endowed rigidity of a region's function. That is, if we know that area 1 has some anatomy and typically supports function 1, and area 2 has different anatomy and supports function 2, is it impossible for area 2 to support function 1 and vice a versa?"
+    ],
+    "approach": [
+      "Deafferent the medial geniculate nucleus (MGN) and ablate the superior colliculus in ferrets immediately after they are born",
+      "Perform intrinsic optical imaging while showing sine gratings to evaluate orientation and direction tuning",
+      "Use anatomical tracers to determine the anatomical connectivity structure of either V1 or A1",
+      "Use single-unit recording to investigate the origins of maps apparent at coarser intrinsic imaging resolution"
+    ],
+    "results": [
+      "Cells in rewired-A1 were visually-responsive, sharply orientation-tuned, and formed coherent maps across the cortical surface (Figure 1)",
+      "Map organization was stable across imaging sessions, at least to the degree V1 maps were",
+      "The maps formed in rewired A1 featured larger orientation domains that were less periodic across the cortical surface than those in V1 (Figure 1)",
+      "Individual cells were sharply tuned both in A1 and in an anterior region typically involved in auditory perception (Figure 2)",
+      "Long-range horizontal projections are characteristic of V1 but not A1. In rewired A1, however, longer range horizontal connections were observed (Figure 3). These maps were also more periodic in rewired A1 than typical A1, more closely resembling V1-like maps (Figure 5)"
+    ],
+    "conclusions": [
+      "Finding sharply tuned cells in a not-so-organized map suggests that the two features are not as tightly linked as previously thought. In modern retrospect, this makes sense -- we know for example that V1 has very organized maps with a lot of cells that are not sharply orientation tuned, e.g., Ringach et al., 2002",
+      "Whereas previous work had shown that afferent activity is needed to maintain maps, this work shows that it is able to instruct their formation as well. The residual difference between rewired-A1 and normal-V1 maps, however, suggests that instructive activity cannot account for all of the observed structure"
+    ],
+    "other": [
+      "An obvious question in my mind is: how is the activity coming from the retina meaningfully different from that coming from the inner ear? Could we ever understand the requirements for orientation tuning in a mechanistic way, i.e., such that we could play the right set of sounds to induce pinwheeled-maps?",
+      "If sharpness of tuning can be dissociated from sharpness of map structure, why is precision of the maps so important (see Ohki et al., 2006)?"
+    ]
+  },
+  "metadata": {
+    "authors": ["Sharma, J", "Angelucci, A", "Sur, M"],
+    "institutions": ["MIT"],
+    "keywords": ["ferret", "v1", "a1", "orientation", "plasticity", "rewiring"],
+    "title": "Induction of visual orientation modules in auditory cortex",
+    "journal": "Nature",
+    "doi": "10.1038/35009043",
+    "url": "https://www.nature.com/articles/35009043",
+    "date": "2000-04",
+    "review_date": "2019-12-16",
+    "one_sentence": "Sharma, Angelucci, and Sur rewire retinal inputs to the MGN and onward to A1 and observe the emergence of V1-like structure (orientation tuning in maps) the deviates from normal A1 development"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "In layer 4C (the input layer) cells retain the same orientation tuning over time. However, in other layers, cells have dynamic tuning profiles that can change dramatically over the span of a few tens of milliseconds.",
+      "The dynamic nature of the tuning of V1 cells suggest some recurrent mechanisms that are unaccounted for in simple feedforward models."
+    ],
+    "background": [
+      "The canonical model of of V1 tuning is that all cells are orientation tuned, and those orientation preferences are static over the course of stimulus presentation.",
+      "The input to V1, LGN cells, are definitely not tuned, prompting the question of how orientation preferences emerges in V1. LGN cells project to a limited laminar range in V1: only to layers 4C-alpha and 4C-beta."
+    ],
+    "approach": [
+      "For each cell, construct a set of sine gratings at an optimal spatial frequency, but varying in orientation and spatial phase. Present random images from this set at a rate of 60fps for about 15 minutes per cell.",
+      "Record all spikes in the 15 minute window, then perform the following reverse correlation method. Pick a time-delay, tau, and go back tau ms from the time of each spike. Log the orientation (ignoring phase) of the stimulus at that time delay. Finally, construct and normalize a histogram of orientations at a given tau. Define 'optimal tau' as the tau at which the cell exhibits the sharpest tuning (farthest from uniform across all orientations).",
+      "Record from 61 V1 cells whose laminar locations, e.g., layer 4C-alpha are known."
+    ],
+    "results": [
+      "In layer 4C, all 12 cells recorded had unimodal temporal preferences. This means that at very long time delays, their tuning is uniform, then exhibits a single peak, then relaxes back to uniform (Table 1 and Figure 2AB)",
+      "Outside of 4C, many cells showed multimodal tuning as a function of time delay. Some had sharp peaks early that switched to orthogonal orientation preference, whereas others had continuously changing orientation preference (Table 1 and Figure 2C-H).",
+      "In a small number of recorded cells, the early excitatory component could be seen sharpening over time, casting further doubt on a simplistic feed-forward model (Figure 3). "
+    ],
+    "conclusions": [
+      "The temporal dynamic observed outside layer 4C are difficult to reconcile with a feedforward model, suggesting some sort of recurrence. One potential mechanism involves inhibitory suppression by neighboring neurons, which might explain the biphasic responses in many cells.",
+      "Similarly, sharpening of tuning over time might be due to recurrent excitation."
+    ],
+    "other": [
+      "An interesting theoretical question here relates to the putative role of these dynamics. Why should a system want to have these dynamic properties? Or is it the case that the dynamics have no effect on behavior, but are an unintended consequence of wiring that's used for other things?",
+      "How do these results, which suggest that most cells are tuned to specific orientations but that the orientation changes, reconcile with Ringach et al., 2002 in which they demonstrate that relatively few cells are strongly tuned?"
+    ]
+  },
+  "metadata": {
+    "authors": [" Ringach, DL", " Hawken, MJ", " Shapley, R"],
+    "institutions": ["Center For Neural Science"],
+    "keywords": ["macaque", "v1", "orientation", "dynamics", "feedback"],
+    "title": "Dynamics of orientation tuning in macaque primary visual cortex",
+    "journal": "Nature",
+    "doi": "10.1038/387281a0",
+    "url": "https://nyuscholars.nyu.edu/en/publications/dynamics-of-orientation-tuning-in-macaque-primary-visual-cortex",
+    "date": "1997-05",
+    "review_date": "2019-12-24",
+    "one_sentence": "Ringach et al. demonstrate that V1 neurons exhibit dynamic orientation tuning over the span of tens of milliseconds, especially in non-input layers"
+  }
+}
