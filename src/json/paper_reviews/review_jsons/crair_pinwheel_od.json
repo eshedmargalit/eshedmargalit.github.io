@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "title": "Ocular Dominance Peaks at Pinwheel Center Singularities of the Orientation Map in Cat Visual Cortex",
+    "authors": ["Crair, MC", "Ruthazer, ES", "Gillespie, DC", "Stryker, MP"],
+    "institutions": ["UCSF"],
+    "date": "1997-05",
+    "journal": "Journal of Neurophysiology",
+    "doi": "10.1152/jn.1997.77.6.3381",
+    "url": "http://dx.doi.org/10.1152/jn.1997.77.6.3381",
+    "keywords": ["cat", "V1", "orientation", "ocular dominance"],
+    "review_date": "2019-12-31",
+    "one_sentence": "Crair and colleagues demonstrate that in cat V1, pinwheel centers nearly perfectly coincide with peaks in the ocular dominance map"
+  },
+  "review": {
+    "summary": [
+      "Whereas prior work had only shown that pinwheel centers tend to lie on the center lines of ocular dominance bands, this study shows a much tighter relationship: that ocular dominance peaks coincide with pinwheel centers"
+    ],
+    "background": [
+      "Individual neurons in primary visual cortex (V1) are tuned to a variety of parameters, including the orientation of a stimulus and the eye (left or right) that a stimulus is presented to. Previous studies in cats had reported a coarse-grained relationship between ocular dominance maps and orientation maps, whereby pinwheel centers lie along the center lines of ocular dominance bands"
+    ],
+    "approach": [
+      "Intrinsic optical imaging was used to measure activity in cat primary visual cortex (ages: 22 to 56 days) during presentation of oriented gratings. Stimuli were shown to the two eyes separately to infer an ocular dominance ratio map.",
+      "Orientation maps were sometimes smoothed, then pinwheel centers were identified and compared with the center lines of ocular dominance columns in the same regions"
+    ],
+    "results": [
+      "As reported previously, orientation maps constructed from stimulation to either eye were more or less identical (Figure 1J, 1L)",
+      "On average, ocular dominance peaks and pinwheel centers were only 138 microns apart, which is much smaller than expected if one of the maps is shuffled (Figure 2)",
+      "The relationship between OD peaks and pinwheel centers is more robust than the more general observation that pinwheels lie along ocular dominance center lines (as reported previously)"
+    ],
+    "conclusions": [
+      "Hypothesis 1 for co-incidence of OD peaks and pinwheel centers: there is a common molecular process that creates peaks in monocular responsiveness and pinwheel centers, e.g., koniocellular projections from the LGN to CO blobs in V1. Eshed's note: this is interesting, as it suggests that most map structure for these two parameters (orientation and eye preference) is driven by a single seed phenomenon",
+      "Hypothesis 2: there is a common online learning program that is satisfied simultaneously by OD peaks and pinwheels, e.g., pressure for local correlations. Pinwheel centers achieve this by having weak orientation tuning and thus responding similarly to many inputs, and OD peaks achieve this by having, e.g., spontaneous activity that comes from a single eye (retinal waves)",
+      "Hypothesis 3: (this one was the least clearly stated in my opinion) that maps for multiple modalities are vying to reduce total variability in represented parameters at a given cortical location."
+    ],
+    "other": [
+      "One thing I personally struggle with is in understanding how much ocular dominance maps really matter from a functional perspective. Is a model of visual cortex functional architecture incomplete without dealing with OD maps, or are they a strange artifact of the particular sensors we're dealing with? This paper shows a tight relationship between topography of ocularity and orientation preference, but what does that mean for neural function?",
+      "While the small median distance between pinwheel centers and OD peaks is indeed small, the figures aren't all that striking. The two maps don't appear especially aligned to my untrained eye."
+    ]
+  }
+}
