@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "High-field fMRI unveils orientation columns in humans",
+    "authors": ["Yacoub, E", "Harel, N", "Ugurbil, KC"],
+    "institutions": ["University of Minnesota CMRR"],
+    "date": "2008-07",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.0804110105",
+    "url": "http://dx.doi.org/10.1073/pnas.0804110105",
+    "keywords": ["human", "fmri", "v1", "orientation", "7t"],
+    "review_date": "2020-01-08",
+    "one_sentence": "Yacoub et al. demonstrate ultra-high-resolution imaging of orientation columns in human visual cortex"
+  },
+  "review": {
+    "summary": [
+      "Orientation columns can be detected with reasonably reliability in human primary visual cortex",
+      "In both subjects measured, there was an over-representation of vertical orientations (90 degrees)"
+    ],
+    "background": [
+      "While the vast majority of fMRI studies over the past two decades have been conducted on 3-Tesla MRI machines, recent advances in scanning hardware and software have made 7-Tesla scanners viable for human functional MRI",
+      "Columns of orientation-selective cells, spanning less than a millimeter along the cortical surface, have been observed in macaque V1, but had not been demonstrated in humans in-vivo prior to this work. However, standard-resolution fMRI had been used to decode orientations from a population of visual cortex voxels.",
+      "A separate columnar system, that for ocular dominance, had been demonstrated with fMRI previously, but ocular dominance columns are 1) slightly larger than orientation columns and 2) are identifiable based on anatomy, i.e., staining in a way that orientation columns are not"
+    ],
+    "approach": [
+      "Perform ultra-high-resolution acquisition of human V1 responses to oriented stimuli, with stimuli presented to either eye separately to allow exploration of both ocular dominance and orientation tuning in the same subjects",
+      "Measure maps in separate sessions to assess reliability, and also vary stimulus presentation to assess reliability"
+    ],
+    "results": [
+      "In addition to ocular dominance columns, orientation-selective columns were also found in human V1 (Figure 1). Eshed's note: after staring at orientation maps from many different species, these look notably noisier and less periodic than those seen in animals",
+      "Pinwheels were identifiable as regions where multiple orientation preferences spatially converged in a radial fashion (Figures 2 and 3)",
+      "Iso-orientation contours tended to cross ocular-dominance columns at right angles, as reported previously in other animals (Figures 2 and 3)",
+      "Orientation maps were kind of consistent between odd and even runs (r = 0.62 and 0.66 for two subjects), and not-that consistent when stimulus presentation order changed (r = 0.4).",
+      "An 'oblique effect' is observed in these data, whereby more voxels are tuned to 0 degrees and 90 degrees than to other orientations (Figure 5a). Note: the authors write that p = 0.07 is significant?",
+      "The authors make a case that even if the point-spread-function of the BOLD response is larger than the 1-mm columns we're attempting to detect, such structures can be resolved if the PSF is uniform across the imaging area (Figure 6)"
+    ],
+    "conclusions": [
+      "Orientation columns exist in human V1 and are organized into orderly maps, and there is an over-representation of vertical orientations",
+      "This study should open the door for more investigation of sub-mm resolution structures in human fMRI"
+    ],
+    "other": []
+  }
+}

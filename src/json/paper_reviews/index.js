@@ -43,7 +43,8 @@ const filenames = [
   "gribizis_retinal_waves.json",
   "sharma_ferret_rewiring.json",
   "ringach_tuning_dynamics.json",
-  "crair_pinwheel_od.json"
+  "crair_pinwheel_od.json",
+  "yacoub_orientation_columns.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
