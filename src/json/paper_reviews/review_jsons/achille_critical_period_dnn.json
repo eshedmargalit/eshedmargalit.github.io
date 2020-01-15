@@ -1,0 +1,45 @@
+{
+  "review": {
+    "summary": [
+      "Deep neural networks trained on object recognition exhibit critical periods during which some stimulus perturbations yield irrecoverable deficits in performance",
+      "The critical period aligns well with a time of dramatic change in the task-information carried in the weights, which itself is transient"
+    ],
+    "background": [
+      "Critical periods (CPs) have been demonstrated in the visual cortex of many mammals, including cats and macaques. CPs are time windows in which perturbation to typical input lead to changes in the system that cannot be recovered by removing the perturbation, e.g., removing cataracts late in life does not yield fully restored vision."
+    ],
+    "approach": [
+      "Train an all-convolutional neural network on CIFAR-10, but introduce blur (by downscaling 4x and interpolating back to full-resolution) starting at a given epoch and extending for a variable amount of time. As a control, also perform other perturbations, e.g., up-down flips with the same time-window approach. For any perturbation, the network is given enough time afterward to see as many normal images as in control cases where no perturbation is not performed.",
+      "Use Fisher Information matrices (FIMs) to approximate how much the change in a given weight is expect to change network output. The authors note that the FIM is also an approximation of the Hessian of the loss with respect to the weights. Because the FIM is hard to compute, the authors instead compute its trace, which is the sum of the \"strengths\" of synapses in a given layer."
+    ],
+    "results": [
+      "Test accuracy decreases smoothly as blur is kept on longer and longer, suggesting that the network struggles to recover more when blur is kept around longer in initial training (Figure 1). ",
+      "When using a fixed window of 40 epochs of blur, it has the greatest impact on test performance between roughly 20 and 40 epochs into training, but has a lower impact when applied later or earlier (Figure 1)",
+      "Blurring is somewhat unique, as other perturbations such as up-down flips allow the network to recover to high performance (Figure 2)",
+      "Critical periods are observed in a variety of contexts, including in fully-connected networks, deeper networks, e.g., ResNet-18, with fixed (as opposed to annealed) learning rates, and with different weight regularization (Figure 3)",
+      "Fisher information initially steeply increases, then briefly plateaus, then comes back down (even as performance increases monotonically). This later phase is akin to \"forgetting\" information that is task-irrelevant and may be useful in preventing overfitting (Figure 4)",
+      "Fisher information is carried by intermediate layers when there is no deficit, and gets pushed later in the network when there is a deficit. If the deficit is removed early enough, however, the early-intermediate layers start to become more informative once again (Figure 5)"
+    ],
+    "conclusions": [
+      "We are able to (and should) consider the developmental trajectories of NNs instead of only their asymptotic behavior",
+      "The extent to which a deficit can be corrected is informative of the perturbation type; i.e., the fact that blur is hard to recover from whereas vertical flips are not suggests that within the somewhat-crystalized weights, only a subset of deficits require a total reconfiguration of those weights.",
+      "The authors suggest that it would be of interest to approximate a measure of information plasticity in biological systems as well, and I agree!"
+    ],
+    "other": []
+  },
+  "metadata": {
+    "authors": ["Achille, A", "Rovere, M", "Soatto, S"],
+    "institutions": [
+      "University of California, Los Angeles",
+      "Brigham and Women's Hospital",
+      "Harvard Medical School"
+    ],
+    "keywords": ["deep learning", "critical period", "perturbation", "blur"],
+    "title": "Critical Learning Periods in Deep Networks",
+    "journal": "International Conference on Learning Representations (ICLR)",
+    "doi": "",
+    "url": "https://openreview.net/pdf?id=BkeStsCcKQ",
+    "date": "2019-05",
+    "review_date": "2020-01-15",
+    "one_sentence": "Achille et al. show that, as in biological systems, deep neural networks undergo an early \"information plasticity\" time frame in which perturbation leads to irrecoverable deficits in performance"
+  }
+}

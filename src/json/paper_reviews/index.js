@@ -44,7 +44,8 @@ const filenames = [
   "sharma_ferret_rewiring.json",
   "ringach_tuning_dynamics.json",
   "crair_pinwheel_od.json",
-  "yacoub_orientation_columns.json"
+  "yacoub_orientation_columns.json",
+  "achille_critical_period_dnn.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
