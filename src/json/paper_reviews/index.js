@@ -45,7 +45,8 @@ const filenames = [
   "ringach_tuning_dynamics.json",
   "crair_pinwheel_od.json",
   "yacoub_orientation_columns.json",
-  "achille_critical_period_dnn.json"
+  "achille_critical_period_dnn.json",
+  "crair_binocular_deprivation.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

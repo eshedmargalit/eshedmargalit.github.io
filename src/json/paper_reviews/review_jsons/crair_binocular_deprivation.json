@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "This paper investigates the role of patterned vision (inputs while eyes are open) on the formation of ocular dominance and orientation maps in cat V1. They show that while initial map formation proceeds independent of patterned vision, experience is necessary to sharpen and retain such maps."
+    ],
+    "background": [
+      "Cells in cat primary visual cortex are tuned to (among other things) stimulus orientation and are sensitive to which eye the input was presented to. Cells responding more strongly to stimuli in a given eye cluster in ocular dominance columns, while cells with similar preferred orientations cluster into stereotypical maps of orientation preference.",
+      "The formation of sharp maps could be attributed to 1) genetic wiring programs, 2) retinal waves, or 3) visual experience. The importance of each had not been determined prior to this work."
+    ],
+    "approach": [
+      "Evaluate orientation maps and ocular dominance maps in cat primary visual cortex using intrinsic optical imaging and electrophysiological recording",
+      "In a subset of cats, suture both eyelids shut (binocular deprivation; BD) prior to the time of natural eye opening, then remove sutures prior to assessment of map structure (so that you can actually show stimuli to the cat)"
+    ],
+    "results": [
+      "Stimulation of the contralateral eye drives stronger responses (and cleaner orientation maps) than stimulation of the ipsilateral map (Figure 1A) for the first three weeks of life. After that, the relative response depending on eye remains asymmetrical for BD cats but becomes more equal in normal cats (equal meaning well-matched between contralateral and ipsilateral eyes; Figure 3)",
+      "For the first three weeks of life, maps of orientation preference from stimulation of either eye become increasingly similar, regardless of whether the eyes were sutured shut or not. However, from week 3 onward, the maps obtained from either eye plateau in similarity for normal cats and deteriorate in deprived cats (Figures 1, 2)",
+      "Orientation selectivity increases up until about week 4 in both BD and normal animals, then declines in BD animals after that (Figure 3). At about 4 weeks, the ipsilateral eye will also catch up to the contralateral eye with respect to selectivity in normal animals (Figure 3B) but not in BD animals.",
+      "Ocular dominance maps are evident as early as P14 (Figure 4), much earlier than previously thought."
+    ],
+    "conclusions": [
+      "Because ocular dominance maps are apparent so early, the formation of ocular dominance maps must coincide with a time point where responses are much higher in one eye than other. This more or less rules out strictly Hebbian mechanisms for ocular dominance map formation, as they would favor a takeover from the more dominant eye.",
+      "Orientation maps may be established by the dominant contralateral eye, which then dictates the form of the map to be assumed by input to the weaker ipsilateral eye, instead of a push-pull competition that results from both eyes fighting to establish the pattern",
+      "Pattern vision appears to be totally irrelevant during the third week of life, where BD cats and normal cats look identical. EM note: is this necessarily true? Are there differences invisible to these techniques that lead to different phenomena later on?",
+      "The period in which patterned vision does seem to matter is during the \"critical period\" in which molecular mechanisms permit or forbid substantial changes to synaptic weights"
+    ],
+    "other": [
+      "This paper is very elegant and presents a fascinating view of the specific role of patterned vision in early development. My only gripe is that it's fairly short on methods -- I couldn't find, for example, when exactly the sutures were removed or how orientation tuning was established, except that it refers to prior work."
+    ]
+  },
+  "metadata": {
+    "authors": ["Crair, MC", "Gillespie, DC", "Stryker, MP"],
+    "institutions": ["UCSF"],
+    "keywords": ["cat", "v1", "critical period", "orientation", "deprivation"],
+    "title": "The Role of Visual Experience in the Development of Columns in Cat Visual Cortex",
+    "journal": "Science",
+    "doi": "10.1126/science.279.5350.566",
+    "url": "http://science.sciencemag.org/content/sci/279/5350/566.full.pdf",
+    "date": "1998-01",
+    "review_date": "2020-01-24",
+    "one_sentence": "Orientation maps in cat primary visual cortex are innately laid out, but require continued visual input to sharpen and avoid degradation"
+  }
+}
