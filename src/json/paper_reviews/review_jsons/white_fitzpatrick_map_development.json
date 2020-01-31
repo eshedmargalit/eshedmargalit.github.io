@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "title": "Vision and Cortical Map Development",
+    "authors": ["White, LE", "Fitzpatrick, D"],
+    "institutions": ["Duke University"],
+    "date": "2007-10",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2007.10.011",
+    "url": "https://www.cell.com/neuron/fulltext/S0896-6273(07)00773-8",
+    "keywords": [
+      "review",
+      "development",
+      "maps",
+      "critical period",
+      "orientation",
+      "direction",
+      "deprivation"
+    ],
+    "review_date": "2020-01-31",
+    "one_sentence": "This review article argues that visual experience plays a role not only in map maintenance, but in map formation in animals like ferret and cat"
+  },
+  "review": {
+    "summary": [
+      "Nicely summarized by the authors: \"visual experience may have a profoundly beneficial or detrimental influence over the formation of these maps in the developing visual cortex\""
+    ],
+    "background": [
+      "Functional maps can be thought of as belonging to two categories: 1) those that re-capitulate the topography in the LGN, e.g., ocular dominance and retinotopy, and 2) those that emerge 'de-novo' in V1, e.g., orientation and direction selectivity.",
+      "The mechanisms of map formation fall into roughly two bins: 1) those that depend on molecular gradients, and 2) those that depend on activity. Group 2 can be further divided into 2a) endogenous activity and 2b) patterned visual experience",
+      "It is generally thought that the molecular systems establish coarse maps which are the refined by visual experience, such that there is some residual plasticity in, e.g., orientation/OD/retinotopy maps, but they mostly don't change with normal experience. The authors argue this viewpoint is a little misguided and under-values the role of patterned activity on map formation itself"
+    ],
+    "approach": [
+      "This is a review article, but I'll keep track of the techniques mentioned here in the other points",
+      "Intrinsic optical imaging and electrophysiological assessment of young ferrets to investigate orientation and direction selectivity"
+    ],
+    "results": [
+      "While some structure is established in-utero, the majority of synapses in visual cortex are added during periods in which sensory experience influences the structure of neuronal activity in space and time! In macaque, for example, synapse density increases exponentially from the third trimester until two months of life. A consequence of this synaptogenesis appears to be an increase in the maturity of intrinsic connections, e.g., horizontal connections between functionally-similar columns",
+      "In ferrets (and probably other organisms), an orientation map is weakly detectable at eye opening, but sharpens substantially thereafter (see my review of Chapman et al. for more). This sharpening is associated with changes to the distribution of GABA and NMDA receptors, so it is hypothesized that excitatory/inhibitory balance (and its associated molecular mechanisms) may explain critical-period sensitivity and precritical-period sensitivity.",
+      "Direction-selectivity maps were not readily apparent at birth (while OD and orientation maps were), indicating that different functional maps emerge at different timepoints. Interestingly, following the first detection of the maps (about a week after eye-opening), they rapidly strengthen such that they reach maturity at roughly the same time as other maps. (Figure 2)",
+      "In dark-reared ferrets, the map of orientation tuning does not strengthen, implicating the role of experience (White et al., 2001). This cannot be explained by activity levels, as ferrets \"seeing\" through closed eyelids likely have higher levels of cortical activity, but the input distribution is low-passed and destroys map structure (Figure 3)",
+      "Dark rearing permanently disrupts direction-selectivity but not orientation or OD maps, suggesting that \"dark rearing deprives the developing visual system of an important source of spatial, temporal, and/or luminance cues that are required for the formation of direction-ally selective circuits in cortical networks\"",
+      "The asymmetry in sensitivity of orientation and direction selectivity maps may be due in part to maturing LGN receptive fields and sharpening response latencies. These properties may be sufficient for a weak orientation tuning maps, but insufficient for establishment of direction selectivity. The maturing cortex may \"instruct\" the LGN and bias spatiotemporal RF properties there to meet the needs of orientation and direction computation in V1"
+    ],
+    "conclusions": [
+      "As much as I hate copy-pasting, this is a really good summary: \"Patterns of neural activity driven by sensorye xperience were considered necessary only in later stages of map maintenance when previously established map structures are sustained and fine-tuned according to the demands imposed by the functional ecology of the organism interacting with its environment. However, this framework for understanding functional maps in visual cortex is difficult to reconcile with the explosive phase of circuit construction that ensues after the onset of sensory experience and several important characteristics of orientation- and direction-map development\"",
+      "Experience can be either beneficial or detrimental: no input is probably better than bad input (also supported by bilateral cataract studies in human)",
+      "Single unit recordings would go a long way in figuring out how these maps form; are there \"pioneer\" neurons that establish the columnar nature? If so, how does experience alter their selectivity?"
+    ],
+    "other": [
+      "I really like this paper and think it does an outstanding job of constructing a theoretical framework for the LGN and V1, but I'm left wondering how these results may generalize to extended plasticity in higher visual regions."
+    ]
+  }
+}
