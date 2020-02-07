@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "'Critical period' is an overloaded term that can refer to many overlapping time periods in the development of a system",
+      "In general, critical periods last from eye opening to puberty and differ across brain regions and functions"
+    ],
+    "background": [
+      "Critical periods (and/or 'sensitive' periods) have primarily been studied in cats in the context of copmetition of ocular dominance columns"
+    ],
+    "approach": [
+      "This is a book chapter that discusses a number of methods, including:",
+      "Monocular deprivation, in which one eye is sutured shut for a period of time",
+      "Reverse suturing, in which one eye is sutured shut for a period of time, then the other eye is sutured shut",
+      "Controlled rearing, in which the visual statistics of an animal's environment are tightly controlled"
+    ],
+    "results": [
+      "As a rule of thumb, critical periods begin around the time of eye opening and close at puberty, although this is variable, e.g., macaque critical period closes by 1 year, but puberty does not begin until 3-3.5 years.",
+      "In general, the magnitude of the effect scales with the length and severity of the deficit, and is thus largest during the peak sensitivity of the critical period and for extreme manipulations",
+      "Later stages of the visual system have later and longer-lasting critical periods, e.g., monocular deprivation doesn't appear to affect the retina and LGN, but does affect V1. IT seems to remain plastic for longer (what is the evidence here?) and the hippocampus may be indefinitely plastic to support memory formation",
+      "Critical period timing, even within a given region, varies depending on the property assessed. For example, the critical period for orientation and direction tuning closes before that for ocular dominance in cat V1. Daw argues this has functional advantages, as one would want cells nicely tuned to direction and orientation before stereo vision (a computation requiring both eyes) can be refined",
+      "The critical period is delayed in dark-reared animals, suggesting that the opening and closing of the window can be disocciated from animal age even within the same species"
+    ],
+    "conclusions": [
+      "One must distinguish between the critical period for initial development of function, the critical period for disruption of function, and the critical period for recovery of function, as they may all differ"
+    ],
+    "other": [
+      "Nearly half of this chapter is devoted to detailing assays of critical periods in human subjects, often relating to visual acuity. Given the relative mystery regarding mechanism that these data offer, I don't review it here."
+    ]
+  },
+  "metadata": {
+    "authors": ["Daw, NW"],
+    "institutions": ["Yale"],
+    "keywords": ["critical period", "deprivation", "review"],
+    "title": "Critical Periods",
+    "journal": "Visual Development (Book)",
+    "doi": "",
+    "url": "https://www.springer.com/gp/book/9781461490586",
+    "date": "2014-01",
+    "review_date": "2020-02-06",
+    "one_sentence": "Daw reviews critical period basics in both human and non-human model systems"
+  }
+}

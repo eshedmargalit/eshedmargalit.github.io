@@ -47,7 +47,8 @@ const filenames = [
   "yacoub_orientation_columns.json",
   "achille_critical_period_dnn.json",
   "crair_binocular_deprivation.json",
-  "white_fitzpatrick_map_development.json"
+  "white_fitzpatrick_map_development.json",
+  "daw_critical_periods.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
