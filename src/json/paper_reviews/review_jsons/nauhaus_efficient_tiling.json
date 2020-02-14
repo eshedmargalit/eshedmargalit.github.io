@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "authors": ["Nauhaus, I", "Nielsen, KJ", "Callaway, EM"],
+    "institutions": ["Salk Institute"],
+    "keywords": [
+      "macaque",
+      "V1",
+      "calcium imaging",
+      "orientation",
+      "spatial frequency",
+      "ocular dominance",
+      "retinotopy"
+    ],
+    "title": "Efficient Receptive Field Tiling in Primate V1",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2016.07.015",
+    "url": "http://dx.doi.org/10.1016/j.neuron.2016.07.015",
+    "date": "2016-07",
+    "review_date": "2020-02-13",
+    "one_sentence": "Retinotopy in V1 is remarkably precise, yielding a small point image on cortex; also, spatial frequency and ocular dominance maps run parallel to each other"
+  },
+  "review": {
+    "summary": [
+      "Ocular dominance and spatial frequency maps 1) run parallel to each other but 2) have different spatial periods, suggesting a strategy for optimizing coverage among feature maps.",
+      "Macaque V1 micro-retinotopy is very precise, and retinotopic gradients can be observed in small (200 micron) imaging regions both in iso-orientation domains and in pinwheel centers."
+    ],
+    "background": [
+      "V1 in primates (and other large mammals) contains continuous maps of stimulus variables such as orientation, spatial position (including ocular dominance), and spatial frequency. The prevailing framework has been that 1) a complete set of visual features at a given location in space is coded by a retinotopically precise hypercolumn, and 2) that the feature maps run more or less orthogonal to one another to maximize coding efficiency.",
+      "Studies spanning organisms have both provided support for and disputed the notion that retinotopy is precise, leaving open the question of how large the cortical 'point image' is: the region of V1 dedicated to processing a point of visual space."
+    ],
+    "approach": [
+      "Wide-field (> 0.5mm) 2P imaging in macaque V1 to compute orientation maps, ocular dominance maps, and spatial frequency maps.",
+      "High spatial resolution (cellular resolution) imaging of a small 200 micron patch of V1 to determine micro-retinotopic 'scatter': the degree to which RF centers systematically shift within the imaging region.",
+      "For micro-retinotopy, fit a 2D plane to the X positions and Y positions, respectively, then quantify residual scatter as the deviation of each unit from that plane."
+    ],
+    "results": [
+      "Confirming prior findings, the orientation map is orthogonal to both the ocular dominance map and the spatial frequency map (Figure 2). For the first time, it was also shown that regions of high spatial frequency preference tend to localize to transition zones in the ocular dominance map, where neither eye has dominance (Figure 2). The SF and OD maps generally run in parallel.",
+      "The SF maps have a lower period (more rapid cycling across the cortical surface) than OD maps, suggesting that staggering maps with different periods is a way around the constraint that three maps (orientation, OD, SF) cannot all be mutually orthogonal (Figure 2)",
+      "Micro-retinotopy shows detectable gradients even in the small imaging windows. This holds both for iso-orientation domains and for pinwheel centers (Figure 4)"
+    ],
+    "conclusions": [
+      "The precision of retinotopy and orthogonality of maps suggests that whatever mechanisms lays out these maps (activity-dependent, genetic, etc) is extremely precise.",
+      "The feedforward anatomy from the LGN might explain the registration of SF and OD maps. A growing body of evidence now suggests that there is 'a spatial coincidence among blob centers, the center of OD bands, low-SF zones, direct koniocellular input, and indirect magnocellular input, while the interblob zones demonstrate a similar relationship among binocularity, high SF, and parvocellular input'",
+      "It is dramatically less clear how orientation maps, which form de-novo in V1, end up in tight register with all other maps. Some theories posit that orientation maps also have retinal/thalamic origins, but the evidence there is contested",
+      "The authors argue that while they show lower RF scatter than in other work, their results are also the best because 1) 2P calcium imaging allows greater statistical power and coverage and 2) their particular stimulus (randomized presentation of oriented bars) is better suited to revealing the true nature of RF scatter."
+    ],
+    "other": [
+      "I think this is a valuable paper in filling the gap in macaque knowledge; this reminds me a lot of the systematic work done in cat by Hubener et al., 1997. I would have loved to see more discussion about whether the authors believe this precision is genetically-encoded or enforced by some activity-dependent mechanism, though!"
+    ]
+  }
+}
