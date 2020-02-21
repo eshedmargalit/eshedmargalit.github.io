@@ -1,0 +1,46 @@
+{
+  "review": {
+    "summary": [
+      "Performing either ICA or sparse coding on static images of retinal waves is sufficient to generate oriented Gabor-like receptive fields.",
+      "The nature of the receptive fields can change with the statistics of the spontaneous activity, potential explaining how spontaneous activity may play different roles in different regions of the brain."
+    ],
+    "background": [
+      "While parts of the visual system obviously need patterned visual input to correctly mature, retinal waves have been shown to play an important role in the development of early visual cortex despite their 1) simplicity and 2) apparent differences from natural images.",
+      "Spontaneous activity has been observed in the retina, in the LGN, in V1, in auditory cortex, and to some degree in the hippocampus and spinal cord.",
+      "The function of the handoff between spontaneous activity and visual experience (and whether they act on similar mechanisms in early visual cortex) is largely unknown.",
+      "The spontaneous activity in V1 and LGN do not overlap in time with retinal waves and may have different spatiotemporal statistics (need to look into this more...)"
+    ],
+    "approach": [
+      "Generate input patterns from general \"threshold site percolation\" patterns, of which some retinal waves in some species are a clear member. Basically, have activity spread across nodes.",
+      "Perform 1) independent components analysis (ICA) on the images of wave-like patterns and 2) the sparse-coding procedure described in Olshausen and Field's earlier work for both retinal-wave like patterns and more general patterns of the threshold site-percolation family."
+    ],
+    "results": [
+      "ICA and sparse-coding both yield Gabor-like filters for retinal-wave-like images and for generic wavefront-like patterns (Figure 2).",
+      "The optimal filters differed depending on the pattern-generation parameters, with a primary difference being the orientation bandwidth of the fit Gabor functions. No strong claim about which parameters yield the most macaque-like V1 cells is made (Figure 3).",
+      "For reasonable filters to form with PCA, the input data must have pairwise correlations but does not require higher-order structure; whitened inputs do not yield \"good\" filters (Figure 4B).",
+      "For reasonable filters to form with ICA, the input data must be natural or patterned (nonrandom), but can be whitened or correlated (Figure 4C)."
+    ],
+    "conclusions": [
+      "Efficient coding (whether sparse or by ICA) can produce structured receptive fields both for natural images (as previously shown) and for wave-like images (shown in this work)",
+      "While molecular guidance cues certainly play a role in establishing the system, spontaneous activity may be important for refinement of receptive fields on the basis of statistical structure that will be shared between spontaneous activity and natural images."
+    ],
+    "other": [
+      "This work can be compared with, e.g., Dahne and Wiskott, 2014, who leverage not just the structure of retinal wave images, but their temporal progressions (they apply slow feature analysis; SFA)"
+    ]
+  },
+  "metadata": {
+    "authors": [" Mark V Albert", " Adam Schnabel", " David J Field"],
+    "institutions": [
+      "Cornell University",
+      "Massachusetts Institute of Technology"
+    ],
+    "keywords": ["retinal waves", "ica", "sparse coding", "gabor"],
+    "title": "Innate Visual Learning through Spontaneous Activity Patterns",
+    "journal": "PLOS Computational Biology",
+    "doi": "10.1371/journal.pcbi.1000137",
+    "url": "https://core.ac.uk/display/87506040",
+    "date": "2008-07",
+    "review_date": "2020-02-20",
+    "one_sentence": "Performing either ICA or sparse coding on static images of retinal waves is sufficient to generate oriented Gabor-like receptive fields."
+  }
+}

@@ -49,7 +49,8 @@ const filenames = [
   "crair_binocular_deprivation.json",
   "white_fitzpatrick_map_development.json",
   "daw_critical_periods.json",
-  "nauhaus_efficient_tiling.json"
+  "nauhaus_efficient_tiling.json",
+  "albert_retinal_waves.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
