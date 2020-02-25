@@ -168,7 +168,8 @@
           ],
           "journal": "NeuroImage",
           "year": "2019",
-          "volume": ", in press",
+          "volume": ", 189",
+          "pages": ", 847-869",
           "url": "https://www.sciencedirect.com/science/article/pii/S1053811919300928",
           "tag": "neuroimage-2019-acritical"
         },
@@ -184,9 +185,26 @@
           ],
           "journal": "Attention, Perception, & Psychophysics",
           "year": "2019",
-          "volume": ", in press",
+          "volume": "",
           "url": "https://link.springer.com/article/10.3758%2Fs13414-019-01840-2",
           "tag": "atten-percep-2019-xvert"
+        },
+        {
+          "title": "Ultra-high-resolution fMRI of human ventral temporal cortex reveals differential representation of categories and domains",
+          "authors": [
+            "Margalit, E.",
+            "Jamison, K.W.,",
+            "Weiner, K.S.",
+            "Vizioli, L.",
+            "Zhang, R.",
+            "Kay, K.N.",
+            "Grill-Spector, K."
+          ],
+          "journal": "Journal of Neuroscience",
+          "year": "2020",
+          "volume": ", in press",
+          "url": "https://www.jneurosci.org/content/early/2020/02/21/JNEUROSCI.2106-19.2020",
+          "tag": "jn-2020-7tfloc"
         }
       ],
       "preprints": []
