@@ -2,10 +2,10 @@
   "projects": [
     {
       "name": "Modeling the Functional Architecture of the Visual System",
-      "description": "The visual system is full of rich and interesting phenomena, many of which are poorly understood. We are using deep convolutional neural networks to model the development of the ventral visual system, which is thought to be responsible for recognizing objects. Large-scale models of the development of this system will enable us to understand how an animal's experience may affect the structure and development of its visual system.",
+      "description": "The visual system is composed of neurons embedded in detailed topographic maps. Although the past few years have seen huge advances in our ability to predict the activity of neurons in these maps with deep neural networks, models of the structure of the maps themselves is lacking. We're using deep convolutional neural networks to better understand 1) the role of this functional architecture and 2) how it might develop in the brain.",
       "img_src": "img/spacenet.png",
-      "url": "img/Margalit_et_al_VSS_2018.png",
-      "url_text": "VSS Poster (11MB)",
+      "url": "img/margalit_cosyne_poster_2020.png",
+      "url_text": "COSYNE 2020 Poster (8MB)",
       "alt": "Orientation tuning map from a computational model of primary visual cortex",
       "id": "func-arch"
     },
@@ -13,8 +13,8 @@
       "name": "Characterizing the Fine Scale Functional Architecture of the Ventral Temporal Cortex",
       "description": "Recent advances in fMRI technology have allowed insights into the functional organization of cortical regions at unprecented resolution. In collaboration with the CVN Lab at the University of Minnesota, we are examining areas of the brain that preferentially respond to different object categories and studying their arrangement in the cortical sheet.",
       "img_src": "img/vtc_faces.png",
-      "url": "https://www.abstractsonline.com/pp8/#!/4649/presentation/41470",
-      "url_text": "SfN 2018 Abstract",
+      "url": "https://www.jneurosci.org/content/early/2020/02/21/JNEUROSCI.2106-19.2020",
+      "url_text": "Read the paper!",
       "alt": "Category tuning maps from ultra-high-res human fMRI",
       "id": "hires"
     },
