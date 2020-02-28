@@ -1,28 +1,28 @@
 {
   "projects": [
     {
+      "name": "Modeling the Functional Architecture of the Visual System",
+      "url": "img/margalit_cosyne_poster_2020.png",
+      "img_src": "spacenet.png",
+      "alt": "Orientation tuning map from a computational model of primary visual cortex"
+    },
+    {
+      "name": "Ultra-high-resolution imaging of human higher visual cortex",
+      "url": "https://www.jneurosci.org/content/early/2020/02/21/JNEUROSCI.2106-19.2020",
+      "img_src": "lateral_vtc_rdm.png",
+      "alt": "Representational dissimilarity matrix"
+    },
+    {
       "name": "A V1-like Model for Object Discrimination",
       "url": "http://geon.usc.edu/GJW/",
       "img_src": "gabor_grab.PNG",
       "alt": "Screengrab from application designed to explore gabor-jet model of image processing."
     },
     {
-      "name": "Modeling the Functional Architecture of the Visual System",
-      "url": "img/Margalit_et_al_VSS_2018.png",
-      "img_src": "spacenet.png",
-      "alt": "Orientation tuning map from a computational model of primary visual cortex"
-    },
-    {
       "name": "Interactive Signal Detection Theory Tutorial",
       "url": "#/DPCalc",
       "img_src": "dp_gui_screenshot.png",
       "alt": "Screenshot of interactive webpage describing signal detection theory"
-    },
-    {
-      "name": "How are object parts represented in the human brain?",
-      "url": "http://www.mitpressjournals.org/doi/abs/10.1162/jocn_a_01144",
-      "img_src": "Margalit_et_al_2017_Fig3.png",
-      "alt": "Outlines of brain areas shown on inflated cortical reconstruction"
     }
   ]
 }
