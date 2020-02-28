@@ -1,0 +1,40 @@
+{
+  "review": {
+    "summary": [
+      "Complicated methods for unsupervised learning via exemplar clustering/aggregation aren't required for high-performance, a simple contrastive algorithm can achieve state of the art given sufficient batch-size and data augmentation."
+    ],
+    "background": [
+      "A long-standing goal of building powerful learning systems is to break the dependence on labeled data and supervised learning. The most promising approaches (in terms of how readily their learned representations transfer to ImageNet performance) are variations of clustering methods that aim to learn similar representations for transformations of the same exemplar.",
+      "Many successful approaches rely on (1) data augmentation and (2) a \"memory bank\" that is continuously updated to provide \"negative examples\": images that are not of the same identity as the image being presented."
+    ],
+    "approach": [
+      "Instead of using a memory bank, generate a positive pair by taking an example image and applying some combination of color jitter, Gaussian blur, and random crop. All other images in the batch are the negative examples.",
+      "Use ResNet to get an encoding of the images, then learn a separate \"projection head\" MLP to convert the ResNet representations into low-D vectors to be aggregated/clustered/etc",
+      "Take advantage of massive computational resources to fit huge batch sizes, and use the LARS optimizer to effectively train the network despite batch size increases."
+    ],
+    "results": [
+      "To identify which augmentations might be useful, try all combinations of two sequential preprocessing steps. First cropping, then applying color jitter leads to the best top-1 ImageNet performance in the supervised context (Figure 5). Color distortion helps distinguish images on the basis of their pixels, which probably helps a lot! (Figure 6)",
+      "The augmentations that help supervised ImageNet don't necessarily align with those that lead to best unsupervised performance (Table 1)",
+      "Adding a non-linear projection head leads to a reliable improvement over a linear alternative (Figure 8)",
+      "Unsurprisingly, big batch sizes help an enormous amount! (Figure 9)",
+      "This method, with its large batch size and simple (no memory bank) approach achieves state of the art transfer to ImageNet top-1 (Table 6)"
+    ],
+    "conclusions": [
+      "The complexity in other methods is not necessary to achieve high performance. Eshed's note: it's hard to say if this method is truly simpler, since it also requires learning a new non-linear head off of the NN representation.",
+      "The authors attribute a large part of the success of this method to the data augmentation process used here."
+    ],
+    "other": []
+  },
+  "metadata": {
+    "authors": ["Chen, T", "Kornblith, S", "Norouzi, M", "Hinton, G"],
+    "institutions": ["Google Research, Brain Team"],
+    "keywords": ["unsupervised learning", "augmentation", "machine learning"],
+    "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+    "journal": "arXiv",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2002.05709",
+    "date": "2020-02",
+    "review_date": "2020-02-28",
+    "one_sentence": "SOTA on unsupervised representation learning can be achieved with contrastive losses computed within a batch (as opposed to requiring a memory bank)"
+  }
+}
