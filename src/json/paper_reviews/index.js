@@ -51,7 +51,8 @@ const filenames = [
   "daw_critical_periods.json",
   "nauhaus_efficient_tiling.json",
   "albert_retinal_waves.json",
-  "chen_simclr.json"
+  "chen_simclr.json",
+  "kunin_local_rules.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

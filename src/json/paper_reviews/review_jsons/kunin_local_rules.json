@@ -1,0 +1,53 @@
+{
+  "review": {
+    "summary": [
+      "For biologically plausible local learning rules to be competitive with abiological backpropagation, implicit alignment of feedforward and feedback weights is required.",
+      "The authors provide a regularization framework that explicitly decouples forward and backward weights, allowing many possible local learning rules to be proposed and tested on performance and generalization."
+    ],
+    "background": [
+      "Modern deep learning relies on backpropagation (BP) as the only learning algorithm that scales to large networks and complex tasks. However, neuroscientists are quick to criticize BP as abiological, as it assumes that the \"backward weights\" which determine how the error signal should flow through a model unit be the exact transpose of the \"forward weights\" which determine its response.",
+      "Recent work proposed \"feedback alignment\" (FA) and \"weight mirror\" (WM), two methods that can be computed locally, i.e., do not require weights to be identical in the forward and backward passes. However, these methods are either fragile or don't scale to large-scale tasks such as ImageNet.",
+      "Kunin et al., 2019 demonstrate that L2-regularization of linear autoencoders boils down to enforcing symmetry between forward and backward weights (a way around strict weight transport), indicating a promising direction for regularization-based methods in more complex model architectures and tasks."
+    ],
+    "approach": [
+      "Formulate network training as a regularization problem where 1) there are distinct forward and backward weights for each node, and 2) loss on the task is a function of the \"forward weights\" and the regularization is computed as a function of the \"backward weights\".",
+      "Build the regularization on the backward weights from a set of primitives that can be sorted into \"local\" (those which act only on their inputs, e.g., a norm-penalty on the weights, and \"non-local\" (those which depend on both their inputs and some other set of weights), e.g., alignment of forward and backward weights directly. Previous work can be described with this set of primitives (cool!)",
+      "For a given learning algorithm, evaluate 1) task performance, i.e., ImageNet performance, and 2) Metaparameter robustness, i.e., how well one can use metaparams such as learning rate across different architectures"
+    ],
+    "results": [
+      "The authors are unable to replicate the weight mirror results suggesting competitive performance with backpropagation, even after attempting over 800 combinations of metaparameters to identify the best ones. This approach is also very sensitive to metaparameter choice, as choosing them on one architecture does not transfer to new architectures (Figure 3). A dynamical systems analysis suggests that this sensitivity follows from instability inherent to the WM algorithm, such that metaparameters have to be very specifically selected (Figure 2).",
+      "Information Alignment (IA) is a modification to weight mirror that effectively penalizes the sparsity of activations in a layer. This addition prevents the forward and backward weights from diverging in magnitude during training. The authors demonstrate that IA is stable and performant, making it the best known local learning rule (Figure 3). However, it is not quite as good or robust as BP.",
+      "Symmetric Alignment and Activation Alignment are non-local learning rules (they do not require weight symmetry, but do violate strict locality of plasticity and computations). They effectively work by encouraging approximate symmetry of forward and backward weights.",
+      "The non-local weight estimation methods, e.g., SA are more robust to noisy updates than BP (Figure 5), suggesting that a spike-dependent mechanism previously proposed to allow some form of weight estimation might be plausible at-scale.",
+      "Except for feedback alignment, all of the methods described here predict firing rates in macaque V4 and IT equally well, suggesting that there is no signature of the learning rule employed by the brain in the final pattern of activations we can presently measure in experiments."
+    ],
+    "conclusions": [
+      "Strictly local learning rules can be very effective with proper regularization, but do not match BP. Non-local learning rules that still separate forward and backward weights, i.e., those employing \"weight estimation\" are competitive with BP and have more biologically-plausible interpretations."
+    ],
+    "other": []
+  },
+  "metadata": {
+    "authors": [
+      "Kunin, D",
+      "Nayebi, A",
+      "Sagastuy-Brena, J",
+      "Ganguli, S",
+      "Bloom, J",
+      "Yamins, D"
+    ],
+    "institutions": ["Stanford University", "Broad Institute"],
+    "keywords": [
+      "neural networks",
+      "plasticity",
+      "learning rules",
+      "deep learning"
+    ],
+    "title": "Two Routes to Scalable Credit Assignment without Weight Symmetry",
+    "journal": "arXiv",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2003.01513",
+    "date": "2020-03",
+    "review_date": "2020-03-04",
+    "one_sentence": "Kunin, Nayebi, and Sagastuy-Brena et al. show that learning rules separating forward and backward weights can be competitive with backprop on ImageNet"
+  }
+}
