@@ -1,0 +1,56 @@
+{
+  "review": {
+    "summary": [
+      "Curvature domains exist in macaque V4, are tuned to specific orientations, are cue-invariant, and are distinct from color and spatial frequency domains"
+    ],
+    "background": [
+      "In the early visual system in macaques, there are orientation domains in V1 and \"higher order orientation domains\" in V2: regions that preferentially respond to orientations irrespective of the type of cue (luminance, depth, etc)",
+      "In V4, neurons have been shown to be selective for curvature, degree of curvature, and orientation of a curve. However, it is unknown how these responses are spatially organized."
+    ],
+    "approach": [
+      "Intrinsic optical imaging in macaque V1, V2, and V4. Map orientation, spatial frequency, and color tuning with a set of gratings, then evaluate curvature sensitivity with a set of gratings curved either up, down, left, or right.",
+      "Functional domains are identified by computing pixel-by-pixel t values.",
+      "In some experiments, different kinds of curved stimuli were used: gratings vs. straight lines, and finer gradataions of orientation (8 instead of 4)."
+    ],
+    "results": [
+      "Curvature-preferring domains were observed in V4; they are non-overlapping with color-preferring domains and spatial-frequency-tuned domains, but overlap substantially with regions selective for straight gratings. (Figure 1)",
+      "Preference for curves was \"cue-invariant\": regions that preferred curved gratings to straight gratings also preferred curved single lines to straight single lines (Figure 1)",
+      "Response maps to similar degrees of curvature were correlated (Figure 2), and curvature domains exhibit subdomains tuned to higher or lower curvature (suggests smooth mapping on the cortical surface of the degree of curvature; Figure 3)",
+      "There are systematic spatial shifts from domains preferring straight lines to increasingly high curvature preference (Figure 6). The preferred orientation of the curved stimuli forms a pinwheel reminscent of those observed in V1 for straight orientations (Figure 6). Eshed's note: not sure how convinced I am of the pinwheel claim, these look about as noisy as when you average a bunch of noise with small biases together."
+    ],
+    "conclusions": [
+      "Curvature domains exist in macaque V4 and are distinct from high-spatial-frequency domains, indicating a novel component to the functional architecture of this region",
+      "The existence of curvature domains in V4 points to a \"third stage\" of the shape processing system, following that of orientation representations in V2 and V4"
+    ],
+    "other": [
+      "Beyond the demonstration of curvature domains, this study is also a nice overview of our existing knowledge of V4 functional architecture. It's also interesting (for me, anyway) to consider the implications of these findings with respect to the search for general principles of functional organization that might extend from early visual cortex to \"intermediate\" visual areas and beyond"
+    ]
+  },
+  "metadata": {
+    "authors": ["Hu, J", "Song, XM", "Wang, Q", "Roe, AW"],
+    "institutions": [
+      "Zhejiang University",
+      "Oregon Health Sciences University"
+    ],
+    "keywords": [
+      "macaque",
+      "v4",
+      "orientation",
+      "curvature",
+      "pinwheel",
+      "maps"
+    ],
+    "title": "Curvature domains in V4 of Macaque Monkey",
+    "journal": "bioRxiv",
+    "doi": "",
+    "url": "https://www.biorxiv.org/content/10.1101/2020.02.28.969329v1.full",
+    "date": "2020-02",
+    "review_date": "2020-03-11",
+    "one_sentence": "Curvature domains exist in macaque V4 and form curvature-direction pinwheels",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1583954740475"
+      }
+    }
+  }
+}
