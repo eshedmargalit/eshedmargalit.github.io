@@ -1,0 +1,54 @@
+{
+  "review": {
+    "summary": [
+      "Face-selective voxels in the congenitally blind localize to the lateral fusiform gyrus (haptic and auditory stimulation), much as they do in sighted subjects (visual/haptic/auditory)",
+      "With face-selectivity shown in the blind in \"typical\" cortical locations, the authors suggest that connectivity to downstream areas (not visual experience) drive the formation of this famous neural circuit"
+    ],
+    "background": [
+      "In typical, sighted subjects, a series of \"face patches\" (clusters in higher visual cortex) can be found in stereotyped locations. The innateness of this face-processing system has long been the subject of debate. ",
+      "Arcaro and Livingstone reported that monkeys deprived of visual experience with faces do not develop face patches (although \"face sounds\" and touching faces was possible). Meanwhile van den Hurk and Op de Beeck reported typical VTC organization in congenitally blind subjects listening to auditory stimuli. These two results initially appear to be at odds."
+    ],
+    "approach": [
+      "3D print exemplars of faces, hands, mazes, and chairs. Allow subjects in the scanner to feel each stimulus on a rotating wheel; stimuli were ordered in blocks. Sighted subjects additionally saw videos of the 3D rendered objects as visual stimuli.",
+      "Identify the top N (usually N=50) voxels in a pre-defined anatomical \"parcel\" based on part of the data, then evaluate the selectivity of those N voxels on a held out portion of the data. Note that sometimes, the top 50 voxels are _not_ significantly selective on their own, despite being the best available.",
+      "Scan some subjects in a second session with additional stimuli (spheroids, cuboids) to assess reliability and the curvature-organization hypothesis (that VTC is organized on the basis of eccentricity preference).",
+      "For each subject, construct a \"connectivity fingerprint\": the resting state correlation between the face-selective region defined and every other region in the brain."
+    ],
+    "results": [
+      "Face-selective regions appear in the lateral fusiform gyrus (and somewhat broadly elsewhere) during haptic stimulation for both blind and subject subjects. (Figure 2)",
+      "Responses in haptically-defined face-selective areas to auditory stimuli (confusing, I know) confirm modality-independent face-selectivity. (Figure 3).",
+      "Connectivity fingerprints were more similar between sighted face-selective regions and blind face-selective regions than between face- and scene-selective regions in either group.",
+      "Predicting face-selectivity of one group from the connectivity fingerprints of another group works better than predicting from the functional activity of another group directly (Figure 4). Note, the predictions aren't that great in general (r < 0.5, R^2 < 0.25), so not sure how much to read into this."
+    ],
+    "conclusions": [
+      "Face-selectivity patterns are innate and are generated from connectivity patterns to other neural parcels"
+    ],
+    "other": [
+      "It's difficult to know to what extent this is a useful general framework for thinking about VTC organization, since I don't think other selectivity patterns were tested, e.g., body-selectivity.",
+      "I'd be curious to see how these results compare to methods that strictly require face-selective voxels to define a face-selective region (as opposed to the top N most face selective voxels in a region)"
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Murty, AR",
+      "Teng, S",
+      "Beeler, D",
+      "Mynick, A",
+      "Oliva, A",
+      "Kanwisher, N"
+    ],
+    "institutions": [
+      "MIT (BCS)",
+      "MIT (CSAIL)",
+      "Smith-Kettlewell Eye Research Institute"
+    ],
+    "keywords": ["human", "fmri", "blind", "development", "faces", "vtc"],
+    "title": "Visual Experience is not Necessary for the Development of Face Selectivity in the Lateral Fusiform Gyrus",
+    "journal": "bioRxiv",
+    "doi": "10.1101/2020.02.25.964890",
+    "url": "https://doi.org/10.1101/2020.02.25.964890",
+    "date": "2020-03",
+    "review_date": "2020-03-18",
+    "one_sentence": "Murty and colleagues compare face-selectivity using visual, auditory, and haptic stimuli in sighted and congenitally blind participants"
+  }
+}
