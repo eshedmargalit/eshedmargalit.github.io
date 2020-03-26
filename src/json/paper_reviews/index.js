@@ -54,7 +54,8 @@ const filenames = [
   "chen_simclr.json",
   "kunin_local_rules.json",
   "hu_curvature.json",
-  "murty_haptic_blind.json"
+  "murty_haptic_blind.json",
+  "vogelsang_acuity.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

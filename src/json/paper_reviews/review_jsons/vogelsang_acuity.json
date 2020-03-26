@@ -1,0 +1,56 @@
+{
+  "review": {
+    "summary": [
+      "Alexnet trained on face recognition is the most generalizable and performant when trained first with blurred inputs, and then with high resolution inputs"
+    ],
+    "background": [
+      "Recent results suggest that there is a critical period for face learning: 1) monkeys raised without seeing faces do not develop patches of face-selective neurons and 2) children who have surgery to remove cataracts in the first year of life are often prosopagnosic later in life.  A domain-general (i.e., not face specific) account for these observations is lacking.",
+      "Newborns have very low visual acuity (20/600) due both to immaturity of the retina and of the visual cortex. In children with cataracts, acuity can improve despite opacity of the eyeball -- in one patient (RK) that had surgery at the age of 4.5, his initial acuity was 20/40",
+      "Computational work has demonstrated that local image patches are sufficient to discriminate images (e.g., BagNets); presumably this is not the case with blurry inputs (like those an infant may see). Blurry inputs may thus require circuits that integrate over extended spatial ranges, which sets up the kind of processing necessary for face recognition"
+    ],
+    "approach": [
+      "Train convolutional neural network (Alexnet modified for 100x100 input and layer 1 kernels increased from 11x11 to 22x22) with blurred training images and blurred testing images (varying amount of blur). Inspect performance of model and learned receptive fields. The input images are 50k faces from about 400 identities.",
+      "To estimate receptive field size and spatial frequency, fit ellipses to different lobes of the learned Gaussians and quantify size and separation of those ellipses. ",
+      "Train some instances of the model on one of 4 regimens: \"blurred-to-high-resolution\"(250 epochs of training with blurred images followed by 250 epochs of training with high-resolution images);\"high-resolution-to-blurred\"(250 epochs of training with high-resolution images followed by 250 epochs of training with blur-red images);\"blurred-to-blurred\"(500 epochs with exclusively blurred training images); and \"high-resolution-to-high-resolution\"(500 epochs with exclusively high-resolution training images).\""
+    ],
+    "results": [
+      "When discriminating face images, smaller regions of the input are needed for high-resolution images than blurred images (Figure 1), indicating that blurred inputs require larger regions of spatial integration",
+      "Learned filters in the first layer become increasingly coarse-scale as inputs become blurrier (Figure 2) and receptive fields increase in size.",
+      "Training at one blur level yields poor generalization at other blur levels (Figure 2C), implying that the low-spatial-frequency info learned when training at extreme blur doesn't help with general face features at higher resolutions. Instead, the network likely shifts learning high SF features to other layers?",
+      "If high-res follows blur in the training schedule, RF sizes stay large. However, if blur follows high-res, the RFs switch from small to large (Figure 3).",
+      "The best-performing model is the one trained first on blur, then on high-resolution images (as normally developing infants do)."
+    ],
+    "conclusions": [
+      "Low initial visual acuity may benefit a learning visual system by encouraging development of receptive fields that are generally useful and integrate over extended spatial fields.",
+      "The training regime proposed here might be a way to make NNs more generalizable in other tasks. I'm a bit skeptical of this claim, as this definition of generalizability isn't one that most computer vision researchers are concerned with (compared to e.g. generalizing to new tasks)"
+    ],
+    "other": [
+      "An assumption is made that 1) the input to the CNN is \"akin to the output of the retina\" and 2) that the first layer of the CNN is effectively V1-like. In my experience, neither of these claims is necessarily true across architectures.",
+      "Of course, small children do not \"train\" on exclusively face images. How do these results hold up to more diverse training settings, including those with natural images?"
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Vogelsang, L",
+      "Gilad-Gutnick, A",
+      "Ehrenberg, EC",
+      "Yonas, A",
+      "Diamond, S",
+      "Held, RM",
+      "Sinha, P"
+    ],
+    "institutions": [
+      "Massachusetts Institute of Technology",
+      "University of Zurich",
+      "Arizona State University"
+    ],
+    "keywords": ["neural network", "acuity", "development", "blur", "faces"],
+    "title": "Potential downside of high initial visual acuity",
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "doi": "10.1073/pnas.1800901115",
+    "url": "https://www.pnas.org/content/pnas/115/44/11333.full.pdf",
+    "date": "2018-10",
+    "review_date": "2020-03-25",
+    "one_sentence": "Vogelsang et al. use CNN models of face recognition to argue that low initial visual acuity in infants has the advantage of setting up receptive fields to be able to integrate over larger spatial extents"
+  }
+}
