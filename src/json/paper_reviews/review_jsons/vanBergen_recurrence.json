@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "Recurrence can be used to understand how both biological and artificial neural networks can accomplish complex tasks under spatial, metabolic, and temporal constraints",
+      "Once we overcome some technical hurdles, recurrence will reveal itself to be superior framework for solving visual inference -- a goal computer scientists and neuroscientists can work toward"
+    ],
+    "background": [
+      "The visual system employs recurrent computation that is apparent in its connectivity, temporal response patterns, and timing of behavioral responses. However, it is unknown why recurrence is used in the brain. In fact, feedforward neural networks have enjoyed success as the current state-of-the-art models of both behavior and neural function.",
+      "There are three explanations for why recurrence might be used in the brain despite the success of feedforward neural network models (FNNs). 1) the brain operates under space, time, and energy constraints that neural networks do not, 2) that feedforward algorithms are what really matter, but recurrence is useful for corner cases, and 3) that recurrence is fundamentally superior as an algorithm to feedforward computation"
+    ],
+    "approach": [
+      "This is a perspective paper so there aren't methods to discuss per se. The primary tools described are recurrent neural network models, although a distinction is made that any RNN can be unrolled into an FNN, so we need to be careful about designations like that.",
+      "Networks unrolled in space feature 1) shared weights, because the same connections are being modeled as different stages in a fully feedforward architecture, and 2) many skip connections."
+    ],
+    "results": [
+      "Instead of thinking of RNNs as a special case of FNNs, we should think of it the other way around. Direct quote: \"Thus,  any  finite-time  RNN  can  be  transformed  into  an equivalent  FNN.  But  this  should  not  be  taken  to  mean that  RNNs  are  a  special  case  of  FNNs.In  fact,  FNNs are  a  special  case  of  finite-time  RNNs,  comprising  those which happen to have no cycles.\" (Figure 1)",
+      "Not all neural networks are realistic, in the sense that some are more readily deployed (either by the biological system, or by the hardware an ANN is deployed on). For example, some finite-time RNNs are realistic whereas their unrolled-in-space feed-forward counterparts are not. (Figure 2)",
+      "ResNets (and DenseNets) are examples of networks that resemble spatially unrolled RNNs and perform exceptionally well on task and brain-similarity benchmarks.",
+      "Recurrence has many high-level advantages: it can perform arbitrarily \"deep\" computations by running longer in time, instead of in space, and it can choose to trade off accuracy for speed by truncating computation temporally (Figure 3)",
+      "Recurrence has been implicated in critical functions, including attention, predictive coding, learning temporal context, i.e., stimulus history, estimating dynamics, for \"cleaning up\" representations of both dynamic and static inputs, and for selecting visual targets in \"active vision\" (Figure 4)"
+    ],
+    "conclusions": [
+      "While the idea of hierarchical feedforward nets is attractive, we should shift to thinking about the power, simplicity, and flexibility of recurrent alternatives. In a similar vein, we shouldn't assume that recurrence is only there to support the heavy lifting done by feedforward responses",
+      "To move beyond the feedforward framework, we also need to find alternative to backprop through time, which is both computationally expensive and reduces recurrent graphs to large feedforward graphs"
+    ],
+    "other": [
+      "I like the framing of these arguments a lot and generally agree with the points made. However, for me to be really convinced that I need to start using RNNs, there needs to be 1) a dramatic improvement in how easy they are to train and implement, and 2) they need to demonstrate superiority on a strongly-constraining task"
+    ]
+  },
+  "metadata": {
+    "authors": ["Ruben S. van Bergen", "Nikolaus Kriegeskorte"],
+    "institutions": ["Columbia University"],
+    "keywords": ["recurrence", "neural network"],
+    "title": "Going in circles is the way forward: the role of recurrence in visual inference",
+    "journal": "arXiv",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2003.12128",
+    "date": "2020-04",
+    "review_date": "2020-04-02",
+    "one_sentence": "van Bergen and Kriegeskorte argue for recurrent neural networks as a promising path forward in understanding how brains and machines accomplish visual inference"
+  }
+}
