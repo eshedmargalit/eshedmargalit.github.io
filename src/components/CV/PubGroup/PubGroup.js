@@ -7,7 +7,7 @@ import {
   ListGroup,
   ListGroupItem
 } from "reactstrap";
-import { FaLink } from "react-icons/fa";
+import { FaFilePdf, FaLink } from "react-icons/fa";
 import moment from "moment";
 
 class PubGroup extends Component {
@@ -64,16 +64,24 @@ class PubGroup extends Component {
 
   render_pub = pub => {
     pub.authors.tag = pub.tag;
-    let link_render;
-    if (pub.url === "") {
-      link_render = null;
-    } else {
+    let link_render = null;
+    if (pub.url !== "") {
       link_render = (
         <Button color="link" target="_blank" href={pub.url}>
           <FaLink size="1.5em" />
         </Button>
       );
     }
+
+    let pdf_render = null;
+    if (pub.pdf && pub.pdf !== "") {
+      pdf_render = (
+        <Button color="link" target="_blank" href={pub.pdf}>
+          <FaFilePdf size="1.5em" />
+        </Button>
+      );
+    }
+
     return (
       <ListGroupItem>
         <p>{pub.year}</p>
@@ -87,6 +95,7 @@ class PubGroup extends Component {
           </em>
         </p>
         {link_render}
+        {pdf_render}
       </ListGroupItem>
     );
   };
