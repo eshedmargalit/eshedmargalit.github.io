@@ -1,0 +1,50 @@
+{
+  "review": {
+    "summary": [
+      "Very deep networks can be successfully trained with the introduction of parameter-free skip connections",
+      "Residual networks converge more quickly and allow higher performance (SOTA on ImageNet), making them an attractive option for computer vision (and other tasks)"
+    ],
+    "background": [
+      "In general, deeper networks perform better than shallow networks. However, deep networks are susceptible to two issues. First, gradients become very small when backpropagated through deep networks, although this can be corrected with reparameterization, e.g., batch-norm. Even with this issue taken care of, deep networks still underperform shallow networks, and the solution to this latter problem was unknown.",
+      "Both residual vectors and skip connections had been previously introduced, but the skip connections weren't simple identity functions, which made them more expensive."
+    ],
+    "approach": [
+      "Instead of having a small block of layers approximate the function H(x), have them approximate H(x) - x (the residual), which should result in lower-magnitude values and a better conditioned optimization problem. Practically, the residual function is approximated by a skip connection that is simply the identity function (since the identity is always added, only the residual needs to be learned).",
+      "Generally train as though it were a deeper VGG-style network, but add residual connections every couple of layers. Train and test on ImageNet, but also investigate CIFAR and PASCAL.",
+      "Investigate networks at different depths (lots of focus on 18 and 34 layers), as well as some super deep cases (50, 101, 152, 1202 layers)"
+    ],
+    "results": [
+      "Without residual connections, an 18-layer \"plain\" network outperforms a deeper 34 layer network on the validation set, and it's clear that the training error is higher for the deeper network. When switching to the residual versions of these networks, the 34-layer network outperforms the 18-layer network, and the 18-layer residual converges faster than its plain counterpart (Figure 4)",
+      "Residual connections are especially useful for \"bottleneck blocks\" in which a 3x3 conv is sandwiched on either side by 1x1 convs (mixing of channels only) ",
+      "\"Aggressively deep\" network architectures (ResNet-1202) still achieve good performance, demonstrating that the introduction of residual connections effectively solves the degradation problem"
+    ],
+    "conclusions": [
+      "Residual connections are a useful building block to allow training deep networks without needing to add any extra parameters"
+    ],
+    "other": [
+      "I hadn't realized before that \"residual\" refers to the goal of a block learning the residual function H(x) - x.",
+      "Looking back at this paper, I was surprised at how little importance is given to the network architecture (blocks, pooling, conv sizes), since now ResNet-18 and ResNet-34 have very stereotyped architectures that are broadly used and analyzed."
+    ]
+  },
+  "metadata": {
+    "authors": ["He, K", "Zhang, X", "Ren, S", "Sun, J"],
+    "institutions": [
+      "Microsoft",
+      "Xi'an Jiaotong University",
+      "University of Science and Technology of China"
+    ],
+    "keywords": [
+      "neural network",
+      "deep learning",
+      "optimization",
+      "skip connection"
+    ],
+    "title": "Deep Residual Learning for Image Recognition",
+    "journal": "Computer Vision and Pattern Recognition",
+    "doi": "10.1109/CVPR.2016.90",
+    "url": "https://arxiv.org/pdf/1512.03385",
+    "date": "2016-06",
+    "review_date": "2020-04-08",
+    "one_sentence": "He and colleagues solve a major issue in training very deep networks with a clever preconditioner: have blocks of layers learn residuals"
+  }
+}
