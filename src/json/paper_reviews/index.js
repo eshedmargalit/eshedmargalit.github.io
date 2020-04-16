@@ -57,7 +57,8 @@ const filenames = [
   "murty_haptic_blind.json",
   "vogelsang_acuity.json",
   "vanBergen_recurrence.json",
-  "he_resnets.json"
+  "he_resnets.json",
+  "fort_goldilocks.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

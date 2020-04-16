@@ -1,0 +1,41 @@
+{
+  "review": {
+    "summary": [
+      "The curvature of the loss landscape is not uniform for all points in weight space; in fact, there is a \"Goldilocks\" zone in which curvature is unusually high, leading to good optimization speed and final accuracy",
+      "Analysis of the Hessian of randomly-oriented hyperplanes and hyperspheres indicates that the suitability of a point in weight space can be computed as a function of the trace and sum of squares of the eigenvalues of the Hessian"
+    ],
+    "background": [
+      "A neural network specified by a set of weights (and biases), can be thought of as a point in D-dimensional space, where D is the number of parameters in that network. Given a loss function to be minimized, there is mapping from each point in that space to a given loss value, and the job of an optimizer is to find regions of the D-dimensional space that lead to low loss values.",
+      "The success of optimization in this space depends on appropriate initializations of the weights such that good regions of the loss landscape are reachable. In practice, some common initialization techniques are Xavier initialization and He initialization, which both scale the standard deviation of the distribution weights are randomly drawn from by the size of the weight matrix being initialized."
+    ],
+    "approach": [
+      "For simplicity (and because empirically it doesn't appear to affect final performance), optimize the network weights not in the full \"ambient\" space of D-dimensions, but on a lower-dimensional hyperplane or hypersphere that intersects the initialization point. Compute the Hessian of the loss with respect to the weights at each point on this hyperplane (or sphere).",
+      "Compute two informative quantities from the Hessian: the trace, Tr(H), and the sum of squares of its eigenvalues, ||H||, the variance of the curvature values. When Tr(H) / ||H|| is greater than 1, the average curvature exceeds the variation in the curvature, implying that the loss landscape is convex in most directions, and thus, that optimization from that point (finding a way downhill to a lower loss value) is easy."
+    ],
+    "results": [
+      "There exists a \"Goldilocks zone\" of the loss landscape characterized by a number of features for fully-connected networks trained on \"easy\" tasks like MNIST and CIFAR-10. Namely, 1) a majority of positive eigenvalues of H and 2) an abnormally large Tr(H)/||H|| (Figure 3).",
+      "Popular initialization schemes work by placing the weights firmly into the Goldilocks zone, which may speed up training and lead to good final accuracy. (Figure 1, 4)",
+      "The increase in Tr(H) / ||H|| is _not_ observed for simple CNNs (Figure 4d)"
+    ],
+    "conclusions": [
+      "For some small fully-connected networks, popular initialization techniques work by placing weights in a \"Goldilocks\" zone with unusually high curvature.",
+      "When optimizing on a lower-dimensional surface (d << D), the intersection of that surface with the Goldilocks zone may be an important prerequisite for successful optimization."
+    ],
+    "other": [
+      "A couple of minor complaints worth noting, since I see this in a number of CS papers: 1) I found many of the plots in this work difficult to read due to issues with resolution and font size, and 2) I found the claim that these results are similar in CNNs and fully connected NNs fairly misleading. The pattern is both qualitatively and quantitatively different for these architecture classes!",
+      "As with many theory-based ML papers, this work is limited to small, simple networks where near-total minimization of the training loss is possible. For problems at-scale, such as ImageNet, it's not clear that these results would hold. In fact, the result that Tr(H)/||H|| behaves differently for CNNs casts doubt on the generality of these results."
+    ]
+  },
+  "metadata": {
+    "authors": ["Fort, S", "Scherlis, A"],
+    "institutions": ["Stanford University"],
+    "keywords": ["neural network", "optimization"],
+    "title": "The Goldilocks zone: Towards better understanding of neural network loss landscapes",
+    "journal": "National Conference on Artificial Intelligence",
+    "doi": "10.1609/AAAI.V33I01.33013574",
+    "url": "https://aaai.org/Conferences/AAAI-19/wp-content/uploads/2018/11/AAAI-19_Accepted_Papers.pdf#1468",
+    "date": "2019-01",
+    "review_date": "2020-04-16",
+    "one_sentence": "Fort and Scherlis demonstrate that popular initialization methods for neural networks work because they put the network weights into an unusually high-curvature region of the loss landspace"
+  }
+}
