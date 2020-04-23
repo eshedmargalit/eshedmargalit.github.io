@@ -1,0 +1,53 @@
+{
+  "review": {
+    "summary": [
+      "Backpropagation is the only reliable way to train large neural networks on difficult tasks, but gets a lot of flack in the neuroscience community as biologically implausible",
+      "While the brain my not implement backprop exactly, we should take seriously the idea that it's implementing the general principles, since we don't know of better ways to train large neuronal networks for improved behavior"
+    ],
+    "background": [
+      "In machine learning (ML), backprop has emerged as the dominant algorithm for training deep neural networks. Work in both monkey and human vision has also demonstrated that networks trained with backprop (in addition to yielding high performance) also have stronger representational correspondence to visual cortex, i.e., the responses of artificial neurons can be well-matched to biological neurons (Figure 2)",
+      "The brain needs some way to adjust the firing of neurons in the middle of circuits to improve downstream behavior, but no known biological mechanism could do so efficiently. For backpropagation to be interpreted literally as the mechanism used by the brain, one has to unrealistically posit that there is an entire network of neurons dedicated to performing the backward pass and that these neurons have exactly matched weights to their forward-pass counterparts.",
+      "A number of ways to relax the assumptions of backprop have recently been proposed and explored in the machine learning literature (see my recent review of Two Routes [...] by Kunin, Nayebi, Sagastuy-Brena et al.)"
+    ],
+    "approach": [
+      "This is a review paper that draws on concepts in the neuroscience of learning at the synaptic level and machine learning algorithms"
+    ],
+    "results": [
+      "Updating weights can either be done in an efficient, correlative mode (e.g., weights or nodes are perturbed, and a global signal is distributed to indicate how much that perturbation helped or hurt performance) or in a targeted efficient mode (backprop of error), although we don't have good ideas for how the brain might do the latter (Figure 1). The learning algorithm likely needs to be synapse-specific, which perturbation is not and backprop is",
+      "While positing fixed, random feedback weights (and alignment of forward weights to learn a good internal representation) works at small scales, this strategy for relaxing backprop does not scale to more difficult tasks and larger networks.",
+      "Feedback projections likely serve an important function in the brain not only for modulation of firing rates for task performance (as typically posited), but also for learning. That is, feedbacks might be used to induce neural activity patterns that enable local learning rules to push synapses in the middle of circuits toward more favorable configurations. This general hypothesis is referred to as \"NGRAD\" (neural gradient representation by activity differences) in this paper",
+      "\"Target propagation\", the idea that stacked autoencoders could signal to intermediate neurons what their activity should be to maximize performance, is one NGRAD (am I using that correctly?) that might be implemented by the brain (Figure 3)",
+      "Another implementational trick the brain might use is to spatially segregate within a cell the inputs from forward and backward projections, thus allowing some sort of spatial integration of the error signal into the feedforward signal. Alternatively, if feedforward and feedback projections both affect neuron activity, there has to be some delicate \"multiplexing\" in time to avoid losing information, since a neuron can only have one instantaneous firing rate at a time"
+    ],
+    "conclusions": [
+      "The authors conclude that given the success of backprop in training neural nets that 1) do well on large-scale tasks and 2) predict visual cortex responses, the brain is likely implementing _something like_ backprop, if not backprop exactly"
+    ],
+    "other": [
+      "I think this is a nice summary of the state of the field and the logic is presented very clearly. However, the last section where target propagation is discussed feels speculative and arbitrary to me. In general, it seems that the authors' claim is \"the brain is super complicated and has extremely high capacity to implement whatever we dream up, so something like backprop could happen\". I think I agree with that, but it's not a very strong claim. Any learning algorithm we can dream up can probably be implemented by the brain! "
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Lillicrap, TP",
+      "Santoro, A",
+      "Marris, L",
+      "Akerman, CJ",
+      "Hinton, G"
+    ],
+    "institutions": [
+      "DeepMind",
+      "University College London",
+      "University of Oxford",
+      "University of Toronto",
+      "Google Brain"
+    ],
+    "keywords": ["neural network", "backprop", "optimization", "review"],
+    "title": "Backpropagation and the brain",
+    "journal": "Nature Reviews Neuroscience",
+    "doi": "10.1038/s41583-020-0277-3",
+    "url": "https://www.nature.com/articles/s41583-020-0277-3",
+    "date": "2020-04",
+    "review_date": "2020-04-23",
+    "one_sentence": "Lillicrap, Santoro et al. argue that even if the brain is not exactly implementing backprop, the strength of the algorithm and the flexibility of neural implementations suggests that we should search for ways it might implement the underlying principles"
+  }
+}
