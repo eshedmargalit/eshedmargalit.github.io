@@ -84,18 +84,32 @@ class PubGroup extends Component {
 
     return (
       <ListGroupItem>
-        <p>{pub.year}</p>
-        <h5>{pub.title}</h5>
-        {this.render_authors(pub.authors)}
-        <p>
-          <em>
-            {pub.journal}
-            {pub.volume}
-            {pub.pages}
-          </em>
-        </p>
-        {link_render}
-        {pdf_render}
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <h5>{pub.title}</h5>
+            {this.render_authors(pub.authors)}
+            <p>
+              <em>
+                {pub.journal}
+                {pub.volume}
+                {pub.pages}
+              </em>
+            </p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: "15px",
+              float: "right",
+              color: "gray"
+            }}
+          >
+            <div>{pub.year}</div>
+            <div>{link_render}</div>
+            <div>{pdf_render}</div>
+          </div>
+        </div>
       </ListGroupItem>
     );
   };
