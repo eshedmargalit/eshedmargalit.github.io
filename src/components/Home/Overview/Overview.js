@@ -49,6 +49,13 @@ class Overview extends Component {
                 preference maps for four object categories: faces, places,
                 words, and bodies. Can you tell which is which?
               </p>
+              <p>
+                To learn more about these data and object representations in
+                human visual cortex, check out {` `}
+                <a href="https://www.jneurosci.org/content/40/15/3008">
+                  our article in the Journal of Neuroscience!
+                </a>
+              </p>
             </Col>
           </Row>
         </Jumbotron>
