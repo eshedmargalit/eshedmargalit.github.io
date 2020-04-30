@@ -1,0 +1,51 @@
+{
+  "review": {
+    "summary": [
+      "beta2-nAchR deficient mice have little correlated retinal activity, which leads to a failure for topographic maps to refine in the first week of life.",
+      "In the second week, when glutamate-mediated waves replace cholinergic waves, the two mouse populations have indistinguishable retinal responses, but the topographic maps remain unrefined in the mice that lacked waves in the first week. Thus, there is a brief critical period in which correlated activity is needed for map refinement."
+    ],
+    "background": [
+      "In the developing mouse visual system, both eye-specific segregation and retinotopy are refined within the first week of life. The mechanisms of this refinement have been debated, but generally appear to be activity-dependent, as silencing input from one eye relative to the other has a negative effect on the resulting maps.",
+      "A key controversy is whether the dominant signal from the retina is simply the amount of activity, e.g., spike frequency, in each eye, or whether the pattern of activity across RGCs in a given eye are correlated or decorrelated.",
+      "Critically, this map refinement, or \"remodeling\" occurs before photoreceptors are connected to RGCs, indicating that the spontaneous activity of the retinal ganglion cells themselves must be driving remodeling. In the first week of life, the waves that sweep across the retina are mediated by a network of cholinergic cells. Later (in postnatal week 2 and onward), it will be glutamate-mediated waves and patterned input that drive the visual system."
+    ],
+    "approach": [
+      "Record electrical activities from retinas placed on multi-electrode arrays (MEAs) in both wild-type and B2-nAchR -/- mice. Note that in recent years, techniques have improved that allow 1) the measurements to be made in-vivo, 2) imaging of the responses instead of using MEAs (which are blind to electrically silent cells), and 3) more specific genetic targeting of the retina instead of global knockout. See Xu, ..., Crair, 2015 as an example.",
+      "Calcium imaging after introduction of fura-2AM to the bath to visualize all cells, including those that the MEA is blind to. Traces from ROIs are visualized and compared between populations. Microsphere retrograde tracing was used to identify cells in the RGC layer that were actually RGCs and not displaced amacrine cells"
+    ],
+    "results": [
+      "At P4, wild-type mouse retinas show sparse, spatially-correlated bursts of electrical activity, whereas the knockout mice show uncorrelated patterns spanning tonic firing to spontaneous sparse firing. By P10, when waves are mediated by glutamate, retinal activity from the two mouse populations is indistinguishable (Figure 1)",
+      "While the inter-spike-interval (ISI) during activity is significantly shorter for wild-type retinas, indicating a higher firing rate while active, the overall firing rate across minutes is significantly higher in the knockout mice (Figure 2)",
+      "Calcium traces are more punctate and correlated between cells in wild-type mice. Quantification of the fraction of cells with identifiable transients shows that all WT cells had transients, and about 60% of RGCs in the knockout mice had transients. (Figure 3)",
+      "Termination zones (TZs) of RGCs in the superior colliculus begin diffuse and remodel to a punctate, high-density location in wild-type mice (Figure 4), but in knockout mice, they fail to refine down and remain diffuse (Figures 5, 6). This diffusivity, indicating failure to remodel, does not improve after the onset of 1) glutamatergic waves or 2) patterned vision."
+    ],
+    "conclusions": [
+      "Correlated retinal activity in the first week of life (and critically, in this specific time period), is required for the proper refinement of topographic projections from the retina to the superior colliculus in mice.",
+      "Because activity levels were higher on average in the knockout mice but correlations between RGCs were lower, this work provides evidence that correlated activity is required for topographic map formation. However, the final map isn't random -- some refinement does occur. Just not as much as in the wild-type mice, opening the door for other compensatory mechanisms."
+    ],
+    "other": [
+      "An important question in this work relates to the behavioral consequences of the deficiency in map refinement demonstrated here. Can these mice still see? Distinguish simple stimuli? How important is it to the animal's fitness?"
+    ]
+  },
+  "metadata": {
+    "authors": ["McLaughlin, T", "Torborg, CL", "Feller, MB", "O'Leary, DDM"],
+    "institutions": [
+      "Salk Institute For Biological Studies",
+      "University of California, San Diego"
+    ],
+    "keywords": [
+      "retinal waves",
+      "mouse",
+      "topography",
+      "retinotopy",
+      "development"
+    ],
+    "title": "Retinotopic Map Refinement Requires Spontaneous Retinal Waves during a Brief Critical Period of Development",
+    "journal": "Neuron",
+    "doi": "10.1016/S0896-6273(03)00790-6",
+    "url": "https://www.cell.com/neuron/fulltext/S0896-6273(03)00790-6",
+    "date": "2003-12",
+    "review_date": "2020-04-30",
+    "one_sentence": "Ex-vivo recordings of the retina in nAchR deficient mice indicate a lack of correlated activity (retinal waves) that prevents the retinotopic map in the superior colliculus to be refined"
+  }
+}
