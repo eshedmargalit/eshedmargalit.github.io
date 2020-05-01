@@ -32,7 +32,7 @@ class Footer extends Component {
               </UncontrolledTooltip>
             </p>
             <p>
-              Website designed by Eshed, browse the source code on Github:
+              Website designed by me, browse the source code on Github:
               <Button
                 color="link"
                 href="http://github.com/eshedmargalit/eshedmargalit.github.io"

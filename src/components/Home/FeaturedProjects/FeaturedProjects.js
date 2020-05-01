@@ -4,6 +4,17 @@ import "./FeaturedProjects.css";
 import projects from "../../../json/featured_projects.json";
 
 class FeaturedProjects extends Component {
+  render_project = (src, alt, title) => {
+    return (
+      <div className="project">
+        <img src={src} className="full-width project-image" alt={alt} />
+        <p className="project-title">
+          <span className="white-background">{title}</span>
+        </p>
+      </div>
+    );
+  };
+
   render_featured_projects = projects => {
     return projects.map(project => {
       const url = project.url;
@@ -13,8 +24,7 @@ class FeaturedProjects extends Component {
       return (
         <Col xs="6" lg="3" key={project.name}>
           <a href={url}>
-            <img src={img_src} className="full-width project" alt={alt_text} />
-            <p>{project.name}</p>
+            {this.render_project(img_src, alt_text, project.name)}
           </a>
         </Col>
       );

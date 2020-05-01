@@ -11,14 +11,14 @@ class Overview extends Component {
         <Jumbotron>
           <Row>
             <Col xs="12" lg="12">
-              <h3>How does the brain make sense of the things we see?</h3>
+              <h3>How does the brain make sense of the visual world?</h3>
               <p>
-                I study the functional architecture of the primate visual
-                system, with an interest in describing and modeling the
-                computations that govern visual cortex and the representations
-                that they operate on. I hope to contribute to our understanding
-                of how information is transformed in neural networks and how
-                such networks develop.
+                I study the primate visual system with a combination of fMRI and
+                deep convolutional neural network modeling. I'm especially
+                interested in the functional architecture of visual cortex (the
+                relationship between a neuron's location and the computations it
+                supports) and the development of that architecture over the
+                lifespan.
               </p>
               <Link to="/Research">
                 <Button size="lg" color="secondary">
