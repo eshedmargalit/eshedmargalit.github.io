@@ -26,8 +26,7 @@ class PaperReviews extends Component {
 
   compute_ppw() {
     const sorted_dates = this.review_dates.sort((a, b) => a.diff(b));
-    const total_weeks =
-      sorted_dates[sorted_dates.length - 1].diff(sorted_dates[0], "days") / 7.0;
+    const total_weeks = moment().diff(sorted_dates[0], "days") / 7.0;
     return Number.parseFloat(sorted_dates.length / total_weeks).toFixed(3);
   }
 
