@@ -1,0 +1,44 @@
+{
+  "review": {
+    "summary": [
+      "We want to train with large batch sizes to speed up training, but without making other adjustments, that leads to worse performance on a held-out validation set (relative to small-batch training).",
+      "The authors provide a blueprint for overcoming this limitation by increasing the learning rate, training longer, and using \"ghost batch normalization\"",
+      "The authors provide an interpretation of the evolution of the weights from an initialization point as an ultra-slow diffusion of a particle on a random potential."
+    ],
+    "background": [
+      "Effectively training neural networks requires not only optimizing performance on the training data, but also identifying parameter configurations that generalize well to unseen data (the \"validation\" data). Note that \"generalization\" here does not mean \"task transfer\".",
+      "Training with a large batch size and stochastic gradient descent, i.e., approximating the gradient for the entire dataset with a smaller batch of data, is faster than using smaller batch sizes. However, it has been observed that models trained with larger batch sizes generalize more poorly to unseen data",
+      "It has been suggested that good generalization is associated with flat (low curvature) regions of the loss landscape, and that training with large batches makes it more difficult to find these flat minima"
+    ],
+    "approach": [
+      "The authors analyze a variety of NN architectures on MNIST, CIFAR10, and ImageNet when trained with vanilla SGD (usually with momentum as well) with an exponentially-decaying learning-rate schedule. A range of batch sizes are used to investigate the effects of batch size on generalization performance.",
+      "The Euclidean distance of the model weights from their initial state is measured and analyzed as the distance accumulated by a particle taking a random walk on a random potential",
+      "The authors introduce \"Ghost Batch Norm\", in which batch normalization of activations is computed not over the entire batch provided, but over smaller \"virtual batches\"."
+    ],
+    "results": [
+      "If model weights are evolving according to ultra-slow diffusion, then on average, the Euclidean distance between the weights at some time t, \"w_t\" and the initial weights \"w_0\" is proportional to (log t) ^ (2/alpha). The interpretation of alpha isn't entirely clear from this work, but as alpha increases, the diffusion will slow.",
+      "Critically, this diffusion is _slower_ than a random walk on a flat potential, which should lead to an increase of distance proportional to sqrt(t). The informal reason for this is that a random potential has peaks and valleys (of height d^(alpha/2)) that the \"particle\" (our weight vector) needs to navigate around. The time to navigate around these peaks is about e^(height) [Eshed's note: why is this true?], which gives us the equation for the expected distance as a function of time on a random potential.",
+      "In the authors' simulations, alpha = 2 matches the empirical data well, although each batch size tested has a slightly different slope (Figure 2).",
+      "Ghost batch norm allows the generalization gap to be closed, even for large batch sizes, without needing to handicap training by requiring small batch sizes to get frequent updates. The final training regime used includes large batch training, increasing the learning rate, training longer for large batches, and using ghost batch normalization."
+    ],
+    "conclusions": [
+      "Increasing the number of weight updates (even when validation error appears to have saturated) is a useful way to close the generalization gap. However, achieving that goal means increasing training time. Ghost batch normalization is one empirically-tested approach to keeping training time low while closing the generalization gap.",
+      "This result can be understood even in the case of simple logistic regression, in which the separating margin improves as O(1/log(t)), see Soudry et al., 2017"
+    ],
+    "other": [
+      "Something that kind of confused me about the math and plots: are the weights across the entire network concatenated here? If so, how might these findings depend on weights from each layer/operation separately?"
+    ]
+  },
+  "metadata": {
+    "authors": ["Hoffer, E", "Hubara, I", "Soudry, D"],
+    "institutions": ["Technion - Israel Institute of Technology"],
+    "keywords": ["neural networks", "optimization", "generalization"],
+    "title": "Train longer, generalize better: closing the generalization gap in large batch training of neural networks",
+    "journal": "arXiv: Machine Learning",
+    "doi": "",
+    "url": "http://export.arxiv.org/pdf/1705.08741",
+    "date": "2017-05",
+    "review_date": "2020-05-07",
+    "one_sentence": "An explanation for \"ultra-slow diffusion\" of network weights on the loss landscape early in training is provided en route to a richer understanding of the \"generalization gap\" in DNN training"
+  }
+}
