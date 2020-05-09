@@ -356,6 +356,70 @@
           "tag": "vss-2019-7t"
         }
       ]
-    }
+    },
+    "service": [
+      {
+        "description": "Chair, Society for Neuroscience Nanosymposium: Extrastriate Vision",
+        "year": "2020"
+      },
+      {
+        "description": "Co-Leader, <a href=\"http://stanford-cnjc.github.io\">Stanford Computational Neuroscience Journal Club (CNJC)</a>",
+        "year": "2018-2020"
+      },
+      {
+        "description": "Reviewer: eLife",
+        "year": "2020"
+      },
+      {
+        "description": "Stanford Neurosciences PhD Program Student Mentor",
+        "year": "2019-2020"
+      },
+      {
+        "description": "Stanford Neurosciences PhD Program Student Program Committee",
+        "year": "2018"
+      },
+      {
+        "description": "Mentor and workshop leader for NSF GRFP Application",
+        "year": "2017-2019"
+      },
+      {
+        "description": "Student Speaker Representative, Stanford Nuerosciences PhD Program",
+        "year": "2017-2018"
+      },
+      {
+        "description": "Mentor, Stanford Biosciences Student Association",
+        "year": "2017-2020"
+      },
+      {
+        "description": "Student Representative, USC Undergraduate Neuroscience Program Executive Committee",
+        "year": "2015-2016"
+      },
+      {
+        "description": "Team captain, USC Cross Country Club",
+        "year": "2014-2015"
+      }
+    ],
+    "teaching": [
+      {
+        "description": "Teaching Assistant, Introduction to Perception (PSYCH 30)",
+        "year": "2017-2018",
+        "link": ""
+      },
+      {
+        "description": "Teaching Assistant, Stanford Intensive Neuroscience Bootcamp",
+        "year": "2017",
+        "link": "https://med.stanford.edu/neurogradprogram/prospective_students/bootcamp.html"
+      },
+      {
+        "description": "Instructor, Stanford Splash",
+        "year": "2017",
+        "link": "https://stanfordesp.org"
+      },
+      {
+        "description": "Instructor, Stanford Brain Day",
+        "year": "2017",
+        "link": "https://med.stanford.edu/neurogradprogram/news_and_events/news/brain-day.html"
+      }
+    ]
   }
 }

@@ -352,7 +352,6 @@ class CV extends Component {
             <ListGroup>
               <ListGroupItem>Google TPUv2</ListGroupItem>
               <ListGroupItem>HTML/CSS/React/Redux</ListGroupItem>
-              <ListGroupItem>C, C++, Java</ListGroupItem>
               <ListGroupItem>FSL</ListGroupItem>
               <ListGroupItem>FreeSurfer</ListGroupItem>
               <ListGroupItem>Photoshop and Illustrator</ListGroupItem>
@@ -384,12 +383,26 @@ class CV extends Component {
         </Button>
       );
     }
+
     return (
       <ListGroupItem>
-        <h6>{award.name}</h6>
-        <p>{award.dates}</p>
-        <p>{award.description}</p>
-        {link_render}
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <h6>{award.name}</h6>
+            <p>{award.description}</p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              marginLeft: "15px",
+              float: "right",
+              color: "gray"
+            }}
+          >
+            {link_render}
+            <p>{award.dates}</p>
+          </div>
+        </div>
       </ListGroupItem>
     );
   };
@@ -411,43 +424,40 @@ class CV extends Component {
   }
 
   render_teaching() {
+    const mapped_items = this.cv.teaching.map(({ description, year, link }) => {
+      let link_render = null;
+      if (link !== "") {
+        link_render = (
+          <Button color="link" target="_blank" href={link}>
+            <FaLink size="1.5em" />
+          </Button>
+        );
+      }
+      return (
+        <ListGroupItem>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div dangerouslySetInnerHTML={{ __html: description }} />
+            <div
+              style={{
+                display: "flex",
+                marginLeft: "15px",
+                float: "right",
+                color: "gray"
+              }}
+            >
+              <div>{link_render}</div>
+              <div>{year}</div>
+            </div>
+          </div>
+        </ListGroupItem>
+      );
+    });
+
     return (
       <Container>
         <Row>
           <Col>
-            <ListGroup>
-              <ListGroupItem>
-                <h6>
-                  Teaching Assistant, Introduction to Perception (PSYCH 30)
-                </h6>
-                <p>Fall 2017, 2018</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Teaching Assistant,{" "}
-                  <a href="https://med.stanford.edu/neurogradprogram/prospective_students/bootcamp.html">
-                    Stanford Intensive Neuroscience Bootcamp
-                  </a>
-                </h6>
-                <p>Fall 2017</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Instructor,{" "}
-                  <a href="https://stanfordesp.org/">Stanford Splash</a>
-                </h6>
-                <p>Fall 2017</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Instructor,{" "}
-                  <a href="https://med.stanford.edu/neurogradprogram/news_and_events/news/brain-day.html">
-                    Stanford Brain Day
-                  </a>
-                </h6>
-                <p>Fall 2017</p>
-              </ListGroupItem>
-            </ListGroup>
+            <ListGroup>{mapped_items}</ListGroup>
           </Col>
         </Row>
       </Container>
@@ -455,72 +465,22 @@ class CV extends Component {
   }
 
   render_service() {
+    const mapped_items = this.cv.service.map(({ description, year }) => {
+      return (
+        <ListGroupItem>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div dangerouslySetInnerHTML={{ __html: description }} />
+            <div style={{ color: "gray" }}>{year}</div>
+          </div>
+        </ListGroupItem>
+      );
+    });
+
     return (
       <Container>
         <Row>
           <Col>
-            <ListGroup>
-              <ListGroupItem>
-                <h6>
-                  Chair, Society for Neuroscience Nanosymposium: Extrastriate
-                  Vision
-                </h6>
-                <p>2018</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Co-Leader,{" "}
-                  <a href="http://stanford-cnjc.github.io">
-                    Stanford Computational Neuroscience Journal Club (CNJC)
-                  </a>
-                </h6>
-                <p>2018, 2019</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>Stanford Neurosciences PhD Program Student Mentor</h6>
-                <p>2019</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Stanford Neurosciences PhD Program Student Program Committee
-                </h6>
-                <p>2018</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>Mentor and workshop leader for NSF GRFP Application</h6>
-                <p>2017, 2018, 2019</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Student Speaker Representative, Stanford Neurosciences PhD
-                  Program
-                </h6>
-                <p>2017 - 2018</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>Mentor, Stanford Biosciences Student Association</h6>
-                <p>2017 - 2019</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>
-                  Student Representative, USC Undergraduate Neuroscience Program
-                  Executive Committee
-                </h6>
-                <p>2015 - 2016</p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>Mentor to undergraduate lab members</h6>
-                <p>2013 - present</p>
-                <p>
-                  Jordan Juarez, Isabel Irawan, Emily Meschke, Rafael Maarek,
-                  and Catrina Hacker
-                </p>
-              </ListGroupItem>
-              <ListGroupItem>
-                <h6>Team captain, USC Cross Country Club</h6>
-                <p>2014 -2015</p>
-              </ListGroupItem>
-            </ListGroup>
+            <ListGroup>{mapped_items}</ListGroup>
           </Col>
         </Row>
       </Container>
