@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "A simple dynamical system consisting of a retina and a cortical sheet (meant to represent V1) with Hebbian learning can produce sharp orientation tuning and clusters of similar orientation tuning."
+    ],
+    "background": [
+      "While the presence of orientation-selective cells in primary visual cortex has been known for almost 70 years (!), questions remain regarding their purpose (why have orientation selective cells at all?), their development (genetic or instructed by activity? What kinds of activity?), and the orderly arrangement of columns with similar orientations (why are nearby columns correlated in their tuning?). As a fun note, while these questions had very few answers at the time of this paper's writing, we still don't have conclusive answers to any of them!",
+      "Because orientation selectivity develops fairly early, its emergence should be explained by an unsupervised learning algorithm that can act on relatively simple retinal inputs (like oriented retinal waves or blurry scenes)"
+    ],
+    "approach": [
+      "A two-layer neural network is created, consisting of a 19-cell \"retina\" with a 2-D spatial layout and a 338-cell \"cortical sheet\", consisting of equal parts excitatory and inhibitory neurons. Cells in the cortical sheet are spatially laid out in a hexagonal grid with (338/2) positions; each position has one excitatory and one inhibitory cell. Neurons are simplified point processes whose activity is determined by the weighted sum of their pre-synaptic inputs, passed through a rectifying nonlinearity (note: this is slightly different from ReLU in that only the \"remainder\" activity past a threshold is passed)",
+      "There are many types of connections between cells. Each retinal cell synapses onto each cortical cell with initially random strength. Neighboring cortical cells are also connected to each other (Excitatory -> Excitatory, Inhibitory -> Inhibitory, Excitatory->Inhibitory) with strength proportional to distance on the cortical sheet (Figure 1). The region being modeled is essentially a single hypercolumn (no retinotopy considered)",
+      "A set of 9 oriented bar \"stimuli\" are presented on the retina (Figure 5), and the activity of cortical cells is determined by a dynamical system with three parts: a decay term on the activity of the cell, input from neighbors, and drive from the retina. The connections from the retina are strengthened according to a Hebbian learning rule: it goes up if there is coincidentally high input to a cell and high activity in the cell. The inputs to each cell are re-normalized to avoid runaway excitation."
+    ],
+    "results": [
+      "Prior to learning, cells show weak orientation selectivity. This means that even with random weights, the cortical connectivity pattern can give rise to stimulus tuning (Figures 7, 8, 9), left columns. The pattern of activity on the cortical sheet in response to a single stimulus is weakly clustered prior to learning (Figure 6)",
+      "As learning progresses (20 steps, then 100 steps), orientation tuning sharpens (Figures 7, 8, 9 middle and right columns; Table 4). Following learning the spatial pattern of activity on the cortical sheet in response to a single stimulus is tightly clustered into patches (Figures 9, 10)",
+      "Following learning, the pattern of preferred orientations on the cortical sheet progresses smoothly (note: unclear if it's pinwheel-like, but definitely swirly; Figures 12, 13)",
+      "The responses of the trained model are highest for stimuli it was trained on, and decrease monotonically as \"overlap\" with those stimuli in the space of the retinal grid decreases (Figure 14). The response patterns are also robust to noise added to the inputs, indicating that the system is able to extract information in lower-SNR regimes."
+    ],
+    "conclusions": [
+      "A simple Hebbian-learning model can capture some of the core properties of the V1 orientation selective cell system and topography. CVDM suggests that adding more cells, moving stimuli, or more inputs could make the system more general. Note: how would this increased generalization square with the result that the system somewhat-rigidly prefers only the stimuli it was trained on?",
+      "Some orientation-selectivity likely arises from the (innate?) wiring of the system, but the sharpening of response properties and similarity between adjacent columns likely relies on a mechanism resembling the one implemented here."
+    ],
+    "other": [
+      "This has to be one of my favorite papers I've read recently! Clear, detailed, and compelling. Some of my favorite quotes: \"Whereas eye, retina, and lateral geniculate [...] transform the images in a 'photographic' way, i.e. preserving essentially the spatial arrangement of the retinal image, the cortex transforms this geometry into a space of concepts\"",
+      "I appreciate that for each modeling decision made, a clear concession outlining the higher complexity of the real brain is noted. Such simplifications/limitations are justified and explained clearly, which is refreshing!"
+    ]
+  },
+  "metadata": {
+    "authors": ["von der Malsburg, C"],
+    "institutions": ["Max Planck Society"],
+    "keywords": ["orientation", "hebbian", "unsupervised", "columns"],
+    "title": "Self-organization of orientation sensitive cells in the striate cortex",
+    "journal": "Kybernetika",
+    "doi": "",
+    "url": "",
+    "date": "1973-12",
+    "review_date": "2020-05-14",
+    "one_sentence": "von der Malsburg reproduces basic hallmarks of orientation columns (and map smoothness) with a simple Hebbian learning rule"
+  }
+}

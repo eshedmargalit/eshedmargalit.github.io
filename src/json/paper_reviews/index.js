@@ -61,7 +61,8 @@ const filenames = [
   "fort_goldilocks.json",
   "lillicrap_backprop.json",
   "mclaughlin_retinal_waves.json",
-  "hoffer_generalization_gap.json"
+  "hoffer_generalization_gap.json",
+  "malsburg_self_organization.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
