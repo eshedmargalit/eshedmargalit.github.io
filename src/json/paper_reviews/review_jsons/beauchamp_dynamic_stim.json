@@ -1,0 +1,52 @@
+{
+  "review": {
+    "summary": [
+      "By \"tracing\" patterns of electrical activity on the surface of visual cortex, a visual cortical prosthetic can be used to allow subjects to discriminate letter shapes from each other."
+    ],
+    "background": [
+      "Most people with acquired blindness only have damage to the eyes or optic nerve, opening the door for cortical prostheses that directly stimulate visual cortex. Given the retinotopic layout of visual cortex, stimulation of different cortical locations should lead to perception at different positions in the visual field.",
+      "One approach to prostheses is an array of surface electrodes which can be activated in different patterns. This tends to lead to incoherent perception, e.g., stimulating a line of electrodes does not lead to the percept of a line, but of two bright spots."
+    ],
+    "approach": [
+      "Current steering is used to \"interpolate\" between electrodes: by passing current between two nearby electrodes, a \"virtual\" electrode is created between them. Combined with a dynamic pattern of stimulation, i.e., one electrode after another, a smooth progression across electrodes can be achieved over a relatively short amount of time."
+    ],
+    "results": [
+      "In a blind participant, a virtual electrode can be reliable created in between two physical electrodes: stimulation of one or the other leads to perception at one visual field position or the other, but scaling current to each electrode can smoothly interpolate between them along a line (Figure 2). In a patient with five electrodes, this technique can be used to create the percept of a continuous line in visual space (Figure 3).",
+      "Over 30 trials, each consisting of 200 ms of stimulus presentation and 500 ms response window, a subject can distinguish \"up\" from \"down\" patterns at a rate of 87% correct. That's about 86 identifications per minute. Subjects can also distinguish \"drawn\" letters, but this is slower (about 30 patterns/minute)."
+    ],
+    "conclusions": [
+      "The jump from static to dynamic stimulation of a visual cortical prosthesis (VCP) enables blind subjects to discriminate the stimuli, much like drawing a shape in the palm is a higher fidelity signal than pressing down on the palm in the desired shape all at once.",
+      "Advances in hardware, presentation techniques, and rapid translation from complicated real-world scenes to line-drawing will facilitate better real-world use cases for this technology.",
+      "The success of dynamic stimulation might lie in its ability to drive direction-selective circuits in early visual cortex, as opposed to indiscriminately stimulation whichever neurons are in a cortical neighborhood."
+    ],
+    "other": [
+      "There are a bunch of interesting limitations that I thought were side-stepped in this article. 1) only a handful of letter forms were used; how good is discrimination for all 26 letters? And including punctuation? 2) To what extent are the forms that can be presented limited by a subject's specific electrode layout? 3) This article shows good performance for large-scale stimuli, but an alternative and equally interesting questions is: what is the finest-scale distinction that can be made above chance?",
+      "In general, I'm surprised that the accuracy is so low for the up vs. down discrimination. Missing 4/30 for such simple and directionally-distinct stimuli is not a trivial amount, but there wasn't much discussion of that in the paper."
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Beauchamp, MS",
+      "Oswalt, D",
+      "Sun, P",
+      "Foster, BL",
+      "Magnotti, JF",
+      "Niketeghad, S",
+      "Pouratian, N",
+      "Bosking, WH",
+      "Yoshor, D"
+    ],
+    "institutions": [
+      "Baylor College of Medicine",
+      "University of California, Los Angeles"
+    ],
+    "keywords": ["visual cortex", "retinotopy", "blind", "stimulation"],
+    "title": "Dynamic Electrical Stimulation of Sites in Visual Cortex Produces Form Vision in Sighted and Blind Humans",
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2020.04.033",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0092867420304967",
+    "date": "2020-05",
+    "review_date": "2020-05-20",
+    "one_sentence": "Beauchamp et al use a visual cortical prosthesis to enable blind subjects to distinguish simple patterns quickly and accurately"
+  }
+}
