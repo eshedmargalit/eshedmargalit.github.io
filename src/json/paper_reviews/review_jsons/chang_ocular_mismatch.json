@@ -1,0 +1,51 @@
+{
+  "review": {
+    "summary": [
+      "At eye opening, two reasonably-clean but distinct orientation maps can be observed by stimulating either eye separately. A third map can be obtained by binocular stimulation",
+      "Following the first week of visual experience, the three stimulation paradigms (L only, R only, or L + R) yield a single unified orientation map, but visual experience in that time window is required for that unification"
+    ],
+    "background": [
+      "In mature animals, the orientation map obtained by presenting images to both eyes is aligned to the map obtained by presenting images monocularly (and the map through the two eyes is aligned). Prior work suggested that this \"unified\" orientation representation doesn't depend on normal visual experience.",
+      "Visual experience during the critical period has been previously shown to be necessary for the preservation of crisp orientation maps, but the role of activity during the critical period in alignment of sensory maps had not been explored"
+    ],
+    "approach": [
+      "Wide-field and two-photon in-vivo calcium imaging in 1) ferrets at eye opening (P30ish), \"naive\", 2) ferrets 4-8 days after eye opening, \"experienced\", 3) \"deprived\" ferrets that had eyelids sutured shut from prior-to-natural-eye-opening to P40, and 4) \"recovery\" ferrets that had eyelid sutures removed after the first week of life",
+      "Wide field epifluorescence imaging: viral expression of GCaMP6s; calcium imaging: measuring activity in putative L2/3 excitatory neurons",
+      "The animals are anesthetized during the experiments, which explains how they can asses the effects of stimulation before \"eye opening\"."
+    ],
+    "results": [
+      "Unlike in experienced animals, naive animals have different orientation maps when stimuli are presented to the contralateral or ipsilateral eye. The mismatch in preferred angles is not uniform, but concentrated into some regions of high-mismatched nested in areas of lower mismatch (Figure 1). The naive animal maps are also noticeably less strongly orientation tuned, but the maps still look fairly smooth. Authors report that even though there are fewer \"well-tuned\" cells/pixels in the naive animals, there is a weak correlation between tuning strength and amount of interocular mismatch.",
+      "2P Ca2+ results (~200 micron window) support wide-field findings. In particular, they indicate that at the single-cell level, the mismatched maps are each fairly well organized (low pref. angle difference at short cortical distances) (Figure 2)",
+      "In deprived animals, the monocular mismatch was greater than in naive animals. Additionally, the monocular mismatch in both naive and deprived animals was less than expected for two totally independent orientation maps! This indicates that experience-independent mechanisms align the maps from both eyes a little bit, and visual experience does the rest. (Figure 4) Orientation selectivity was also lower in deprived animals than experienced animals.",
+      "Recovery animals also show low alignment, suggesting that the period of visual experience has to occur at the right time, developmentally, to have the effect of aligning the two eyes (Figure 4).",
+      "Binocular stimulation yields a third, distinct orientation map prior to eye opening (Figure 5, 6). This representation was not biased to be more similar to either of the monocular maps. In a chronic imaging paradigm, it's apparent that single cells are shifting their orientation preference to eventually align the maps in the two eyes. (Figure 7)."
+    ],
+    "conclusions": [
+      "While experience-independent mechanisms, e.g., retinal waves, coordinate orientation maps between the two eyes to some degree, visual experience in the first week of life is needed to 1) preserve orientation tuning strength and 2) align the maps from the two eyes completely",
+      "Constructive interactions between segregated inputs can lead to a new, distinct representation that becomes a \"template\""
+    ],
+    "other": [
+      "One thing left unaddressed here are possible mechanism for the alignment. Since the naive binocular map doesn't resemble the single-eye maps, how do both single-eye maps know which orientations to shift their RFs to?"
+    ]
+  },
+  "metadata": {
+    "authors": ["Chang, JT", "Whitney, D", "Fitzpatrick, D"],
+    "institutions": [
+      "Department of Functional Architecture and Development of Cerebral Cortex, Max Planck Florida Institute for Neuroscience"
+    ],
+    "keywords": [
+      "ferret",
+      "orientation",
+      "binocularity",
+      "experience",
+      "plasticity"
+    ],
+    "title": "Experience-Dependent Reorganization Drives Development of a Binocularly Unified Cortical Representation of Orientation",
+    "journal": "Neuron",
+    "doi": "10.1016/j.neuron.2020.04.022",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0896627320303147",
+    "date": "2020-05",
+    "review_date": "2020-05-27",
+    "one_sentence": "The first week of experience after eye opening in ferrets nudges two different monocular orientation maps toward a unified binocular orientation map"
+  }
+}

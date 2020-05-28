@@ -63,7 +63,8 @@ const filenames = [
   "mclaughlin_retinal_waves.json",
   "hoffer_generalization_gap.json",
   "malsburg_self_organization.json",
-  "beauchamp_dynamic_stim.json"
+  "beauchamp_dynamic_stim.json",
+  "chang_ocular_mismatch.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
