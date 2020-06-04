@@ -1,0 +1,50 @@
+{
+  "review": {
+    "summary": [
+      "More than half of macaque inferotemporal cortex is occupied by four patch networks, each covering a quadrant of the space spanned by the first two PCs of an object-space obtained with AlexNet",
+      "The existence of patches may be a by-product of their embedding in a continuous space, instead of discrete archipelagos in human higher visual cortex"
+    ],
+    "background": [
+      "The functional organization of higher visual cortex has been described as a series of inter-connected patches of neurons selective for certain categories such as faces, bodies, and in literate humans, words. This description is complemented by observations of general gradients of feature selectivity, including animacy, real-world size, and retinal position.",
+      "It remains unknown what regions of IT without clear selectivity (on standard localizers) are encoding, and how it might fit into a general framework for understanding principles of organization. Recent work (Rajalingham et al., 2019, Conway 2018) has attempted to tackle this question from empirical (but more punctate) and theoretical perspectives, respectively."
+    ],
+    "approach": [
+      "Identification of \"No Man's Land (NML) network\": in one macaque, run face, body, scene, color, and disparity patch localizers. Find a region not selective for any of those things, then microstimulate and mark other areas whose activity is modulated by that stimulation. Identify stimuli from a set of 51 objects that preferentially excite neurons in this patch, conduct an fMRI experiment to confirm the location of selectivity to the best objects, and generalize to three other macaques.",
+      "Construction of the \"object space\": pass the images presented to the macaques to AlexNet (pretrained on ImageNet), then compute principal components of the FC6 response. Depending on analysis, retain either the first 50 PCs (85% of the variance in the FC6 responses) or the top two components. The authors demonstrate similar analyses with other networks and image sets to argue that the result is not specific to AlexNet responses to these images.",
+      "Identification of the \"stubby\" patch system: the authors hypothesize that IT is encoding the first two dimensions of the AlexNet object space. The preferences of the three patch systems found so far (faces, bodies, NML) occupy roughly three quadrants of the object space, leading to the hypothesis that there may be a network for a fourth type of objects: stubby objects. (Figure 4). Presentation of stubby stimuli did indeed identify a fourth patch network.",
+      "Image reconstructions: activity vectors were inverted back to pixel space with a generative model trained on Alexnet. Realistic-ish images were produced, although I don't know how that was assessed and how much can be chalked up to the generative model itself..."
+    ],
+    "results": [
+      "Stimulation of No Man's Land indicated the presence of three patches arranged from anterior to posterior that do not overlap any known functional localizers (Figure 1). As in the face-patch network, viewpoint-invariance for preferred objects increases from posterior to anterior patches, and the preferred stimuli for this patch network appeared to be objects with high aspect ratios (Figure 3).",
+      "Individual cells in the NML network had ramp-like tuning for certain axes in the 50-D object space, with flat responses in orthogonal directions (Extended Data Figure 5). Linear regression of neuron responses onto these 50 dimensions explains 45% of the variance in the neural responses.",
+      "Together, the four patch networks identified here occupy about 53% of the real estate in macaque IT (Figure 4). Many previous accounts of IT organization can be understood in this framework, projection of stimuli that drive spatially distinct responses also separate nicely in the object space proposed here.",
+      "The spatial arrangement of these four patch systems is consistent across monkeys, implying a general organization principle (Figure 4)."
+    ],
+    "conclusions": [
+      "These results suggest that IT is not necessarily housing a small set of patch networks for specific stimuli, but is encoding all of object space in a continuous fashion, and patch networks previously found can be understood as points along a 2-D continuum. It remains an open question whether patch boundaries are thus crisp and discrete, or bleed into one another. Eshed's note: it seems clear that resolving that question is going to depend in part on how people agree where one patch ends and another begins, which is difficult.",
+      "The authors write \"It will be important to understand why IT physically clusters neurons with similar axes—something not currently implemented in deep networks.\" That's true, and the subject of my ongoing research!"
+    ],
+    "other": [
+      "Interesting to see that this paper took a year and a half from submission to publication! I'm not surprised given some of the wording and the number of Extended Data Figures, but it's still remarkable to me."
+    ]
+  },
+  "metadata": {
+    "authors": ["Pinglei Bao", "Liang She", "Mason McGill", "Doris Y. Tsao"],
+    "institutions": ["California Institute of Technology"],
+    "keywords": [
+      "macaque",
+      "topography",
+      "fmri",
+      "electrophysiology",
+      "patches",
+      "neural network"
+    ],
+    "title": "A map of object space in primate inferotemporal cortex",
+    "journal": "Nature",
+    "doi": "10.1038/s41586-020-2350-5",
+    "url": "http://dx.doi.org/10.1038/s41586-020-2350-5",
+    "date": "2020-06",
+    "review_date": "2020-06-03",
+    "one_sentence": "Over half of macaque IT (by surface area) is functionally organized according to the first two dimensions of a general \"object-space\" obtained via dimensionality reduction of a feedforward neural networks late-layer responses"
+  }
+}

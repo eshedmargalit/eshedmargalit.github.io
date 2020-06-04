@@ -64,7 +64,8 @@ const filenames = [
   "hoffer_generalization_gap.json",
   "malsburg_self_organization.json",
   "beauchamp_dynamic_stim.json",
-  "chang_ocular_mismatch.json"
+  "chang_ocular_mismatch.json",
+  "bao_object_space.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
