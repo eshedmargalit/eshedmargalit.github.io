@@ -1,0 +1,56 @@
+{
+  "review": {
+    "summary": [
+      "Mouse V1 L2/3 neurons preferentially connect to neurons with similar responses, both when evaluated with drifting sine gratings and with natural movies."
+    ],
+    "background": [
+      "At long distances, neurons preferentially connect to other neurons with similar feature selectivity. For example, face-selective patches in higher visual cortex project to other face-selective patches. In early visual cortex, animals with columnar organization have connections between similarly-tuned neurons (spanning multiple millimeters). However, within small neighborhoods (a few tens of microns), dendritic arbors overlap significantly and it's not obvious whether interneuronal connectivity is random or feature-selective.",
+      "Unlike in carnivores, orientation-selective cells in mice are not thought to be arranged into orderly maps. That notion has been challenged in recent years (see Fahey et al., for example), but in any case there is far less clear organization based on preferred orientation."
+    ],
+    "approach": [
+      "Imaging: 2-photon in vivo calcium imaging of layer 2/3 cells in the monocular region of mouse visual cortex. The imaging region was roughly 285 x 285 x 90 microns, starting at the upper border of L2/3. Mice ( were anesthetized and presented with two stimulus sets: drifting oriented gratings and grayscale natural movies.",
+      "Electrophysiology: the regions that were imaged were also sliced and studied in-vitro. The samples were aligned with an affine transformation, and whole-cell patch clamping was used to measure connectivity. Monosynaptic connections were detected by measuring EPSPs in a given cell while a current was injected into a source cell."
+    ],
+    "results": [
+      "Of the 222 potential connections assayed with electrophysiology, about 19% of possible connections were found. This rate did not significantly differ from a control population in which no imaging was performed prior to slicing and measuring, suggesting that the calcium indicator and imaging process did not alter connectivity. Note: I guess in principle it could have changed the nature of connectivity but not the connectivity fraction, but that seems really unlikely given what we know about how connections are formed and remodeled.",
+      "Of the 116 neurons for which both imaging and ephys data are available, 77 were reliably responsive to the natural movie dataset, and 79 were orientation-selective.",
+      "Within small neighborhoods, cells with diverse orientation tuning are found (Figure 1c). Connection probability was highest for cell pairs with the same preferred orientation, lower for cell pairs with preferred orientation differing by 45 degrees, and lowest for pairs with orthogonal preferred orientations (Figure 2d). A similar pattern was observed for direction selectivity (Figure 2e).",
+      "Neuron pairs were more likely to be connected the higher their \"signal correlations\": the correlation between the timecourses of responses to 30-40 second long segments of natural videos (Figure 3c). ",
+      "For all cases, the authors did not find stronger synapses between pairs with similar feature selectivity, just that connections were more likely to exist in the first place.",
+      "The connectivity preferences described thus far are more dramatic for bidirectionally connected pairs than unidirectionally connected pairs (Figure 4)."
+    ],
+    "conclusions": [
+      "The finding of connectivity preference based on feature selectivity in an animal without columnar architecture suggests ta general feature of cortical organization: that small subnetworks dedicated to processing related information are formed during development.",
+      "At the same time, many connections exist between cells with low signal correlations or orthogonal orienation preferences. This is consistent with prior observations that sub-threshold activity is more weakly tuned to orientations than supra-threshold activity."
+    ],
+    "other": [
+      "This work is very impressive and thorough, wow! It's also an important finding for my work on enforcing connectivity rules based on response similarity, and relates strongly to influential theoretical work, e.g. Koulakov and Chklovskii, 2001."
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Ko, H",
+      "Hofer, SB",
+      "Pichler, B",
+      "Buchanan, KA",
+      "Sjöström, PJ",
+      "Mrsic-Flogel, TD"
+    ],
+    "institutions": ["University College London"],
+    "keywords": [
+      "mouse",
+      "v1",
+      "vision",
+      "connectivity",
+      "electrophysiology",
+      "calcium imaging"
+    ],
+    "title": "Functional specificity of local synaptic connections in neocortical networks",
+    "journal": "Nature",
+    "doi": "10.1038/nature09880",
+    "url": "http://dx.doi.org/10.1038/nature09880",
+    "date": "2011-04",
+    "review_date": "2020-06-09",
+    "one_sentence": "In L2/3 of mouse V1, neurons are more likely to be connected to each other (in a 50 micron radius) if they had either shared orientation tuning or correlated responses to natural movies"
+  }
+}
