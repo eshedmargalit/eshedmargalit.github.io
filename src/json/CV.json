@@ -209,7 +209,23 @@
           "tag": "jn-2020-7tfloc"
         }
       ],
-      "preprints": []
+      "preprints": [
+        {
+          "title": "Extensive individual differences of category information in ventral temporal cortex in the congenitally blind",
+          "authors": [
+            "Rosenke, M.",
+            "van den Hurk, J.",
+            "Margalit, E.",
+            "Op de Beeck, H.P.",
+            "Grill-Spector, K.",
+            "Weiner, K.S."
+          ],
+          "journal": "bioRxiv",
+          "year": "2020",
+          "url": "https://www.biorxiv.org/content/10.1101/2020.06.14.151092v1",
+          "tag": "br-2020-blind"
+        }
+      ]
     },
     "presentations": {
       "posters": [
