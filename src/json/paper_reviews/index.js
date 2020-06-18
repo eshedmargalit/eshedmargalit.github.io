@@ -66,7 +66,8 @@ const filenames = [
   "beauchamp_dynamic_stim.json",
   "chang_ocular_mismatch.json",
   "bao_object_space.json",
-  "ko_mouse_v1_connectivity.json"
+  "ko_mouse_v1_connectivity.json",
+  "matteucci_temporal_discontinuity.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

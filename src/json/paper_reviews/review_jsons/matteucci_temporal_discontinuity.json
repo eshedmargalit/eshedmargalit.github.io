@@ -1,0 +1,41 @@
+{
+  "review": {
+    "summary": [
+      "Rats raised to see only temporally discontinuous movies show fewer complex cells, and those that do survive are worse encoders of orientation information.",
+      "Simple cells emerged as usual in this population, as did direction selectivity, suggesting that temporal learning is required for phase tolerance but not orientation/direction selectivity."
+    ],
+    "background": [
+      "Two major classes of orientation-selective cells are found in primary visual cortex in many species: simple cells and complex cells. Complex cells are position/phase invariant, whereas simple cells only respond maximally for specific phases",
+      "Mechanisms for the formation of simple and complex cells fall into two broad categories: unsupervised spatial learning (USL) and unsupervised temporal learning (UTL). Relating to previous reviews: sparse coding is a USL method, slow feature analysis is a UTL method. It is unclear whether either USL or UTL is necessary for either simple or complex cell development (small exception: studies in which animals are reared under strobe lighting)"
+    ],
+    "approach": [
+      "Raise 18 newborn rats in light-proof cabinets. From eye-opening to P60, subject rats to 4-hour long exposures fo visual stimuli in an LCD-box. The control group saw natural movies, while the experimental group saw frame-scrambled versions of those movies to disrupt temporal continuity. All movies played at 15Hz.",
+      "Multichannel extracellular recordings from V1 under anesthesia. Responses were recorded to drifting gratings at 12 directions and contrast-modulated noise movies. Orientation- and direction selectivity indices were computed for neurons, along with a measure of phase invariance: the modulation index (MI). Combining across animals, there were 105 well-isolated neurons recorded from the control group and 158 from the experimental group."
+    ],
+    "results": [
+      "Fewer complex cells were found in the experimental group than the control group (55% vs. 39%), with cells in the experimental group forming a single peak at high modulation index (i.e., strongly modulated by phase). In contrast, cells in the control group had two peaks: one at a lower MI (complex cells) and one at a higher MI (simple cells). Figure 2.",
+      "Orientation and direction tuning indices did not differ between groups, indicating that simple cell spatial processing was likely unaffected by the temporal discontinuity manipulation (Figure 2). These simple cells were similar between groups in number of lobes of the Gabor-like function and the sharpness of the spike-triggered average (Contrast Index; CI; Figure 3)",
+      "Control-group complex cells were able to efficiently decode stimulus orientation across many grating phases (Figure 5B, light blue), whereas simple cells from both populations dipped below chance when tested on time windows with phases differing from the phase in the training window (Figure 5B, dark blue and dark brown). Experimental-group complex cells were in between these two extremes (gold curve)."
+    ],
+    "conclusions": [
+      "The experimental manipulation led to a lower number of complex cells, and these cells were less useful in a phase-tolerant orientation decoding classifier. However, some complex cells were still present, likely because 1) animals could see themselves (e.g., paws), and 2) because head movements within the time of a single frame (66 ms) would be continuous.",
+      "Orientation tuning does not depend on temporal continuity, but phase-tolerance does, pointing to the necessity of UTL for learning complex cells. The fact that direction tuning still emerges despite complex cells not emerging suggests independent mechanisms for direction selectivity and phase tolerance, although they are closely related computations."
+    ],
+    "other": [
+      "The authors point to retinal waves as a potential reason for the persistence of some complex cells. I wonder how that squares with the assertions of Dahne et al., 2014, who claim that retinal wave inputs are sufficient for generating complex cells if one assumes that V1 is performing some kind of slow feature analysis.",
+      "I loved this paper! Very clear, interesting experiment, and a nice detailed description of results. I'd be interested to know how these deficits affect the rats' visual perception afterward... Is the orientation decoding afforded by simple cells and the remaining complex cells sufficient for downstream visual tasks?"
+    ]
+  },
+  "metadata": {
+    "authors": ["Matteucci, G", "Zoccolan, D"],
+    "institutions": ["International School for Advanced Studies (SISSA)"],
+    "keywords": ["rat", "simple", "complex", "temporal", "dynamics", "v1"],
+    "title": "Unsupervised experience with temporal continuity of the visual environment is causally involved in the development of V1 complex cells",
+    "journal": "Science Advances",
+    "doi": "10.1126/sciadv.aba3742",
+    "url": "http://dx.doi.org/10.1126/sciadv.aba3742",
+    "date": "2020-05",
+    "review_date": "2020-06-17",
+    "one_sentence": "Disrupting the temporal ordering of movies consisting the majority of rats' visual experience prevents formation of complex cells but preserves simple cells"
+  }
+}
