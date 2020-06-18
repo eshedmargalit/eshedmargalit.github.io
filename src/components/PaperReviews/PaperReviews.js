@@ -45,6 +45,11 @@ class PaperReviews extends Component {
   }
 
   render() {
+    const siren_emoji = (
+      <span role="img" aria-label="siren label">
+        🚨
+      </span>
+    );
     return (
       <Container>
         <Row>
@@ -119,7 +124,10 @@ class PaperReviews extends Component {
         <hr />
         <Row>
           <Col>
-            <h6> 🚨 App in Development! 🚨 </h6>
+            <h6>
+              {" "}
+              {siren_emoji} App in Development! {siren_emoji}{" "}
+            </h6>
             <p>
               {" "}
               Over the past year, I've been working on making Paper-a-Week a
