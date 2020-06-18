@@ -116,6 +116,30 @@ class PaperReviews extends Component {
             </ul>
           </Col>
         </Row>
+        <hr />
+        <Row>
+          <Col>
+            <h6> 🚨 App in Development! 🚨 </h6>
+            <p>
+              {" "}
+              Over the past year, I've been working on making Paper-a-Week a
+              standalone website. Users that sign up are able to:
+            </p>
+            <ul>
+              <li>
+                Search for papers by DOI, keyword, topic, author, and more
+              </li>
+              <li>Automatically import metadata for papers reviews</li>
+              <li>Organize papers in a searchable, sortable table</li>
+              <li>Share their reviews with a public URL</li>
+            </ul>
+            <p>
+              {" "}
+              If you're interested in helping me test the public version of the
+              site, please email me! I'd love to hear your feedback and ideas.
+            </p>
+          </Col>
+        </Row>
         <br />
         <Row>
           <Col>
