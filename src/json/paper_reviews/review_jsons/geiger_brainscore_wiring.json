@@ -1,0 +1,44 @@
+{
+  "review": {
+    "summary": [
+      "With a small number of supervised weight updates, a deep convolutional neural network (DCNN) model can achieve a high BrainScore",
+      "A new weight initialization scheme allows untrained models to have high BrainScores, and selective optimization of weights in downsampling layers only is the most effective for increasing BrainScore"
+    ],
+    "background": [
+      "While DCNNs are the strongest models of ventral stream activity and object recognition behavior we have, the way they are trained is not a model of biological development for a number of reasons, including task (supervised learning with labels is unrealistic) and learning rule (backpropagation has not been shown in the brain)",
+      "One approach to solving the supervised learning problem is to do unsupervised learning instead. Recent work has shown how promising unsupervised learning can be for creating model-to-brain correspondences (maybe I'll review a couple of them soon). This paper goes a different route and asks: how can we make _fewer_ supervised updates and still get a good model-to-brain correspondence?"
+    ],
+    "approach": [
+      "Defining brain predictivity: BrainScore is an established combination of a model's activity to predict primate behavior along with firing rates in V1, V2, V4, and IT. Models with a high BrainScore are thus stronger models of brain and behavior",
+      "\"Weight compression\": the authors introduce Weight Compression, an alternative to standard, e.g., Kaiming Normal initialization. Weight compression works as follows: first, train a network with the full number of supervised steps. Then, for each layer that isn't the first layer, cluster kernel weights from the trained model in that layer using kNN clustering. Fit a multi-D Gaussian for each cluster. For a new \"at-birth\" network, consider a single channel in a given layer. For that channel, pick a cluster at random, then choose weights from that cluster to initialize the kernel. For the first layer, fit Gabor parameters to the trained-model-kernels. For a newly initialized model, pick a Gabor at random to initialize that channel.",
+      "\"Critical training\": instead of updating all weights, update weights only in spatial downsampling layers, e.g., max-pooling layers. This is in contrast to \"Downstream Training\" which freezes model weights up to layer N and allows retraining of all weights past the freeze point (this is often what is done during 'finetuning')."
+    ],
+    "results": [
+      "BrainScore increases as the number of supervised updates (images * epochs) increases, whether the increase in updates comes from training on a larger dataset or increasing the number of epochs. Improvement on all 5 sub-scores (V1, V2, V4, IT, behavior) increases with more updates, but gains are largest for IT and behavior, and smallest for V1 (Figure 1)",
+      "Weight compression allows a higher brain-score at initialization (no supervised updates) than commonly used Kaiming Normal initialization (Figure 2). The BrainScore achieved \"at birth\" is 54%",
+      "Critical training (CT) outperforms Downstream training (DT) as the number of trainable parameters is reduced (as measured by preserving high BrainScore). CT also allows a 30% of reduction in train time while retaining 80% of BrainScore. (Figure 3) ",
+      "By combining weight compression with critical training, a higher BrainScore can be achieved for a given number of supervised updates than just naively reducing dataset size or number of epochs. (Figure 4)",
+      "The benefits of applying weight compression and critical training are best seen for ResNet50, but are fairly small (maybe not even worth it) for an already-compressed architecture (MobileNet). This raises questions of how choice of architecture also interacts with these weight-init and training techniques. (Figure 5)"
+    ],
+    "conclusions": [
+      "The techniques introduced here are valuable steps for thinking about how evolution and development contribute to the firing rate patterns and behaviors we observe in adult primates; weight compression may be a sort of \"modeling\" the information stored in the genome that initializes the system. I think it would be valuable to consider the following question here: what experimental data could we use to ask if synapses are actually initialized closer to weight compression than Kaiming Normal?",
+      "The finding that Critical Training can outperform Downstream training suggests 1) that finetuning can be done more intelligently than \"block-freezing\", and 2) that techniques relying on sparse labels or no labels (self-supervised and un-supervised learning, respectively) may have an easier problem to solve, i.e., fewer weights to update."
+    ],
+    "other": [
+      "It would be interesting to see if the techniques for initialization and training introduced here actually lead to models that more closely match the developmental trajectory of monkeys (across many timepoints)",
+      "I wonder how much of the benefit of weight compression comes from the selection of weights from a trained model and how much of it comes from the explicit prior that first-layer weights should be Gabors. I also need to think more about how much it's \"fair game\" to use weights from a pre-trained model when initializing a new network, which clearly relates to e.g. student-teacher networks."
+    ]
+  },
+  "metadata": {
+    "authors": ["Geiger, F", "Schrimpf, M", "Marques, T", "DiCarlo, JJ"],
+    "institutions": ["MIT"],
+    "keywords": ["neural network", "evolution", "initialization", "wiring"],
+    "title": "Wiring Up Vision: Minimizing Supervised Synaptic Updates Needed to Produce a Primate Ventral Stream",
+    "journal": "arXiv",
+    "doi": "10.1101/2020.06.08.140111",
+    "url": "https://www.biorxiv.org/content/10.1101/2020.06.08.140111v1",
+    "date": "2020-06",
+    "review_date": "2020-06-26",
+    "one_sentence": "Relatively few supervised weight updates are needed to produce a CNN model of the primate ventral stream that explains activity in V1, V2, V4, IT, and behavior"
+  }
+}
