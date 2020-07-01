@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.59aa7656.chunk.css",
-  "main.js": "/static/js/main.108fd501.chunk.js",
-  "main.js.map": "/static/js/main.108fd501.chunk.js.map",
+  "main.js": "/static/js/main.db982d88.chunk.js",
+  "main.js.map": "/static/js/main.db982d88.chunk.js.map",
   "static/css/1.52524f3d.chunk.css": "/static/css/1.52524f3d.chunk.css",
   "static/js/1.b3e42cce.chunk.js": "/static/js/1.b3e42cce.chunk.js",
   "static/js/1.b3e42cce.chunk.js.map": "/static/js/1.b3e42cce.chunk.js.map",
@@ -25,10 +25,10 @@
   "static/media/lateral_vtc_rdm.png": "/static/media/lateral_vtc_rdm.85ca8aa4.png",
   "static/media/spacenet.png": "/static/media/spacenet.4f23cab6.png",
   "static/media/vtc_faces.png": "/static/media/vtc_faces.eae46f35.png",
-  "static/media/katex.min.css": "/static/media/KaTeX_Typewriter-Regular.ba01f72a.woff",
-  "static/css/main.59aa7656.chunk.css.map": "/static/css/main.59aa7656.chunk.css.map",
+  "static/media/katex.min.css": "/static/media/KaTeX_Typewriter-Regular.6b9645af.ttf",
   "static/css/1.52524f3d.chunk.css.map": "/static/css/1.52524f3d.chunk.css.map",
+  "static/css/main.59aa7656.chunk.css.map": "/static/css/main.59aa7656.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.7762acf8d87cf00bac076d41646f66f0.js": "/precache-manifest.7762acf8d87cf00bac076d41646f66f0.js",
+  "precache-manifest.99653fe98cff47c3696215d4d08715db.js": "/precache-manifest.99653fe98cff47c3696215d4d08715db.js",
   "service-worker.js": "/service-worker.js"
 }
