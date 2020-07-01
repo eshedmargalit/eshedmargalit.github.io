@@ -1,8 +1,8 @@
 {
   "CV": {
-    "last_updated": "July 2019",
+    "last_updated": "July 2020",
     "pdf": {
-      "path": "2019.July.CV.pdf"
+      "path": "2020.July.CV.pdf"
     },
     "awards": [
       {
@@ -226,11 +226,38 @@
           "year": "2020",
           "url": "https://www.biorxiv.org/content/10.1101/2020.06.14.151092v1",
           "tag": "br-2020-blind"
+        },
+        {
+          "title": "Validation and generalization of pixel-wise relevance in convolutional neural networks trained for face classification",
+          "authors": [
+            "Crawford, J.",
+            "Margalit, E.",
+            "Grill-Spector, K.",
+            "Poltoratski, S."
+          ],
+          "journal": "arXiv",
+          "year": "2020",
+          "url": "https://arxiv.org/abs/2006.16795",
+          "tag": "ar-2020-pixels"
         }
       ]
     },
     "presentations": {
       "posters": [
+        {
+          "title": "Correlation-based spatial layout of deep neural network features generates ventral stream topography",
+          "authors": [
+            "Margalit, E.",
+            "Lee, H.",
+            "Marques, T.",
+            "DiCarlo, J.J.",
+            "Yamins, D.L.K."
+          ],
+          "journal": "COSYNE",
+          "year": "2020",
+          "url": "img/margalit_cosyne_poster_2020.png",
+          "tag": "cosyne-2020-spacenet"
+        },
         {
           "title": "Pinwheel-like Iso-Orientation Domains in a Convolutional Neural Network Model",
           "authors": [
