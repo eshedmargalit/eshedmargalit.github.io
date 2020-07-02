@@ -1,0 +1,42 @@
+{
+  "review": {
+    "summary": [
+      "Orientation selectivity in normal ferrets increases from weak at eye-opening to strong two weeks later. This improvement is not seen in dark-reared ferrets, although the initial point is similar. In lid-sutured ferrets, orientation selectivity is never observed.",
+      "The differences in orientation selectivity cannot be entirely explained by anatomical differences in the degree of horizontal connection projections."
+    ],
+    "background": [
+      "When and how orientation selectivity develops in carnivores is an open question. Orientation selectivity (and cortical maps of orientation tuning) are present at birth, but weak. In the first few weeks of life, the strength of selectivity increases dramatically. Whether this \"refinement\" depends on visual experience is unknown. ",
+      "Prior work in cats has indicated that lid suture can degrade orientation map structure, suggesting at least a permissive role of visual experience for refinement."
+    ],
+    "approach": [
+      "Intrinsic optical imaging in primary visual cortex of 16 ferrets in response to oriented gratings at 0, 45, 90, and 135 degrees. These 16 animals were dark-reared from two weeks prior to eye opening, then, on the day of the experiment, anesthetized and presented with stimuli.",
+      "A different group of animals was not dark-reared, but had both eyelids sutured shut; effectively low-pass filtering the inputs to the retina.",
+      "To analyze the anatomical structure of intracortical connections, animals received injections of biocytin into V1, and axons were labeled in tangential sections through layer 2/3 of cortex."
+    ],
+    "results": [
+      "Dark-reared ferrets have orientation maps (and selectivity) that is well-developed, but weaker than light-reared control animals (Figure 1, 2).",
+      "In normal animals, orientation selectivity increased sharply in the two weeks following eye opening (Figure 2). This increase was not apparent in dark-reared animals, where orientation selectivity was stable or decreased slightly following the time of natural eye opening.",
+      "Lid-sutured animals had spatially-scattered orientation responses, no coherent map, and poor orientation selectivity that did not improve following the time at which the eyes would normally open (Figures 1, 2)",
+      "The spatial extent of axonal horizontal connections were significantly smaller for both dark-reared and lid-sutured ferrets, indicating that normal visual experience is needed for horizontal connections, but that they cannot explain the functional differences between dark-reared and lid-sutured animals (Figure 3)."
+    ],
+    "conclusions": [
+      "The authors' model of development is that endogenous activity (retinal waves) shapes the basic columnar circuitry that leads to the weak initial selectivity. However, lighted rearing facilitates interactions between this circuitry and sensory info, which is needed for full maturation. Long contours in the environment may be particularly important in this context, as they can co-activate inputs that are spatially-distant (maybe needed to wire up horizontal connections?)"
+    ],
+    "other": [
+      "There are some differences here and in results reported by Crair/Stryker in cats, and it isn't exactly clear why (or what to do about it...), although some methodological possibilities are provided",
+      "Later work, Ohshiro et al., 2011 (maybe I'll review that sometime...) shows that contours aren't actually needed for strong orientation selectivity, dots are fine too. So that conclusion in this paper isn't totally right"
+    ]
+  },
+  "metadata": {
+    "authors": ["White, LE", "Coppola, DM", "Fitzpatrick, D"],
+    "institutions": ["Duke University", "Centenary College"],
+    "keywords": ["ferret", "deprivation", "orientation", "experience", "v1"],
+    "title": "The contribution of sensory experience to the maturation of orientation selectivity in ferret visual cortex",
+    "journal": "Nature",
+    "doi": "10.1038/35082568",
+    "url": "http://dx.doi.org/10.1038/35082568",
+    "date": "2001-06",
+    "review_date": "2020-07-02",
+    "one_sentence": "Orientation maps are slightly weaker in dark reared ferrets, but almost non-existent in lid-sutured ferrets, suggesting that experience can be either beneficial or detrimental depending on the contents of vision"
+  }
+}
