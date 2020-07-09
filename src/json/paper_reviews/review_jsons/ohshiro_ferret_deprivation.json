@@ -1,0 +1,39 @@
+{
+  "review": {
+    "summary": [
+      "Ferrets raised seeing only flickering dots have as strong of orientation tuning as normally-reared counterparts, suggesting that explicit experience with contours is not necessary for orientation selectivity",
+      "The authors propose a simple Hebbian \"split-constraint\" model to refine initially weak orientation biases into strong orientation selectivity"
+    ],
+    "background": [
+      "Orientation-selectivity depends on visual experience to fully develop, but the nature of that experience required for normal development is unknown. Does any visual input work? Or are there specific statistics of the visual environment that are required?"
+    ],
+    "approach": [
+      "Ferrets were dark-reared, and following natural eye-opening, exposed to one of the following visual diets every day for the next few weeks (for up to 4 hours per day): strictly dark-reared (never saw any inputs), normally-reared (saw the lab and other ferrets, flickering dots, drifting dots, and drifting bars",
+      "In the terminal experiments assessing selectivity, full-field sine gratings were shown while micro-electrode recordings were made in V1. Neurons were assessed by orientation selectivity, direction selectivity, and a reverse-correlation technique was used to estimate receptive field shape.",
+      "Eye movements were monitored by the experimenter, but 1) the ferrets could probably see the edges of the screen from time to time, and 2) their ability to move their eyes likely caused novel patterns of light stimulation on the retina that cannot be controlled for"
+    ],
+    "results": [
+      "Normal levels of orientation selectivity were observed for every visual diet except for dark-rearing, where orientation selectivity was markedly lower. The moving-dots group had slightly lower orientation selectivity than the others, but still more selective than the dark-reared group (Figures 2, 3). Direction selectivity followed the same pattern.",
+      "Estimation of spatial receptive fields led to four notable results: 1) the receptive fields in all non-dark-reared groups looked like Gabor filters, as in light-reared animals, 2) the preferred orientation of the cells (evaluated functionally) matched the inferred preferred orientation from the RFs, 3) the size of receptive fields and number of lobes was well-matched to prior work, and 4) no differences were seen between flicker and drift groups",
+      "Where other models of simple cell formation fail to account for orientation selectivity when presented with sparse spots, a Hebbian model with a \"split-constraint\", where synaptic weight is conserved separately for excitatory and inhibitory cells, can fit the data presented in this work (Figures 5, 6)"
+    ],
+    "conclusions": [
+      "The authors conclude that some small amount of orientation tuning exists at eye opening due to retinal waves or wiring patterns, and Hebbian mechanisms act on visual inputs after eye opening to refine those representations. This work suggests that any input, including flickering dots, is sufficient for that purpose"
+    ],
+    "other": [
+      "It seems to me that controlling the important potential confounds of eye motion and\nhead motion are extremely important here, but extremely hard to do. What if the small amount of screen-edge they saw (or the random formation of an edge from random dots) are sufficient for map formation at very low frequencies of being encountered?"
+    ]
+  },
+  "metadata": {
+    "authors": ["Ohshiro, T", "Hussain, S", "Weliky, M"],
+    "institutions": ["University of Rochester"],
+    "keywords": ["ferret", "v1", "experience", "orientation", "development"],
+    "title": "Development of cortical orientation selectivity in the absence of visual experience with contour",
+    "journal": "Journal of Neurophysiology",
+    "doi": "10.1152/jn.00095.2011",
+    "url": "http://dx.doi.org/10.1152/jn.00095.2011",
+    "date": "2011-10",
+    "review_date": "2020-07-09",
+    "one_sentence": "Ferrets develop orientation selectivity in primary visual cortex even if they are raised seeing only flickering dots, indicating that experience with contours is not necessary for orientation tuning"
+  }
+}

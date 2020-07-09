@@ -69,7 +69,8 @@ const filenames = [
   "ko_mouse_v1_connectivity.json",
   "matteucci_temporal_discontinuity.json",
   "geiger_brainscore_wiring.json",
-  "white_ferret_deprivation.json"
+  "white_ferret_deprivation.json",
+  "ohshiro_ferret_deprivation.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
