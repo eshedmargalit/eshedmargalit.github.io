@@ -239,6 +239,22 @@
           "year": "2020",
           "url": "https://arxiv.org/abs/2006.16795",
           "tag": "ar-2020-pixels"
+        },
+        {
+          "title": "Topographic deep artificial neural networks reproduce the hallmarks of the primate inferior temporal cortex face processing network",
+          "authors": [
+            "Lee, H.",
+            "Margalit, E.",
+            "Jozwik, K.",
+            "Cohen, M.A.",
+            "Kanwisher, N.G.",
+            "Yamins, D.L.K.",
+            "DiCarlo, J.J."
+          ],
+          "journal": "bioRxiv",
+          "year": "2020",
+          "url": "https://www.biorxiv.org/content/10.1101/2020.07.09.185116v1",
+          "tag": "br-2020-tdann"
         }
       ]
     },
