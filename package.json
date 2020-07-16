@@ -10,7 +10,7 @@
     "fuse.js": "^3.4.4",
     "gaussian": "^1.1.0",
     "gh-pages": "2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mathjs": "^6.0.3",
     "moment": "^2.24.0",
     "prettier": "^1.15.1",
