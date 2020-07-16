@@ -1,0 +1,48 @@
+{
+  "review": {
+    "summary": [
+      "Face-selective neurons respond not only to faces, but also the space where faces should be when they are occluded or replaced. In particular, when the presence of a face is ambiguous, having a body below the face dramatically strengthens responses.",
+      "The joint occurrence of faces and bodies may explain the joint coding observed here (and explained with an analysis of AlexNet features), adding evidence for the view that IT responses are experience-dependent and not wholly innate."
+    ],
+    "background": [
+      "The study of category-selective populations (either by fMRI or ePhys) typically present objects (or categories of objects) in isolation, e.g., a face against a blank background, and find strong category-selective signals. However, faces do not appear in isolation in the wild, but are attached in meaningful ways to bodies, creating some statistical regularity in the spatial/feature relationships between real-world objects. These regularities are known to affect our perception of objects."
+    ],
+    "approach": [
+      "Recording with 32-ch multielectrode arrays in fMRI-defined face-selective patches in two monkeys: from ML and PL in Monkey 1 and ML in Monkey 2. Responses within an array were homogenous enough that they were averaged, such that the data were reduced to one mean response per array, per stimulus",
+      "Natural images subtending 16 degrees of visual angle on a side where presented in multiple positions while the monkey held fixation, allowing activity to be recorded as multiple parts of the image were centered on the recorded receptive fields (Figure 1)",
+      "Natural images were modified in a variety of (pretty entertaining!) ways; I recommend looking at the paper for examples.",
+      "Neural network analysis: AlexNet layer responses were recorded for isolated object from 6 categories (faces, headless bodies, animals, houses, inanimate objects, and tools). Activation pattern similarity was computed by Spearman rank correlation, and pixel-wise similarity was assessed with Euclidean distance."
+    ],
+    "results": [
+      "Neurons in the fMRI-defined face patches are indeed selective for faces, and have a surprising degree of spatial specificity: responses are very high when the face is centered over the neuron's RF but fall off quickly when the image is moved even slightly (Figure 1D-H)",
+      "Face-selective neurons' response latency depends on the presence of eyes: if they are present, responses are earlier (and stronger for the eyes than the rest of the face). If they are occluded, responses are generally slower (Figure 2)",
+      "When faces are occluded by objects in an image, neurons respond to the location where the face would be (if not occluded). Responses to occluded faces are lower in magnitude and slightly longer latency (about 30-40ms; Figure 3). Similarly, responses to masked faces (e.g., bag over head), responses were stronger to masked faces than to non-faces, but weaker than unmasked-face responses. Latency was also 30-40 ms slower for masked faces (Figure 4).",
+      "The presence of a body below non-face objects facilitates responses (Figure 5); however, responses to faces were the same whether a body was present or not (Figure 6) pointing to a ceiling effect.",
+      "Face cells respond to where a face would be expected, regardless of the orientation of the body (Figure 7). This effect is observed whether faces are actually present or not. Nevertheless, when the presence of a face is ambiguous, the strongest facilitation is for the native configuration: upright face-area above body.",
+      "In early layers of AlexNet (and in pixels) faces and bodies are represented more similarly than faces to other categories. This effect decreases in the middle of the network, and rises sharply again in the fully connected layers (Figure 8). This effect was not found for the untrained network, indicating that beyond architecture, the image distribution and task for the ImageNet dataset matters for this similarity to emerge."
+    ],
+    "conclusions": [
+      "The responses of category-selective neurons look quite different depending on the stimuli used; in particular, joint presentation of multiple categories can have a large effect, especially if those categories naturally co-occur. \"We propose that these neurons are sensitive to the statistical regularities of their cumulative experience...\"",
+      "The similarity in AlexNet representations between faces and bodies (without explicit training to consider them similar) is taken as evidence that joing occurrence of those categories in visual experience may explain the contextual sensitivity of \"face-neurons\" to non-face categories. I like this explanation! The authors also point out that the weight-sharing constraints of current CNNs make it hard to compare to other results in this work, where space and features are obviously separated."
+    ],
+    "other": [
+      "This was a really fun read, and it's great to see that it got published despite the eccentric choices of stimuli! It leaves me thinking about the importance of defining selectivity, and how we let those definitions shape our thinking about the computational functions of IT."
+    ]
+  },
+  "metadata": {
+    "authors": ["Arcaro, MJ", "Ponce, C", "Livingstone, M"],
+    "institutions": [
+      "University of Pennsylvania",
+      "Washington University in St. Louis",
+      "Harvard Medical School"
+    ],
+    "keywords": ["macaque", "it", "face", "context", "receptive fields"],
+    "title": "The neurons that mistook a hat for a face",
+    "journal": "eLife",
+    "doi": "10.7554/elife.53798",
+    "url": "http://dx.doi.org/10.7554/eLife.53798",
+    "date": "2020-06",
+    "review_date": "2020-07-16",
+    "one_sentence": "Face-selective neurons in macaque IT respond not just to faces in isolation, but also to where a face \"ought to be\" in modified photos without faces"
+  }
+}
