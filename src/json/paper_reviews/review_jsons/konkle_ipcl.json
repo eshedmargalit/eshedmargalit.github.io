@@ -1,0 +1,43 @@
+{
+  "review": {
+    "summary": [
+      "Self-supervised algorithms can yield representations that are as brain-like as category-supervised models when evaluated on an fMRI dataset of visual cortex responses to inanimate objects. Model architecture, however, is the only reasonably strong predictor of representational similarity.",
+      "In these data, all models tested are reasonably far from the noise ceiling and do not show clear hierarchical effects, suggesting that both self- and category-supervised approaches leave more variance to be explained."
+    ],
+    "background": [
+      "The introduction of deep learning to cognitive and visual neuroscience in 2014 was fueled by comparison of neural representations to the representations learned by task-optimized supervised models. However, the fully-supervised framework was never a good model of visual learning: animals don't get millions of verbally-labeled examples",
+      "In the past couple of years, self-supervised models have shown the capacity to learn representations that are almost as powerful as those from fully supervised training. This exciting advance suggests that self-supervision (a biologically plausible learning context) may also be able to explain neural representations. Prior to this work and Zhuang et al., 2020, that hypothesis had not been explicitly tested",
+      "The family of self-supervised algorithms that have been the most promising are instance-level and contrastive: they learn representations by encouraging an image to be \"near\" augmented versions of that image in representation space while staying far from other images. Despite that lack of any category labels, the emerging representation across a large set of images forms clusters that naturally follow category boundaries."
+    ],
+    "approach": [
+      "The IPCL (instance-prototype contrastive learning) algorithm: Take some image, randomly augment it 5 times by choosing from a pool of augmentations like crops, flips, and color/hue/saturation modification. Pass each of the 5 augmented images through an encoder to get a low-dimensional representation, then average these representations together: this average is the \"prototype\". When doing the contrastive learning, the prototype serves as the positive sample, and a random selection from the past 4096 most recent representations is the negative sample. The encoder is Alexnet, but with group-norm (gn) rather than batch norm (bn).",
+      "Group-normalization (gn): channels are grouped together, and the mean and standard deviation of responses across that group is used to normalize the responses. This is intriguing to me because it suggests some relationship between the channels, where most approaches consider the grouping or ordering of channels unimportant.",
+      "Comparison models: the authors compare Alexnet-gn IPCL to 12 other self-supervised models using a similar indexed-memory algorithm, termed \"Wusnets\". These include variations in architecture (Alexnet-gn, Alexnet-bn, Resnet18, Cornet-z), and variations of the size of the latent space for representations (128, 256, and 1000 dimensional). For all self-supervised models, weighted k-nearest neighbors was used to assess the capacity of the learned representations for categorization (a \"transfer\" task). Category-supervised models (Alexnet-bn, Alexnet-gn, Resnet18, Resnet50, and Cornet-z) were also used for comparison.",
+      "fMRI data: visual cortex responses to 72 images depicted isolated (no background) inanimate objects. Comparison of neural and model representations was done with RSA, but without the reweighting and remixing approach introduced by Khalig-Razavi and Kriegeskorte, 2014. Neural responses were chunked into early (V1-V3), intermediate (pOTC), and late (aOTC). The authors argue that this dataset is higher-reliability than prior data and is unique in its focus on inanimate objects only."
+    ],
+    "results": [
+      "Self-supervised models using the Alexnet group-norm architecture (incl. IPCL) are on-par or better than category-supervised models in their prediction of neural representations. Category-supervised models sometimes won out in aOTC with the final layers of Resnet18 and Cornet-z (Figure 2)",
+      "Model architecture is a stronger predictor of neural representation than latent space dimensionality, learning algorithm, or top-1 performance on Imagenet. In explaining these data, models based on Alexnet were typically best (Figures 2,3)",
+      "Unlike in other work (including concurrent self-supervised work, see Zhuang et al., 2020) there is no clear hierarchical correspondence between model layer and brain stage, i.e., earlier layers don't particularly fit early visual cortex better than later layers (Figure 2)"
+    ],
+    "conclusions": [
+      "Instance-prototypes are a biologically-plausible way to compare the current scene to an internal representation, and is consistent with frameworks in which category representation is a probabilistic system in which a given example is measured against a prototype.",
+      "Because instance-level self-supervised learning can yield representations that are similar to the brain, \"category-specialized learning mechanisms\" do not appear to be necessary for categorical representations to emerge -- this work offers an existence proof that instance-level learning mechanisms may suffice."
+    ],
+    "other": [
+      "As mentioned a couple of times already, this paper could be compared to Zhuang et al., 2020, which also considers unsupervised learning from videos. Perhaps I'll review that one in the future..."
+    ]
+  },
+  "metadata": {
+    "authors": ["Konkle, T", "Alvarez, GA"],
+    "institutions": ["Harvard University"],
+    "keywords": ["deep learning", "unsupervised", "fmri", "contrastive"],
+    "title": "Instance-level contrastive learning yields human brain-like representation without category-supervision",
+    "journal": "bioRxiv",
+    "doi": "10.1101/2020.06.15.153247",
+    "url": "https://www.biorxiv.org/content/biorxiv/early/2020/06/16/2020.06.15.153247.full.pdf",
+    "date": "2020-06",
+    "review_date": "2020-07-23",
+    "one_sentence": "A new contrastive self-supervised learning algorithm, IPCL, yields models that fit visual fMRI data better than comparable supervised models"
+  }
+}

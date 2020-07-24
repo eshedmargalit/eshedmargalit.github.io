@@ -71,7 +71,8 @@ const filenames = [
   "geiger_brainscore_wiring.json",
   "white_ferret_deprivation.json",
   "ohshiro_ferret_deprivation.json",
-  "arcaro_face_hat.json"
+  "arcaro_face_hat.json",
+  "konkle_ipcl.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {
