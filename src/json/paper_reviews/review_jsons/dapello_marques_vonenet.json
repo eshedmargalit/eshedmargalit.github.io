@@ -1,0 +1,50 @@
+{
+  "review": {
+    "summary": [
+      "Replacing the first learned conv block in a deep network with a fixed set of Gabors (whose parameters are set by empirical studies), then re-training the remaining layers leads to models that 1) retain most of their \"clean\" image performance, 2) are much more robust to white-box attacks, and 3) are slightly more robust to black-box attacks, while being computationally cheap"
+    ],
+    "background": [
+      "Over 40 years ago, researchers proposed the idea that V1 receptive fields (in cats, primates, and many other species) are essentially Gabor wavelets: sinusoids with a Gaussian envelope. In parallel, Gabors were shown to be an efficient way to represent natural images, leading to the idea that V1 receptive fields are Gabor-like as an efficient coding strategy",
+      "Recent advances in deep convolutional neural network (DCNN) models of vision suggest that task-optimized representations in later model layers are strong predictors of neural responses later in the visual hierarchy, i.e., in IT, whereas earlier layers of the models are better predictors of neural responses earlier in the visual hierarchy, e.g., V1, V2, V4",
+      "An influential paper (Cadena et al., 2019) directly compared the fit to neural data of a Gabor filterbank and a task-optimized DCNN and found that the task-optimized representation narrowly but consistently outperformed the Gabor filterbank in predicting V1 firing rates to natural images."
+    ],
+    "approach": [
+      "Adversarial attacks: standard ImageNet trained models were compared with models trained to be robust to white-box attacks and those trained on SIN (stylized ImageNet), which has been shown to help with robustness to \"image corruption\" such as fog/snow covering the original image. All networks were evaluated on white-box susceptibility and the corruption susceptibility",
+      "Predicting V1 firing rates: 102 neurons tested on 450 images consisting of naturalistic textures and noise samples (not natural images). PLS regression was used to predict activity of V1 neurons from a weighted sum of units in the designated model layer",
+      "VOneNet: replace the first block of the architecture (usually one or two conv operations) with a fixed Gabor filterbank front end, then learn the remaining parameters. The filterbank used had 512 channels with parameters set by looking at empirical data from macaque V1, e.g., distribution of spatial frequency sensitivities. The filterbank includes processing with simple and complex Gabors, nonlinearities, and Poisson stochasticity on the outputs. Finally, if needed, a \"transition\" layer was trained to squish the number of channels back down to whatever the next layer expected"
+    ],
+    "results": [
+      "A model's ability to predict V1 firing rates is strongly correlated with its robustness to white box attacks, with adversarially trained networks being both robust to attacks and strong predictors of V1 (Figure 1)",
+      "Adding the VOneBlock to each of {ResNet50, CORnetS, Alexnet} dramatically improves white box robustness while only slightly losing performance on \"clean\" images (Figure 2)",
+      "A comparison of 4 ResNet50s (baseline, adversarially trained, SIN trained, and VOneResNet), the VOneBlock rescues white box accuracy almost as well as adversarial training. However, it is only slightly effective in rescuing black-box accuracy (Table 1)",
+      "While the stochasticity is the most important part of the V1 block when looking at perturbation accuracy, the rest of the features also contribute, and combining the features with stochasticity gives best results (Figure 3). Adding the stochasticity during training is even more effective than only adding it at evaluation time (Figure 4)."
+    ],
+    "conclusions": [
+      "Because the VOneBlock is mathematically fixed, it is much cheaper computationally to use it than to undergo expensive adversarial training.",
+      "Having a primate-like preprocessing frontend lends robustness to adversarial attacks. Eshed's note: I was a bit confused by this framing-- I don't think anyone believes that animals evolved for white-box robustness (since knowledge of all of our synapses isn't possible), and the black-box improvement is relatively small."
+    ],
+    "other": [
+      "Not highlighted much in text, but this conflicts with the Cadena result, as the authors assert that the VOneBlock is a stronger predictor of V1 firing rates than any task-optimized layer. Note however that the evaluation datasets and fitting procedures differ between this data and the Cadena data.",
+      "It's most interesting to me to think about how this approach might or might not generalize to downstream regions. In V1 we know how to make a Gabor filterbank, but what's the analogous approach for V2? For V4? IT? Are there ways to effectively get a Gabor filterbank with more general principles? The work of Olshausen and Field suggests so, but thus far those approaches haven't explained higher visual cortex firing rates very well."
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "Dapello, J",
+      "Marques, T",
+      "Schrimpf, M",
+      "Geiger, F",
+      "Cox, DD",
+      "Dicarlo, JJ"
+    ],
+    "institutions": ["Massachusetts Institute of Technology", "IBM"],
+    "keywords": ["deep neural network", "v1", "gabor", "adversarial"],
+    "title": "Simulating a Primary Visual Cortex at the Front of CNNs Improves Robustness to Image Perturbations",
+    "journal": "bioRxiv",
+    "doi": "10.1101/2020.06.16.154542",
+    "url": "https://www.biorxiv.org/content/biorxiv/early/2020/06/17/2020.06.16.154542.full.pdf",
+    "date": "2020-06",
+    "review_date": "2020-08-01",
+    "one_sentence": "Replacing the first conv block of various DNN architectures with a fixed Gabor filterbank increases predictivity of V1 responses and robustness to white-box adversarial attacks"
+  }
+}
