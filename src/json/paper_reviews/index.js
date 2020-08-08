@@ -73,7 +73,8 @@ const filenames = [
   "ohshiro_ferret_deprivation.json",
   "arcaro_face_hat.json",
   "konkle_ipcl.json",
-  "dapello_marques_vonenet.json"
+  "dapello_marques_vonenet.json",
+  "henderson_orientation_bias.json"
 ];
 
 const filenames_with_prefix = filenames.map(filename => {

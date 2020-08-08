@@ -1,0 +1,48 @@
+{
+  "review": {
+    "summary": [
+      "ImageNet-trained VGG is best at discriminating orientations at the cardinal orientations (0 and 90) consistent with human psychophysics results. There is also an over-representation of units with sharp tuning at cardinal orientations.",
+      "Rotating ImageNet images and re-training the network systematically shifts these peaks based on the rotation angle and disappears in the absence of training, indicating that the bias is not solely due to architecture or task, but depends on specific visual experience"
+    ],
+    "background": [
+      "Primates are best at discriminating orientations that are perfectly horizontal or vertical: the \"cardinal orientations\". This ability is thought to be supported by an over-representation of sharply-tuned cardinal-preferring neurons in primary visual cortex.",
+      "Because natural scenes have more power in cardinal orientations (when doing a Fourier transform, for example), it has been proposed that the cardinal bias emerges as a way to efficiently code natural scenes: we want to dedicate resources to stimuli seen commonly. However, whether this bias is entirely experience dependent or is baked in to wiring patterns over millions of years is an open question.",
+      "Convolutional neural networks can be leveraged to separate the influences of experience and architecture: by systematically modifying the training set, researchers can explore the effects of experience on learned representations."
+    ],
+    "approach": [
+      "Evaluation images: ImageNet images were filtered in a narrow orientation band but preserving broadband spatial frequency information. The resulting set looks like textured Gabor patches (Figure 1). Images were created in steps of 1-degree (which to my knowledge is the most detailed test-set used in this field).",
+      "Fisher information: to evaluate the ability of DNN layers to discriminate similar orientations, the Fisher Information (FI) was computed. The FI can be computed two ways: squaring the slope of the tuning curve wrt orientation, or calculating how much information about orientations is contained in the unit activity. In this setting, FI should be 0 at the preferred orientation (for a unimodal tuning curve), very high immediately off-peak, and 0 at non-preferred orientations.",
+      "Tuning curves: von Mises functions (circular Gaussians) were fit to unit tuning curves, and those units with strong fits were kept for further analysis of the tuning curve centers (Figure 2B).",
+      "Rotated ImageNet: re-train the network on images that were rotated by either 0 (a re-training control given that other results are on pre-trained networks), 22.5 or 45 degrees clockwise."
+    ],
+    "results": [
+      "Deviations from uniform FI (across orientations) emerge gradually across network layers and are strongest in late layers. The same is not true (at least, not until late layers) in a randomly-initialized network. (Figures 2, 3).",
+      "Rotating the natural images (cropped through an aperture) led to a predictable shift in orientation content from 0/90 to (0/90 + rotation amount). Networks trained on these images had a similar shift in discriminability of orientations and tuning centers (Figures 4, 5).",
+      "In all rotated cases, the same trend in Fisher Information Bias was seen: increasing bias with depth. (Figure 6)."
+    ],
+    "conclusions": [
+      "The fact that orientation bias took time to emerge (until intermediate layers) is supported by work like Cadena et al., 2019 that shows best V1 productivity from intermediate DCNN layers. They continue to write \"the finding that the bias continues to increase with depth [...] is also consistent with some behavioral and physiological results suggesting that the primate oblique effect may be dependent on higher-order processing beyond V1\".",
+      "The finding that some Fisher Information Bias emerged late in untrained networks suggests that the effects described here are not _entirely_ experience dependent."
+    ],
+    "other": [
+      "I'm surprised to see that orientation tuning strength and a cardinal bias emerge linearly in the pretrained network. When I've looked at similar metrics, the strength of orientation tuning peaks at the same layers that best explain V1 data in macaque... On a related note, I would be interested to follow up on the idea that although the bias emerges in V1, it is supported by downstream readouts."
+    ]
+  },
+  "metadata": {
+    "authors": ["Henderson, MM", "Serences, J"],
+    "institutions": ["University of California, San Diego"],
+    "keywords": [
+      "deep neural network",
+      "experience",
+      "orientation",
+      "natural image statistics"
+    ],
+    "title": "Biased orientation representations can be explained by experience with non-uniform training set statistics",
+    "journal": "bioRxiv",
+    "doi": "10.1101/2020.07.17.209536",
+    "url": "https://www.biorxiv.org/content/biorxiv/early/2020/07/18/2020.07.17.209536.full.pdf",
+    "date": "2020-07",
+    "review_date": "2020-08-08",
+    "one_sentence": "ImageNet-trained neural networks exhibit biases in their orientation sensitivity (mirroring those reported in humans) that can be systematically shifted by modifying the visual diet"
+  }
+}
