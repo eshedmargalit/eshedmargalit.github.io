@@ -3,6 +3,9 @@
   align-items: center;
 }
 
+.paw-image {
+  width: 80%;
+}
 .full-width {
   width: 100%;
 }

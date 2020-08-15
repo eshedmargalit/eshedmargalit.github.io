@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
-import { Sparklines, SparklinesCurve, SparklinesSpots } from "react-sparklines";
+import { Button, Container, Row, Col } from "reactstrap";
 import moment from "moment";
 
 import PaperAWeek from "./PaperAWeek.js";
 import review_filenames from "../../json/paper_reviews/index.js";
 import "./PaperReviews.css";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 class PaperReviews extends Component {
   constructor(props) {
@@ -24,32 +24,13 @@ class PaperReviews extends Component {
     });
   };
 
-  compute_ppw() {
-    const sorted_dates = this.review_dates.sort((a, b) => a.diff(b));
-    const total_weeks = moment().diff(sorted_dates[0], "days") / 7.0;
-    return Number.parseFloat(sorted_dates.length / total_weeks).toFixed(3);
-  }
-
-  compute_cumulative_number() {
-    const sorted_dates = this.review_dates.sort((a, b) => a.diff(b));
-
-    var cumulative_number = [];
-    var counter = 0;
-    for (var i = 0; i < sorted_dates.length - 1; i++) {
-      var diff = sorted_dates[i + 1].diff(sorted_dates[i], "days");
-      counter += diff;
-      cumulative_number.push(counter);
-    }
-
-    return cumulative_number;
-  }
-
   render() {
     const siren_emoji = (
       <span role="img" aria-label="siren label">
         🚨
       </span>
     );
+    const pawScreenshot = require("../../assets/img/paw.png");
     return (
       <Container>
         <Row>
@@ -75,82 +56,83 @@ class PaperReviews extends Component {
             elsewhere, but the format and content of these entries are meant to
             serve my own interests.
           </Col>
-          <Col>
-            <br />
-            <h5> How am I doing? </h5>
-            <p>
-              {" "}
-              Papers / week: <strong>{this.compute_ppw()}</strong>{" "}
-            </p>
-            <Sparklines data={this.compute_cumulative_number()} height={75}>
-              <SparklinesCurve />
-              <SparklinesSpots />
-            </Sparklines>
-            <p className="float-right">
-              <em>
-                Cumulative review count: <strong>{this.papers.length}</strong>
-              </em>
-            </p>
-          </Col>
-        </Row>
-        <hr />
-        <Row>
-          <Col>
-            <h6> How this works </h6>
-            <ul>
-              <li>
-                {" "}
-                Click through each paper to see my notes about background,
-                methods, results, conclusions, and more{" "}
-              </li>
-              <li>
-                {" "}
-                The selected paper stays open in a new 'tab', so you can browse
-                the rest of the list while leaving the current review open{" "}
-              </li>
-              <li>
-                {" "}
-                Each paper has a number of tags, each of which has a unique
-                background color. Click tags to search by that keyword!
-              </li>
-              <li>
-                {" "}
-                The search bar allows you to search by title, author,
-                publication year, or keyword{" "}
-              </li>
-            </ul>
-          </Col>
         </Row>
         <hr />
         <Row>
           <Col>
             <h6>
               {" "}
-              {siren_emoji} App in Development! {siren_emoji}{" "}
+              {siren_emoji} Update: Paper-A-Week is now a standalone web app!{" "}
+              {siren_emoji}{" "}
             </h6>
             <p>
-              {" "}
-              Over the past year, I've been working on making Paper-a-Week a
-              standalone website. Users that sign up are able to:
+              This page will no longer be updated with my weekly reviews, but
+              I'll keep it for archival purposes. Please visit my public profile
+              on the Paper-A-Week website to read my reviews!
             </p>
-            <ul>
-              <li>
-                Search for papers by DOI, keyword, topic, author, and more
-              </li>
-              <li>Automatically import metadata for papers reviews</li>
-              <li>Organize papers in a searchable, sortable table</li>
-              <li>Share their reviews with a public URL</li>
-            </ul>
-            <p>
-              {" "}
-              If you're interested in helping me test the public version of the
-              site, please email me! I'd love to hear your feedback and ideas.
-            </p>
+            <a
+              href="https://paperaweek.com/profiles/113214769483919341732"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button color="primary">My Paper-A-Week Profile</Button>
+            </a>
           </Col>
         </Row>
         <br />
         <Row>
           <Col>
+            <h6>Paper-A-Week is publicly-available for beta-testing!</h6>
+            <p>
+              I would love your help testing the beta-version of Paper-A-Week.
+              All you need is a Google account to get started. The only favor I
+              ask of you is to please help me improve the site by providing
+              feedback! No request or note is too small to share.
+            </p>
+            <a
+              href="https://paperaweek.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button color="success">Start Using Paper-a-Week</Button>
+              <br />
+              <img
+                alt="screenshot of the Paper-a-Week website with Eshed logged in"
+                src={pawScreenshot}
+                className="paw-image border"
+              />
+            </a>
+            <br />
+            <br />
+            <h6>Highlighted Features</h6>
+            <ul>
+              <li>Search, sort, and share your reviews</li>
+              <li>Find papers on the internet and auto-import metadata</li>
+              <li>Keep a reading list</li>
+              <li>Track how many papers you average per week</li>
+              <li>Use the standardized form to write consistent reviews</li>
+            </ul>
+          </Col>
+        </Row>
+        <hr />
+        <Row>
+          <Col>
+            <h5>
+              <FaExclamationTriangle />
+              {` `}As of August 2020, this list will no longer be updated{` `}
+              <FaExclamationTriangle />
+            </h5>
+            <p>
+              Please visit{" "}
+              <a
+                href="https://paperaweek.com/profiles/113214769483919341732"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                my Paper-A-Week profile
+              </a>{" "}
+              instead.
+            </p>
             <PaperAWeek />
           </Col>
         </Row>
