@@ -41,18 +41,18 @@ class DPCalc extends Component {
             case where this assumption is not met.
             <br />
             <br />
-            <h5>Hits, Misses, False Positives, and Correct Rejections</h5>
+            <h5>Hits, Misses, False Alarms, and Correct Rejections</h5>
             Given the SignalPresent and SignalAbsent distributions, setting a
-            "criterion" tells you the hit rate, miss rate, false positive rate,
-            and correct rejection rate. In plain English, the hit rate is the
+            "criterion" tells you the hit rate, miss rate, false alarm rate, and
+            correct rejection rate. In plain English, the hit rate is the
             proportion of the time that a signal is reported when there actually
-            is a signal, and the false positive rate is the proportion of the
-            time that a signal is reported when there is no signal present.
+            is a signal, and the false alarm rate is the proportion of the time
+            that a signal is reported when there is no signal present.
             <br />
             Remember, the miss rate is just one minus the hit rate, and the
-            correct rejection rate is just one minus the false positive rate, so
+            correct rejection rate is just one minus the false alarm rate, so
             knowing the hit rate gives you the miss rate, and knowing the false
-            positive rate gives you the correct rejection rate.
+            alarm rate gives you the correct rejection rate.
             <br />
             <Row>
               <Col lg={{ size: 3, offset: 4 }} xs={{ size: 6, offset: 3 }}>
@@ -70,29 +70,29 @@ class DPCalc extends Component {
             will be reported. Thus, the hit rate is the proportion of responses
             from the SignalPresent distribution above the criterion, and the
             miss rate is the propoertion of resopnses from the SignalPresent
-            distribution below the criterion. The false positive rate is the
+            distribution below the criterion. The false alarm rate is the
             proportion of responses from the SignalAbsent distribution above the
             criterion, and the correct rejection rate is the propoertion of
             responses from the SignalAbsent distribution below the criterion. A
             "conservative" criterion is relatively high, such that both hits and
-            false positives will be low. A "liberal" criterion is relatively
-            low, such that both hits and false positives will be high.
+            false alarms will be low. A "liberal" criterion is relatively low,
+            such that both hits and false alarms will be high.
             <br />
             <br />
             <h5> ROC Curves </h5>
             Receiver Operating Characteristic (ROC) Curves provide a visual
             representation of discriminability for a sensor. The x-axis is the
-            false positive rate and the y-axis is the hit rate. An ROC curve is
-            composed of all of the false positive rates and hit rates
-            corresponding to all possible criteria one could choose from 0 to{" "}
-            {infinity}. Note that d&#39; is constant along this curve, because
-            different points along the curve only differ in criterion, not in
-            sensor sensitivity. Increasing d&#39; moves the curve up and to the
-            left, whereas decreasing d&#39; brings the curve toward the
+            false alarm rate and the y-axis is the hit rate. An ROC curve is
+            composed of all of the false alarm rates and hit rates corresponding
+            to all possible criteria one could choose from 0 to {infinity}. Note
+            that d&#39; is constant along this curve, because different points
+            along the curve only differ in criterion, not in sensor sensitivity.
+            Increasing d&#39; moves the curve up and to the left, whereas
+            decreasing d&#39; brings the curve toward the
             <InlineMath>y=x</InlineMath> unity line. The{" "}
             <InlineMath>y=x</InlineMath> unity line represents a d&#39; of 0,
-            since hits and false positives are exactly equal along that line,
-            and thus, the Signal Present and Signal Absent distributions must be
+            since hits and false alarms are exactly equal along that line, and
+            thus, the Signal Present and Signal Absent distributions must be
             perfectly overlapping.
             <br />
             <br />
@@ -118,7 +118,7 @@ class DPCalc extends Component {
             <h6> Computing d' from the hit rate and false alarm rate </h6>
             If you have the hit rate and false alarm rate and can assume the two
             distributions are approximately normal, you can also compute d' as:
-            <BlockMath math={"d' = Z(HitRate) - Z(FalsePositiveRate)"} />
+            <BlockMath math={"d' = Z(HitRate) - Z(FalseAlarmRate)"} />
             where Z() is the inverse CDF of the Gaussian distribution.
             <br />
             <hr />

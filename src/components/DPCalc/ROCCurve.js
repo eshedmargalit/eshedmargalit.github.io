@@ -6,7 +6,7 @@ import {
   LineChart,
   CartesianGrid,
   XAxis,
-  YAxis
+  YAxis,
 } from "recharts";
 
 class ROCCurve extends Component {
@@ -19,7 +19,7 @@ class ROCCurve extends Component {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis domain={[0, 1]} type="number" dataKey="false_positives">
-          <Label value="False Positives" offset={-5} position="insideBottom" />
+          <Label value="False Alarms" offset={-5} position="insideBottom" />
         </XAxis>
         <YAxis label={{ value: "Hits", angle: -90, position: "insideLeft" }} />
         <ReferenceLine

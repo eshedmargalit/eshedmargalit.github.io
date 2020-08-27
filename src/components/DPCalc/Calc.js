@@ -9,7 +9,7 @@ import {
   roundTruncate,
   getROCCurve,
   normalCDF,
-  normalICDF
+  normalICDF,
 } from "./mathUtils.js";
 
 // stylesheets
@@ -29,7 +29,7 @@ class Calc extends Component {
       isEditingHits: false,
       isEditingFP: false,
       isEditingMisses: false,
-      isEditingCR: false
+      isEditingCR: false,
     };
     this.signal_color = "#0d5e08";
     this.noise_color = "#960f0f";
@@ -79,69 +79,69 @@ class Calc extends Component {
             prevState.noise_mean,
             prevState.noise_sigma
           )
-        )
+        ),
       };
     });
   }
 
   // slider update handlers
-  handleOnChangeSignalMu = value => {
+  handleOnChangeSignalMu = (value) => {
     this.setState({
-      signal_mean: value
+      signal_mean: value,
     });
     this.updateMetrics();
   };
 
-  handleOnChangeSignalSigma = value => {
+  handleOnChangeSignalSigma = (value) => {
     if (this.state.sigma_lock) {
       this.setState({
         signal_sigma: value,
-        noise_sigma: value
+        noise_sigma: value,
       });
     } else {
       this.setState({
-        signal_sigma: value
+        signal_sigma: value,
       });
     }
     this.updateMetrics();
   };
 
-  handleOnChangeNoiseMu = value => {
+  handleOnChangeNoiseMu = (value) => {
     this.setState({
-      noise_mean: value
+      noise_mean: value,
     });
     this.updateMetrics();
   };
 
-  handleOnChangeNoiseSigma = value => {
+  handleOnChangeNoiseSigma = (value) => {
     if (this.state.sigma_lock) {
       this.setState({
         noise_sigma: value,
-        signal_sigma: value
+        signal_sigma: value,
       });
     } else {
       this.setState({
-        noise_sigma: value
+        noise_sigma: value,
       });
     }
     this.updateMetrics();
   };
 
-  handleOnChangeCriterion = value => {
+  handleOnChangeCriterion = (value) => {
     this.setState({
-      criterion: value
+      criterion: value,
     });
     this.updateMetrics();
   };
 
   // checkbox toggle handler
-  toggleCheckbox = e => {
+  toggleCheckbox = (e) => {
     this.setState({
-      sigma_lock: e.target.checked
+      sigma_lock: e.target.checked,
     });
     if (e.target.checked) {
       this.setState({
-        signal_sigma: this.state.noise_sigma
+        signal_sigma: this.state.noise_sigma,
       });
     }
     this.updateMetrics();
@@ -254,7 +254,7 @@ class Calc extends Component {
     this.setState({ isEditingCR: !this.state.isEditingCR });
   }
 
-  updateHitsInput = e => {
+  updateHitsInput = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
@@ -273,11 +273,11 @@ class Calc extends Component {
             (Math.pow(this.state.signal_sigma, 2) +
               Math.pow(this.state.noise_sigma, 2))
         ),
-      misses: 1 - value
+      misses: 1 - value,
     });
   };
 
-  updateMissesInput = e => {
+  updateMissesInput = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
@@ -297,11 +297,11 @@ class Calc extends Component {
             (Math.pow(this.state.signal_sigma, 2) +
               Math.pow(this.state.noise_sigma, 2))
         ),
-      hits: hits
+      hits: hits,
     });
   };
 
-  updateFPsInput = e => {
+  updateFPsInput = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
@@ -320,11 +320,11 @@ class Calc extends Component {
             (Math.pow(this.state.signal_sigma, 2) +
               Math.pow(this.state.noise_sigma, 2))
         ),
-      cr: 1 - value
+      cr: 1 - value,
     });
   };
 
-  updateCRsInput = e => {
+  updateCRsInput = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
@@ -344,7 +344,7 @@ class Calc extends Component {
             (Math.pow(this.state.signal_sigma, 2) +
               Math.pow(this.state.noise_sigma, 2))
         ),
-      cr: value
+      cr: value,
     });
   };
 
@@ -501,7 +501,7 @@ class Calc extends Component {
         <Row>
           <Col lg="6" xs="6">
             <FormGroup>
-              <Label for="FPsInput">False Positives:</Label>
+              <Label for="FPsInput">False Alarms:</Label>
               {FPBox}
             </FormGroup>
           </Col>
