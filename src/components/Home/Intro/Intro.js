@@ -4,7 +4,7 @@ import {
   FaLinkedin,
   FaTwitter,
   FaGithub,
-  FaGraduationCap
+  FaGraduationCap,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -19,28 +19,28 @@ const buttons = [
   {
     link: "https://scholar.google.com/citations?user=ijttsicAAAAJ&hl=en&oi=ao",
     text: "Google Scholar",
-    icon: <FaGraduationCap color={ICON_COLOR} size={ICON_SIZE} />
+    icon: <FaGraduationCap color={ICON_COLOR} size={ICON_SIZE} />,
   },
   {
     link: "https://github.com/eshedmargalit",
     text: "GitHub",
-    icon: <FaGithub color={ICON_COLOR} size={ICON_SIZE} />
+    icon: <FaGithub color={ICON_COLOR} size={ICON_SIZE} />,
   },
   {
     link: "https://twitter.com/eshedmargalit",
     text: "Twitter",
-    icon: <FaTwitter color={ICON_COLOR} size={ICON_SIZE} />
+    icon: <FaTwitter color={ICON_COLOR} size={ICON_SIZE} />,
   },
   {
     link: "https://www.linkedin.com/in/eshed-margalit-437222a7",
     text: "LinkedIn",
-    icon: <FaLinkedin color={ICON_COLOR} size={ICON_SIZE} />
-  }
+    icon: <FaLinkedin color={ICON_COLOR} size={ICON_SIZE} />,
+  },
 ];
 
 class Intro extends Component {
   render_buttons() {
-    const cols = buttons.map(button => {
+    const cols = buttons.map((button) => {
       return (
         <Col lg="3" xs="3" key={button.link}>
           <Button className="hover-button" color="link">
@@ -144,7 +144,7 @@ class Intro extends Component {
                     and neuroimaging! To learn more or to see some of my past
                     work, please check out my{" "}
                     <Link to="/Research">research interests</Link>, or my{" "}
-                    <Link to="/CV">CV</Link>. I also run the{" "}
+                    <Link to="/CV">CV</Link>. I'm a past organizer of the{" "}
                     <a href="http://stanford-cnjc.github.io">
                       Stanford Computational Neuroscience Journal Club
                     </a>
