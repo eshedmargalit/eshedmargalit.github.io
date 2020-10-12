@@ -31,8 +31,8 @@ class Calc extends Component {
       isEditingMisses: false,
       isEditingCR: false,
     };
-    this.signal_color = "#0d5e08";
-    this.noise_color = "#960f0f";
+    this.signal_color = "#1e88e5";
+    this.noise_color = "#ffc107";
     this.updateMetrics = this.updateMetrics.bind(this);
   }
 

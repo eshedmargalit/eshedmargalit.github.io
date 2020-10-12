@@ -1,15 +1,24 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button, Table } from "reactstrap";
 import { InlineMath, BlockMath } from "react-katex";
 import { FaLink } from "react-icons/fa";
 import "katex/dist/katex.min.css";
-import dp_table from "../../assets/img/dp_table.png";
 
 import Calc from "./Calc.js";
 import "./DPCalc.css";
 
 class DPCalc extends Component {
   renderDprimer() {
+    const check_emoji = (
+      <span role="img" aria-label="check mark emoji">
+        ✅
+      </span>
+    );
+    const x_emoji = (
+      <span role="img" aria-label="red x emoji">
+        ❌
+      </span>
+    );
     const mu_signal_present = <InlineMath math="\mu_{SignalPresent}" />;
     const mu_signal_absent = <InlineMath math="\mu_{SignalAbsent}" />;
     const sigma = <InlineMath>\sigma</InlineMath>;
@@ -42,85 +51,111 @@ class DPCalc extends Component {
             <br />
             <br />
             <h5>Hits, Misses, False Alarms, and Correct Rejections</h5>
-            Given the SignalPresent and SignalAbsent distributions, setting a
-            "criterion" tells you the hit rate, miss rate, false alarm rate, and
-            correct rejection rate. In plain English, the hit rate is the
-            proportion of the time that a signal is reported when there actually
-            is a signal, and the false alarm rate is the proportion of the time
-            that a signal is reported when there is no signal present.
-            <br />
-            Remember, the miss rate is just one minus the hit rate, and the
-            correct rejection rate is just one minus the false alarm rate, so
-            knowing the hit rate gives you the miss rate, and knowing the false
-            alarm rate gives you the correct rejection rate.
+            <p>
+              Given the SignalPresent and SignalAbsent distributions, setting a
+              "criterion" tells you the hit rate, miss rate, false alarm rate,
+              and correct rejection rate. In plain English, the hit rate is the
+              proportion of the time that a signal is reported when there
+              actually is a signal, and the false alarm rate is the proportion
+              of the time that a signal is reported when there is no signal
+              present.
+            </p>
+            <p>
+              Remember, the miss rate is just one minus the hit rate, and the
+              correct rejection rate is just one minus the false alarm rate, so
+              knowing the hit rate gives you the miss rate, and knowing the
+              false alarm rate gives you the correct rejection rate.
+            </p>
             <br />
             <Row>
-              <Col lg={{ size: 3, offset: 4 }} xs={{ size: 6, offset: 3 }}>
-                <img
-                  src={dp_table}
-                  alt="outcome table"
-                  className="full-width"
-                />
+              <Col lg={{ size: 8, offset: 2 }} xs={{ size: 6, offset: 3 }}>
+                <Table bordered>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>
+                        <em>"Yes, there was a signal!"</em>
+                      </th>
+                      <th>
+                        <em>"No signal here..."</em>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Signal Actually Present</th>
+                      <td>{check_emoji} Hit</td>
+                      <td>{x_emoji} Miss</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Signal Actually Absent</th>
+                      <td>{x_emoji} False Alarm</td>
+                      <td>{check_emoji} Correct Rejection</td>
+                    </tr>
+                  </tbody>
+                </Table>
               </Col>
             </Row>
-            <br />
-            <br />
             <h5> What's the Criterion? </h5>
-            The criterion indicates the amount of evidence above which a signal
-            will be reported. Thus, the hit rate is the proportion of responses
-            from the SignalPresent distribution above the criterion, and the
-            miss rate is the propoertion of resopnses from the SignalPresent
-            distribution below the criterion. The false alarm rate is the
-            proportion of responses from the SignalAbsent distribution above the
-            criterion, and the correct rejection rate is the propoertion of
-            responses from the SignalAbsent distribution below the criterion. A
-            "conservative" criterion is relatively high, such that both hits and
-            false alarms will be low. A "liberal" criterion is relatively low,
-            such that both hits and false alarms will be high.
-            <br />
-            <br />
+            <p>
+              The criterion indicates the amount of evidence above which a
+              signal will be reported. Thus, the hit rate is the proportion of
+              responses from the SignalPresent distribution above the criterion,
+              and the miss rate is the propoertion of resopnses from the
+              SignalPresent distribution below the criterion. The false alarm
+              rate is the proportion of responses from the SignalAbsent
+              distribution above the criterion, and the correct rejection rate
+              is the propoertion of responses from the SignalAbsent distribution
+              below the criterion. A "conservative" criterion is relatively
+              high, such that both hits and false alarms will be low. A
+              "liberal" criterion is relatively low, such that both hits and
+              false alarms will be high.
+            </p>
             <h5> ROC Curves </h5>
-            Receiver Operating Characteristic (ROC) Curves provide a visual
-            representation of discriminability for a sensor. The x-axis is the
-            false alarm rate and the y-axis is the hit rate. An ROC curve is
-            composed of all of the false alarm rates and hit rates corresponding
-            to all possible criteria one could choose from 0 to {infinity}. Note
-            that d&#39; is constant along this curve, because different points
-            along the curve only differ in criterion, not in sensor sensitivity.
-            Increasing d&#39; moves the curve up and to the left, whereas
-            decreasing d&#39; brings the curve toward the
-            <InlineMath>y=x</InlineMath> unity line. The{" "}
-            <InlineMath>y=x</InlineMath> unity line represents a d&#39; of 0,
-            since hits and false alarms are exactly equal along that line, and
-            thus, the Signal Present and Signal Absent distributions must be
-            perfectly overlapping.
-            <br />
-            <br />
-            Often, the area under the ROC curve (AUC) is used to quantify how
-            sensitive a sensor is. AUC ranges from 0 to 1, with 1 being a
-            perfect sensor corresponding to a d&#39; of {infinity}. How does the
-            AUC numerically relate to the d&#39; value?
-            <BlockMath math={"d' = \\sqrt{2}Z(AUC)"} /> where Z() is the inverse
-            CDF of the Gaussian distribution.
-            <br />
-            <br />
+            <p>
+              Receiver Operating Characteristic (ROC) Curves provide a visual
+              representation of discriminability for a sensor. The x-axis is the
+              false alarm rate and the y-axis is the hit rate. An ROC curve is
+              composed of all of the false alarm rates and hit rates
+              corresponding to all possible criteria one could choose from 0 to{" "}
+              {infinity}. Note that d&#39; is constant along this curve, because
+              different points along the curve only differ in criterion, not in
+              sensor sensitivity. Increasing d&#39; moves the curve up and to
+              the left, whereas decreasing d&#39; brings the curve toward the
+              <InlineMath>y=x</InlineMath> unity line. The{" "}
+              <InlineMath>y=x</InlineMath> unity line represents a d&#39; of 0,
+              since hits and false alarms are exactly equal along that line, and
+              thus, the Signal Present and Signal Absent distributions must be
+              perfectly overlapping.
+            </p>
+            <p>
+              Often, the area under the ROC curve (AUC) is used to quantify how
+              sensitive a sensor is. AUC ranges from 0 to 1, with 1 being a
+              perfect sensor corresponding to a d&#39; of {infinity}. How does
+              the AUC numerically relate to the d&#39; value?
+              <BlockMath math={"d' = \\sqrt{2}Z(AUC)"} /> where Z() is the
+              inverse CDF of the Gaussian distribution.
+            </p>
             <h5> Advanced Topics </h5>
             <h6> Unequal Standard Deviations </h6>
-            What if the standard deviations of the two distributions are not
-            equal? No problem, just replace the denominator with the square root
-            of the average variance!
-            <BlockMath
-              math={
-                "d' = \\frac{\\mu_{SignalPresent} - \\mu_{SignalAbsent}}{\\sqrt{\\frac{1}{2}(\\sigma_{SignaPresent}^2 + \\sigma_{SignalAbsent}^2)}}"
-              }
-            />
-            <br />
+            <p>
+              What if the standard deviations of the two distributions are not
+              equal? No problem, just replace the denominator with the square
+              root of the average variance!
+              <BlockMath
+                math={
+                  "d' = \\frac{\\mu_{SignalPresent} - \\mu_{SignalAbsent}}{\\sqrt{\\frac{1}{2}(\\sigma_{SignaPresent}^2 + \\sigma_{SignalAbsent}^2)}}"
+                }
+              />
+            </p>
             <h6> Computing d' from the hit rate and false alarm rate </h6>
-            If you have the hit rate and false alarm rate and can assume the two
-            distributions are approximately normal, you can also compute d' as:
-            <BlockMath math={"d' = Z(HitRate) - Z(FalseAlarmRate)"} />
-            where Z() is the inverse CDF of the Gaussian distribution.
-            <br />
+            <p>
+              If you have the hit rate and false alarm rate and can assume the
+              two distributions are approximately normal, you can also compute
+              d' as:
+              <BlockMath math={"d' = Z(HitRate) - Z(FalseAlarmRate)"} />
+              where Z() is the inverse CDF of the Gaussian distribution.
+            </p>
             <hr />
             <h5> References and Future Reading </h5>
             <a
